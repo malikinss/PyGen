@@ -1,7 +1,8 @@
 # Sum Calculator Program
 
 ## Description 📝
-This Python script reads three integers from the user and prints their sum on the screen. Each integer is entered on a separate line.
+This Python script reads three integers from the user and prints their sum on the screen.
+Each integer is entered on a separate line.
 The program demonstrates basic integer input, arithmetic operations, and output formatting.
 
 ## Purpose 🎯

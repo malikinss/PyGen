@@ -1,7 +1,8 @@
 # Expression Calculator Program
 
 ## Description 📝
-This Python script calculates the value of a mathematical expression given integer values for `a` and `b`. The expression is:
+This Python script calculates the value of a mathematical expression given integer values for `a` and `b`.
+The expression is:
     `3(a + b)^3 + 275b^2 - 127a - 41`
 
 The program calculates the power of numbers by repeated multiplication, avoiding the use of the exponentiation operator.
