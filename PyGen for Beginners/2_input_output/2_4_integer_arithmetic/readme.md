@@ -45,5 +45,5 @@ This Python script calculates the n-th term of an arithmetic progression.
 This Python script generates and prints a sequence of numbers based on a positive integer input.
 
 ## Conclusion 🚀
-By completing this chapter, you will have gained essential skills in integer arithmetic and how to apply these concepts to solve various programming problems.
+By completing this lesson, you will have gained essential skills in integer arithmetic and how to apply these concepts to solve various programming problems.
 Mastering these techniques is crucial for working with numerical data and performing complex calculations.

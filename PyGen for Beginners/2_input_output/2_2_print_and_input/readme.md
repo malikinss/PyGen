@@ -1,14 +1,14 @@
-# Chapter 2.2: Print and Input 📜
+# Lesson 2.2: Print and Input 📜
 
 ## Description 📝
-This chapter covers fundamental concepts of printing to the console and handling user input in programming.
+This lesson covers fundamental concepts of printing to the console and handling user input in programming.
 It introduces various methods for outputting data and capturing user inputs.
 
 ## Purpose 🎯
-The purpose of this chapter is to provide a comprehensive understanding of how to use print statements and input functions to interact with the user and display information.
+The purpose of this lesson is to provide a comprehensive understanding of how to use print statements and input functions to interact with the user and display information.
 
 ## How It Works 🔍
-In this chapter, you will work with different tasks that demonstrate:
+In this lesson, you will work with different tasks that demonstrate:
 - Printing simple text to the console.
 - Formatting and printing sequences of data.
 - Creating visual representations such as triangles using print statements.
@@ -41,5 +41,5 @@ This Python script reads three lines of text from standard input and prints each
 This Python script reads three strings from standard input and prints them in reverse order, each on a separate line.
 
 ## Conclusion 🚀
-This chapter introduces essential print and input operations that are foundational to many programming tasks.
+This lesson introduces essential print and input operations that are foundational to many programming tasks.
 By completing these exercises, you will gain valuable skills in handling user interaction and displaying information effectively.
