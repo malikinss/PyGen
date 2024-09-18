@@ -1,0 +1,18 @@
+'''
+TODO:
+    The program is given a string of text as input - the name of
+    a football team.
+
+    Write a program that accepts this string through the standard input stream
+    (the input() command) and prints a sentence in the following format:
+        <name of the football team> - champion!
+
+    where <name of the football team> is the string of text that your program
+    received as input.
+
+NOTE:
+    Use the input() command to read text, and use the print() command to print
+    text on the screen.
+'''
+team = input()
+print(team, '- champion!')
