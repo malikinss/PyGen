@@ -37,7 +37,7 @@ The output will be:
 2. Open a terminal or command prompt.
 3. Navigate to the directory where the file is located.
 4. Run the script using the command:
-   `python four_digit_relationship_checker.py`
+   `python 4_1_3_four_digit_relationship_checker.py`
 5. Enter a four-digit number when prompted, and the program will display whether the relationship holds.
 
 ## Conclusion 🚀
