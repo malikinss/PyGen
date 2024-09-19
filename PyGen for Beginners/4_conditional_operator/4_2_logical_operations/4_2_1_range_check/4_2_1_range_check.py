@@ -12,4 +12,4 @@ x = int(input())
 if (-1) < x < 17:
     print('Belongs to')
 else:
-    print('Does not belong')
+    print('Does not belongs to')
