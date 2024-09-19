@@ -43,6 +43,6 @@ Explanation:
 5. Enter a positive integer (between 1 and 9) when prompted, and the program will display the calculated result.
 
 ## Conclusion 🚀
-This program allows you to explore how numbers can be manipulated and summed in creative ways by repeating digits.
+This program allows me to explore how numbers can be manipulated and summed in creative ways by repeating digits.
 It provides a clear example of how Python handles basic arithmetic and string manipulation in numeric contexts.
 Enjoy experimenting! 😊
