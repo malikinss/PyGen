@@ -11,11 +11,9 @@ The program demonstrates the application of mathematical formulas to compute the
    - The program prompts the user to input the radius \( R \) of the circle.
 2. **Calculations**:
    - The area is calculated using the formula:
-     \[
-     \text{Area} = \pi R^2
-     \]
+     `Area = \pi R^2`
    - The circumference is calculated using the formula:
-     \[Circumference = 2\pi R\]
+     `Circumference = 2\pi R`
 3. **Output**:
    - The program prints the area and circumference, each on a new line.
 
