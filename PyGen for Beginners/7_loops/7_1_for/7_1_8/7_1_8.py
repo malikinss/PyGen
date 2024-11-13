@@ -1,12 +1,14 @@
-""" 
-Task: The input to the program is three natural numbers m, p, n:
+'''
+TODO:
+    The input to the program is three natural numbers m, p, n:
+        m: starting number of organisms;
+        p: average daily increase in %;
+        n: number of days to breed.
 
-m: starting number of organisms;
-p: average daily increase in %;
-n: number of days to breed.
-
-Write a program that predicts the size of a population of organisms. The program should output the population size on each day, starting on day 1 and ending on the nth day.
-"""
+    Write a program that predicts the size of a population of organisms.
+    The program should output the population size on each day, starting
+    on day 1 and ending on the nth day.
+'''
 
 m, p, n = int(input()), int(input()), int(input())
 
