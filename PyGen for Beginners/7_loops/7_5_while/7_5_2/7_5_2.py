@@ -1,17 +1,31 @@
-""" 
-Task: Given a natural number.
-Write a program that reverses the order of the digits of a number.
-"""
+'''
+TODO:
+    Given a natural number.
 
-num = int(input())
-reversed_num = 0
+    Write a program that reverses the order of the digits of a number.
+'''
 
-while num != 0:
-    last_digit = num % 10
-    reversed_num += last_digit
-    reversed_num *= 10
-    num //= 10
 
-reversed_num = int(reversed_num / 10)
+def reverse_number(n: int) -> int:
+    """
+    Reverses the digits of a given natural number.
 
-print(reversed_num)
+    Args:
+        n (int): The number to reverse.
+
+    Returns:
+        int: The reversed number.
+    """
+    reversed_num = 0
+    while n != 0:
+        last_digit = n % 10  # Get the last digit
+        reversed_num = reversed_num * 10 + last_digit  # Add last digit
+        n //= 10  # Remove the last digit from the original number
+    return reversed_num
+
+
+# Input
+num = int(input("Enter a natural number: "))
+
+# Output
+print(reverse_number(num))
