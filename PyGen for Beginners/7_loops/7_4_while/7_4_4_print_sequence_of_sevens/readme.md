@@ -2,11 +2,13 @@
 
 ## Description 📝
 
-This program reads a sequence of integers from user input and prints each integer that is divisible by 7. The sequence ends when a number not divisible by 7 is entered. This last number is used as an exit condition and is not printed.
+This program reads a sequence of integers from user input and prints each integer that is divisible by 7.
+The sequence ends when a number not divisible by 7 is entered. This last number is used as an exit condition and is not printed.
 
 ## Purpose 🎯
 
-This program demonstrates conditional looping, where input is processed and printed as long as it meets a specific condition (divisibility by 7). It efficiently handles termination based on an unmet condition.
+This program demonstrates conditional looping, where input is processed and printed as long as it meets a specific condition (divisibility by 7).
+It efficiently handles termination based on an unmet condition.
 
 ## How It Works 🔍
 
