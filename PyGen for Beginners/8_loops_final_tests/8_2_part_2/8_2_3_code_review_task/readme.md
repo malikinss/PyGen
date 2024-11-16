@@ -2,7 +2,9 @@
 
 ## Description 📝
 
-This program takes a sequence of 4 integers as input and determines the number of odd numbers in the sequence. It also calculates the maximum odd number. If there are no odd numbers in the sequence, the program will output `"NO"`.
+This program takes a sequence of 4 integers as input and determines the number of odd numbers in the sequence.
+It also calculates the maximum odd number.
+If there are no odd numbers in the sequence, the program will output `"NO"`.
 
 ## Purpose 🎯
 
