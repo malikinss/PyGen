@@ -1,7 +1,10 @@
-""" 
-The input to the program is one line. 
-Write a program that determines how many identical adjacent characters are in it.
-"""
+'''
+TODO:
+    The input to the program is one line.
+
+    Write a program that determines how many identical adjacent
+    characters are in it.
+'''
 
 given_string = input()
 count = 0

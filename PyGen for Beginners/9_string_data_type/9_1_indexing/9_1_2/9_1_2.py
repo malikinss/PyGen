@@ -1,7 +1,8 @@
-""" 
-Task: Enhance the code above using an indexer so that 
-it outputs the w character.
-"""
+'''
+TODO:
+    Enhance the code above using an indexer so that 
+    it outputs the w character.
+'''
 
 #original code
 s = "In 2010, someone paid 10k Bitcoin for two pizzas."

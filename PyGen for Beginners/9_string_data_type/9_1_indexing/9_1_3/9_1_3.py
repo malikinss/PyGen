@@ -1,8 +1,10 @@
-""" 
-Task: The input to the program is one line.
-Write a program that displays the elements of a row 
-with indices 0, 2, 4, ... in a column.
-"""
+'''
+TODO:
+    The input to the program is one line.
+
+    Write a program that displays the elements of a row
+    with indices 0, 2, 4, ... in a column.
+'''
 
 given_string = input()
 

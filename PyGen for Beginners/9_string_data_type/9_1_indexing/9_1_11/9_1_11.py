@@ -1,8 +1,10 @@
-""" 
-Task: The input to the program is a natural number written in 
-the decimal number system. 
-Write a program that converts a given number to the binary number system.
-"""
+'''
+TODO:
+    The input to the program is a natural number written in
+    the decimal number system.
+
+    Write a program that converts a given number to the binary number system.
+'''
 
 n = int(input())
 res = ""

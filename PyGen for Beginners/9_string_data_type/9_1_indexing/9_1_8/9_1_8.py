@@ -1,7 +1,9 @@
-""" 
-Task: The input to the program is one line. 
-Write a program that determines how many times + and * occur in a string.
-"""
+'''
+TODO:
+    The input to the program is one line.
+
+    Write a program that determines how many times + and * occur in a string.
+'''
 
 given_string = input()
 cnt_plus = 0
