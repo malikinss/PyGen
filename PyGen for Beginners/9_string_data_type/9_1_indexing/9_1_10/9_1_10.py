@@ -6,20 +6,37 @@ TODO:
     Write a program that determines the number of vowels and consonants.
 '''
 
-given_string = input()
 
-vowels = 'aeiouAEIOU'
-consonants = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'
+def count_vowels_and_consonants(input_string: str) -> None:
+    """
+    Determines the number of vowels and consonants in a given string of
+    Russian letters.
 
-vowels_cnt = 0
-consonants_cnt = 0
+    Args:
+        input_string (str): The string to be analyzed, consisting of
+        Russian letters.
 
-for i in range(0, len(given_string)):
-    if given_string[i] in vowels:
-        vowels_cnt += 1
+    Returns:
+        None: Prints the counts of vowels and consonants.
+    """
+    vowels = 'аеёийоуюэяAEЁИЙОУЭЯ'
+    consonants = 'бвгдеёжзийклмнопрстфхцчшщБВГДЕЁЖЗИЙКЛМНОПРСТФХЦЧШЩ'
 
-    if given_string[i] in consonants:
-        consonants_cnt += 1
+    vowels_cnt = 0
+    consonants_cnt = 0
 
-print('The number of vowels is', vowels_cnt)
-print('The number of consonants is', consonants_cnt)
+    for char in input_string:
+        if char in vowels:
+            vowels_cnt += 1
+        elif char in consonants:
+            consonants_cnt += 1
+
+    print('The number of vowels is', vowels_cnt)
+    print('The number of consonants is', consonants_cnt)
+
+
+# User input
+given_string = input("Enter a string: ")
+
+# Call function to count vowels and consonants
+count_vowels_and_consonants(given_string)
