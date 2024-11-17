@@ -16,7 +16,7 @@ The purpose of this program is to provide an easy way to toggle the case of char
 
 ### Example:
 
-```plaintext
+```bash
 Input: Hello World
 Output: hELLO wORLD
 
