@@ -12,25 +12,46 @@ TODO:
         - a string with the first and last character removed.
 '''
 
-string = input()
 
-# the total number of characters in the line
-print(len(string))
+def process_string(input_string: str) -> None:
+    """
+    Processes the input string to perform various tasks:
+        - Calculate the total number of characters.
+        - Repeat the string 3 times.
+        - Extract specific parts of the string.
+        - Reverse the string.
+        - Remove the first and last characters.
 
-# original string repeated 3 times
-print(string * 3)
+    Args:
+        input_string (str): The string to be processed.
 
-# the first character of the string
-print(string[0])
+    Returns:
+        None: Outputs the results directly.
+    """
+    # Total number of characters
+    print(len(input_string))
 
-# the first three characters of the string
-print(string[:3])
+    # Original string repeated 3 times
+    print(input_string * 3)
 
-# the last three characters of the string
-print(string[-3:])
+    # First character of the string
+    print(input_string[0])
 
-# line in reverse order
-print(string[::-1])
+    # First three characters of the string
+    print(input_string[:3])
 
-# a string with the first and last character removed
-print(string[1:][:-1])
+    # Last three characters of the string
+    print(input_string[-3:])
+
+    # Line in reverse order
+    print(input_string[::-1])
+
+    # String with the first and last character removed
+    print(input_string[1:-1])
+
+
+# User input
+user_string = input("Enter a string: ")
+
+# Call the function
+process_string(user_string)

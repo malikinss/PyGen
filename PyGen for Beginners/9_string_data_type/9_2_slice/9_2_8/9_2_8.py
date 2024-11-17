@@ -6,13 +6,35 @@ TODO:
     and displays them on the screen.
 '''
 
-string = input()
-string_len = len(string)
-mid_len = int(string_len/2)
 
-if string_len % 2 != 0:
-    mid_len += 1
+def rearrange_string(input_string: str) -> str:
+    """
+    Splits the input string into two equal parts, rearranges them,
+    and returns the rearranged string.
 
-string = string[mid_len:] + string[:mid_len]
+    If the string has an odd length, the extra character is included
+    in the first part.
 
-print(string)
+    Args:
+        input_string (str): The string to be rearranged.
+
+    Returns:
+        str: The rearranged string.
+    """
+    string_len = len(input_string)
+    mid_len = string_len // 2
+
+    # Adjust for odd-length strings
+    if string_len % 2 != 0:
+        mid_len += 1
+
+    # Rearrange the string
+    rearranged = input_string[mid_len:] + input_string[:mid_len]
+    return rearranged
+
+
+# User input
+user_string = input("Enter a string: ")
+
+# Call the function and display the result
+print(rearrange_string(user_string))

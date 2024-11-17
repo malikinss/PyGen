@@ -13,29 +13,55 @@ TODO:
         - all characters of the string through one in reverse order,
           starting with the last one.
 '''
-string = input()
 
-# the third character of this line
-print(string[2])
 
-# penultimate character of this line
-print(string[-2])
+def analyze_string(input_string: str) -> None:
+    """
+    Analyzes the input string and performs the following tasks:
+        - Outputs the third character.
+        - Outputs the penultimate character.
+        - Outputs the first five characters.
+        - Outputs the string except the last two characters.
+        - Outputs all characters with even indices.
+        - Outputs all characters with odd indices.
+        - Outputs all characters in reverse order.
+        - Outputs every second character in reverse order starting
+        from the last.
 
-# the first five characters of this string
-print(string[:5])
+    Args:
+        input_string (str): The string to be analyzed.
 
-# the entire line, except for the last two characters
-print(string[:-2])
+    Returns:
+        None: Outputs the results directly.
+    """
+    # The third character of this line
+    print(input_string[2])
 
-# all characters with even indices
-print(string[::2])
+    # Penultimate character of this line
+    print(input_string[-2])
 
-# all characters with odd indices
-print(string[1::2])
+    # The first five characters of this string
+    print(input_string[:5])
 
-# all characters in reverse order
-print(string[::-1])
+    # The entire line, except for the last two characters
+    print(input_string[:-2])
 
-# all characters of the string through one in reverse order,
-# starting with the last one
-print(string[::-1][::2])
+    # All characters with even indices
+    print(input_string[::2])
+
+    # All characters with odd indices
+    print(input_string[1::2])
+
+    # All characters in reverse order
+    print(input_string[::-1])
+
+    # All characters of the string through one in reverse order,
+    # starting with the last one
+    print(input_string[::-1][::2])
+
+
+# User input
+user_string = input("Enter a string: ")
+
+# Call the function
+analyze_string(user_string)
