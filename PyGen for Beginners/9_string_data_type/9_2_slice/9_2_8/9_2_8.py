@@ -1,8 +1,10 @@
-""" 
-Task: The input to the program is a string of text. 
-Write a program that cuts it into two equal parts, rearranges them, 
-and displays them on the screen.
-"""
+'''
+TODO:
+    The input to the program is a string of text.
+
+    Write a program that cuts it into two equal parts, rearranges them,
+    and displays them on the screen.
+'''
 
 string = input()
 string_len = len(string)

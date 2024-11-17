@@ -1,8 +1,12 @@
-""" 
-Task: The input to the program is one word written in lower case. 
-Write a program that determines if it is a palindrome.
-The program should output "YES" if the word is a palindrome and "NO" otherwise.
-"""
+'''
+TODO:
+    The input to the program is one word written in lower case.
+
+    Write a program that determines if it is a palindrome.
+
+    The program should output "YES" if the word is a palindrome
+    and "NO" otherwise.
+'''
 
 word = input()
 flag_palindrom = True

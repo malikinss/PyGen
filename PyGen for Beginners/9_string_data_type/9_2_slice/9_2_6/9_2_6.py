@@ -1,15 +1,16 @@
-""" 
-Task: The input to the program is one line. 
-Write a program that outputs:
+'''
+TODO:
+    The input to the program is one line.
 
-the total number of characters in the line;
-original string repeated 3 times;
-the first character of the string;
-the first three characters of the string;
-the last three characters of the string;
-line in reverse order;
-a string with the first and last character removed.
-"""
+    Write a program that outputs:
+        - the total number of characters in the line;
+        - original string repeated 3 times;
+        - the first character of the string;
+        - the first three characters of the string;
+        - the last three characters of the string;
+        - line in reverse order;
+        - a string with the first and last character removed.
+'''
 
 string = input()
 
