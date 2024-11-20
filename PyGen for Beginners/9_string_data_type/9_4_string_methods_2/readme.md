@@ -12,7 +12,7 @@ To equip learners with practical knowledge of Python's string manipulation metho
 
 ## How It Works 🔍
 
-In this lesson, you will:
+In this lesson, I will:
 
 -   Learn about the methods used for finding substrings, counting occurrences, and replacing or stripping characters in strings.
 -   Solve real-world tasks requiring the use of these methods for effective text processing.
@@ -54,5 +54,5 @@ In this lesson, you will:
 
 ## Conclusion 🚀
 
-By completing this lesson, you will develop strong skills in using Python string methods for search, replace, and format tasks.
+By completing this lesson, I will develop strong skills in using Python string methods for search, replace, and format tasks.
 These methods are essential tools for data preprocessing, text analysis, and general-purpose programming.
