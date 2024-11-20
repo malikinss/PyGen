@@ -51,4 +51,5 @@ NO
 
 ## Conclusion 🚀
 
-This program provides a convenient way to validate the sorting of books in a library according to specified rules. It ensures the collection adheres to a proper order, simplifying organization and retrieval.
+This program provides a convenient way to validate the sorting of books in a library according to specified rules.
+It ensures the collection adheres to a proper order, simplifying organization and retrieval.
