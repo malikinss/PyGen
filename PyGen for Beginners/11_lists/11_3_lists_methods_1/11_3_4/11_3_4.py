@@ -1,9 +1,11 @@
-""" 
-Task: The input to the program is a natural number n, and then n integers.
-Write a program that creates a list of their cubes from the given numbers.
-"""
+'''
+TODO:
+    The input to the program is a natural number n, and then n integers.
 
-rn = int(input())
+    Write a program that creates a list of their cubes from the given numbers.
+'''
+
+n = int(input())
 lst = []
 
 for i in range(n):
