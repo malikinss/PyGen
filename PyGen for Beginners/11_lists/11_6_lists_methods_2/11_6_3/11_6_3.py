@@ -5,13 +5,27 @@ TODO:
     Write a program that counts the total number of articles: 'a', 'an', 'the'.
 '''
 
-given_string = input()
-counter = 0
 
-list_1 = ['a', 'an', 'the']
-list_2 = given_string.lower().split()
+def count_articles(text: str) -> int:
+    """
+    Counts the total number of articles ('a', 'an', 'the') in the given text.
 
-for i in range(len(list_1)):
-    counter += list_2.count(list_1[i])
+    Args:
+        text (str): The input text string.
 
-print('total number of articles:', counter)
+    Returns:
+        int: The total count of articles in the text.
+    """
+    articles = {'a', 'an', 'the'}  # Set for faster lookups
+    words = text.lower().split()  # Convert to lowercase and split into words
+    return sum(1 for word in words if word in articles)
+
+
+# Input: Read a string containing English text
+input_text = input("Enter English text: ")
+
+# Count the articles
+total_articles = count_articles(input_text)
+
+# Print the total number of articles
+print(f"Total number of articles: {total_articles}")

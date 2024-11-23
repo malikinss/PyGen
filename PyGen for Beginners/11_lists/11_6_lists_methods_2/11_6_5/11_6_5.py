@@ -7,13 +7,31 @@ TODO:
     Write a program that sorts and prints the given list first in ascending
     order and then in descending order.
 '''
+from typing import List
 
-seq = []
-for el in input().split():
-    seq.append(int(el))
 
-seq.sort()
-print(*seq)
+def sort_and_print(numbers: List[int]) -> None:
+    """
+    Sorts a list of integers in ascending and descending order
+    and prints the results.
 
-seq.reverse()
-print(*seq)
+    Args:
+        numbers (List[int]): A list of integers.
+
+    Returns:
+        None
+    """
+    # Sort in ascending order
+    ascending = sorted(numbers)
+    print(*ascending)
+
+    # Sort in descending order
+    descending = sorted(numbers, reverse=True)
+    print(*descending)
+
+
+# Input: Read a string of integers, split, and convert to a list of integers
+sequence = list(map(int, input().split()))
+
+# Process and Output: Sort and print the sequence
+sort_and_print(sequence)
