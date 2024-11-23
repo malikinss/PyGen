@@ -1,5 +1,8 @@
 '''
-The input to the program is a string of text. Write a list expression program that prints all the numeric characters of a given string.
+TODO:
+    The input to the program is a string of text.
+    Write a list expression program that prints all the numeric characters
+    of a given string.
 '''
 
 
