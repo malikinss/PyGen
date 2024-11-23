@@ -2,7 +2,7 @@
 
 ## Description 📝
 
-This lesson covers various methods and techniques for adding and removing elements from a Python list. You will learn how to use:
+This lesson covers various methods and techniques for adding and removing elements from a Python list. I will learn how to use:
 
 -   The `append()` method to add an element to the end of the list.
 -   The `extend()` method to add all elements from another iterable to the list.
