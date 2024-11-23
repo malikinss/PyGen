@@ -21,13 +21,22 @@ The goal of this program is to take a string of space-separated natural numbers,
 ```bash
 Example Input:
 3 1 5 2 4
-
 Example Output:
 3 5 1 2 4
 
 Example Input:
 7 8 4 9 6 3
-
 Example Output:
 7 3 4 9 6 8
 ```
+
+## Usage 📦
+
+1. Save the script as `swap_min_max.py`.
+2. Run the script in a Python environment.
+3. Input a string of space-separated natural numbers (e.g., `3 1 5 2 4`).
+4. The program will output the list with the minimum and maximum elements swapped.
+
+## Conclusion 🚀
+
+This program demonstrates how to manipulate a list by swapping its minimum and maximum elements, offering a simple solution to a common problem in data manipulation.
