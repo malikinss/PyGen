@@ -1,7 +1,9 @@
-""" 
-Task: The input to the program is a text string containing integers. 
-Write a program that draws a bar chart given numbers.
-"""
+'''
+TODO:
+    The input to the program is a text string containing integers.
+
+    Write a program that draws a bar chart given numbers.
+'''
 
 text = input().split()
 

@@ -1,7 +1,10 @@
-""" 
-Task: The input to the program is a text string containing the name, patronymic and surname of the person. 
-Write a program that prints out the initials of a person.
-"""
+'''
+TODO:
+    The input to the program is a text string containing the name,
+    patronymic and surname of the person.
+
+    Write a program that prints out the initials of a person.
+'''
 
 full_name = input().split()
 
