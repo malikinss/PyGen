@@ -11,11 +11,35 @@ TODO:
     pair, which must be calculated.
 '''
 
-num, count = input().split(), 0
 
-for i in range(len(num)):
-    for j in range(i + 1, len(num)):
-        if num[i] == num[j]:
-            count += 1
+def count_equal_pairs(numbers: str) -> int:
+    """
+    This function counts how many pairs of elements in the given list
+    are equal to each other. A pair is formed by any two elements
+    that are equal.
 
-print(count)
+    Args:
+        numbers (str): A string containing space-separated natural numbers.
+
+    Returns:
+        int: The number of pairs of equal elements in the list.
+    """
+    num_list = numbers.split()
+    num_list_len = len(num_list)
+    count = 0
+
+    # Compare each pair of elements in the list
+    for i in range(num_list_len):
+        for j in range(i + 1, num_list_len):
+            if num_list[i] == num_list[j]:
+                count += 1
+
+    return count
+
+
+# Input: String of numbers
+input_string = input()
+
+# Calling the function and printing the result
+result = count_equal_pairs(input_string)
+print(result)

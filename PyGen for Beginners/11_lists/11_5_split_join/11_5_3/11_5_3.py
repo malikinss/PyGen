@@ -15,7 +15,26 @@ TODO:
     Print each part on a separate line.
 '''
 
-s = input()
-a = '\\'
-lst = s.split(a)
-print(*lst, sep='\n')
+
+def parse_windows_file_path(file_path: str) -> None:
+    """
+    This function takes a file path in the Windows operating system format and
+    splits it into parts separated by the backslash character ("\\").
+    It then prints each part on a separate line.
+
+    Args:
+        file_path (str): The full file path in Windows format, which includes
+        drive letter, subdirectories, and file name.
+
+    Returns:
+        None: The function prints each part of the path on a separate line.
+    """
+    parts = file_path.split("\\")
+    print(*parts, sep="\n")
+
+
+# Input the file path
+file_path = input()
+
+# Call the function with the input file path
+parse_windows_file_path(file_path)

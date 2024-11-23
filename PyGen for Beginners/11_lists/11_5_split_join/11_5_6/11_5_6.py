@@ -6,12 +6,26 @@ TODO:
     of an input string of text.
 '''
 
-string_1, string_2 = input(), input()
-new_list = []
 
-for i in range(len(string_1)):
-    new_list.append(string_1[i])
+def insert_separator(string_1: str, string_2: str) -> str:
+    """
+    This function inserts a specified separator between each character
+    of an input string.
 
-output_string = string_2.join(new_list)
+    Args:
+        string_1 (str): The input string where the separator will be inserted.
+        string_2 (str): The separator to be inserted between each character.
 
-print(output_string)
+    Returns:
+        str: A new string with the separator inserted between each character.
+    """
+    return string_2.join(string_1)
+
+
+# Input: The first string and the separator
+input_string = input()
+separator = input()
+
+# Call the function and print the result
+result = insert_separator(input_string, separator)
+print(result)
