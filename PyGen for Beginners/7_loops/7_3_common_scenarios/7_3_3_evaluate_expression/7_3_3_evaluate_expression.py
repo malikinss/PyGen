@@ -20,7 +20,7 @@ def evaluate_expression(n: int) -> float:
     """
     total = 0
     for i in range(1, n + 1):
-        total += 1 / i  # Add 1/i to the total sum
+        total += 1 / i  # type: ignore
 
     return total - log(n)  # Subtract the natural logarithm of n
 

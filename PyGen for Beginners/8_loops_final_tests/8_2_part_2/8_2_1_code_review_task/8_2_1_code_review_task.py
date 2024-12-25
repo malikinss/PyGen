@@ -17,21 +17,21 @@ NOTE:
 # original code
 n = input()
 s = 0
-while n > 10:
+while n > 10:   # type: ignore
     if n % 2 == 1:
-        s = n % 10
-    n //= 10
+        s = n % 10  # type: ignore
+    n //= 10    # type: ignore
 print(s)
 
 
 # fixed code
-n = int(input())
+n = int(input())  # type: ignore
 s = 0
 
-while n > 0:
+while n > 0:  # type: ignore
     if n % 2 == 0:
-        s += n % 10
+        s += n % 10  # type: ignore
 
-    n //= 10
+    n //= 10  # type: ignore
 
 print(s)

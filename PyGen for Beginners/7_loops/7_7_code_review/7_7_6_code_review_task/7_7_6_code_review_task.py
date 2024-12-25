@@ -17,20 +17,20 @@ TODO:
 n = input()
 
 product = n % 10
-while n >= 10:
+while n >= 10:  # type: ignore
     digit = n % 10
-    product = product * digit
-    n //= 10
+    product = product * digit  # type: ignore
+    n //= 10  # type: ignore
 print(product)
 
 # fixed code:
-n = int(input())
+n = int(input())  # type: ignore
 
-product = 1
+product = 1  # type: ignore
 
-while n > 0:
+while n > 0:  # type: ignore
     digit = n % 10
-    product *= digit
-    n //= 10
+    product *= digit  # type: ignore
+    n //= 10  # type: ignore
 
 print(product)

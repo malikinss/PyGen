@@ -43,7 +43,7 @@ def find_min_max_words(words_num: int) -> Tuple[str, str]:
             min_word = min(min_word, row)
             max_word = max(max_word, row)
 
-    return min_word, max_word
+    return min_word, max_word   # type: ignore
 
 
 def find_magic_number() -> int:

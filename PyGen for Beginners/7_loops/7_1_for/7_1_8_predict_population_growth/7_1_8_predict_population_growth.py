@@ -36,7 +36,7 @@ def predict_population_growth(initial_population: int,
     population = initial_population
     for day in range(1, days + 1):
         print(f"Day {day}: {population:.2f}")
-        population *= daily_increase_multiplier
+        population *= daily_increase_multiplier  # type: ignore
 
 
 # Input data

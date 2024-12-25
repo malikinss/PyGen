@@ -21,7 +21,7 @@ def create_char_list(n: int, strings: List[str]) -> List[str]:
     Returns:
     List[str]: A list containing all characters from all the strings.
     """
-    char_list = []
+    char_list: List[str] = []
     for string in strings:
         char_list.extend(string)  # Adding each character from the string
     return char_list

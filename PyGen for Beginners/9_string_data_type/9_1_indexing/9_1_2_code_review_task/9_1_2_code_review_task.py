@@ -1,15 +1,15 @@
 '''
 TODO:
-    Enhance the code above using an indexer so that 
+    Enhance the code above using an indexer so that
     it outputs the w character.
 '''
 
-#original code
+# original code
 s = "In 2010, someone paid 10k Bitcoin for two pizzas."
 
-print(s[])
+print(s)
 
-#fixed code
+# fixed code
 s = "In 2010, someone paid 10k Bitcoin for two pizzas."
 
 print(s[-10])

@@ -11,6 +11,7 @@ NOTE:
     It is necessary to distinguish between uppercase and lowercase letters,
     as well as letters of the Russian and English alphabets.
 '''
+from typing import Dict
 
 
 def most_frequent_char(given_text: str) -> str:
@@ -26,7 +27,7 @@ def most_frequent_char(given_text: str) -> str:
         str: The character that appears most frequently.
     """
     # Create a dictionary to store the frequency of each character
-    frequency = {}
+    frequency: Dict = {}
 
     # Count the frequency of each character
     for char in given_text:

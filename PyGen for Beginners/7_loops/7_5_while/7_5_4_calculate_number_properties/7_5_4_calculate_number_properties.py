@@ -46,16 +46,20 @@ def calculate_number_properties(n: int):
         n //= 10
 
     digit_average = digit_sum / digit_cnt
-    first_last_sum = first_digit + last_digit
+    first_last_sum = first_digit + last_digit  # type: ignore
 
-    return digit_sum, digit_cnt, digit_product, digit_average, first_digit, first_last_sum
+    return (
+        digit_sum, digit_cnt, digit_product,
+        digit_average, first_digit, first_last_sum
+    )
 
 
 # Input
 n = int(input("Enter a natural number: "))
 
 # Calculate the properties
-digit_sum, digit_cnt, digit_product, digit_average, first_digit, first_last_sum = calculate_number_properties(n)
+(digit_sum, digit_cnt, digit_product,
+ digit_average, first_digit, first_last_sum) = calculate_number_properties(n)
 
 # Output
 print(digit_sum)
