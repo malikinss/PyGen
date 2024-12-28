@@ -8,7 +8,7 @@ NOTE:
 '''
 
 
-def is_prime(num):
+def is_prime(num: int) -> bool:
     """
     Checks if a given number is prime.
 
@@ -29,7 +29,7 @@ def is_prime(num):
     return True
 
 
-def get_next_prime(num):
+def get_next_prime(num: int) -> int:
     """
     Returns the next prime number greater than the given number.
 
