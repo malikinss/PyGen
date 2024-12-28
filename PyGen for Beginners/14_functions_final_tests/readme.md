@@ -1,83 +1,40 @@
-# Lesson 14.1: Function Tasks 🧑‍💻
+# Section 14: Functions - Final Tests 🧑‍💻
+
+Welcome to Section 14 of the course!
+This section is focused on testing my understanding and application of functions.
+I will solve real-world problems using Python functions to enhance my problem-solving skills.
 
 ## Description 📝
 
-This lesson focuses on solving various real-world problems using Python functions.
-Each task demonstrates the use of functions to perform different types of calculations, checks, and operations.
-The tasks include drawing shapes, calculating binomial coefficients, converting numbers to words, and more.
+This section includes a set of final tasks that demonstrate the practical application of functions in various scenarios.
+I will work on problems involving calculations, shape drawing, and even language-related tasks.
+These challenges will help solidify my understanding of how to use functions effectively.
 
 ## Purpose 🎯
 
-The purpose of this lesson is to:
+The purpose of this section is to:
 
--   Enhance problem-solving skills using Python functions.
--   Teach how to implement practical algorithms, such as generating shapes, computing binomial coefficients, and checking for pangrams or magic dates.
--   Introduce common utility functions that can be used in different applications, including language localization and fun date-related checks.
+-   Enhance my problem-solving skills through the use of Python functions.
+-   Teach me how to implement practical algorithms, such as generating shapes, computing binomial coefficients, and performing date-related checks.
+-   Introduce utility functions for various real-world applications, including fun checks like magic dates or determining pangrams.
 
 ## How It Works 🔍
 
-The lesson is structured around seven tasks, each focusing on a specific type of function.
-I will learn to implement these functions step by step, understanding their purpose, inputs, and outputs.
+-   **14_1_function_tasks**: In this task, I will work on solving real-world problems using Python functions. These problems may involve generating shapes, performing mathematical calculations like binomial coefficients, checking for specific conditions like pangrams, and converting numbers to words.
 
-## Tasks 📜
+## Output 📜
 
-### 14_1_1 Draw Triangle
-
-Draw an isosceles triangle made of stars (`*`) with a base of 15 stars and a height of 8 rows.
-The triangle is symmetrical and centered horizontally.
-
-### 14_1_2 Get Shipping Cost
-
-Calculate the total shipping cost for an order based on the number of products.
-The base rate for express delivery is 1000 rubles, with an additional 120 rubles for each subsequent product.
-
-### 14_1_3 Compute Binomial Coefficient
-
-Calculate the binomial coefficient \( C(n, k) \), which represents the number of ways to choose \( k \) elements from a set of \( n \) elements using the formula:  
-\[
-C(n, k) = \frac{n!}{k!(n-k)!}
-\]
-
-### 14_1_4 Number to Words (Russian) Converter
-
-Convert a natural number between 1 and 99 into its verbal description in Russian.
-For example, `42` becomes "сорок два."
-
-### 14_1_5 Get Month Name
-
-Return the name of a month in either Russian (`ru`) or English (`eng`) based on the month number (1 to 12) provided by the user.
-
-### 14_1_6 Magic Date Checker
-
-Check if a given date is "magic."
-A date is magic if the day multiplied by the month equals the last two digits of the year.
-
-### 14_1_7 Pangram Checker
-
-Check if a given text is a **pangram**.
-A pangram is a sentence that contains all the letters of the English alphabet at least once.
+The output for each task will vary based on the specific function and the problem being solved.
+Test each function with different inputs to ensure correctness and understand its behavior in various scenarios.
 
 ## Usage 📦
 
-1. Clone the repository or download the files.
-    ```bash
-    git clone https://github.com/yourusername/function-tasks.git
-    ```
-2. Navigate to the `14_1_function_tasks` directory.
-3. Run each script individually:
-    ```bash
-    python 14_1_1_draw_triangle.py
-    python 14_1_2_get_shipping_cost.py
-    python 14_1_3_compute_binom.py
-    python 14_1_4_number_to_words_ru.py
-    python 14_1_5_get_month.py
-    python 14_1_6_is_magic.py
-    python 14_1_7_is_pangram.py
-    ```
-4. Follow the prompts and observe the results in the terminal.
+1. Navigate to the `14_1_function_tasks` directory.
+2. Open the relevant files to review or run the code.
+3. Solve the tasks by implementing the functions required for each problem.
+4. Test the functions with different inputs and validate the outputs.
 
 ## Conclusion 🚀
 
-This lesson provides a hands-on experience with solving practical problems using Python functions.
-Mastering these tasks will enhance my ability to implement functions for real-world applications, from calculating shipping costs to checking for magic dates and pangrams.
-Keep practicing these challenges to improve Python skills! 🚀✨
+By the end of this section, I will have a deeper understanding of how to create and apply functions to solve practical problems.
+This will greatly enhance my programming skills and prepare me for tackling more complex coding challenges.
