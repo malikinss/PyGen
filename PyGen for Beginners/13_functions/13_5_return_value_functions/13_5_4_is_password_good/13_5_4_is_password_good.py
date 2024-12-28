@@ -12,7 +12,7 @@ TODO:
 '''
 
 
-def is_password_good(password):
+def is_password_good(password: str) -> bool:
     """
     Checks if the given password is strong.
 
