@@ -12,13 +12,10 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
 -   **Platform:** Stepik
 -   **Description:** This course covers fundamental programming concepts and introduces Python as a first programming language.
 -   **Status:** Completed ✅
--   **Certificate:**
-    ![Certificate](./PyGen for Beginners/pygen_beginners_certificate.png)
-
+-   **Certificate:** Presented into dircetory
 -   **Practical Tasks:**  
     The course includes **310 practical coding tasks** ranging from basic syntax to working with data structures and algorithms.
-
-**Path:** `./PyGen for Beginners`
+-   **Path:** `./PyGen for Beginners`
 
 ## Purpose 🎯
 
