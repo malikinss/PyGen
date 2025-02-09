@@ -7,7 +7,7 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
 
 ## Courses 📚
 
-### 1. Python Generation: Course for Beginners 🐍 (./PyGen for Beginners)
+### ![1. Python Generation: Course for Beginners 🐍](./PyGen for Beginners)
 
 -   **Platform:** Stepik
 -   **Description:** This course covers fundamental programming concepts and introduces Python as a first programming language.
