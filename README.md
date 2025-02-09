@@ -7,9 +7,7 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
 
 ## Courses 📚
 
-### 1. Python Generation: Course for Beginners 🐍
-
-![Link](./PyGen for Beginners)
+### [1. Python Generation: Course for Beginners 🐍](https://github.com/malikinss/PyGen/tree/main/PyGen%20for%20Beginners)
 
 -   **Platform:** Stepik
 -   **Description:** This course covers fundamental programming concepts and introduces Python as a first programming language.
@@ -18,9 +16,7 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
 -   **Practical Tasks:**  
     The course includes **310 practical coding tasks** ranging from basic syntax to working with data structures and algorithms.
 
-### 2. Python Generation: Advanced Course 🏆
-
-![Link](./PyGen for Advanced)
+### [2. Python Generation: Advanced Course 🏆](https://github.com/malikinss/PyGen/tree/main/PyGen%20for%20Advanced)
 
 -   **Platform:** Stepik
 -   **Description:** This course is designed for learners who have already mastered the basics of Python and want to dive deeper into advanced topics such as data structures, functional programming, file handling, and more.
