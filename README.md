@@ -17,7 +17,7 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
     The course includes **310 practical coding tasks** ranging from basic syntax to working with data structures and algorithms.
 -   **Path:** `./PyGen for Beginners`
 
-2. Python Generation: Advanced Course 🏆
+### 2. Python Generation: Advanced Course 🏆
 
 -   **Platform:** Stepik
 -   **Description:** This course is designed for learners who have already mastered the basics of Python and want to dive deeper into advanced topics such as data structures, functional programming, file handling, and more.
