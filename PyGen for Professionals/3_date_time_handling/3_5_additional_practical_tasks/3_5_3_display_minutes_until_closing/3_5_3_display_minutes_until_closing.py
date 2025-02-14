@@ -12,71 +12,103 @@ TODO:
     closes, or the text “The store is closed” if it is closed.
 '''
 
-from datetime import datetime
+from datetime import datetime, time
+from typing import Tuple, Optional
 
 TIME_FORMAT = '%H:%M'
-DATE_FORMAT = '%d.%m.%Y'
+DATETIME_FORMAT = '%d.%m.%Y %H:%M'
 
-def parse_time(time_string):  
+OPERATING_HOURS = {
+    'Monday': ('09:00', '21:00'),
+    'Tuesday': ('09:00', '21:00'),
+    'Wednesday': ('09:00', '21:00'),
+    'Thursday': ('09:00', '21:00'),
+    'Friday': ('09:00', '21:00'),
+    'Saturday': ('10:00', '18:00'),
+    'Sunday': ('10:00', '18:00')
+}
+
+
+def parse_datetime(datetime_string: str) -> datetime:
+    """
+    Parses a datetime string into a datetime object.
+
+    Args:
+        datetime_string (str): Date and time in the format 'DD.MM.YYYY HH:MM'.
+
+    Returns:
+        datetime: Parsed datetime object.
+
+    Raises:
+        ValueError: If the format is incorrect.
+    """
     try:
-        return datetime.strptime(time_string, TIME_FORMAT).time()
+        return datetime.strptime(datetime_string, DATETIME_FORMAT)
     except ValueError:
-        raise ValueError('Invalid time format. Please use the format HH:MM')
+        raise ValueError(
+            'Invalid datetime format. Please use DD.MM.YYYY HH:MM'
+        )
 
-def parse_datetime(datetime_string):
-    try:
-        return datetime.strptime(datetime_string, f'{DATE_FORMAT} {TIME_FORMAT}')
-    except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')    
 
-def create_operating_hours():
-    operating_hours = {}
-    
-    for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']:
-        operating_hours[day] = ('9:00', '21:00')
-    
-    for day in ['Saturday', 'Sunday']:
-        operating_hours[day] = ('10:00', '18:00')
-    
-    return operating_hours      
+def get_operating_hours(date_obj: datetime) -> Optional[Tuple[time, time]]:
+    """
+    Retrieves the store's operating hours for a given date.
 
-def retrieve_operating_hours_for_date(current_date):
-    operating_hours = create_operating_hours()
+    Args:
+        date_obj (datetime): The date for which to get the operating hours.
 
-    current_weekday = current_date.strftime('%A')
+    Returns:
+        Optional[Tuple[time, time]]: A tuple with opening and closing times,
+                                     or None if the store is closed.
+    """
+    weekday = date_obj.strftime('%A')
+    if weekday not in OPERATING_HOURS:
+        return None
 
-    return operating_hours.get(current_weekday)
+    open_str, close_str = OPERATING_HOURS[weekday]
+    return (
+        datetime.strptime(open_str, TIME_FORMAT).time(),
+        datetime.strptime(close_str, TIME_FORMAT).time()
+    )
 
-def is_store_open(current_time, start_time, end_time):
-    after_opening = start_time.hour <= current_time.hour
-    before_closing = end_time.hour > current_time.hour
-    
-    return after_opening and before_closing
 
-def minutes_until_closing(current_dt, end_dt):
-    return int((end_dt - current_dt).total_seconds() // 60)
+def minutes_until_closing(current_dt: datetime, closing_time: time) -> int:
+    """
+    Calculates the number of minutes until the store closes.
 
-def process_operating_hours(given_datetime):
-    given_date = given_datetime.date()
-    start_time_str, end_time_str = retrieve_operating_hours_for_date(given_date)
+    Args:
+        current_dt (datetime): The current date and time.
+        closing_time (time): The store's closing time.
 
-    start_time = parse_time(start_time_str)
-    end_time = parse_time(end_time_str)
+    Returns:
+        int: Minutes remaining until the store closes.
+    """
+    closing_dt = datetime.combine(current_dt.date(), closing_time)
+    return max(0, (closing_dt - current_dt).seconds // 60)
 
-    start_dt = datetime.combine(given_date, start_time)
-    end_dt = datetime.combine(given_date, end_time)
 
-    return start_dt, end_dt
+def display_minutes_until_closing(datetime_string: str) -> None:
+    """
+    Prints the minutes remaining until the store closes or a message if it's
+    closed.
 
-def display_minutes_until_closing(given_datetime_string):
-    given_dt = parse_datetime(given_datetime_string)
-    start_dt , end_dt = process_operating_hours(given_dt)
+    Args:
+        datetime_string (str): The input date and time string.
+    """
+    current_dt = parse_datetime(datetime_string)
+    operating_hours = get_operating_hours(current_dt)
 
-    if is_store_open(given_dt, start_dt, end_dt):
-        remaining_minutes = minutes_until_closing(given_dt, end_dt)
-        print(remaining_minutes)
+    if operating_hours is None:
+        print('The store is closed')
+        return
+
+    opening_time, closing_time = operating_hours
+    if opening_time <= current_dt.time() < closing_time:
+        print(minutes_until_closing(current_dt, closing_time))
     else:
         print('The store is closed')
 
+
+# Example usage:
 datetime_string = input()
-display_minutes_until_closing(datetime_string) 
+display_minutes_until_closing(datetime_string)
