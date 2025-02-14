@@ -32,104 +32,193 @@ TODO:
     the program should output the text:
         'The course is out now!'
 '''
-from datetime import date, time, datetime, timedelta
+from datetime import datetime
 
 
 TIME_FORMAT = '%H:%M'
 DATE_FORMAT = '%d.%m.%Y'
-FULL_DAY_MINUTES = 60 * 24
 
-CORRECT_WORDS = {'d':('день', 'дня', 'дней'),
-                 'h':('час', 'часа', 'часов'),
-                 'm':('минута', 'минуты', 'минут')}
+UNIT_PLURALS = {
+    'd': ('day', 'days'),
+    'h': ('hour', 'hours'),
+    'm': ('minute', 'minutes')
+}
 
 
-def parse_datetime(datetime_string):
+def get_msg(time: str) -> str:
+    """
+    Returns the message indicating the time left until the course is released.
+
+    Args:
+        answer (time): The formatted string representing the remaining time.
+
+    Returns:
+        str: The full message with the time left until the course release.
+    """
+    return f'There are: {time} left until the course is released'
+
+
+def parse_datetime(datetime_string: str) -> datetime:
+    """
+    Parses a datetime string into a datetime object.
+
+    Args:
+        datetime_string (str): The datetime string to parse in the format
+                                'DD.MM.YYYY HH:MM'.
+
+    Returns:
+        datetime: The parsed datetime object.
+
+    Raises:
+        ValueError: If the datetime string doesn't match the expected format.
+    """
     try:
-        return datetime.strptime(datetime_string, f'{DATE_FORMAT} {TIME_FORMAT}')
+        return datetime.strptime(
+            datetime_string, f'{DATE_FORMAT} {TIME_FORMAT}'
+        )
     except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')
+        raise ValueError(
+            'Invalid datetime format. Please use the format DD.MM.YYYY HH:MM'
+        )
 
 
-def choose_plural(amount, variants):
-    if amount % 10 == 1 and amount % 100 != 11:
-        variant = 0
-    elif amount % 10 >= 2 and amount % 10 <= 4 and \
-            (amount % 100 < 10 or amount % 100 >= 20):
-        variant = 1
+def get_plural_form(amount: int, variants: tuple) -> str:
+    """
+    Returns the correct plural form based on the amount.
+
+    Args:
+        amount (int): The quantity to determine the plural form for.
+        variants (tuple): A tuple containing the singular, genitive singular,
+                          and plural forms of the word.
+
+    Returns:
+        str: The formatted string with the correct plural form based on
+             the amount.
+    """
+    if amount == 1:
+        return f'{amount} {variants[0]}'
+    elif 2 <= amount <= 4:
+        return f'{amount} {variants[1]}'
     else:
-        variant = 2
-    return '{} {}'.format(amount, variants[variant])
+        return f'{amount} {variants[2]}'
 
-def is_not_released(date1, date2):
-    return date1 > date2
 
-def get_answer_for_remain_measure(remain_minutes, measure):
-    return choose_plural(remain_minutes, CORRECT_WORDS[measure])
+def get_expanded_answer(answer: str, part_to_expand: str) -> str:
+    """
+    Combines the answer with an additional part.
 
-def get_answer_for_remain_hours(remain_hours):
-    return choose_plural(remain_hours, CORRECT_WORDS['h'])
+    Args:
+        answer (str): The initial part of the answer.
+        part_to_expand (str): The part to add to the answer.
 
-def get_expanded_answer(answer, part_to_expand):
-    return answer + ' и ' + part_to_expand
+    Returns:
+        str: The combined answer.
+    """
+    return f'{answer} and {part_to_expand}'
 
-def get_answer_if_remain_more_than_day(remain_days, remain_hours):
-    result = get_answer_for_remain_measure(remain_days, 'd')
-        
+
+def get_answer_if_remain_more_than_day(
+    remain_days: int, remain_hours: int
+) -> str:
+    """
+    Returns the formatted answer when the remaining time is more than one day.
+
+    Args:
+        remain_days (int): The number of remaining days.
+        remain_hours (int): The number of remaining hours.
+
+    Returns:
+        str: The formatted string with days and hours, if applicable.
+    """
+    result = get_plural_form(remain_days, UNIT_PLURALS['d'])
     if remain_hours > 0:
-        part_to_expand = get_answer_for_remain_measure(remain_hours, 'h')
+        part_to_expand = get_plural_form(remain_hours, UNIT_PLURALS['h'])
         result = get_expanded_answer(result, part_to_expand)
-
     return result
 
-def get_answer_if_remain_less_than_day(remain_hours, remain_minutes):
-    result = get_answer_for_remain_measure(remain_hours, 'h')
-    
+
+def get_answer_if_remain_less_than_day(
+    remain_hours: int, remain_minutes: int
+) -> str:
+    """
+    Returns the formatted answer when the remaining time is less than one day.
+
+    Args:
+        remain_hours (int): The number of remaining hours.
+        remain_minutes (int): The number of remaining minutes.
+
+    Returns:
+        str: The formatted string with hours and minutes, if applicable.
+    """
+    result = get_plural_form(remain_hours, UNIT_PLURALS['h'])
     if remain_minutes > 0:
-        part_to_expand = get_answer_for_remain_measure(remain_minutes, 'm')
+        part_to_expand = get_plural_form(remain_minutes, UNIT_PLURALS['m'])
         result = get_expanded_answer(result, part_to_expand)
+    return result
 
-    return result    
 
-def get_minutes_from_time(given_time):
-    return given_time.seconds // 60 % 60
+def get_remaining_time(current_time: datetime, target_time: datetime) -> dict:
+    """
+    Calculates the remaining time between two datetimes.
 
-def get_hours_from_time(given_time):
-    return given_time.seconds // 3600
+    Args:
+        current_time (datetime): The current datetime.
+        target_time (datetime): The target datetime to compare with.
 
-def get_remain_time_dict(current_date, required_date):
-    remain_time = {'days': 0,
-                   'hours': 0,
-                   'minutes': 0}
-    
-    remain_time_td = required_date - current_date
-    remain_time['days'] = remain_time_td.days
-    remain_time['hours'] = get_hours_from_time(remain_time_td)
-    remain_time['minutes'] = get_minutes_from_time(remain_time_td)
+    Returns:
+        dict: A dictionary with keys 'days', 'hours', and 'minutes'
+              representing the remaining time.
+    """
+    delta = target_time - current_time
+    return {
+        'days': delta.days,
+        'hours': delta.seconds // 3600,
+        'minutes': (delta.seconds // 60) % 60
+    }
 
-    return remain_time
 
-def display_time_to_release():
-    now_date = parse_datetime(input())
-    required_date = datetime(2022, 11, 8, 12)
+def get_answer_for_remaining_time(remaining_time: dict) -> str:
+    """
+    Returns the appropriate answer based on the remaining time in days, hours,
+    and minutes.
 
-    if is_not_released(required_date, now_date):
-        remain_time = get_remain_time_dict(now_date, required_date)
-        
-        result = ''
-        
-        if remain_time['days'] > 0:
-            result = get_answer_if_remain_more_than_day(remain_time['days'], remain_time['hours'])
-        
-        elif remain_time['hours'] > 0:
-            result = get_answer_if_remain_less_than_day(remain_time['hours'], remain_time['minutes'])
+    Args:
+        remaining_time (dict): A dictionary containing 'days', 'hours',
+                               and 'minutes'.
 
-        else:
-            result = get_answer_for_remain_measure(remain_time['minutes'], 'm')
-        
-        print('До выхода курса осталось: ' + result)
-
+    Returns:
+        str: The formatted answer indicating the remaining time.
+    """
+    if remaining_time['days'] > 0:
+        return get_answer_if_remain_more_than_day(
+            remaining_time["days"], remaining_time["hours"]
+        )
+    elif remaining_time['hours'] > 0:
+        return get_answer_if_remain_less_than_day(
+            remaining_time["hours"], remaining_time["minutes"]
+        )
     else:
-        print('Курс уже вышел!')
+        return get_plural_form(
+            remaining_time["minutes"], UNIT_PLURALS["m"]
+        )
+
+
+def display_time_to_release() -> None:
+    """
+    Displays the remaining time until the course is released, based on
+    the current date and time input by the user.
+
+    If the current time is after the release time, it displays that the course
+    is already released.
+    """
+    current_datetime = parse_datetime(input())
+    release_datetime = datetime(2022, 11, 8, 12)
+
+    if current_datetime < release_datetime:
+        remaining_time = get_remaining_time(current_datetime, release_datetime)
+        print(get_msg(get_answer_for_remaining_time(remaining_time)))
+    else:
+        print('The course is out now!')
+
 
 display_time_to_release()
