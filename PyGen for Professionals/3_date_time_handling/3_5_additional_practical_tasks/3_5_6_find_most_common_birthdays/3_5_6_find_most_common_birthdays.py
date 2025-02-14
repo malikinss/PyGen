@@ -20,56 +20,79 @@ TODO:
     ascending order, each on a separate line, in the same format.
 '''
 from collections import Counter
-from datetime import datetime, timedelta
+from datetime import datetime, date
+from typing import List
 
 
 DATE_FORMAT = '%d.%m.%Y'
 
 
-def parse_date(date_string):
+def parse_date(date_string: str) -> date:
+    """
+    Parses a date string into a date object.
+
+    Args:
+        date_string (str): The date string in the format 'DD.MM.YYYY'.
+
+    Returns:
+        date: Parsed date object.
+
+    Raises:
+        ValueError: If the format is incorrect.
+    """
     try:
         return datetime.strptime(date_string, DATE_FORMAT).date()
     except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')   
-        
-def input_employee_data():
-    employee_name, employee_lastname, birthday_str = input().split(' ')
+        raise ValueError('Invalid date format. Please use DD.MM.YYYY')
 
-    employee = f"{employee_name} {employee_lastname}"
-    birthday_date = parse_date(birthday_str)
 
-    return employee, birthday_date
+def collect_birth_dates(num_employees: int) -> Counter:
+    """
+    Reads employee data and counts occurrences of each birth date.
 
-def collect_employees_data(employees_num):
-    employees = {}
+    Args:
+        num_employees (int): The number of employees.
 
-    for _ in range(employees_num):
-        employee, birthday = input_employee_data()
-        employees[employee] = birthday
+    Returns:
+        Counter: A dictionary-like object where keys are birth dates and
+                 values are their occurrences.
+    """
+    birth_dates = [
+        parse_date(input().split()[2]) for _ in range(num_employees)
+    ]
+    return Counter(birth_dates)
 
-    return employees
 
-def count_occurrences_per_date(dates_data):
-    dates_counter = Counter(dates_data.values())
+def get_most_common_birthdays(dates_count: Counter) -> List[date]:
+    """
+    Finds the most common birth dates.
 
-    return dates_counter
+    Args:
+        dates_count (Counter): Counter object mapping birth dates
+                               to occurrence count.
 
-def get_most_common_dates(dates_count):
-    max_occurance = max(dates_count.values())
-    most_common_dates = [cur_date for cur_date, num_occurance in dates_count.items() if num_occurance == max_occurance]
+    Returns:
+        List[date]: List of the most common birth dates, sorted
+                             in ascending order.
+    """
+    max_occurrence = max(dates_count.values(), default=0)
+    return sorted(
+        date for date, count in dates_count.items() if count == max_occurrence
+    )
 
-    return most_common_dates        
 
-def display_dates(popular_dates):
-    for cur_date in sorted(popular_dates):
-        cur_date_str = cur_date.strftime(DATE_FORMAT)
-        print(cur_date_str)
+def display_dates(dates: List[date]) -> None:
+    """
+    Prints a list of dates in the required format.
 
-def find_most_common_birthdays():
-    employees = collect_employees_data(int(input()))
-    dates_count = count_occurrences_per_date(employees)
-    most_common_birtdays = get_most_common_dates(dates_count)
+    Args:
+        dates (List[date): List of dates to print.
+    """
+    for some_date in dates:
+        print(some_date.strftime(DATE_FORMAT))
 
-    return most_common_birtdays
 
-display_dates(find_most_common_birthdays())
+num_employees = int(input())
+birth_date_counts = collect_birth_dates(num_employees)
+most_common_birthdays = get_most_common_birthdays(birth_date_counts)
+display_dates(most_common_birthdays)
