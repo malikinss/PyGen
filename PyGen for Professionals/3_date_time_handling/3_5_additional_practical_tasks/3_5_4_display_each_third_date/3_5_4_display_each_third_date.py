@@ -17,55 +17,111 @@ TODO:
     starting from a date for which the sum of the day and month is odd, every
     third date, only if it is not Monday or Thursday.
 
-    Each date must be located on a separate line, in the format DD.MM.YYYY
+    Each date must be located on a separate line, in the format DD.MM.YYYY.
 
 NOTE:
     If there are no dates that satisfy the condition, the program should not
     output anything.
 '''
-from datetime import datetime, timedelta
-
+from datetime import datetime, timedelta, date
+from typing import Optional
 
 DATE_FORMAT = '%d.%m.%Y'
 
 
-def parse_date(date_string):
+def parse_date(date_string: str) -> date:
+    """
+    Convert a date string into a date object.
+
+    Args:
+        date_string (str): Date in the format 'DD.MM.YYYY'.
+
+    Returns:
+        date: The parsed date object.
+
+    Raises:
+        ValueError: If the format is incorrect.
+    """
     try:
         return datetime.strptime(date_string, DATE_FORMAT).date()
     except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')       
+        raise ValueError('Invalid date format. Please use DD.MM.YYYY')
 
-def is_odd(number):
-    return 0 != number % 2
 
-def sum_of_day_and_month_in_date(given_date):
-    return int(given_date.day + given_date.month)
+def is_odd(number: int) -> bool:
+    """
+    Check if a number is odd.
 
-def find_first_odd_sum_day_month_in_range(start_date, end_date):
+    Args:
+        number (int): The number to check.
+
+    Returns:
+        bool: True if the number is odd, False otherwise.
+    """
+    return number % 2 != 0
+
+
+def sum_of_day_and_month(given_date: date) -> int:
+    """
+    Calculate the sum of the day and month of a given date.
+
+    Args:
+        given_date (date): The date to process.
+
+    Returns:
+        int: The sum of the day and month.
+    """
+    return given_date.day + given_date.month
+
+
+def find_first_valid_date(start_date: date, end_date: date) -> Optional[date]:
+    """
+    Find the first date in the range where the sum of the day and month is odd.
+
+    Args:
+        start_date (date): The start of the date range.
+        end_date (date): The end of the date range.
+
+    Returns:
+        Optional[date]: The first valid date, or None if no such date exists.
+    """
     current_date = start_date
 
     while current_date <= end_date:
-        if is_odd(sum_of_day_and_month_in_date(current_date)):
+        if is_odd(sum_of_day_and_month(current_date)):
             return current_date
+        current_date += timedelta(days=1)
 
-        current_date += timedelta(days=1)    
+    return None
 
-def display_date(given_date):
-    print(given_date.strftime(DATE_FORMAT))
 
-def is_not_monday_or_thursday(given_date):
-    return given_date.weekday() not in (0,3) 
-    
-def display_each_third_date_if_not_monday_and_thursday():
-    left_border_date = parse_date(input())
-    right_border_date = parse_date(input()) + timedelta(days=1)
+def is_valid_weekday(given_date: datetime) -> bool:
+    """
+    Check if the given date is neither Monday nor Thursday.
 
-    current_date = find_first_odd_sum_day_month_in_range(left_border_date, right_border_date)
+    Args:
+        given_date (datetime): The date to check.
 
-    while current_date < right_border_date:
-        if is_not_monday_or_thursday(current_date):
-            display_date(current_date)
+    Returns:
+        bool: True if the date is not Monday or Thursday, False otherwise.
+    """
+    return given_date.weekday() not in (0, 3)
 
-        current_date += timedelta(days=3)     
 
-display_each_third_date_if_not_monday_and_thursday()
+def display_valid_dates():
+    """
+    Read input dates, find the first valid date in the range, and print every
+    third valid date that is not Monday or Thursday.
+    """
+    start_date = parse_date(input())
+    end_date = parse_date(input())
+
+    current_date = find_first_valid_date(start_date, end_date)
+
+    while current_date and current_date <= end_date:
+        if is_valid_weekday(current_date):
+            print(current_date.strftime(DATE_FORMAT))
+        current_date += timedelta(days=3)
+
+
+display_valid_dates()
