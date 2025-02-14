@@ -10,46 +10,72 @@ TODO:
     Complete the code below to print the total integer number of minutes the
     programmer spent solving all problems.
 '''
+
 from datetime import datetime, timedelta
+from typing import List, Tuple
 
 TIME_FORMAT = '%H:%M'
 
-def get_time_from_string(string_time):
-    try:
-        return datetime.strptime(string_time, TIME_FORMAT)
-    except ValueError:
-        raise ValueError('Invalid time format. Please use the format HH:MM')
 
-def get_time_duration_for_one_task(task):
-    start_time = get_time_from_string(task[0])
-    end_time = get_time_from_string(task[1])
+def parse_time(string_time: str) -> datetime:
+    """
+    Converts a time string in HH:MM format to a datetime object.
 
-    # Ensure end time is after start time
+    Args:
+        string_time (str): Time string in HH:MM format.
+
+    Returns:
+        datetime: Corresponding datetime object.
+    """
+    return datetime.strptime(string_time, TIME_FORMAT)
+
+
+def calculate_task_duration(task: Tuple[str, str]) -> timedelta:
+    """
+    Calculates the duration of a single task.
+
+    Args:
+        task (Tuple[str, str]): Tuple containing start and end times.
+
+    Returns:
+        timedelta: Duration of the task.
+    """
+    start_time, end_time = map(parse_time, task)
+
     if end_time < start_time:
         raise ValueError('End time cannot be before start time.')
 
-    time_duration = end_time - start_time
+    return end_time - start_time
 
-    return time_duration
 
-def get_total_time_duration(data):
-    total_time_duration = timedelta()
+def calculate_total_duration(data: List[Tuple[str, str]]) -> int | float:
+    """
+    Calculates the total duration of all tasks in minutes.
 
-    for task_record in data:
-        task_duration = get_time_duration_for_one_task(task_record)
-        total_time_duration += task_duration
+    Args:
+        data (List[Tuple[str, str]]): List of tuples containing start and
+                                      end times.
 
-    total_minutes_duration = int(total_time_duration.total_seconds() // 60)
+    Returns:
+        int: Total duration in minutes.
+    """
+    total_duration = sum(
+        (calculate_task_duration(task) for task in data), timedelta()
+    )
+    return total_duration.total_seconds() // 60
 
-    return total_minutes_duration   
 
-data = [('07:14', '08:46'),
-        ('09:01', '09:37'),
-        ('10:00', '11:43'),
-        ('12:13', '13:49'),
-        ('15:00', '15:19'),
-        ('15:58', '17:24'),
-        ('17:57', '19:21'),
-        ('19:30', '19:59')]
+# Task records
+data = [
+    ('07:14', '08:46'),
+    ('09:01', '09:37'),
+    ('10:00', '11:43'),
+    ('12:13', '13:49'),
+    ('15:00', '15:19'),
+    ('15:58', '17:24'),
+    ('17:57', '19:21'),
+    ('19:30', '19:59')
+]
 
-print(get_total_time_duration(data))
+# Print total minutes spent
+print(int(calculate_total_duration(data)))
