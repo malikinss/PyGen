@@ -1,62 +1,86 @@
 '''
-TODO:   
-        Implement a function fill_up_missing_dates() that takes one argument as input:
-            dates — list of string dates in DD.MM.YYYY format
+TODO:
+    Implement a function fill_up_missing_dates() that takes one argument as
+    input:
+        dates — list of string dates in DD.MM.YYYY format
 
-        The function should return a list containing all the dates in the dates list, in ascending order, plus any missing dates in between.
+    The function should return a list containing all the dates in the dates
+    list, in ascending order, plus any missing dates in between.
 
 NOTE:
-        Let's look at the first test. The dates list contains the period from 01.11.2021 to 07.11.2021
-            dates = ['01.11.2021', '07.11.2021', '04.11.2021', '03.11.2021']
-        missing dates 02.11.2021, 05.11.2021, 06.11.2021.
-        Then the function call:
-            fill_up_missing_dates(dates)
-        should return a list:
-            ['01.11.2021', '02.11.2021', '03.11.2021', '04.11.2021', '05.11.2021', '06.11.2021', '07.11.2021']
+    Let's look at the first test. The dates list contains the period from
+    01.11.2021 to 07.11.2021
+        dates = ['01.11.2021', '07.11.2021', '04.11.2021', '03.11.2021']
+    missing dates 02.11.2021, 05.11.2021, 06.11.2021.
+    Then the function call:
+        fill_up_missing_dates(dates)
+    should return a list:
+        [
+            '01.11.2021', '02.11.2021', '03.11.2021',
+            '04.11.2021', '05.11.2021', '06.11.2021',
+            '07.11.2021'
+        ]
 
-        The function should create and return a new list, and not modify the passed one.
+    The function should create and return a new list, and not modify
+    the passed one.
 
 '''
 from datetime import datetime, timedelta
+from typing import List
 
 DATE_FORMAT = '%d.%m.%Y'
 
-def convert_to_datetime(string_date):
+
+def convert_to_datetime(date_str: str) -> datetime:
+    """
+    Convert a string date to a datetime object.
+
+    Args:
+        date_str (str): Date string in DD.MM.YYYY format.
+
+    Returns:
+        datetime: Corresponding datetime object.
+    """
     try:
-        return datetime.strptime(string_date, DATE_FORMAT)
+        return datetime.strptime(date_str, DATE_FORMAT)
     except ValueError:
-        raise ValueError('Invalid date format. Please use the format DD.MM.YYYY')
+        raise ValueError(
+            "Invalid date format. Please use the format DD.MM.YYYY"
+        )
 
-def get_datetime_sorted_dates(string_dates):
-    return sorted([convert_to_datetime(date) for date in string_dates])
 
-def get_string_dates(datetime_dates): 
-    return [date.strftime(DATE_FORMAT) for date in datetime_dates] 
+def fill_up_missing_dates(dates: List[str]) -> List[str]:
+    """
+    Fill up missing dates between the given dates in the list and return them
+    in ascending order.
 
-def get_dates_range(start_date, end_date):
-    dates = []
-    current_date = start_date
+    Args:
+        dates (List[str]): List of date strings in DD.MM.YYYY format.
 
-    while current_date <= end_date:
-        dates.append(current_date)
-        current_date += timedelta(days=1)
+    Returns:
+        List[str]: List of all dates including missing dates in ascending
+                   order.
+    """
+    if not dates:
+        return []
 
-    return dates
+    # Convert all dates to datetime objects and sort
+    sorted_dates = sorted(convert_to_datetime(date) for date in dates)
 
-def fill_up_missing_dates(dates):
-    # Convert string dates to datetime objects and sort them
-    dates_dt = sorted([convert_to_datetime(date) for date in dates])
-    
-    min_date = min(dates_dt)
-    max_date = max(dates_dt)
+    # Create a list of dates between the min and max date
+    start_date = sorted_dates[0]
+    end_date = sorted_dates[-1]
 
-    # Get the range of dates between the minimum and maximum dates
-    new_dates = get_dates_range(min_date, max_date)
+    # Generate all dates in the range
+    all_dates = [
+        start_date + timedelta(days=i)
+        for i in range((end_date - start_date).days + 1)
+    ]
 
-    # Convert the new datetime dates back to strings
-    new_dates_string = get_string_dates(new_dates)   
+    # Convert datetime objects back to string and return the list
+    return [date.strftime(DATE_FORMAT) for date in all_dates]
 
-    return new_dates_string
 
+# Example usage
 dates = ['01.11.2021', '04.11.2021', '09.11.2021', '15.11.2021']
 print(fill_up_missing_dates(dates))
