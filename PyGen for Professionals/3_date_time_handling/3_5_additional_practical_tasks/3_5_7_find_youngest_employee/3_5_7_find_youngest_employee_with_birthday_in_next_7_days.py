@@ -23,108 +23,110 @@ TODO:
 
 NOTE:
     It is guaranteed that all employees have different dates of birth.
-
-    For example, for the date 01.11.2021, the nearest seven days are:
-        02.11.2021
-        03.11.2021
-        04.11.2021
-        05.11.2021
-        06.11.2021
-        07.11.2021
-        08.11.2021
 '''
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
+from typing import Callable
+
 
 DATE_FORMAT = '%d.%m.%Y'
 
 
-def parse_date(date_string):
+def parse_date(date_string: str) -> date:
+    """
+    Parse a string into a date object.
+    Args:
+        date_string (str): Date in DD.MM.YYYY format.
+    Returns:
+        date: The parsed date object.
+    """
     try:
         return datetime.strptime(date_string, DATE_FORMAT).date()
     except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')   
-        
-def input_employee_data():
-    employee_name, employee_lastname, birthday_str = input().split(' ')
+        raise ValueError(
+            'Invalid datetime format. Please use the format DD.MM.YYYY'
+        )
 
-    employee = f"{employee_name} {employee_lastname}"
-    birthday_date = parse_date(birthday_str)
 
-    return employee, birthday_date
-
-def collect_employees_data(employees_num):
+def collect_employees_data(employees_num: int) -> dict:
+    """
+    Collect employee data, including first name, last name, and birth date.
+    Args:
+        employees_num (int): Number of employees.
+    Returns:
+        dict: A dictionary with employee names as keys and birth dates
+              as values.
+    """
     employees = {}
-
     for _ in range(employees_num):
-        employee, birthday = input_employee_data()
-        employees[employee] = birthday
-
+        employee_name, employee_lastname, birthday_str = input().split(' ')
+        employee = f"{employee_name} {employee_lastname}"
+        birthday_date = parse_date(birthday_str)
+        employees[employee] = birthday_date
     return employees
 
-def generate_date_range(start_date, end_date):
-    days_num = (end_date - start_date).days + 1
-    dates_range = []
 
-    for i in range(days_num):
-        date = start_date + timedelta(days=i)
-        dates_range.append(date)
+def get_next_7_days(current_date: date) -> list:
+    """
+    Get a list of the next 7 days after the current date.
+    Args:
+        current_date (date): The current date.
+    Returns:
+        list: List of the next 7 days (date objects).
+    """
+    return [current_date + timedelta(days=i) for i in range(1, 8)]
 
-    return dates_range        
 
-def add_days_to_date(given_date, days_num):
-    return given_date + timedelta(days=days_num)
+def filter_employees_in_next_7_days(
+    cur_date: date, employees_data: dict
+) -> dict:
+    """
+    Filter employees who have birthdays within the next 7 days.
+    Args:
+        cur_date (date): The current date.
+        employees_data (dict): Dictionary with employee names and birth dates.
+    Returns:
+        dict: A dictionary of employees with birthdays within the next 7 days.
+    """
+    next_7_days = [
+        date.strftime('%d.%m') for date in get_next_7_days(cur_date)
+    ]
+    return {employee: birthday for employee, birthday in employees_data.items()
+            if birthday.strftime('%d.%m') in next_7_days}
 
-def get_next_7_days(current_date):
-    start = add_days_to_date(current_date, 1)
-    end = add_days_to_date(current_date, 7)
 
-    dates_range = generate_date_range(start, end)
+def find_youngest_employee(employees_data: dict) -> str:
+    """
+    Find the youngest employee based on the latest birth date.
+    Args:
+        employees_data (dict): Dictionary of employees and their birth dates.
+    Returns:
+        str: The name of the youngest employee.
+    """
+    key: Callable = employees_data.get
+    youngest_employee = max(employees_data, key=key)
+    return youngest_employee
 
-    return dates_range
-
-def format_dates_without_year(dates):
-    new_list = []
-
-    for current_date in dates:
-        new_list.append(current_date.strftime('%d.%m'))
-
-    return new_list    
-
-def filter_employees_in_next_7_days(cur_date, employees_data):
-    next_7_days = format_dates_without_year(get_next_7_days(cur_date))
-
-    new_data = {}
-    
-    for employee, birthday in employees_data.items():
-        bday_without_year_str = birthday.strftime('%d.%m')
-        
-        if bday_without_year_str in next_7_days:
-            new_data[employee] = birthday
-
-    return new_data
-
-def get_key_by_value(given_dict, given_value):
-    for key, value in given_dict.items():
-        if value == given_value:
-            return key
-
-def find_youngest_employee(employees_data):
-    lastest_birth_date = max(employees_data.values())
-    youngest = get_key_by_value(employees_data, lastest_birth_date)
-
-    return youngest
-
-def data_is_empty(given_data):
-    return len(given_data) == 0
 
 def find_youngest_employee_with_birthday_in_next_7_days():
-    current_date = parse_date(input())
-    employees_birthdays = collect_employees_data(int(input()))
-    this_week_birthdays = filter_employees_in_next_7_days(current_date, employees_birthdays)
+    """
+    Find the youngest employee whose birthday is in the next 7 days.
+    If no such employee exists, print 'No birthdays planned'.
+    """
+    current_date = parse_date(input())  # Current date input
 
-    if data_is_empty(this_week_birthdays):
-        print('No birthdays planned')
-    else:
+    # Collect employee data
+    employees_birthdays = collect_employees_data(int(input()))
+
+    # Filter employees with birthdays in the next 7 days
+    this_week_birthdays = filter_employees_in_next_7_days(
+        current_date, employees_birthdays
+    )
+
+    if this_week_birthdays:
+        # Print the youngest employee
         print(find_youngest_employee(this_week_birthdays))
+    else:
+        print('No birthdays planned')
+
 
 find_youngest_employee_with_birthday_in_next_7_days()
