@@ -20,49 +20,46 @@ TODO:
     Write a program that calculates how many thirteenth numbers there are for
     each day of the week in the period from 01/01/0001 to 31/12/9999.
 '''
-from datetime import datetime, timedelta
+
+from datetime import datetime
+from collections import Counter
+from typing import Dict
 
 
-def is_last_month(giving_date):
-    is_last_year = giving_date.year == 9999
-    is_december = giving_date.month == 12
+def count_thirteenth_days(start_year: int, end_year: int) -> Dict[str, int]:
+    """
+    Counts occurrences of the 13th day of the month for each day of the week.
 
-    return is_last_year and is_december
+    Args:
+        start_year (int): Starting year of the range.
+        end_year (int): Ending year of the range.
 
-def count_thirteenth_days(start_date, end_date):
-    thirteen_dict = {'Monday': 0, 
-                 'Tuesday': 0, 
-                 'Wednesday':0, 
-                 'Thursday': 0, 
-                 'Friday': 0, 
-                 'Saturday': 0, 
-                 'Sunday': 0}
-    
-    # Set the current date to the 13th of the first month
-    current_date = start_date
+    Returns:
+        Dict[str, int]: A dictionary mapping each weekday to its count.
+    """
+    weekday_count: Dict = Counter()
 
-    if current_date.day <= 13:
-        current_date = start_date.replace(day = 13)
-    
-    while current_date < end_date:
-        if current_date.day == 13:
-            current_date_weekday = current_date.strftime('%A')
-            thirteen_dict[current_date_weekday] += 1
+    for year in range(start_year, end_year + 1):
+        for month in range(1, 13):
+            thirteenth = datetime(year, month, 13)
+            weekday_name = thirteenth.strftime('%A')
+            weekday_count[weekday_name] += 1
 
-            if not is_last_month(current_date):
-                # If not, move on to next month
-                current_date += timedelta(days=27)
-                continue
-        
-        current_date += timedelta(days=1)
+    return weekday_count
 
-    return thirteen_dict        
 
-def display_dict_items(any_dict):
-    for any_value in any_dict.values():
-        print(any_value)
+def display_weekday_counts(weekday_counts: Dict[str, int]) -> None:
+    """
+    Displays counts of the 13th for each weekday.
 
-start_date = datetime(1,1,1)
-end_date = datetime(9999,12,31)
+    Args:
+        weekday_counts (Dict[str, int]): Dictionary with weekday names as keys
+                                         and counts as values.
+    """
+    for count in weekday_counts.values():
+        print(count)
 
-display_dict_items(count_thirteenth_days(start_date, end_date))
+
+# Compute and display the results
+weekday_counts = count_thirteenth_days(1, 9999)
+display_weekday_counts(weekday_counts)
