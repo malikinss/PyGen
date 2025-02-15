@@ -1,42 +1,58 @@
 '''
-TODO:   
-        Implement a function get_days_in_month() that takes two arguments in the following order:
-            year — natural number
-            month — full name of the month in English
+TODO:
+    Implement a function get_days_in_month() that takes two arguments in
+    the following order:
+        year — natural number
+        month — full name of the month in English
 
-        The function should return a list, sorted in ascending order, of all dates (type date) of the month month and year year.    
+    The function should return a list, sorted in ascending order, of all dates
+    (type date) of the month month and year year.
 '''
 import calendar
-from datetime import datetime
+from datetime import date
 
-DATE_FORMAT = '%Y-%m-%d'
-ENG_MONTH_NAMES = list(calendar.month_name)
 
-def parse_date(date_string):
-    try:
-        return datetime.strptime(date_string, DATE_FORMAT).date()
-    except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')  
+def get_month_number_by_name(month_name: str) -> int:
+    """
+    Returns the month number for a given month name.
 
-def get_number_of_month_by_name(month_name):
-    return ENG_MONTH_NAMES.index(month_name)
+    Args:
+        month_name (str): The full name of the month in English.
 
-def get_number_of_days_in_month(year, month):
-    _, number_of_days = calendar.monthrange(year, month)
+    Returns:
+        int: The month number (1 for January, 2 for February, etc.).
 
-    return number_of_days
+    Raises:
+        ValueError: If the month name is invalid.
+    """
+    month_name = month_name.capitalize()
 
-def get_days_in_month(year, month):
-    month_num = get_number_of_month_by_name(month)
-    days_number = get_number_of_days_in_month(year, month_num)
+    # Skip the empty string at index 0
+    month_list = list(calendar.month_name)[1:]
+    if month_name not in month_list:
+        raise ValueError(
+            f"Invalid month name: '{month_name}'. Please enter a valid month."
+        )
 
-    result_list = []
+    return month_list.index(month_name) + 1  # Month numbers start from 1
 
-    for day_num in range(1, days_number+1):
-        combined_date = f"{year}-{month_num:02d}-{day_num:02d}"
-        cur_date = parse_date(combined_date)
-        result_list.append(cur_date)
 
-    return result_list    
+def get_days_in_month(year: int, month: str) -> list:
+    """
+    Returns a sorted list of all dates in the given month and year.
 
-get_days_in_month(2021, 'December')
+    Args:
+        year (int): The year of the dates.
+        month (str): The full name of the month in English.
+
+    Returns:
+        list: A list of dates in the month.
+    """
+    month_num = get_month_number_by_name(month)
+    _, num_days = calendar.monthrange(year, month_num)
+
+    return [date(year, month_num, day) for day in range(1, num_days + 1)]
+
+
+# Example usage
+print(get_days_in_month(2021, 'December'))
