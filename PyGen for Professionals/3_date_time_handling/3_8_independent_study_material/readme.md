@@ -1,8 +1,8 @@
-### Lesson 3.8: Material for Independent Study
+# Lesson 3.8: Material for Independent Study
 
 This lesson doesn't include practical tasks or questions but provides material for self-study focused on working with time zones, and related modules like `zoneinfo`, `dateutil`, and `arrow`.
 
-#### 1. **Working with Time Zones**
+## 1. **Working with Time Zones**
 
 -   **Objective**: Learn how to handle time zones in Python, which is essential for dealing with dates and times in different parts of the world.
 
@@ -13,7 +13,7 @@ This lesson doesn't include practical tasks or questions but provides material f
     -   **PyCon US 2022 video**: A video presentation that explains working with time zones: [Video on YouTube](https://www.youtube.com/watch?v=XZlPXLsSU2U).
     -   **`pytz` module**: A third-party library for time zone calculations that is widely used in Python. Documentation: [pytz documentation](https://pypi.python.org/pypi/pytz).
 
-#### 2. **Working with `dateutil` module**
+## 2. **Working with `dateutil` module**
 
 -   **Objective**: Learn to extend the functionality of the `datetime` module using `dateutil`, which provides additional capabilities like parsing dates and adding time intervals.
 
@@ -21,7 +21,7 @@ This lesson doesn't include practical tasks or questions but provides material f
     -   **`dateutil` documentation**: A detailed guide to the features of the `dateutil` module, including date parsing and manipulating time intervals. Documentation: [dateutil documentation](https://dateutil.readthedocs.io/en/stable/).
     -   **Main features of `dateutil`**: A summary of key functionalities in `dateutil`, which is an extension of `datetime`. Read more on [pythonru](https://pythonru.com/biblioteki/modul-dateutil).
 
-#### 3. **Study the `arrow` module**
+## 3. **Study the `arrow` module**
 
 -   **Objective**: Understand the `arrow` module, a simple and human-friendly alternative to working with dates and times in Python. It makes it easier to create, manipulate, format, and convert dates and times.
 
