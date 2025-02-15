@@ -1,71 +1,64 @@
 '''
-TODO:   
-        Implement a function get_all_mondays() that takes one argument:
-            year — natural number
-        
-        The function should return a list, sorted in ascending order, of all dates (type date) in the year year that fall on Monday. 
+TODO:
+    Implement a function get_all_mondays() that takes one argument:
+        year — natural number
+
+    The function should return a list, sorted in ascending order, of all
+    dates (type date) in the year year that fall on Monday.
 '''
 import calendar
-from datetime import datetime
+from datetime import date
 
-DATE_FORMAT = '%Y-%m-%d'
-ENG_MONTH_NAMES = list(calendar.month_name)
 
-def parse_date(date_string):
-    try:
-        return datetime.strptime(date_string, DATE_FORMAT).date()
-    except ValueError:
-        raise ValueError('Invalid datetime format. Please use the format DD.MM.YYYY HH:MM')  
+def get_all_weekdays_in_year(year: int, target_weekday: int) -> list:
+    """
+    Returns a list of all dates in the given year that fall on the specified
+    weekday.
 
-def get_number_of_month_by_name(month_name):
-    return ENG_MONTH_NAMES.index(month_name)
+    Args:
+        year (int): The year to check.
+        target_weekday (int): The weekday to find (0 for Monday,
+                              1 for Tuesday, etc.).
 
-def get_number_of_days_in_month(year, month):
-    _, number_of_days = calendar.monthrange(year, month)
+    Returns:
+        list: A sorted list of all dates in the given year that fall on the
+              target weekday.
+    """
+    weekdays = []
 
-    return number_of_days
+    # Iterate through all months
+    for month in range(1, 13):
+        # Get the number of days in the month
+        _, num_days = calendar.monthrange(year, month)
 
-def get_days_in_month(year, month):
-    month_num = get_number_of_month_by_name(month)
-    days_number = get_number_of_days_in_month(year, month_num)
+        # Check every day in the month
+        for day in range(1, num_days + 1):
+            current_date = date(year, month, day)
 
-    result_list = []
+            # 0 is Monday, 1 is Tuesday, etc.
+            if current_date.weekday() == target_weekday:
+                weekdays.append(current_date)
 
-    for day_num in range(1, days_number+1):
-        combined_date = f"{year:04d}-{month_num:02d}-{day_num:02d}"
-        cur_date = parse_date(combined_date)
-        result_list.append(cur_date)
+    return weekdays
 
-    return result_list    
 
-def filter_dates_by_weekday_in_month(year, month, target_weekday):
-    result = []
-    cur_month_dates = get_days_in_month(year, month)
+def get_all_mondays(year: int) -> list:
+    """
+    Retrieves all the Mondays of the specified year.
 
-    for cur_date in cur_month_dates:
-        cur_year = cur_date.year
-        cur_month = cur_date.month
-        cur_day = cur_date.day
+    This function returns a sorted list of `date` objects that correspond to
+    each Monday within the given year.
 
-        cur_date_weekday = calendar.weekday(cur_year, cur_month, cur_day)
+    Args:
+        year (int): The year for which Mondays are to be retrieved.
 
-        if cur_date_weekday == target_weekday:
-            result.append(cur_date)
+    Returns:
+        list: A list of `date` objects, each representing a Monday in the
+              specified year, sorted in ascending order.
+    """
+    return get_all_weekdays_in_year(year, 0)
 
-    return result        
 
-def get_all_mondays(year):
-    mondays = []
-
-    for month_name in ENG_MONTH_NAMES:
-        if month_name == '':
-            continue
-
-        mondays_in_cur_month =  filter_dates_by_weekday_in_month(year, month_name, 0)
-
-        mondays.extend(mondays_in_cur_month)
-
-    return mondays    
-
-mondays = get_all_mondays(111)
+# Example usage
+mondays = get_all_mondays(2021)
 print(*mondays, sep='\n')
