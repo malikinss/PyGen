@@ -33,7 +33,10 @@ NOTE:
             ["Hello", 179, true, null, [1, 2, 3], {"key": "value"}]
         then the program would create a file updated_data.json with the
         following contents:
-            ["Hello!", 180, false, [1, 2, 3, 1, 2, 3], {"key": "value", "newkey": null}]
+            [
+                "Hello!", 180, false,
+                [1, 2, 3, 1, 2, 3], {"key": "value", "newkey": null}
+            ]
 '''
 import json
 from typing import List, Any, Dict
@@ -67,7 +70,7 @@ def write_json_data_to_file(data: List[Any], file_path: str):
 
 def process_string_object(obj: str) -> str:
     """
-    Process string object.
+    Process string object: adds an exclamation mark at the end.
 
     Args:
         obj: String object.
@@ -80,7 +83,7 @@ def process_string_object(obj: str) -> str:
 
 def process_number_object(obj: int) -> int:
     """
-    Process number object.
+    Process number object: increments the number by one.
 
     Args:
         obj: Number object.
@@ -93,7 +96,7 @@ def process_number_object(obj: int) -> int:
 
 def process_boolean_object(obj: bool) -> bool:
     """
-    Process boolean object.
+    Process boolean object: inverts the boolean value.
 
     Args:
         obj: Boolean object.
@@ -106,7 +109,7 @@ def process_boolean_object(obj: bool) -> bool:
 
 def process_list_object(obj: List[Any]) -> List[Any]:
     """
-    Process list object.
+    Process list object: doubles the list.
 
     Args:
         obj: List object.
@@ -119,7 +122,7 @@ def process_list_object(obj: List[Any]) -> List[Any]:
 
 def process_dict_object(obj: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Process dictionary object.
+    Process dictionary object: adds a new key-value pair.
 
     Args:
         obj: Dictionary object.
@@ -141,20 +144,27 @@ def modify_data_objects(data: List[Any]) -> List[Any]:
     Returns:
         List with modified objects.
     """
-    object_processors = {
-        str: process_string_object,
-        int: process_number_object,
-        bool: process_boolean_object,
-        list: process_list_object,
-        dict: process_dict_object
-    }
+    modified_data: List = []
 
-    return [object_processors[type(obj)](obj) for obj in data if obj is not None]
+    for obj in data:
+        if obj is None:
+            continue  # Skip null values
+        if isinstance(obj, str):
+            modified_data.append(process_string_object(obj))
+        elif isinstance(obj, int):
+            modified_data.append(process_number_object(obj))
+        elif isinstance(obj, bool):
+            modified_data.append(process_boolean_object(obj))
+        elif isinstance(obj, list):
+            modified_data.append(process_list_object(obj))
+        elif isinstance(obj, dict):
+            modified_data.append(process_dict_object(obj))
+
+    return modified_data
 
 
 input_file_path = 'data.json'
 output_file_path = 'updated_data.json'
-
 data = read_json_data_from_file(input_file_path)
 modified_data = modify_data_objects(data)
 write_json_data_to_file(modified_data, output_file_path)
