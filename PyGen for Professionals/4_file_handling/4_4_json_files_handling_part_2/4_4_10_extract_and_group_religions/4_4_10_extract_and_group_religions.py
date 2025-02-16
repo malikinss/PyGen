@@ -51,9 +51,20 @@ def read_json_file(file_path: str) -> List[Dict[str, str]]:
 
     Returns:
         List[Dict[str, str]]: List of dictionaries containing JSON data.
+
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+        json.JSONDecodeError: If the file is not a valid JSON.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return json.load(file)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: The file {file_path} was not found.")
+        raise
+    except json.JSONDecodeError:
+        print("Error: The file is not a valid JSON.")
+        raise
 
 
 def write_json_file(data: Dict[str, List[str]], file_path: str) -> None:
@@ -63,12 +74,21 @@ def write_json_file(data: Dict[str, List[str]], file_path: str) -> None:
     Args:
         data (Dict[str, List[str]]): JSON data to be written.
         file_path (str): Path to the output JSON file.
+
+    Raises:
+        IOError: If the file cannot be written.
     """
-    with open(file_path, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=3)
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(data, file, ensure_ascii=False, indent=3)
+    except IOError:
+        print(f"Error: Could not write to {file_path}.")
+        raise
 
 
-def extract_and_group_religions(data: List[Dict[str, str]]) -> Dict[str, List[str]]:
+def extract_and_group_religions(
+    data: List[Dict[str, str]]
+) -> Dict[str, List[str]]:
     """
     Create a dictionary where keys are religions and values are lists of
     countries practicing that religion.
@@ -81,29 +101,39 @@ def extract_and_group_religions(data: List[Dict[str, str]]) -> Dict[str, List[st
         Dict[str, List[str]]: Dictionary with religions as keys and lists of
         countries as values.
     """
-    religions_dict = {}
+    religions_dict: Dict = {}
 
     for item in data:
-        religion = item['religion']
-        country = item['country']
+        religion = item.get('religion')
+        country = item.get('country')
 
-        if religion not in religions_dict:
-            religions_dict[religion] = []
-
-        religions_dict[religion].append(country)
+        if religion and country:
+            if religion not in religions_dict:
+                religions_dict[religion] = []
+            religions_dict[religion].append(country)
 
     return religions_dict
 
 
-if __name__ == "__main__":
-    input_file_path = '4_3_10/tests/countries.json'
-    output_file_path = '4_3_10/tests/religion.json'
+def update_religion_data(input_file_path: str, output_file_path: str) -> None:
+    """
+    Reads data from the input JSON file, groups countries by religion,
+    and writes the resulting JSON object to the output file.
 
-    # Read data from JSON file
+    Args:
+        input_file_path (str): Path to the input JSON file.
+        output_file_path (str): Path to the output JSON file.
+    """
+    # Read the original data from the JSON file
     data = read_json_file(input_file_path)
 
     # Group countries by religion
     religions = extract_and_group_religions(data)
 
-    # Write updated data back to JSON file
+    # Write the resulting data to a new JSON file
     write_json_file(religions, output_file_path)
+
+
+input_file_path = 'countries.json'
+output_file_path = 'religion.json'
+update_religion_data(input_file_path, output_file_path)
