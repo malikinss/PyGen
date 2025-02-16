@@ -21,8 +21,6 @@ def is_correct_json(json_string: str) -> bool:
     """
     try:
         json.loads(json_string)
-        # If json.loads does not raise an exception, the string is valid JSON
         return True
-    except ValueError:
-        # If a ValueError is raised, the string is not valid JSON
+    except json.JSONDecodeError:
         return False
