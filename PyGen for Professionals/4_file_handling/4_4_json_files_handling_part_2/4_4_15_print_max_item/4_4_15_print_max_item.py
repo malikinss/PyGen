@@ -51,110 +51,87 @@ NOTE:
             French bakery SeDelice: 144
 '''
 import json
-from typing import Dict, List, Any
+from typing import Dict, List, Callable
 
 
-def read_json_file(file_path: str) -> List[Dict[str, Any]]:
+def read_json_file(file_path: str) -> List[Dict[str, str]]:
     """
-    Read JSON data from a file.
+    Read and parse JSON file with food services data.
 
     Args:
         file_path (str): Path to the JSON file.
 
     Returns:
-        List[Dict[str, Any]]: List of dictionaries containing JSON data.
+        List[Dict[str, str]]: List of dictionaries containing food services
+        data.
     """
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 
-def increment_counter(counter: Dict[str, int], key: str) -> None:
+def count_items(
+    data: List[Dict[str, str]],
+    key_extractor: Callable[[Dict[str, str]], str],
+    filter_func: Callable[[Dict[str, str]], bool] = lambda x: True
+) -> Dict[str, int]:
     """
-    Increment the counter for a given key.
+    Count items based on extracted keys and optional filter.
 
     Args:
-        counter (Dict[str, int]): Dictionary counter.
-        key (str): Key to increment.
-    """
-    if key in counter:
-        counter[key] += 1
-    else:
-        counter[key] = 1
-
-
-def get_establishment_counts_by_district(establishments: List[Dict[str, Any]]) -> Dict[str, int]:
-    """
-    Get counts of establishments per district.
-
-    Args:
-        establishments (List[Dict[str, Any]]): List of establishments.
+        data (List[Dict[str, str]]): List of food service records.
+        key_extractor (Callable): Function to extract key from record.
+        filter_func (Callable): Function to filter records.
 
     Returns:
-        Dict[str, int]: Counts of establishments per district.
+        Dict[str, int]: Dictionary with counts for each key.
     """
-    district_counts = {}
-
-    for establishment in establishments:
-        district = establishment['District']
-        increment_counter(district_counts, district)
-
-    return district_counts
+    counts: Dict[str, int] = {}
+    for item in filter(filter_func, data):
+        key = key_extractor(item)
+        counts[key] = counts.get(key, 0) + 1
+    return counts
 
 
-def get_establishment_counts_by_chain(establishments: List[Dict[str, Any]]) -> Dict[str, int]:
+def print_most_frequent(counts: Dict[str, int]) -> None:
     """
-    Get counts of establishments per chain.
+    Print item with the highest count.
 
     Args:
-        establishments (List[Dict[str, Any]]): List of establishments.
-
-    Returns:
-        Dict[str, int]: Counts of establishments per chain.
+        counts (Dict[str, int]): Dictionary with item counts.
     """
-    chain_counts = {}
+    if not counts:
+        return
 
-    for establishment in establishments:
-        if establishment['IsNetObject'].lower() == 'да':
-            chain_name = establishment['OperatingCompany']
-            increment_counter(chain_counts, chain_name)
-
-    return chain_counts
+    most_frequent = max(counts.items(), key=lambda x: x[1])
+    print(f'{most_frequent[0]}: {most_frequent[1]}')
 
 
-def get_key_by_value(d: Dict[str, Any], value: Any) -> str:
+def analyze_food_services(file_path: str) -> None:
     """
-    Find a key in dictionary by its value.
+    Analyze food services data and print statistics.
 
     Args:
-        d (Dict[str, Any]): Dictionary to search.
-        value (Any): Value to find.
-
-    Returns:
-        str: Key corresponding to the given value.
+        file_path (str): Path to the JSON file with food services data.
     """
-    for key, val in d.items():
-        if val == value:
-            return key
-    return ""
+    # Read data
+    food_services = read_json_file(file_path)
+
+    # Count districts
+    districts = count_items(
+        food_services,
+        key_extractor=lambda x: x['District']
+    )
+
+    # Count chains
+    chains = count_items(
+        food_services,
+        key_extractor=lambda x: x['OperatingCompany'],
+        filter_func=lambda x: x['IsNetObject'].lower() == 'да'
+    )
+
+    # Print results
+    print_most_frequent(districts)
+    print_most_frequent(chains)
 
 
-def print_max_item(counts: Dict[str, int]) -> None:
-    """
-    Print the item with the maximum count from a dictionary.
-
-    Args:
-        counts (Dict[str, int]): Dictionary of counts.
-    """
-    max_count = max(counts.values())
-    item_name = get_key_by_value(counts, max_count)
-    print(f'{item_name}: {max_count}')
-
-
-if __name__ == "__main__":
-    establishments_data = read_json_file('4_3_15/tests/food_services.json')
-
-    district_counts = get_establishment_counts_by_district(establishments_data)
-    chain_counts = get_establishment_counts_by_chain(establishments_data)
-
-    print_max_item(district_counts)
-    print_max_item(chain_counts)
+analyze_food_services('food_services.json')
