@@ -64,18 +64,22 @@ NOTE:
             ]
 '''
 import json
-from typing import Dict, List
+from typing import Dict, List, Set
 
 
 def read_json_file(file_path: str) -> List[Dict]:
     """
-    Read JSON data from a file.
+    Reads JSON data from a file and returns it as a list of dictionaries.
 
     Args:
-        file_path: Path to the JSON file.
+        file_path (str): Path to the JSON file to read.
 
     Returns:
-        List of dictionaries containing JSON data.
+        List[Dict]: A list of dictionaries containing the JSON data.
+
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+        json.JSONDecodeError: If the file is not a valid JSON.
     """
     with open(file_path, 'r', encoding='utf8') as file:
         return json.load(file)
@@ -83,11 +87,14 @@ def read_json_file(file_path: str) -> List[Dict]:
 
 def write_json_file(data: List[Dict], file_path: str) -> None:
     """
-    Write JSON data to a file.
+    Writes a list of dictionaries as JSON data to a file.
 
     Args:
-        data: JSON data to be written.
-        file_path: Path to the output JSON file.
+        data (List[Dict]): List of dictionaries containing the data to write.
+        file_path (str): Path to the output JSON file.
+
+    Raises:
+        IOError: If the file cannot be written.
     """
     with open(file_path, 'w', encoding='utf8') as file:
         json.dump(data, file, ensure_ascii=False, indent=3)
@@ -95,16 +102,17 @@ def write_json_file(data: List[Dict], file_path: str) -> None:
 
 def get_all_existing_keys(data: List[Dict]) -> set:
     """
-    Get a set of all keys existing in a list of dictionaries.
+    Retrieves all unique keys present in any dictionary within the given list.
 
     Args:
-        data: List of dictionaries.
+        data (List[Dict]): List of dictionaries to extract keys from.
 
     Returns:
-        A set containing all keys.
+        set: A set containing all unique keys from the dictionaries.
     """
-    all_keys = set()
+    all_keys: Set = set()
 
+    # Update all_keys with the keys from each dictionary in the data list
     for obj in data:
         all_keys.update(obj.keys())
 
@@ -113,17 +121,20 @@ def get_all_existing_keys(data: List[Dict]) -> set:
 
 def add_missing_keys(data: List[Dict]) -> List[Dict]:
     """
-    Add missing keys to each dictionary in a list, assigning None
-    to missing keys.
+    Adds missing keys to each dictionary in the list, assigning `None` to
+    the missing keys.
 
     Args:
-        data: List of dictionaries.
+        data (List[Dict]): List of dictionaries to update.
 
     Returns:
-        List of dictionaries with missing keys added.
+        List[Dict]: A new list of dictionaries where each dictionary has all
+        the keys from the full set of keys in the original data.
     """
+    # Retrieve all the unique keys from the entire data
     all_keys = get_all_existing_keys(data)
 
+    # Iterate through each dictionary and add missing keys with None values
     for item in data:
         for key in all_keys:
             if key not in item:
@@ -132,15 +143,25 @@ def add_missing_keys(data: List[Dict]) -> List[Dict]:
     return data
 
 
-if __name__ == "__main__":
-    input_file_path = '4_3_9_/tests/people.json'
-    output_file_path = '4_3_9_/tests/updated_people.json'
+def update_json_data(input_file_path: str, output_file_path: str) -> None:
+    """
+    Reads data from the input JSON file, adds missing keys to each dictionary,
+    and writes the updated data to the output JSON file.
 
-    # Read data from JSON file
+    Args:
+        input_file_path (str): Path to the input JSON file.
+        output_file_path (str): Path to the output JSON file.
+    """
+    # Read the original data from the JSON file
     data = read_json_file(input_file_path)
 
     # Add missing keys to each dictionary in the list
     result_data = add_missing_keys(data)
 
-    # Write updated data back to JSON file
+    # Write the updated data back to a new JSON file
     write_json_file(result_data, output_file_path)
+
+
+input_file_path = 'people.json'
+output_file_path = 'updated_people.json'
+update_json_data(input_file_path, output_file_path)
