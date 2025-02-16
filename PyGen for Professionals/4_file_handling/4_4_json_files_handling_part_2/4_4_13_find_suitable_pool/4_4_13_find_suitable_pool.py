@@ -7,14 +7,17 @@ TODO:
 
         He also likes to swim in long lanes, so of all the pools that are open
         at this time, you need to choose the pool with the longest lane, and
-        with equal values ​​- with the widest one.
+        with equal values - with the widest one.
 
         You can access the pools.json file, which contains a list of JSON
         objects that represent data on indoor swimming pools:
             [
                 {
-                    "ObjectName": "Physical Culture and Health Complex with a Swimming Pool 'State Budgetary Institution 'Sports School No. 82' of the Moscow Sports Committee'",
-                    "AdmArea": ​​"North-Eastern Administrative Okrug",
+                    "ObjectName":
+                        "Physical Culture and Health Complex with a Swimming
+                        Pool 'State Budgetary Institution 'Sports School No.
+                        82' of the Moscow Sports Committee'",
+                    "AdmArea": "North-Eastern Administrative Okrug",
                     "District": "Altufevsky District",
                     "Address": "Inzhenernaya Street, Building 5, Building 1",
                     "WorkingHoursSummer": {
@@ -83,14 +86,14 @@ def read_json_file(file_path: str) -> List[Dict[str, Any]]:
         return json.load(file)
 
 
-def find_max_dimension(pools: List[Dict[str, Any]], dimension: str) -> int:
+def get_max_dimension(pools: List[Dict[str, Any]], dimension: str) -> int:
     """
-    Find the maximum value of a given dimension in a list of pools.
+    Get the maximum value of a given dimension in a list of pools.
 
     Args:
         pools (List[Dict[str, Any]]): List of pool dictionaries.
-        dimension (str): The dimension to find the maximum value for ('Length'
-        or 'Width')
+        dimension (str): The dimension to find the maximum value for
+                         ('Length' or 'Width').
 
     Returns:
         int: The maximum value of the specified dimension.
@@ -98,87 +101,75 @@ def find_max_dimension(pools: List[Dict[str, Any]], dimension: str) -> int:
     return max(pool['DimensionsSummer'][dimension] for pool in pools)
 
 
-def get_pools_with_max_dimension(pools: List[Dict[str, Any]],
-                                 dimension: str) -> List[Dict[str, Any]]:
+def is_within_working_hours(
+    start_time: str, end_time: str, check_time: str
+) -> bool:
     """
-    Get pools with the maximum value of a given dimension.
-
-    Args:
-        pools (List[Dict[str, Any]]): List of pool dictionaries.
-        dimension (str): The dimension to filter pools by ('Length' or 'Width')
-
-    Returns:
-        List[Dict[str, Any]]: List of pools with the maximum value of the
-        specified dimension.
-    """
-    max_value = find_max_dimension(pools, dimension)
-
-    return [pool for pool in pools if pool['DimensionsSummer'][dimension] == max_value]
-
-
-def get_working_hours(pool: Dict[str, Any], day: str) -> List[str]:
-    """
-    Get the working hours of a pool on a specific day.
-
-    Args:
-        pool (Dict[str, Any]): The pool dictionary.
-        day (str): The day to get the working hours for.
-
-    Returns:
-        List[str]: The start and end times as a list of strings.
-    """
-    return pool['WorkingHoursSummer'][day].split('-')
-
-
-def is_time_in_range(start_time: str,
-                     end_time: str,
-                     requiring_time: str) -> bool:
-    """
-    Check if a time is within a given range.
+    Check if a given time falls within the specified start and end time.
 
     Args:
         start_time (str): The start time in HH:MM format.
         end_time (str): The end time in HH:MM format.
-        requiring_time (str): The time to check in HH:MM format.
+        check_time (str): The time to check in HH:MM format.
 
     Returns:
         bool: True if the time is within the range, False otherwise.
     """
     time_format = '%H:%M'
-
     start = datetime.strptime(start_time, time_format).time()
     end = datetime.strptime(end_time, time_format).time()
-    required = datetime.strptime(requiring_time, time_format).time()
+    check = datetime.strptime(check_time, time_format).time()
 
-    return start <= required <= end
+    return start <= check <= end
 
 
-def get_pools_open_at(pools: List[Dict[str, Any]],
-                      day: str,
-                      start_time: str,
-                      end_time: str) -> List[Dict[str, Any]]:
+def get_working_hours(pool: Dict[str, Any], day: str) -> List[str]:
     """
-    Get pools that are open during a specific time range on a specific day.
+    Get the working hours of a pool for a specific day.
+
+    Args:
+        pool (Dict[str, Any]): The pool dictionary.
+        day (str): The day to check the working hours for.
+
+    Returns:
+        List[str]: A list containing the start and end times in HH:MM format.
+    """
+    return pool['WorkingHoursSummer'].get(day, "").split('-')
+
+
+def get_pools_open_at(
+    pools: List[Dict[str, Any]], day: str, start_time: str, end_time: str
+) -> List[Dict[str, Any]]:
+    """
+    Get the pools that are open during a specified time range on a given day.
 
     Args:
         pools (List[Dict[str, Any]]): List of pool dictionaries.
-        day (str): The day to check.
+        day (str): The day to check the working hours for.
         start_time (str): The start time in HH:MM format.
         end_time (str): The end time in HH:MM format.
 
     Returns:
-        List[Dict[str, Any]]: List of pools open during the specified
+        List[Dict[str, Any]]: List of pools that are open during the given
         time range.
     """
-    required_pools = []
+    open_pools = []
 
     for pool in pools:
-        cur_start_time, cur_end_time = get_working_hours(pool, day)
+        working_hours = get_working_hours(pool, day)
+        if len(working_hours) == 2:
+            cur_start_time, cur_end_time = working_hours
+            time_check_start = is_within_working_hours(
+                cur_start_time, cur_end_time, start_time
+            )
+            time_check_end = is_within_working_hours(
+                cur_start_time, cur_end_time, end_time
+            )
 
-        if is_time_in_range(cur_start_time, cur_end_time, start_time) and is_time_in_range(cur_start_time, cur_end_time, end_time):
-            required_pools.append(pool)
+            if time_check_start and time_check_end:
+                open_pools.append(pool)
 
-    return required_pools
+    return open_pools
 
 
 def print_pool_info(pool: Dict[str, Any]) -> None:
@@ -196,12 +187,12 @@ def print_pool_info(pool: Dict[str, Any]) -> None:
     print(address)
 
 
-def find_suitable_pool(pools: List[Dict[str, Any]],
-                       day: str,
-                       start: str,
-                       end: str) -> Dict[str, Any]:
+def find_suitable_pool(
+    pools: List[Dict[str, Any]], day: str, start: str, end: str
+) -> Dict[str, Any]:
     """
-    Find the most suitable pool for swimming based on given criteria.
+    Find the most suitable pool based on given criteria: longest length,
+    and widest if equal.
 
     Args:
         pools (List[Dict[str, Any]]): List of pool dictionaries.
@@ -213,15 +204,26 @@ def find_suitable_pool(pools: List[Dict[str, Any]],
         Dict[str, Any]: The most suitable pool dictionary.
     """
     open_pools = get_pools_open_at(pools, day, start, end)
-    longest_pools = get_pools_with_max_dimension(open_pools, 'Length')
+    max_length = get_max_dimension(open_pools, 'Length')
+    longest_pools = [
+        pool for pool in open_pools
+        if pool['DimensionsSummer']['Length'] == max_length
+    ]
 
+    # If there are pools with the same length, filter by width
     if len(longest_pools) > 1:
-        longest_pools = get_pools_with_max_dimension(longest_pools, 'Width')
+        max_width = get_max_dimension(longest_pools, 'Width')
+        longest_pools = [
+            pool for pool in longest_pools
+            if pool['DimensionsSummer']['Width'] == max_width
+        ]
 
     return longest_pools[0]
 
 
-if __name__ == "__main__":
-    data = read_json_file('pools.json')
-    suitable_pool = find_suitable_pool(data, 'Понедельник', '10:00', '12:00')
+data = read_json_file('pools.json')
+suitable_pool = find_suitable_pool(data, 'Monday', '10:00', '12:00')
+if suitable_pool:
     print_pool_info(suitable_pool)
+else:
+    print("No suitable pool found.")
