@@ -8,7 +8,9 @@ TODO:
         the third column contains the name of the district;
         the fourth column contains the address:
             ObjectName; AdmArea; District; Address
-            Park, green urban area "Lianozovsky Park of Culture and Leisure"; North-Eastern Administrative District; Lianozovo District; Uglichskaya Street, Building 13
+            Park, green urban area "Lianozovsky Park of Culture and Leisure";
+            North-Eastern Administrative District; Lianozovo District;
+            Uglichskaya Street, Building 13
             ...
 
         Write a program that creates a JSON object, the key of which is the
@@ -74,11 +76,13 @@ def write_json_file(data: Dict[str, List[str]], file_path: str) -> None:
         json.dump(data, file, ensure_ascii=False, indent=3)
 
 
-def create_administrative_area_dict(data: List[Dict[str, str]]) -> Dict[str, Dict[str, List[str]]]:
+def create_administrative_area_dict(
+    data: List[Dict[str, str]]
+) -> Dict[str, Dict[str, List[str]]]:
     """
     Create a dictionary where keys are administrative areas and values
     are dictionaries
-    with keys as districts and values as empty lists.
+    with keys as districts and values as lists of addresses.
 
     Args:
         data (List[Dict[str, str]]): List of dictionaries containing
@@ -88,80 +92,26 @@ def create_administrative_area_dict(data: List[Dict[str, str]]) -> Dict[str, Dic
         Dict[str, Dict[str, List[str]]]: Dictionary with administrative
         areas as keys and dictionaries of districts as values.
     """
-    addresses = {}
+    addresses: Dict = {}
 
     for row in data:
         adm_area = row['AdmArea']
+        district = row['District']
+        address = row['Address']
+
         if adm_area not in addresses:
             addresses[adm_area] = {}
 
-    return addresses
+        if district not in addresses[adm_area]:
+            addresses[adm_area][district] = []
 
-
-def fill_districts(data: List[Dict[str, str]],
-                   addresses: Dict[str, Dict[str, List[str]]]) -> Dict[str, Dict[str, List[str]]]:
-    """
-    Fill the dictionary of administrative areas with districts.
-
-    Args:
-        data (List[Dict[str, str]]): List of dictionaries containing
-        data from CSV.
-        addresses (Dict[str, Dict[str, List[str]]]): Dictionary with
-        administrative areas as keys and dictionaries of districts as values.
-
-    Returns:
-        Dict[str, Dict[str, List[str]]]: Updated dictionary with
-        administrative areas and districts.
-    """
-    for area in addresses:
-        for row in data:
-            if row['AdmArea'] == area:
-                district = row['District']
-                if district not in addresses[area]:
-                    addresses[area][district] = []
+        addresses[adm_area][district].append(address)
 
     return addresses
 
 
-def fill_addresses(data: List[Dict[str, str]],
-                   addresses: Dict[str, Dict[str, List[str]]]) -> Dict[str, Dict[str, List[str]]]:
-    """
-    Fill the dictionary with addresses of playgrounds.
-
-    Args:
-        data (List[Dict[str, str]]): List of dictionaries containing data
-        from CSV.
-        addresses (Dict[str, Dict[str, List[str]]]): Dictionary with
-        administrative areas and districts.
-
-    Returns:
-        Dict[str, Dict[str, List[str]]]: Updated dictionary with
-        addresses of playgrounds.
-    """
-    for area, districts in addresses.items():
-        for district in districts:
-            for row in data:
-                if row['AdmArea'] == area and row['District'] == district:
-                    addresses[area][district].append(row['Address'])
-
-    return addresses
-
-
-if __name__ == "__main__":
-    input_file_path = '4_3_11/tests/playgrounds.csv'
-    output_file_path = '4_3_11/tests/addresses.json'
-
-    # Read data from CSV file
-    data = read_csv(input_file_path, delimiter=';')
-
-    # Create initial dictionary structure
-    addresses = create_administrative_area_dict(data)
-
-    # Fill dictionary with districts
-    addresses = fill_districts(data, addresses)
-
-    # Fill dictionary with addresses
-    addresses = fill_addresses(data, addresses)
-
-    # Write updated data to JSON file
-    write_json_file(addresses, output_file_path)
+input_file_path = 'playgrounds.csv'
+output_file_path = 'addresses.json'
+data = read_csv(input_file_path, delimiter=';')
+addresses: Dict = create_administrative_area_dict(data)
+write_json_file(addresses, output_file_path)
