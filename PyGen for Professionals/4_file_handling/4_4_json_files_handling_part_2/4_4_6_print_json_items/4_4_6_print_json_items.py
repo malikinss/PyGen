@@ -51,10 +51,9 @@ def format_if_list(data: Any) -> Any:
     Returns:
         Any: The formatted data if it's a list, otherwise the original data.
     """
-    def is_list(data: Any) -> bool:
-        return isinstance(data, list)
-
-    return ', '.join(map(str, data)) if is_list(data) else data
+    if isinstance(data, list):
+        return ', '.join(map(str, data))
+    return data
 
 
 def print_json_items(json_data: Dict[str, Any]) -> None:
@@ -69,6 +68,5 @@ def print_json_items(json_data: Dict[str, Any]) -> None:
         print(f'{key}: {formatted_value}')
 
 
-if __name__ == "__main__":
-    data = read_json_from_stdin()
-    print_json_items(data)
+data = read_json_from_stdin()
+print_json_items(data)
