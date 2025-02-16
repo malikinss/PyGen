@@ -58,14 +58,23 @@ def read_json_file(file_path: str) -> List[Dict[str, str]]:
     Returns:
         List[Dict[str, str]]: List of dictionaries containing JSON data.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return json.load(file)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: The file {file_path} was not found.")
+        return []
+    except json.JSONDecodeError:
+        print(f"Error: The file {file_path} is not valid JSON.")
+        return []
 
 
-def write_csv(data: List[Dict[str, str]],
-              filename: str,
-              columns: List[str],
-              delimiter: str = ',') -> None:
+def write_csv(
+    data: List[Dict[str, str]],
+    filename: str,
+    columns: List[str],
+    delimiter: str = ','
+) -> None:
     """
     Writes data to a CSV file.
 
@@ -75,12 +84,15 @@ def write_csv(data: List[Dict[str, str]],
         columns: The column names to use in the CSV file.
         delimiter: The delimiter to use in the CSV file.
     """
-    with open(filename, 'w', encoding='utf-8', newline='') as file:
-        writer = csv.DictWriter(file,
-                                fieldnames=columns,
-                                delimiter=delimiter)
-        writer.writeheader()
-        writer.writerows(data)
+    try:
+        with open(filename, 'w', encoding='utf-8', newline='') as file:
+            writer = csv.DictWriter(file,
+                                    fieldnames=columns,
+                                    delimiter=delimiter)
+            writer.writeheader()
+            writer.writerows(data)
+    except Exception as e:
+        print(f"Error writing to file {filename}: {e}")
 
 
 def is_eligible_student(student: Dict[str, str]) -> bool:
@@ -93,10 +105,18 @@ def is_eligible_student(student: Dict[str, str]) -> bool:
     Returns:
         bool: True if the student is eligible, False otherwise.
     """
-    return student['age'] >= 18 and student['progress'] >= 75
+    try:
+        age = int(student['age'])
+        progress = float(student['progress'])
+    except (ValueError, KeyError):
+        return False
+
+    return age >= 18 and progress >= 75
 
 
-def filter_students_by_criteria(students_data: List[Dict[str, str]]) -> List[Dict[str, str]]:
+def filter_students_by_criteria(
+    students_data: List[Dict[str, str]]
+) -> List[Dict[str, str]]:
     """
     Filters students based on age and progress criteria.
 
@@ -106,27 +126,38 @@ def filter_students_by_criteria(students_data: List[Dict[str, str]]) -> List[Dic
     Returns:
         List[Dict[str, str]]: List of filtered student dictionaries.
     """
-    name = 'name'
-    phone = 'phone'
-
-    # Filter students and select only necessary fields
-    eligible_students = [{'name': student[name], 'phone': student[phone]} for student in students_data if is_eligible_student(student)]
+    eligible_students = [
+        {'name': student['name'], 'phone': student['phone']}
+        for student in students_data
+        if is_eligible_student(student)
+    ]
 
     return sorted(eligible_students, key=lambda x: x['name'])
 
 
-if __name__ == "__main__":
-    input_file_path = '4_3_12/tests/students.json'
-    output_file_path = '4_3_12/tests/data.csv'
+def process_student_data(input_file_path: str, output_file_path: str) -> None:
+    """
+    Process the student data from the JSON file, filter eligible students,
+    and write to a CSV file.
 
-    # Read data from JSON file
+    Args:
+        input_file_path (str): Path to the input JSON file.
+        output_file_path (str): Path to the output CSV file.
+    """
     data = read_json_file(input_file_path)
 
-    # Filter students based on criteria
-    students = filter_students_by_criteria(data)
+    if data:
+        students = filter_students_by_criteria(data)
+        if students:
+            headers = list(students[0].keys())
+            write_csv(students, output_file_path, headers)
+        else:
+            print("No students met the eligibility criteria.")
+    else:
+        print("No data to process.")
 
-    # Get headers
-    headers = list(students[0].keys())
 
-    # Write updated data to CSV file
-    write_csv(students, output_file_path, headers)
+# Example usage
+input_file_path = 'students.json'
+output_file_path = 'data.csv'
+process_student_data(input_file_path, output_file_path)
