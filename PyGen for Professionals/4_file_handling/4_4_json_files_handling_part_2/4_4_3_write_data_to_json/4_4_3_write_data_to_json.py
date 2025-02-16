@@ -1,34 +1,42 @@
 '''
 TODO:
-        You have access to the club1, club2, and club3 dictionaries, which
-        contain data about different football clubs.
+    You have access to the club1, club2, and club3 dictionaries, which contain
+    data about different football clubs.
 
-        Complete the code below so that it concatenates these dictionaries
-        into a list and writes the resulting data structure to the data.json
-        file, indented by three spaces.
+    Complete the code below so that it concatenates these dictionaries into a
+    list and writes the resulting data structure to the data.json file,
+    indented by three spaces.
 
 NOTE:
-        The dictionaries in the list must be in their original order.
+    The dictionaries in the list must be in their original order.
 
-        The initial part of the data.json file looks like this:
-            [
-                {
-                    "name": "FC Byern Munchen",
-                    "country": "Germany",
-                    ...
-                },
+    The initial part of the data.json file looks like this:
+        [
+            {
+                "name": "FC Byern Munchen",
+                "country": "Germany",
                 ...
-            ]
+            },
+            ...
+        ]
 '''
 import json
 from typing import Dict, List, Any
 
 
 def write_data_to_json(data: Any, indent: Any) -> None:
+    """
+    Writes the given data to a JSON file with specified indentation.
+
+    Args:
+        data (Any): The data to be written to the file.
+        indent (Any): The indentation level for the JSON file.
+    """
     with open('data.json', 'w', encoding='utf8') as json_file:
         json.dump(data, json_file, indent=indent)
 
 
+# Football club dictionaries
 club1: Dict = {"name": "FC Byern Munchen", "country": "Germany",
                "founded": 1900, "trainer": "Julian Nagelsmann",
                "goalkeeper": "M. Neuer", "league_position": 1}
@@ -41,6 +49,8 @@ club3: Dict = {"name": "FC Manchester United", "country": "England",
                "founded": 1878, "trainer": "Michael Carrick",
                "goalkeeper": "D. De Gea", "league_position": 8}
 
+# Combine the clubs into a list
 clubs: List[Dict] = [club1, club2, club3]
 
+# Write the list to a JSON file with the specified indentation
 write_data_to_json(data=clubs, indent='   ')
