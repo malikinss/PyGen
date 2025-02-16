@@ -66,7 +66,27 @@ def read_json_data(file_path: str) -> List[Dict[str, Any]]:
         return json.load(file)
 
 
-def group_establishments_by_type_and_find_largest(establishments: List[Dict[str, Any]]) -> Dict[str, List[Any]]:
+def should_replace_largest(
+    current_largest: List[Any], establishment_size: int
+) -> bool:
+    """
+    Determines if the current establishment should replace the largest one
+    based on the number of seats.
+
+    Args:
+        current_largest (List[Any]): The current largest establishment's name
+        and seats count.
+        establishment_size (int): The size of the new establishment.
+
+    Returns:
+        bool: True if the current establishment should replace the largest one.
+    """
+    return current_largest is None or establishment_size > current_largest[1]
+
+
+def group_establishments_by_type_and_find_largest(
+    establishments: List[Dict[str, Any]]
+) -> Dict[str, List[Any]]:
     """
     Groups establishments by type and finds the largest establishment
     of each type.
@@ -80,17 +100,33 @@ def group_establishments_by_type_and_find_largest(establishments: List[Dict[str,
         and values are lists of the name and seat count of the largest
         establishment of that type.
     """
-    result = {}
+    result: Dict[str, List[Any]] = {}
 
     for establishment in establishments:
         establishment_type = establishment.get('TypeObject')
         establishment_name = establishment.get('Name')
         establishment_size = establishment.get('SeatsCount')
 
-        if establishment_type not in result or establishment_size > result[establishment_type][1]:
-            result[establishment_type] = [establishment_name, establishment_size]
+        # Skip if establishment_type is None or establishment_size is
+        # not an integer
+        if establishment_type is None or \
+           not isinstance(establishment_size, int):
+            continue
 
-    return dict(sorted(result.items()))
+        # Check if the type is already in result
+        if establishment_type not in result:
+            result[establishment_type] = [
+                establishment_name, establishment_size
+            ]
+        else:
+            current_largest = result[establishment_type]
+            # If current establishment is larger, update the result
+            if should_replace_largest(current_largest, establishment_size):
+                result[establishment_type] = [
+                    establishment_name, establishment_size
+                ]
+
+    return result
 
 
 def print_establishments_results(data: Dict[str, List[Any]]) -> None:
@@ -100,13 +136,14 @@ def print_establishments_results(data: Dict[str, List[Any]]) -> None:
     Args:
         data (Dict[str, List[Any]]): Dictionary with grouped establishments.
     """
-    for establishment_type, value in data.items():
-        establishment_name, establishment_size = value
+    for establishment_type in sorted(data):
+        establishment_name, establishment_size = data[establishment_type]
+        print(
+            f'{establishment_type}: {establishment_name}, {establishment_size}'
+        )
 
-        print(f'{establishment_type}: {establishment_name}, {establishment_size}')
 
-
-if __name__ == "__main__":
-    establishments = read_json_data('4_3_16_group_establishments_by_type_and_find_largest/tests/food_services.json')
-    result = group_establishments_by_type_and_find_largest(establishments)
-    print_establishments_results(result)
+# Main execution
+establishments = read_json_data('food_services.json')
+result = group_establishments_by_type_and_find_largest(establishments)
+print_establishments_results(result)
