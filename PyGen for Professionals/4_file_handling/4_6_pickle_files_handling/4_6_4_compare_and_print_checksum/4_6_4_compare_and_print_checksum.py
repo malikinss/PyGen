@@ -25,22 +25,15 @@ TODO:
 NOTE:
     If the list (dictionary) does not contain integer elements (keys),
     then consider the checksum to be 0.
-
-    Let's consider the first test.
-    The file name is given — data.pkl, which contains the serialized list:
-        ['a', 'b', 3, 4, 'f', 'g', 7, 8]
-
-    then the number — 3023.
-
-    The checksum for this list is 3⋅8=24.
-    Since 3023 ≠ 24, the program outputs:
-        Checksums do not match
 '''
 import pickle
+import sys
 from typing import List, Dict, Any, Union
 
 
-def deserialize_pickle_file(pickle_file_path: str) -> Union[Dict[Any, Any], List[Any]]:
+def deserialize_pickle_file(
+    pickle_file_path: str
+) -> Union[Dict[Any, Any], List[Any], None]:
     """
     Deserializes an object from the given pickle file.
 
@@ -48,73 +41,98 @@ def deserialize_pickle_file(pickle_file_path: str) -> Union[Dict[Any, Any], List
         pickle_file_path (str): Path to the pickle file.
 
     Returns:
-        Union[Dict[Any, Any], List[Any]]: The deserialized dictionary or list.
+        Union[Dict[Any, Any], List[Any], None]: The deserialized dictionary
+        or list, or None if an error occurs.
+
+    Raises:
+        Exception: If deserialization fails.
     """
-    with open(pickle_file_path, 'rb') as file:
-        return pickle.load(file)
+    try:
+        with open(pickle_file_path, 'rb') as file:
+            return pickle.load(file)
+    except Exception as error:
+        print(f"Error loading pickle file: {error}", file=sys.stderr)
+        return None
 
 
-def extract_integer_elements(items: Union[List[Any], Dict[Any, Any]]) -> List[int]:
+def extract_integer_elements(
+    items: Union[List[Any], Dict[Any, Any]]
+) -> List[int]:
     """
-    Extracts all integer elements from a list or integer keys
-    from a dictionary.
+    Extracts all integer elements from a list or integer keys from
+    a dictionary.
 
     Args:
         items (Union[List[Any], Dict[Any, Any]]): A list or dictionary
         containing various elements.
 
     Returns:
-        List[int]: A list containing only integer elements or keys.
+        List[int]: A list containing only integer elements (from a list)
+        or integer keys (from a dictionary).
     """
     if isinstance(items, list):
         return [item for item in items if isinstance(item, int)]
-    elif isinstance(items, dict):
+    if isinstance(items, dict):
         return [key for key in items.keys() if isinstance(key, int)]
     return []
 
 
-def calculate_checksum(data_structure: Union[Dict[Any, Any], List[Any]]) -> int:
+def calculate_checksum(
+    data_structure: Union[Dict[Any, Any], List[Any]]
+) -> int:
     """
     Calculates the checksum for the given data structure.
 
     Args:
-        data_structure (Union[Dict[Any, Any], List[Any]]): The data structure
-        to calculate the checksum for.
+        data_structure (Union[Dict[Any, Any], List[Any]]): The dictionary or
+        list to process.
 
     Returns:
-        int: The calculated checksum.
+        int: The calculated checksum, or 0 if no valid integer elements
+        are found.
     """
     integer_elements = extract_integer_elements(data_structure)
 
     if isinstance(data_structure, list) and integer_elements:
         return min(integer_elements) * max(integer_elements)
-    elif isinstance(data_structure, dict) and integer_elements:
+    if isinstance(data_structure, dict) and integer_elements:
         return sum(integer_elements)
-
     return 0
 
 
-def compare_and_print_checksum(expected_checksum: int,
-                               calculated_checksum: int) -> None:
+def compare_checksum(
+    expected_checksum: int, calculated_checksum: int
+) -> str:
     """
-    Compares the expected checksum with the calculated checksum and prints
-    the result.
+    Compares the expected checksum with the calculated checksum.
 
     Args:
-        expected_checksum (int): The expected checksum.
-        calculated_checksum (int): The calculated checksum.
+        expected_checksum (int): The expected checksum value.
+        calculated_checksum (int): The calculated checksum value.
+
+    Returns:
+        str: The result of the comparison.
     """
     if expected_checksum == calculated_checksum:
-        print('Контрольные суммы совпадают')
+        return 'Checksums match'
     else:
-        print('Контрольные суммы не совпадают')
+        return 'Checksums do not match'
 
 
-pickle_file_path = input()
-expected_checksum = int(input())
+def process_pickle_checksum():
+    """
+    Reads input, processes the pickle file, and compares checksums.
+    """
+    try:
+        pickle_file_path = input("Enter pickle file path: ").strip()
+        expected_checksum = int(input("Enter expected checksum: ").strip())
+    except ValueError:
+        print("Invalid checksum input", file=sys.stderr)
+        sys.exit(1)
 
-data_structure = deserialize_pickle_file(pickle_file_path)
+    data_structure = deserialize_pickle_file(pickle_file_path)
+    if data_structure is None:
+        sys.exit(1)
 
-calculated_checksum = calculate_checksum(data_structure)
-
-compare_and_print_checksum(expected_checksum, calculated_checksum)
+    calculated_checksum = calculate_checksum(data_structure)
+    print(compare_checksum(expected_checksum, calculated_checksum))
