@@ -14,9 +14,16 @@ def create_pickle(data: Any, filename: str) -> None:
     Args:
         data (Any): The data to be serialized.
         filename (str): The name of the pickle file.
+
+    Raises:
+        IOError: If the file cannot be opened or written.
+        pickle.PickleError: If serialization fails.
     """
-    with open(filename, mode='wb') as file:
-        pickle.dump(data, file)
+    try:
+        with open(filename, mode='wb') as file:
+            pickle.dump(data, file, protocol=pickle.HIGHEST_PROTOCOL)
+    except (IOError, pickle.PickleError) as error:
+        print(f"Error while writing to {filename}: {error}")
 
 
 dogs = {
