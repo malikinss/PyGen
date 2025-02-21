@@ -50,6 +50,13 @@ def read_input(input_stream=sys.stdin) -> List[str]:
     """
     Reads input from the given input stream and returns a list of
     stripped lines.
+
+    Args:
+        input_stream (file object, optional): The input stream to read from.
+            Defaults to sys.stdin.
+
+    Returns:
+        List[str]: A list of stripped input lines.
     """
     return [line.strip() for line in input_stream.readlines()]
 
@@ -63,9 +70,27 @@ def deserialize_pickle(pickle_filepath: str) -> Callable:
 
     Returns:
         Callable: The deserialized function.
+
+    Raises:
+        IOError: If the file cannot be opened.
+        pickle.UnpicklingError: If the file cannot be deserialized.
+        TypeError: If the unpickled object is not callable.
     """
-    with open(pickle_filepath, 'rb') as file:
-        return pickle.load(file)
+    try:
+        with open(pickle_filepath, 'rb') as file:
+            loaded_object = pickle.load(file)
+            if not callable(loaded_object):
+                raise TypeError(
+                    f"Deserialized object from {pickle_filepath}"
+                    f"is not a function"
+                )
+            return loaded_object
+    except (IOError, pickle.UnpicklingError, TypeError) as error:
+        print(
+            f"Error while loading function from {pickle_filepath}: {error}",
+            file=sys.stderr
+        )
+        sys.exit(1)
 
 
 def call_func_from_pickle(pickle_filepath: str, arguments: List[str]) -> str:
