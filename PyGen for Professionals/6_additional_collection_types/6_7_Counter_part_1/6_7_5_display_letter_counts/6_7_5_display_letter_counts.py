@@ -41,32 +41,10 @@ def read_lines_from_file(file_name: str) -> list[str]:
         list[str]: A list of lines read from the file.
     """
     with open(file_name, 'rt', encoding='utf-8') as file:
-        content = [line.rstrip() for line in file.readlines()]
-
-    return content
+        return [line.rstrip() for line in file]
 
 
-def filter_letters_counter(counter: Counter) -> Counter:
-    """
-    Filters out non-alphabetic characters from a Counter object.
-
-    Args:
-        counter (Counter): Counter object containing character counts.
-
-    Returns:
-        Counter: Filtered Counter object with only alphabetic characters.
-    """
-    non_letters = [
-        ch for ch in counter.keys() if ch not in string.ascii_letters
-    ]
-
-    for non_letter in non_letters:
-        del counter[non_letter]
-
-    return counter
-
-
-def count_letters(text: list[str]) -> dict[str, int]:
+def count_letters(text: list[str]) -> Counter[str]:
     """
     Counts the occurrences of each alphabetic letter in the given text.
 
@@ -74,34 +52,27 @@ def count_letters(text: list[str]) -> dict[str, int]:
         text (list[str]): A list of strings representing the text.
 
     Returns:
-        dict[str, int]: A dictionary mapping each letter to its count.
+        Counter[str]: A Counter object mapping each letter to its count.
     """
-    letter_counts = Counter()
-
-    for line in text:
-        letter_counts.update(line.lower())
-
-    letter_counts = filter_letters_counter(letter_counts)
-
-    return dict(sorted(letter_counts.items()))
+    letter_counts = Counter(
+        char for line in text
+        for char in line.lower() if char in string.ascii_lowercase
+    )
+    return Counter(dict(sorted(letter_counts.items())))
 
 
-def display_letter_counts(letter_counts: dict[str, int]) -> None:
+def display_letter_counts(letter_counts: Counter[str]) -> None:
     """
     Displays the counts of each letter in lexicographic order.
 
     Args:
-        letter_counts (dict[str, int]): A dictionary mapping each letter to
+        letter_counts (Counter[str]): A Counter object mapping each letter to
         its count.
-
-    Returns:
-        None
     """
     for letter, count in letter_counts.items():
-        print(f'{letter}: {count}')
+        print(f"{letter}: {count}")
 
 
-file_path = './tests/pythonzen.txt'
-data = read_lines_from_file(file_path)
-letter_counts = count_letters(data)
-display_letter_counts(letter_counts)
+if __name__ == "__main__":
+    file_path = "./tests/pythonzen.txt"
+    display_letter_counts(count_letters(read_lines_from_file(file_path)))
