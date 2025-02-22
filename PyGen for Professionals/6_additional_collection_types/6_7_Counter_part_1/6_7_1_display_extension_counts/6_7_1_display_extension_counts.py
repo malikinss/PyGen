@@ -14,29 +14,10 @@ from collections import Counter
 from typing import List
 
 
-def get_extension_list(files: List[str]) -> List[str]:
-    """
-    Extracts and returns the list of file extensions from the given list of
-    file names.
-
-    Args:
-        files (List[str]): A list of file names.
-
-    Returns:
-        List[str]: A sorted list of file extensions.
-    """
-    extensions_list = []
-    for file in files:
-        # Extract the file extension
-        _, extension = file.split('.')
-        extensions_list.append(extension)
-    return sorted(extensions_list)
-
-
 def count_extensions(files: List[str]) -> Counter:
     """
-    Counts the occurrences of each file extension in the given list of
-    file names.
+    Counts the occurrences of each file extension in the given list of file
+    names.
 
     Args:
         files (List[str]): A list of file names.
@@ -44,10 +25,7 @@ def count_extensions(files: List[str]) -> Counter:
     Returns:
         Counter: A Counter object with the count of each file extension.
     """
-    extensions = get_extension_list(files)
-    # Count the number of occurrences of each extension
-    extensions_cnt = Counter(extensions)
-    return extensions_cnt
+    return Counter(file.rsplit('.', 1)[-1] for file in files if '.' in file)
 
 
 def display_extension_counts(extension_counts: Counter) -> None:
@@ -58,7 +36,7 @@ def display_extension_counts(extension_counts: Counter) -> None:
         extension_counts (Counter): A Counter object with the count of each
         file extension.
     """
-    for extension, amount in extension_counts.items():
+    for extension, amount in sorted(extension_counts.items()):
         print(f'{extension}: {amount}')
 
 
@@ -82,7 +60,6 @@ files = [
     'sony_vegas11.exe', 'friends.jpeg', 'data.pkl'
 ]
 
-# Get the counts of each file extension
+
 extensions = count_extensions(files)
-# Display the extension counts
 display_extension_counts(extensions)
