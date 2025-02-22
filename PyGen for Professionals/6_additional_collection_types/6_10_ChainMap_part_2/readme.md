@@ -1,11 +1,11 @@
-Lesson 6.7: Counter datatype (part 1)
+Lesson 6.10: ChainMap datatype (part 2)
 
-Lesson Topic: Counter Data Type
-Collections Module
-Counting Objects
-Counter Data Type
-Abstract. The lesson is about the Counter data type.
+Lesson Topic: ChainMap Data Type
+ChainMap Data Type
+maps and parents attributes
+new_child() method
+Abstract. The lesson is dedicated to the ChainMap data type.
 
-This lesson has good theory explonation, 5 practical tasks and 13 theoretical questions presented on the website
+This lesson has good theory explonation, 3 practical tasks and 11 theoretical questions presented on the website
 
-https://stepik.org/lesson/590120/step/1?unit=585064
+https://stepik.org/lesson/634670/step/1?unit=630932
