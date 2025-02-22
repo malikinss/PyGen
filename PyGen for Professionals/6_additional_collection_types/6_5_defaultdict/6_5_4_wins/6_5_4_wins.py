@@ -26,45 +26,48 @@ from collections import defaultdict
 from typing import Dict, Tuple, Set, Iterable
 
 
-def wins(pairs: Iterable[Tuple[str, str]]) -> Dict[str, Set[str]]:
+def wins(games: Iterable[Tuple[str, str]]) -> Dict[str, Set[str]]:
     """
-    Computes the winners and their defeated opponents from a list of games.
+    Computes the winners and their defeated opponents from a list of chess
+    games.
 
     Args:
-        games (Iterable[Tuple[str, str]]): An iterable containing tuples,
-        each representing a game with the winner and loser.
+        games (Iterable[Tuple[str, str]]): An iterable of tuples, where each
+        tuple consists of a winner's name and a loser's name.
 
     Returns:
-        Dict[str, Set[str]]: A dictionary where the key is the name of the
-        student and the value is a set of names of the students they defeated.
+        Dict[str, Set[str]]: A dictionary mapping each winner to a set
+        of defeated players.
     """
-    winners_dict = defaultdict(set)
+    victories = defaultdict(set)
 
-    for winner, loser in pairs:
-        winners_dict[winner].add(loser)
+    for winner, loser in games:
+        victories[winner].add(loser)
 
-    return winners_dict
+    return victories
 
 
-def print_results(results: Dict[str, Set[str]]) -> None:
+def print_results(wins_map: Dict[str, Set[str]]) -> None:
     """
-    Prints the results of the games in a formatted manner.
+    Prints the results of the chess competition in a formatted manner.
 
     Args:
-        results (Dict[str, Set[str]]): A dictionary where the key is the name
-        of the student and the value is a set of names of the students they
-        defeated.
+        wins_map (Dict[str, Set[str]]): A dictionary where each key is
+        a student's name, and the value is a set of names of students
+        they have defeated.
     """
-    for winner, losers in sorted(results.items()):
-        print(winner, '->', *sorted(losers))
+    for winner in sorted(wins_map):
+        print(winner, '->', ", ".join(sorted(wins_map[winner])))
 
 
 if __name__ == '__main__':
-    # Example games data
-    result = wins([('Артур', 'Дима'),
-                   ('Артур', 'Тимур'),
-                   ('Артур', 'Анри'),
-                   ('Дима', 'Артур')])
+    result = wins(
+        [
+            ('Артур', 'Дима'),
+            ('Артур', 'Тимур'),
+            ('Артур', 'Анри'),
+            ('Дима', 'Артур')
+        ]
+    )
 
-    # Print formatted results
     print_results(result)
