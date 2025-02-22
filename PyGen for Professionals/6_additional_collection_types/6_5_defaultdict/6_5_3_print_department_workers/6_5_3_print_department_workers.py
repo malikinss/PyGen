@@ -30,62 +30,32 @@ NOTE:
         ...
 '''
 from collections import defaultdict
-from typing import Dict, List, Tuple, Set
+from typing import Dict, List, Tuple
 
 
-def sort_dict_keys(data_dict: Dict[str, Set[str]]) -> Dict[str, Set[str]]:
-    """
-    Sorts a dictionary by its keys.
-
-    Args:
-        data_dict (Dict[str, Set[str]]): The dictionary to sort.
-
-    Returns:
-        Dict[str, Set[str]]: The sorted dictionary.
-    """
-    return dict(sorted(data_dict.items()))
-
-
-def sort_department_workers(
-    workers_per_department: Dict[str, Set[str]]
+def group_and_sort_workers_by_department(
+    data: List[Tuple[str, str]]
 ) -> Dict[str, List[str]]:
     """
-    Sorts the workers in each department and returns a sorted dictionary.
-
-    Args:
-        workers_per_department (Dict[str, Set[str]]): The dictionary
-        containing workers per department.
-
-    Returns:
-        Dict[str, List[str]]: The sorted dictionary with sorted lists of
-        workers.
-    """
-    sorted_dict = sort_dict_keys(workers_per_department)
-    for department in sorted_dict:
-        sorted_dict[department] = sorted(sorted_dict[department])
-
-    return sorted_dict
-
-
-def group_workers_by_department(
-    data: List[Tuple[str, str]]
-) -> Dict[str, Set[str]]:
-    """
-    Groups workers by their departments.
+    Groups workers by their departments and sorts both the departments
+    and the workers lexicographically.
 
     Args:
         data (List[Tuple[str, str]]): The list of tuples containing department
-        and worker name.
+        and worker names.
 
     Returns:
-        Dict[str, Set[str]]: A dictionary grouping workers by department.
+        Dict[str, List[str]]: A sorted dictionary with sorted lists of workers.
     """
     workers_per_department = defaultdict(set)
 
     for department, worker in data:
         workers_per_department[department].add(worker)
 
-    return workers_per_department
+    return {
+        dept: sorted(workers)
+        for dept, workers in sorted(workers_per_department.items())
+    }
 
 
 def print_department_workers(
@@ -103,7 +73,6 @@ def print_department_workers(
 
 
 if __name__ == '__main__':
-    # Given data
     staff = [
         ('Developing', 'Miguel Norris'), ('Sales', 'Connie Reid'),
         ('Sales', 'Joseph Lee'), ('Marketing', 'Carol Peters'),
@@ -144,11 +113,5 @@ if __name__ == '__main__':
         ('Accounting', 'Dale Houston')
     ]
 
-    # Group workers by department
-    grouped_workers = group_workers_by_department(staff)
-
-    # Sort departments and workers within each department
-    sorted_workers = sort_department_workers(grouped_workers)
-
-    # Print the sorted workers by department
+    sorted_workers = group_and_sort_workers_by_department(staff)
     print_department_workers(sorted_workers)
