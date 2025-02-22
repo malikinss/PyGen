@@ -1,11 +1,11 @@
 '''
 TODO:
-        Complete the code below so that it creates a named tuple Fruit with
-        fields:
-            name, color, vitamins
+    Complete the code below so that it creates a named tuple Fruit with
+    fields:
+        name, color, vitamins
 
 NOTE:
-        The program should not output anything.
+    The program should not output anything.
 '''
 from collections import namedtuple
 
