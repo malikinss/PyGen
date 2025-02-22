@@ -18,7 +18,7 @@ from collections import Counter
 
 def count_occurrences(word: str, words: str) -> int:
     """
-    Determine how many times the word occurs in the sequence of words.
+    Determines how many times the word occurs in the sequence of words.
 
     Parameters:
     word (str): The word to count.
@@ -27,9 +27,7 @@ def count_occurrences(word: str, words: str) -> int:
     Returns:
     int: The number of occurrences of the word in the sequence of words.
     """
-    word_count = Counter(words.lower().split())
-
-    return word_count[word.lower()]
+    return Counter(words.lower().split())[word.lower()]
 
 
 word = 'python'
