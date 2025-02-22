@@ -23,31 +23,33 @@ NOTE:
     be preserved.
 '''
 from collections import OrderedDict
-from typing import OrderedDict as ODType
 
 
-def custom_sort(ordered_dict: ODType[str, int],
-                by_values: bool = False) -> None:
+def custom_sort(
+    ordered_dict: OrderedDict[str, int], by_values: bool = False
+) -> None:
     """
     Sorts an OrderedDict in place.
 
-    Parameters:
-    ordered_dict (OrderedDict[str, int]): The OrderedDict to sort.
-    by_values (bool): If True, sort by values; otherwise, sort by keys.
+    Args:
+        ordered_dict (OrderedDict[str, int]): The OrderedDict to sort.
+        by_values (bool): If True, sort by values; otherwise, sort by keys.
 
     Returns:
-    None
+        None: The dictionary is sorted in place.
     """
-    if by_values:
-        sorted_items = sorted(ordered_dict.items(), key=lambda item: item[1])
-    else:
-        sorted_items = sorted(ordered_dict.items(), key=lambda item: item[0])
-
     ordered_dict.clear()
-    ordered_dict.update(sorted_items)
+
+    if by_values:
+        ordered_dict.update(
+            sorted(ordered_dict.items(), key=lambda item: item[1])
+        )
+    else:
+        ordered_dict.update(
+            sorted(ordered_dict.items(), key=lambda item: item[0])
+        )
 
 
 data = OrderedDict(Dustin=29, Anabel=17, Brian=40, Carol=16)
 custom_sort(data)
-
 print(data)
