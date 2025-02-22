@@ -21,29 +21,25 @@ TODO:
         <item>: <quantity>
 '''
 from collections import Counter
-from typing import Counter as CounterType
 
 
-def parse_shopping_list() -> CounterType[str]:
+def parse_shopping_list() -> Counter[str]:
     """
     Reads the user input, splits it into individual items, and counts the
     occurrences of each item.
 
     Returns:
-        CounterType[str]: A Counter object containing the count of each item.
+        Counter[str]: A Counter object containing the count of each item.
     """
-    items = input().split(',')
-    item_counts = Counter(items)
-
-    return item_counts
+    return Counter(input().split(','))
 
 
-def print_shopping_list(item_counts: CounterType[str]) -> None:
+def print_shopping_list(item_counts: Counter[str]) -> None:
     """
     Prints the shopping list items and their quantities in lexicographic order.
 
     Args:
-        item_counts (CounterType[str]): A Counter object containing the count
+        item_counts (Counter[str]): A Counter object containing the count
         of each item.
     """
     for item, amount in sorted(item_counts.items()):
