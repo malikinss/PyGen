@@ -19,33 +19,34 @@ NOTE:
     elements in the lists, must be in their original order.
 '''
 from collections import defaultdict
-from typing import Dict, List, DefaultDict, Union
+from typing import Dict, List, DefaultDict, Hashable
 
 
 def flip_dict(
-    original_dict: Dict[Union[int, str], List[Union[int, str]]]
-) -> DefaultDict[Union[int, str], List[Union[int, str]]]:
+    dict_of_lists: Dict[Hashable, List[Hashable]]
+) -> DefaultDict[Hashable, List[Hashable]]:
     """
     Flips the dictionary by inverting keys and values.
 
     Args:
-        original_dict (Dict[Union[int, str], List[Union[int, str]]]):
-        A dictionary where the key is a number or string,
-        and the value is a list of numbers or strings.
+        dict_of_lists (Dict[Hashable, List[Hashable]]): A dictionary where
+        keys are hashable elements (strings or numbers) and values are lists
+        of hashable elements.
 
     Returns:
-        DefaultDict[Union[int, str], List[Union[int, str]]]: A new dictionary
-        with inverted keys and values.
+        DefaultDict[Hashable, List[Hashable]]: A new dictionary with inverted
+        keys and values.
     """
-    flipped_dict = defaultdict(list)
+    result_dict = defaultdict(list)
 
-    for key, values in original_dict.items():
+    for key, values in dict_of_lists.items():
         for value in values:
-            flipped_dict[value].append(key)
+            result_dict[value].append(key)
 
-    return flipped_dict
+    return result_dict
 
 
-original_dict: dict = {'a': [1, 2], 'b': [3, 1], 'c': [2]}
-flipped_dict = flip_dict(original_dict)
-print(flipped_dict)
+if __name__ == '__main__':
+    original_dict: Dict = {'a': [1, 2], 'b': [3, 1], 'c': [2]}
+    flipped_dict = flip_dict(original_dict)
+    print(dict(flipped_dict))
