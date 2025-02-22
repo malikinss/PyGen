@@ -16,22 +16,22 @@ NOTE:
         )
 '''
 from collections import OrderedDict
-from typing import OrderedDict as ODType
 
 
-def reverse_dict_order(ordered_dict: ODType[str, str]) -> ODType[str, str]:
+def reverse_dict_order(
+    ordered_dict: OrderedDict[str, str]
+) -> OrderedDict[str, str]:
     """
     Reverses the order of an OrderedDict.
 
     Args:
-        ordered_dict (OrderedDictType[str, str]): The OrderedDict to reverse.
+        ordered_dict (OrderedDict[str, str]): The OrderedDict to reverse.
 
     Returns:
-        OrderedDictType[str, str]: The reversed OrderedDict.
+        OrderedDict[str, str]: The reversed OrderedDict with items in
+        reverse order.
     """
-    key_value_pairs = ordered_dict.items()
-
-    return OrderedDict(reversed(key_value_pairs))
+    return OrderedDict(reversed(list(ordered_dict.items())))
 
 
 data = OrderedDict({
