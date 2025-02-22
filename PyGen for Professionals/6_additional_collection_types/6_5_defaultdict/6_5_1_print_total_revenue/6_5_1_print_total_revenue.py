@@ -2,11 +2,14 @@
 TODO:
     You are given a list of data tuples containing revenue data for some
     educational resource.
+
     The first element of the tuple is the product name, and the second
     element is the revenue in dollars.
+
     Expand the code below to determine how much total revenue each product
     brought in and print the names of all the products, with the
     corresponding total revenue for each.
+
     The products should be listed lexicographically, each on a separate
     line, in the following format:
         <product>: $<total revenue>
@@ -30,15 +33,15 @@ def calculate_total_revenue(data: List[Tuple[str, int]]) -> Dict[str, int]:
         and revenue.
 
     Returns:
-        Dict[str, int]: A dictionary mapping product names to their total
-        revenue.
+        Dict[str, int]: A dictionary mapping product names to their
+        total revenue.
     """
-    total_revenue: Dict = defaultdict(int)
+    total_revenue: Dict[str, int] = defaultdict(int)
 
     for product, revenue in data:
         total_revenue[product] += revenue
 
-    # Sort dictionary by keys (product names)
+    # Convert defaultdict to a sorted dictionary (sorted by product name)
     return dict(sorted(total_revenue.items()))
 
 
@@ -47,11 +50,11 @@ def print_total_revenue(total_revenue: Dict[str, int]) -> None:
     Prints the total revenue for each product in a specified format.
 
     Args:
-        total_revenue (Dict[str, int]): A dictionary mapping product names to
-        their total revenue.
+        total_revenue (Dict[str, int]): A dictionary mapping product names
+        to their total revenue.
     """
     for product, revenue in total_revenue.items():
-        print(f'{product}: ${revenue}')
+        print(f'{product}: ${revenue:,}')  # Adds thousand separators
 
 
 if __name__ == '__main__':
@@ -66,8 +69,5 @@ if __name__ == '__main__':
         ('Tutorials', 977), ('Books', 656)
     ]
 
-    # Calculate total revenue for each product
     total_revenue = calculate_total_revenue(data)
-
-    # Display total revenue for each product
     print_total_revenue(total_revenue)
