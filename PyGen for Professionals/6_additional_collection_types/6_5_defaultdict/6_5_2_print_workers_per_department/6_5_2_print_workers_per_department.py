@@ -26,19 +26,6 @@ from collections import defaultdict
 from typing import Dict, List, Tuple
 
 
-def sort_dict_by_keys(data_dict: Dict[str, int]) -> Dict[str, int]:
-    """
-    Sorts a dictionary by its keys.
-
-    Args:
-        data_dict (Dict[str, int]): The dictionary to sort.
-
-    Returns:
-        Dict[str, int]: The sorted dictionary.
-    """
-    return dict(sorted(data_dict.items()))
-
-
 def count_workers_per_department(
     data: List[Tuple[str, str]]
 ) -> Dict[str, int]:
@@ -56,7 +43,8 @@ def count_workers_per_department(
     workers_per_department: Dict[str, int] = defaultdict(int)
     for department, _ in data:
         workers_per_department[department] += 1
-    return sort_dict_by_keys(workers_per_department)
+
+    return dict(sorted(workers_per_department.items()))
 
 
 def print_workers_per_department(data: Dict[str, int]) -> None:
@@ -67,8 +55,8 @@ def print_workers_per_department(data: Dict[str, int]) -> None:
         data (Dict[str, int]): The dictionary with departments and the number
         of workers.
     """
-    for department, amount in data.items():
-        print(f'{department}: {amount}')
+    for department, count in data.items():
+        print(f'{department}: {count}')
 
 
 if __name__ == '__main__':
