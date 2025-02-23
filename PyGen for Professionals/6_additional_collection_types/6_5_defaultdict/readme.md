@@ -1,12 +1,12 @@
-## Lesson 6.5: defaultdict Data Type 🏷️
+# Lesson 6.5: defaultdict Data Type 🏷️
 
-### Description 📝
+## Description 📝
 
 In this lesson, I will be working with **defaultdict**, a specialized dictionary type from Python's **collections module**.
 This class is particularly useful for handling missing keys with automatic default values.
 Through practical tasks, I will explore various real-world applications of defaultdict and understand how it can simplify my code.
 
-### Purpose 🎯
+## Purpose 🎯
 
 By the end of this lesson, I will:
 
@@ -14,7 +14,7 @@ By the end of this lesson, I will:
 -   Apply defaultdict to aggregate, group, and track data efficiently.
 -   Use **defaultdict(list)** for grouping items and managing dynamic collections of values.
 
-### How It Works 🔍
+## How It Works 🔍
 
 This lesson provides 6 practical tasks involving defaultdict:
 
@@ -47,14 +47,14 @@ This lesson provides 6 practical tasks involving defaultdict:
     - **Objective:** Find the sender who has sent the most words in their messages.
     - **Use:** Use defaultdict to keep track of the total number of words sent by each sender and identify the one with the maximum count.
 
-### Output 📜
+## Output 📜
 
 After completing the tasks, I will be able to:  
 ✅ Use **defaultdict** to handle missing keys automatically.  
 ✅ Aggregate, group, and sort data efficiently using **defaultdict(list)** and other defaultdict patterns.  
 ✅ Solve real-world problems involving counting, grouping, and sorting data with ease.
 
-### Conclusion 🚀
+## Conclusion 🚀
 
 This lesson taught me how to utilize **defaultdict** to streamline data processing, handle missing data, and work with dynamic collections of values.
 With its automatic default value handling, defaultdict is an essential tool for reducing complexity and improving the readability of my code.
