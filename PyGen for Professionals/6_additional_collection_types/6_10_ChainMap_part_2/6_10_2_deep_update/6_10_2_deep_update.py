@@ -1,22 +1,22 @@
 '''
 TODO:
-        Implement a deep_update() function that takes three arguments in the
-        following order:
-            chainmap — a ChainMap whose elements are dictionaries
-            key — a hashable object
-            value — an arbitrary object
+    Implement a deep_update() function that takes three arguments in the
+    following order:
+        chainmap — a ChainMap whose elements are dictionaries
+        key — a hashable object
+        value — an arbitrary object
 
-        The function should update all values by key in all dictionaries in
-        the chainmap to value.
+    The function should update all values by key in all dictionaries in
+    the chainmap to value.
 
-        If key is not present in the chainmap, the function should add
-        the key: value pair to the first dictionary.
+    If key is not present in the chainmap, the function should add
+    the key: value pair to the first dictionary.
 
 NOTE:
-        The function should update the ChainMap passed to it and return None.
+    The function should update the ChainMap passed to it and return None.
 
-        It is guaranteed that the ChainMap passed to the function contains at
-        least one dictionary.
+    It is guaranteed that the ChainMap passed to the function contains at
+    least one dictionary.
 '''
 from collections import ChainMap
 from typing import Any, Hashable
@@ -33,14 +33,11 @@ def deep_update(chain_map: ChainMap, key: Hashable, value: Any) -> None:
         key (Hashable): The key to update.
         value (Any): The value to set for the given key.
     """
-    maps = chain_map.maps
-    key_found = False
-
-    for element in maps:
+    # Iterate over each dictionary in the ChainMap
+    for element in chain_map.maps:
         if key in element:
-            element[key] = value
-            key_found = True
-
-    # If key is not found in any dictionary, add it to the first one
-    if not key_found:
-        maps[0][key] = value
+            element[key] = value  # Update the value of the key
+            break
+    else:
+        # If the key is not found, add it to the first dictionary
+        chain_map.maps[0][key] = value
