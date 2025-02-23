@@ -13,6 +13,7 @@ NOTE:
     It is guaranteed that the search word is unique.
 
     The program must ignore case.
+
     That is, for example, the words Python and python are considered the
     same.
 '''
