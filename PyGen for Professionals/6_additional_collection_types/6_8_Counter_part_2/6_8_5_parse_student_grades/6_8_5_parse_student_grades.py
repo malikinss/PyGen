@@ -1,28 +1,39 @@
 '''
 TODO:
-        Given a list of student names and their exam grades.
+    Given a list of student names and their exam grades.
 
-        Write a program that determines the second lowest grade student.
+    Write a program that determines the second lowest grade student.
 
-        The program is given an arbitrary number of lines, each containing the
-        name of the next student and his grade, separated by a space.
+    The program is given an arbitrary number of lines, each containing the
+    name of the next student and his grade, separated by a space.
 
-        The program should determine the second lowest grade student and print
-        his name.
+    The program should determine the second lowest grade student and print
+    his name.
 
 NOTE:
-        It is guaranteed that all students have different names and grades.
+    It is guaranteed that all students have different names and grades.
 '''
 import sys
-from collections import defaultdict, Counter
+from collections import Counter
 
 
 def read_input() -> str:
-    """Reads input from stdin and returns it as a single string."""
+    """
+    Reads all input from standard input (stdin) and returns it as a single
+    string.
+
+    This function will capture all lines of input provided by the user and
+    combine them into one string, with each line separated by a newline
+    character.
+
+    Returns:
+        str: A single string containing all the lines of input provided
+        by the user.
+    """
     return sys.stdin.read().strip()
 
 
-def get_students_grades(input_data: str) -> Counter:
+def get_students_grades(input_data: str):
     """
     Parses input data containing student names and grades.
 
@@ -30,32 +41,47 @@ def get_students_grades(input_data: str) -> Counter:
         input_data (str): Input data in the format of "name grade" per line.
 
     Returns:
-        Counter: A Counter object where keys are student names and values are
-        lists of grades.
+        List[Tuple[str, int]]: A list of tuples where each tuple contains a
+        student's name and their grade.
     """
-    student_grades = defaultdict(list)
+    student_grades = []
     lines = input_data.splitlines()
 
     for line in lines:
         student, grade = line.split()
-        student_grades[student].append(int(grade))
+        student_grades.append((student, int(grade)))
 
-    return Counter(student_grades)
+    return student_grades
 
 
-def get_second_lowest_grade_student(grades: Counter) -> str:
+def get_second_lowest_grade_student(grades):
     """
     Finds the student with the second lowest grade based on the provided
-    Counter object.
+    list of grades.
 
     Args:
-        grades (Counter): Counter object where keys are student names and
-        values are lists of grades.
+        grades (List[Tuple[str, int]]): A list of tuples where each tuple
+        contains a student's name and grade.
 
     Returns:
         str: Name of the student with the second lowest grade.
     """
-    return grades.most_common()[-2][0]
+    # Create a Counter to count occurrences of each grade
+    grade_counter = Counter(grade for student, grade in grades)
+
+    # Get sorted list of unique grades
+    sorted_grades = sorted(grade_counter.keys())
+
+    # The second lowest grade will be the second item in the sorted list
+    second_lowest_grade = sorted_grades[1]
+
+    # Find all students with the second lowest grade
+    second_lowest_students = [
+        student for student, grade in grades if grade == second_lowest_grade
+    ]
+
+    # Return the name of the student with the second lowest grade
+    return second_lowest_students[0]
 
 
 def parse_student_grades(input_data: str) -> str:
@@ -70,7 +96,6 @@ def parse_student_grades(input_data: str) -> str:
         str: Name of the student with the second lowest grade.
     """
     grades = get_students_grades(input_data)
-
     return get_second_lowest_grade_student(grades)
 
 
