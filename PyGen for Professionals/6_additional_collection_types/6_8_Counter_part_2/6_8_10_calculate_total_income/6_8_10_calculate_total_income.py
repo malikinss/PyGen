@@ -31,8 +31,7 @@ from collections import Counter
 from typing import List, Dict
 
 
-def read_csv_file(filename: str,
-                  delimiter: str = ',') -> List[Dict[str, str]]:
+def read_csv_file(filename: str, delimiter: str = ',') -> List[Dict[str, str]]:
     """
     Reads a CSV file and returns its content as a list of dictionaries.
 
@@ -48,7 +47,7 @@ def read_csv_file(filename: str,
         return [row for row in reader]
 
 
-def read_json_file(file_path: str) -> List[Dict[str, str]]:
+def read_json_file(file_path: str) -> Dict[str, int]:
     """
     Read JSON data from a file.
 
@@ -56,7 +55,7 @@ def read_json_file(file_path: str) -> List[Dict[str, str]]:
         file_path (str): Path to the JSON file.
 
     Returns:
-        List[Dict[str, str]]: List of dictionaries containing JSON data.
+        Dict[str, int]: A dictionary containing product prices.
     """
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
@@ -72,28 +71,30 @@ def parse_monthly_purchases(record: Dict[str, str]) -> Counter:
     Returns:
         Counter object with product names and amounts sold.
     """
-    monthly_purchases = Counter()
-    product_name = record['продукт']
+    monthly_purchases: Counter = Counter()
+    product_name = record['product']  # Ensure the correct column name
 
+    # Iterate through the months
     for month, value in record.items():
-        if month == 'продукт':
+        if month == 'product':  # Skip the product column
             continue
         monthly_purchases[product_name] += int(value)
 
     return monthly_purchases
 
 
-def count_quarterly_purchases(quarter_number: int) -> Counter:
+def count_quarterly_purchases(quarter_number: int, folder: str) -> Counter:
     """
     Count the purchases for a specific quarter.
 
     Args:
         quarter_number: The quarter number (1 to 4).
+        folder: The folder path where the CSV files are stored.
 
     Returns:
         Counter object with total product amounts for the quarter.
     """
-    quarterly_purchases = Counter()
+    quarterly_purchases: Counter = Counter()
     current_quarter_path = f'{folder}quarter{quarter_number}.csv'
     quarter_data = read_csv_file(current_quarter_path)
 
@@ -104,24 +105,26 @@ def count_quarterly_purchases(quarter_number: int) -> Counter:
     return quarterly_purchases
 
 
-def count_total_purchases() -> Counter:
+def count_total_purchases(folder: str) -> Counter:
     """
     Count the total purchases from all quarters.
+
+    Args:
+        folder: The folder path where the CSV files are stored.
 
     Returns:
         A Counter object with the total amount of each product sold.
     """
-    total_purchases = Counter()
+    total_purchases: Counter = Counter()
 
     for i in range(1, 5):
-        quarterly_purchases = count_quarterly_purchases(i)
+        quarterly_purchases = count_quarterly_purchases(i, folder)
         total_purchases.update(quarterly_purchases)
 
     return total_purchases
 
 
-def calculate_total_income(purchases: Counter,
-                           prices: Dict[str, int]) -> Counter:
+def calculate_total_income(purchases: Counter, prices: Dict[str, int]) -> int:
     """
     Calculate the total income from all products.
 
@@ -130,24 +133,24 @@ def calculate_total_income(purchases: Counter,
         prices: Dictionary with product prices.
 
     Returns:
-        Counter object with total income for each product.
+        The total income from all products.
     """
-    total_income = Counter()
+    total_income = 0
 
     for product, amount in purchases.items():
-        product_price = prices[product]
-        total_income[product] = amount * product_price
+        product_price = prices.get(product, 0)
+        total_income += amount * product_price
 
     return total_income
 
 
 if __name__ == '__main__':
-    folder = '6_8_10/tests/'
-    prices_path = f'{folder}prices.json'
+    folder = './tests/'  # The folder where CSV files are stored
+    prices_path = f'{folder}prices.json'  # Path to the prices JSON file
     prices = read_json_file(prices_path)
 
-    total_purchases = count_total_purchases()
+    total_purchases = count_total_purchases(folder)
     total_income = calculate_total_income(total_purchases, prices)
 
     # Print the total income earned for the year
-    print(total_income.total())
+    print(total_income)
