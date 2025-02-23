@@ -30,39 +30,58 @@ NOTE:
         barbaradavis@aol.com: 2
         ...
 '''
-
 import csv
 from collections import Counter
 from typing import Dict, List
 
 
-def read_csv_file(filename: str,
-                  delimiter: str = ',') -> List[Dict[str, str]]:
+def read_csv_file(filename: str, delimiter: str = ',') -> List[Dict[str, str]]:
     """
     Reads a CSV file and returns its content as a list of dictionaries.
 
     Args:
-        filename: The path to the CSV file.
-        delimiter: The delimiter used in the CSV file.
+        filename (str): Path to the CSV file.
+        delimiter (str): The delimiter used in the CSV file (default is ',').
 
     Returns:
-        The content of the CSV file as a list of dictionaries.
+        List[Dict[str, str]]: A list of dictionaries representing the CSV data.
+
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+        ValueError: If the CSV does not contain the required columns.
     """
-    with open(filename, 'r', encoding='utf-8') as csv_file:
-        reader = csv.DictReader(csv_file, delimiter=delimiter)
-        return [row for row in reader]
+    try:
+        with open(filename, 'r', encoding='utf-8') as csv_file:
+            reader = csv.DictReader(csv_file, delimiter=delimiter)
+            # Ensure the fieldnames are valid
+            if not reader.fieldnames or not all(
+                col in reader.fieldnames
+                for col in ['username', 'email', 'dtime']
+            ):
+                raise ValueError(
+                    "CSV is missing one of the required columns: 'username',"
+                    "'email', or 'dtime'."
+                )
+            return [row for row in reader]
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found.")
+        raise
+    except ValueError as e:
+        print(f"Error: {e}")
+        raise
 
 
 def count_name_changes_per_user(data: List[Dict[str, str]]) -> Counter:
     """
-    Counts the number of name changes per user.
+    Counts the number of name changes per user based on the email.
 
     Args:
-        data: List of dictionaries containing CSV data.
+        data (List[Dict[str, str]]): List of dictionaries representing the
+        CSV data.
 
     Returns:
-        A Counter object with email addresses as keys and the number of name
-        changes as values.
+        Counter: A Counter object mapping email addresses to the number
+        of name changes.
     """
     emails = [record['email'] for record in data]
     return Counter(emails)
@@ -70,19 +89,25 @@ def count_name_changes_per_user(data: List[Dict[str, str]]) -> Counter:
 
 def display_name_changes(changes: Counter) -> None:
     """
-    Displays the number of name changes per user.
+    Displays the number of name changes per user in lexicographically sorted
+    order.
 
     Args:
-        changes: Counter object with email addresses and corresponding name
-        change counts.
+        changes (Counter): Counter object with email addresses and
+        corresponding name change counts.
     """
     for email, number_changes in sorted(changes.items()):
         print(f'{email}: {number_changes}')
 
 
-input_csv_path = '6_8_7/tests/name_log.csv'
+# Specify the path to the CSV file
+input_csv_path = './tests/name_log.csv'
 
-data = read_csv_file(input_csv_path, delimiter=',')
-changes = count_name_changes_per_user(data)
-
-display_name_changes(changes)
+# Main processing flow
+try:
+    data = read_csv_file(input_csv_path)
+    changes = count_name_changes_per_user(data)
+    display_name_changes(changes)
+except Exception as e:
+    # Catch and report any errors encountered during processing
+    print(f"An error occurred: {e}")
