@@ -27,8 +27,17 @@ def scrabble(symbols: str, word: str) -> bool:
     Returns:
         bool: True if the word can be formed from the symbols, False otherwise.
     """
-    return Counter(symbols.lower()) >= Counter(word.lower())
+    symbols_counter = Counter(symbols.lower())
+    word_counter = Counter(word.lower())
+
+    # Check if for every character in the word, there are enough symbols
+    # in the set
+    for char, count in word_counter.items():
+        if symbols_counter[char] < count:
+            return False
+    return True
 
 
-print(scrabble('bbbbbeeeeegggggggeeeeeekkkkk', 'Beegeek'))
-print(scrabble('begk', 'beegeek'))
+# Test cases
+print(scrabble('bbbbbeeeeegggggggeeeeeekkkkk', 'Beegeek'))  # Expected: True
+print(scrabble('begk', 'beegeek'))  # Expected: False
