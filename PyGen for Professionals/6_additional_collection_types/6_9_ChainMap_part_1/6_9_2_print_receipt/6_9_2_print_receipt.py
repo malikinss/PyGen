@@ -54,24 +54,27 @@ def get_max_string_length(strings: List[str]) -> int:
     return max(len(string) for string in strings)
 
 
-def calculate_total_price(order: Counter,
-                          total_ingredients: Dict[str, int]) -> int:
+def calculate_total_price(
+    order: Counter,
+    ingredient_prices: Dict[str, int] | ChainMap
+) -> int:
     """
     Calculates the total price of the order based on the selected ingredients.
 
     Args:
-        order (Counter): A counter object containing the ingredients and their
-        quantities.
-        total_ingredients (Dict[str, int]): A dictionary with ingredient
-        prices.
+        order (Counter): A counter object containing the ingredients and
+        their quantities.
+        ingredient_prices (Dict[str, int] | ChainMap): A dictionary with
+        ingredient prices.
 
     Returns:
         int: The total price of the order.
     """
-    price = 0
-    for ingredient, amount in order.items():
-        price += total_ingredients[ingredient] * amount
-    return price
+    total_price = sum(
+        ingredient_prices[ingredient] * amount
+        for ingredient, amount in order.items()
+    )
+    return total_price
 
 
 def generate_line(size: int) -> str:
@@ -84,58 +87,97 @@ def generate_line(size: int) -> str:
     Returns:
         str: A string containing dashes.
     """
-    return ''.ljust(size, '-')
+    return '-' * size
 
 
-def create_receipt(order: Counter) -> List[str]:
+def create_receipt(
+    order: Counter, ingredient_prices: Dict[str, int] | ChainMap
+) -> List[str]:
     """
     Prepares the receipt lines based on the order.
 
     Args:
-        order (Counter): A counter object containing the ingredients and their
-        quantities.
+        order (Counter): A counter object containing the ingredients and
+                         their quantities.
+        ingredient_prices (Dict[str, int] | ChainMap): A dictionary with
+                                                       ingredient prices.
 
     Returns:
         List[str]: A list of strings representing the receipt.
     """
-    total_price = calculate_total_price(order, total_ingredients)
+    total_price = calculate_total_price(order, ingredient_prices)
     sorted_order = sorted(order)
-    max_name_len = get_max_string_length(order.keys())
+    max_name_len = get_max_string_length(sorted_order)
 
-    receipt = [f'{ingredient.ljust(max_name_len)} x {order[ingredient]}' for ingredient in sorted_order]
-    receipt.append(f'ИТОГ: {total_price}р')
+    # Create each line for the ordered ingredients
+    receipt_lines = [
+        f'{ingredient.ljust(max_name_len)} x {order[ingredient]}'
+        for ingredient in sorted_order
+    ]
 
-    line_size = max(len(receipt[0]), len(receipt[-1]))
-    receipt.insert(-1, generate_line(line_size))
+    # Add a line for the total cost
+    receipt_lines.append(f'ИТОГ: {total_price}р')
 
-    return receipt
+    # Calculate the size of the line
+    line_size = max(len(receipt_lines[0]), len(receipt_lines[-1]))
+    receipt_lines.insert(-1, generate_line(line_size))
+
+    return receipt_lines
 
 
-def print_receipt(order: Counter) -> None:
+def print_receipt(
+    order: Counter,
+    ingredient_prices: Dict[str, int] | ChainMap
+) -> None:
     """
     Prints the receipt to the console.
 
     Args:
-        order (Counter): A counter object containing the ingredients and their
-        quantities.
+        order (Counter): A counter object containing the ingredients and
+        their quantities.
+        ingredient_prices (Dict[str, int] | ChainMap): A dictionary with
+        ingredient prices.
     """
-    receipt = create_receipt(order)
-    for row in receipt:
-        print(row)
+    receipt = create_receipt(order, ingredient_prices)
+    for line in receipt:
+        print(line)
 
 
 # Ingredient prices
-bread = {'булочка с кунжутом': 15, 'обычная булочка': 10, 'ржаная булочка': 15}
-meat = {'куриный бифштекс': 50, 'говяжий бифштекс': 70, 'рыбный бифштекс': 40}
-sauce = {'сливочно-чесночный': 15, 'кетчуп': 10, 'горчица': 10, 'барбекю': 15, 'чили': 15}
-vegetables = {'лук': 10, 'салат': 15, 'помидор': 15, 'огурцы': 10}
-toppings = {'сыр': 25, 'яйцо': 15, 'бекон': 30}
+bread = {
+    'булочка с кунжутом': 15,
+    'обычная булочка': 10,
+    'ржаная булочка': 15
+}
+meat = {
+    'куриный бифштекс': 50,
+    'говяжий бифштекс': 70,
+    'рыбный бифштекс': 40
+}
+sauce = {
+    'сливочно-чесночный': 15,
+    'кетчуп': 10,
+    'горчица': 10,
+    'барбекю': 15,
+    'чили': 15
+}
+vegetables = {
+    'лук': 10,
+    'салат': 15,
+    'помидор': 15,
+    'огурцы': 10
+}
+toppings = {
+    'сыр': 25,
+    'яйцо': 15,
+    'бекон': 30
+}
 
 # Combining all ingredient dictionaries
-total_ingredients = ChainMap(bread, meat, sauce, vegetables, toppings)
+ingredient_prices = ChainMap(bread, meat, sauce, vegetables, toppings)
 
 # Taking input from the user and counting the ingredients
-order = Counter(input().split(','))
+order_input = input("Enter ingredients separated by commas: ")
+order = Counter(order_input.split(','))
 
-# Printing the receipt
-print_receipt(order)
+print_receipt(order, ingredient_prices)
