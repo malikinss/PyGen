@@ -1,27 +1,29 @@
 '''
 TODO:
-        Implement a get_value() function that takes three arguments in the
-        following order:
-            chainmap is a ChainMap object whose elements are dictionaries
-            key is an arbitrary object
-            from_left is a Boolean value, which defaults to True
+    Implement a get_value() function that takes three arguments in the
+    following order:
+        chainmap is a ChainMap object whose elements are dictionaries
+        key is an arbitrary object
+        from_left is a Boolean value, which defaults to True
 
-        The function should return the value for the key from the chainmap,
-        where:
-            - If from_left is True, the key in the chainmap should be searched
-            from the first dictionary to the last
-            - If from_left is False, the key in the chainmap should be searched
-            from the last dictionary to the first
-            - If the key is not present in the chainmap, the function should
-            return None.
+    The function should return the value for the key from the chainmap,
+    where:
+        - If from_left is True, the key in the chainmap should be searched
+        from the first dictionary to the last
+        - If from_left is False, the key in the chainmap should be searched
+        from the last dictionary to the first
+        - If the key is not present in the chainmap, the function should
+        return None.
 '''
 from collections import ChainMap
 from typing import Any, Hashable
 
 
-def get_value(chainmap: ChainMap,
-              key: Hashable,
-              from_left: bool = True) -> Any:
+def get_value(
+    chainmap: ChainMap,
+    key: Hashable,
+    from_left: bool = True
+) -> Any:
     """
     Retrieve the value for a key from a ChainMap object.
 
@@ -36,12 +38,16 @@ def get_value(chainmap: ChainMap,
     Returns:
         Any: The value associated with the key if found; otherwise, None.
     """
-    result = None
+    if from_left:
+        # Search from left to right
+        for dictionary in chainmap.maps:
+            if key in dictionary:
+                return dictionary[key]
+    else:
+        # Search from right to left (reverse iteration)
+        for dictionary in reversed(chainmap.maps):
+            if key in dictionary:
+                return dictionary[key]
 
-    if key in chainmap:
-        if not from_left:
-            chainmap.maps.reverse()
-
-        result = chainmap.get(key)
-
-    return result
+    # If key not found, return None
+    return None
