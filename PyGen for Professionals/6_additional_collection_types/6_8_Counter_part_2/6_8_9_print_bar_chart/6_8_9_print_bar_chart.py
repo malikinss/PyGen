@@ -40,11 +40,12 @@ def get_sorted_counts(data: Union[str, List[str]]) -> List[Tuple[str, int]]:
     their frequency in descending order.
 
     Args:
-        data (Union[str, List[str]]): The input data which can be a string or
+        data (Union[str, List[str]]): The input data, either a string or
         a list of strings.
 
     Returns:
-        List[Tuple[str, int]]: A list of tuples with elements and their counts.
+        List[Tuple[str, int]]: A list of tuples with elements and their counts,
+        sorted by frequency in descending order.
     """
     return Counter(data).most_common()
 
@@ -54,19 +55,23 @@ def print_bar_chart(data: Union[str, List[str]], mark: str) -> None:
     Prints a bar chart representing the frequency of elements in the data.
 
     Args:
-        data (Union[str, List[str]]): The input data which can be a string or
+        data (Union[str, List[str]]): The input data, which can be a string or
         a list of strings.
         mark (str): A single character used to create the bar chart.
     """
+    # Get the sorted counts of characters or strings
     sorted_counts = get_sorted_counts(data)
 
-    # Determine the maximum length of item names for formatting
+    # Determine the maximum length of item names for consistent formatting
     max_item_length = max(len(item) for item, _ in sorted_counts)
 
     # Print each element and its count represented by the mark character
     for item, count in sorted_counts:
+        # Use ljust to pad the item name to align with the longest item
         print(f'{item.ljust(max_item_length)} |{mark * count}')
 
 
+# Example usage
 if __name__ == '__main__':
     print_bar_chart('beegeek', '+')
+    print_bar_chart(['apple', 'banana', 'apple', 'cherry'], '*')
