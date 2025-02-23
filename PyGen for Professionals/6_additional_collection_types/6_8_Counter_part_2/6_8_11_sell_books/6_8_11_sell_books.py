@@ -58,44 +58,58 @@ NOTE:
 from collections import Counter
 
 
-def sell_book(available_books: Counter) -> int:
+def sell_book(
+    available_books: Counter, class_number: int, given_price: int
+) -> int:
     """
     Simulates the selling process for each customer.
 
+    Args:
+        available_books: Counter object with available books per class.
+        class_number: The class number the customer wants to buy.
+        given_price: The amount the customer is willing to pay.
+
     Returns:
-        int: The amount earned from selling books.
+        int: The amount earned from selling the book, or 0 if the book is
+        not available.
     """
-    chosen_book, given_price = input().split()
-
-    if available_books[chosen_book] > 0:
-        available_books[chosen_book] -= 1
-        return int(given_price)
-
+    if available_books[class_number] > 0:
+        available_books[class_number] -= 1
+        return given_price
     return 0
 
 
-def sell_books(available_books: Counter) -> int:
+def sell_books(available_books: Counter, customers: list) -> int:
     """
     Sells books to customers based on available stock and customer requests.
 
     Args:
-        available_books (Counter): Counter object representing available books
-        per class.
-        customers_number (int): Number of customers.
+        available_books: Counter object representing available books per class.
+        customers: List of tuples (class_number, price).
 
     Returns:
         int: Total income earned from selling books.
     """
-    customers_number = int(input())
     total_income = 0
 
-    for _ in range(customers_number):
-        total_income += sell_book(available_books)
+    for class_number, price in customers:
+        total_income += sell_book(available_books, class_number, price)
 
     return total_income
 
 
 if __name__ == '__main__':
-    available_books = Counter(input().split())
-    total_income = sell_books(available_books)
+    # Reading available books (class_number counts)
+    available_books = Counter(map(int, input().split()))
+
+    # Reading the number of customers
+    n = int(input())
+
+    # Reading customer requests (class_number and price offered)
+    customers = [tuple(map(int, input().split())) for _ in range(n)]
+
+    # Calculate the total income
+    total_income = sell_books(available_books, customers)
+
+    # Output the total income
     print(total_income)
