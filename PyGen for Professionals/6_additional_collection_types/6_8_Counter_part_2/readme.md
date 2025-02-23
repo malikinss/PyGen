@@ -1,12 +1,12 @@
-## Lesson 6.8: Counter Data Type (Part 2) 📚
+# Lesson 6.8: Counter Data Type (Part 2) 📚
 
-### Description 📝
+## Description 📝
 
 In this lesson, I explore **Counter**, a powerful subclass of `dict` in Python's **collections module**.
 The **Counter** data type is designed to count hashable objects and provides a variety of useful methods for counting and performing operations on data.
 This lesson focuses on several methods and operators available in **Counter**, including `most_common()`, `elements()`, and various operators like `+`, `-`, `&`, and `|`.
 
-### Purpose 🎯
+## Purpose 🎯
 
 By the end of this lesson, I will:
 
@@ -14,7 +14,7 @@ By the end of this lesson, I will:
 -   Learn to implement practical tasks using **Counter**, like finding the most and least common items, processing word sequences, and more.
 -   Gain experience with additional **Counter** operators and methods like `total()`, `subtract()`, and others.
 
-### How It Works 🔍
+## How It Works 🔍
 
 This lesson covers 11 practical tasks related to **Counter**:
 
@@ -73,14 +73,14 @@ This lesson covers 11 practical tasks related to **Counter**:
 -   **Objective:** Calculate the total income from book sales, processing customer orders and tracking available stock.
 -   **Use:** This task involves using **Counter** to manage inventory and calculate income based on book sales to customers.
 
-### Output 📜
+## Output 📜
 
 After completing the tasks, I will:  
 ✅ Implement methods like `most_common()`, `elements()`, and `total()`.  
 ✅ Perform operations like `+`, `-`, `&`, and `|` with **Counter**.  
 ✅ Apply **Counter** for real-world use cases such as word frequency analysis, inventory management, and data visualization.
 
-### Conclusion 🚀
+## Conclusion 🚀
 
 Through this lesson, I learned how to use **Counter** effectively for counting and manipulating hashable items.
 From finding the most or least frequent items to performing arithmetic operations and working with real-world examples like book sales and name change tracking, **Counter** proves to be a versatile tool for data analysis and processing.
