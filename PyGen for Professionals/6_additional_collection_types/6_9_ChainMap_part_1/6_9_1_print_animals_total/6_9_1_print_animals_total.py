@@ -31,11 +31,11 @@ NOTE:
     All keys in JSON objects are guaranteed to be distinct.
 '''
 import json
-from typing import Dict, List
+from typing import List, Dict
 from collections import ChainMap
 
 
-def read_json_file(file_path: str) -> List[Dict[str, str]]:
+def read_json_file(file_path: str) -> List[Dict[str, int]]:
     """
     Read JSON data from a file.
 
@@ -43,24 +43,35 @@ def read_json_file(file_path: str) -> List[Dict[str, str]]:
         file_path (str): Path to the JSON file.
 
     Returns:
-        List[Dict[str, str]]: List of dictionaries containing JSON data.
+        List[Dict[str, int]]: List of dictionaries containing animal counts.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return json.load(file)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: The file at '{file_path}' was not found.")
+        return []
+    except json.JSONDecodeError:
+        print("Error: Failed to decode JSON from the file.")
+        return []
 
 
-def count_total_animals(zoo_data: Dict[str, int]) -> int:
+def count_total_animals(zoo_data: List[Dict[str, int]]) -> int:
     """
     Count the total number of animals in the zoo.
 
     Args:
-        zoo_data (Dict[str, int]): Dictionary containing animal names as keys
-        and their counts as values.
+        zoo_data (List[Dict[str, int]]): List of dictionaries containing animal
+        names as keys and their counts as values.
 
     Returns:
         int: Total number of animals in the zoo.
     """
-    return sum(zoo_data.values())
+    # Merging all dictionaries into one using ChainMap
+    merged_data = ChainMap(*zoo_data)
+    # Summing the values of all animals
+    total = sum(merged_data.values())
+    return total
 
 
 def print_animals_total(filename: str) -> None:
@@ -71,9 +82,13 @@ def print_animals_total(filename: str) -> None:
     Args:
         filename (str): Path to the JSON file.
     """
-    data = ChainMap(*read_json_file(filename))
+    zoo_data = read_json_file(filename)
+    if zoo_data:
+        total_animals = count_total_animals(zoo_data)
+        print(f"Total number of animals in the zoo: {total_animals}")
+    else:
+        print("No data available to process.")
 
-    print(count_total_animals(data))
 
-
+# Example usage
 print_animals_total('zoo.json')
