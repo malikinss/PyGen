@@ -25,6 +25,22 @@ print(numbers)
 
 
 # fixed code
-a = int(input())
-b = int(input())
-print([i for i in range(a, b+1) if i % 7 == 0])
+def divisible_by_seven(a: int, b: int) -> list[int]:
+    """
+    Returns a list of integers between a and b (inclusive) that are divisible
+    by 7.
+
+    Args:
+        a (int): The starting integer.
+        b (int): The ending integer.
+
+    Returns:
+        list[int]: A list of integers divisible by 7.
+    """
+    return [i for i in range(a, b + 1) if i % 7 == 0]
+
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print(divisible_by_seven(a, b))
