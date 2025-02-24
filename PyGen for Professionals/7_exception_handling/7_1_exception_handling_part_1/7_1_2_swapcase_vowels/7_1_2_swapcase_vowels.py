@@ -13,6 +13,8 @@ NOTE:
     It is known that each error affects only one string and can be corrected
     without changing other strings.
 '''
+
+
 # original code
 def swapcase_vowels(string):
     vowels = 'aeiouy'
@@ -27,14 +29,15 @@ def swapcase_vowels(string):
 
 
 # fixed code
-def swapcase_vowels(string):
+def swapcase_vowels2(string: str) -> str:
+    """
+    Replaces all Latin vowels in the given string with uppercase letters.
+
+    Args:
+        string (str): The input string.
+
+    Returns:
+        str: The modified string with vowels in uppercase.
+    """
     vowels = 'aeiouy'
-    swapped_string = ''
-
-    for char in string:
-        if char in vowels:
-            char = char.upper()
-
-        swapped_string += char
-
-    return swapped_string
+    return ''.join(char.upper() if char in vowels else char for char in string)
