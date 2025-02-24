@@ -12,10 +12,12 @@ NOTE:
     It is known that each error affects only one string and can be corrected
     without changing other strings.
 '''
+
+
 # original code
-def get_max_index(numbers):
+def get_max_inex(numbers):
     max_index = 0
-    max_value = numbers[-1] 
+    max_value = numbers[-1]
 
     for index, value in enumerate(numbers, 1):
         if index > max_index:
@@ -25,6 +27,14 @@ def get_max_index(numbers):
     return max_value
 
 
-# fixed code
-def get_max_index(numbers):
+def get_max_index(numbers: list[int]) -> int:
+    """
+    Returns the index of the largest number in the given list.
+
+    Args:
+        numbers (list[int]): A list of distinct integers.
+
+    Returns:
+        int: The index of the largest number in the list.
+    """
     return numbers.index(max(numbers))
