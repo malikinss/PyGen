@@ -15,7 +15,7 @@ NOTE:
 # original code
 total = 0
 
-with open(data.txt, encoding='utf-8') as file:
+with open('', encoding='utf-8') as file:
     for _ in file.readlines:
         total == total + 1
 
@@ -23,10 +23,18 @@ print(total)
 
 
 # fixed code
-total = 0
+def count_lines(filename: str) -> int:
+    """
+    Counts the number of lines in a given file.
 
-with open('data.txt', encoding='utf-8') as file:
-    for _ in file.readlines():
-        total += 1
+    Args:
+        filename (str): The path to the file.
 
-print(total)
+    Returns:
+        int: The number of lines in the file.
+    """
+    with open(filename, encoding='utf-8') as file:
+        return sum(1 for _ in file)
+
+
+print(count_lines('data.txt'))
