@@ -25,28 +25,31 @@ NOTE:
 from typing import Any, Dict, Hashable
 
 
-def add_to_list_in_dict(data: Dict[Hashable, list],
-                        key: Hashable,
-                        element: Any) -> None:
+def add_to_list_in_dict(
+    data: Dict[Hashable, list],
+    key: Hashable,
+    element: Any
+) -> None:
     """
-    Adds an element to the list at the given key in the data dictionary.
+    Adds an element to the list at the specified key in the data dictionary.
 
-    If the key does not exist in the dictionary, it initializes an empty list
-    for that key before adding the element to the list.
+    If the key does not exist in the dictionary, the function initializes
+    an empty list for that key and then adds the element to the list.
 
     Parameters:
-        data (Dict[Hashable, list]): The dictionary of lists.
-        key (Hashable): The key where the element should be added.
+        data (Dict[Hashable, list]): A dictionary where values are lists.
+        key (Hashable): The key in the dictionary where the element should
+                        be added.
         element (Any): The element to add to the list.
 
     Returns:
-        None
+        None: The function modifies the dictionary in place and returns
+        nothing.
+
     """
     try:
         _ = data[key]
     except KeyError:
-        data.update({key: []})
+        data[key] = []
     finally:
         data[key].append(element)
-
-    return None
