@@ -24,8 +24,18 @@ from calendar import month_name
 
 def print_month_name() -> None:
     """
-    Reads an integer from input and prints the corresponding month name.
-    If the input is not an integer or is out of range, prints an error message.
+    Reads an integer input representing a month number and prints the
+    corresponding month name.
+
+    If the input is a valid integer within the range [1, 12], the program will
+    print the full name of the month.
+
+    If the input is not a valid integer, an error message will be displayed:
+        'The entered value is incorrect'.
+
+    If the integer is out of the valid range, an error message will
+    be displayed:
+        'The entered number is from an invalid range'.
     """
     months = {key: month_name[key] for key in range(1, 13)}
 
