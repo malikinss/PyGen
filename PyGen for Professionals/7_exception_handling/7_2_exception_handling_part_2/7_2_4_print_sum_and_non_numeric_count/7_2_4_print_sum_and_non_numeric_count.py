@@ -13,13 +13,19 @@ TODO:
 NOTE:
     If no numbers were entered, the sum is 0.
 """
-
 import sys
 from typing import List, Tuple
 
 
 def read_input() -> List[str]:
-    """Reads input from stdin and returns a list of stripped lines."""
+    """
+    Reads multiple lines of input from stdin, strips leading/trailing
+    whitespace, and returns the lines as a list of strings.
+
+    Returns:
+        List[str]: A list of input lines with leading and trailing whitespace
+        removed.
+    """
     return [line.strip() for line in sys.stdin.readlines()]
 
 
@@ -27,14 +33,16 @@ def split_to_numbers_and_non_numbers(
     data: List[str]
 ) -> Tuple[List[float], List[str]]:
     """
-    Splits the input data into numbers and non-numbers.
+    Processes a list of input strings, separating them into numeric values and
+    non-numeric values.
 
     Args:
-        data (List[str]): List of input strings.
+        data (List[str]): A list of strings representing input data.
 
     Returns:
-        Tuple[List[float], List[str]]: A tuple containing a list of numbers
-        and a list of non-numeric values.
+        Tuple[List[float], List[str]]: A tuple where the first element
+        is a list of numeric values (converted to float) and the second
+        element is a list of non-numeric values.
     """
     numbers = []
     non_numbers = []
@@ -53,15 +61,15 @@ def print_sum_and_non_numeric_count(
     numbers: List[float], non_numbers: List[str]
 ) -> None:
     """
-    Prints the sum of numbers and the count of non-numeric values.
+    Prints the sum of all numeric values and the count of non-numeric entries.
 
     Args:
-        numbers (List[float]): List of numeric values.
-        non_numbers (List[str]): List of non-numeric values.
+        numbers (List[float]): A list of numeric values (int or float).
+        non_numbers (List[str]): A list of non-numeric values encountered
+        in the input.
     """
     total_sum = sum(numbers)
 
-    # Convert to int if the sum is an integer
     if total_sum == int(total_sum):
         total_sum = int(total_sum)
 
