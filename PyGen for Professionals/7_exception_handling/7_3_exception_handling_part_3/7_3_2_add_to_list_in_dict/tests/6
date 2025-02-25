@@ -1,0 +1,9 @@
+data = {'a': [1, 2, 3], 'b': [4, 5, 6], 'c': [4, 5, 6]}
+add_to_list_in_dict(data, 'a', True)
+add_to_list_in_dict(data, 'a', -90)
+add_to_list_in_dict(data, 'b', False)
+add_to_list_in_dict(data, 'b', 'beegeek')
+add_to_list_in_dict(data, 'b', None)
+add_to_list_in_dict(data, 'c', [])
+
+print(data)

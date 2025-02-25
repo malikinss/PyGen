@@ -1,0 +1,4 @@
+data = {}
+add_to_list_in_dict(data, 'c', 7)
+
+print(data)
