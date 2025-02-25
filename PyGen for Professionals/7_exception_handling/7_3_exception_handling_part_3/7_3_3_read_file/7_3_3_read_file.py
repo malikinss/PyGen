@@ -22,17 +22,22 @@ NOTE:
 
 def read_file(filename: str) -> None:
     """
-    Reads the contents of a file and prints it.
-    If the file is not found, prints an error message.
+    Reads and prints the contents of the specified file. If the file is
+    not found, prints an error message.
 
     Args:
-        filename (str): The name of the file to read.
+        filename (str): The name of the text file to read, including
+        its extension.
+
+    Returns:
+        None: If the file exists, its content is printed. If the file is
+        not found, an error message is printed.
     """
     try:
         with open(filename, 'r', encoding='utf-8') as file_handle:
             print(file_handle.read())
     except FileNotFoundError:
-        print('Файл не найден')
+        print('File not found')
 
 
 read_file(input())
