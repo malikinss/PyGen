@@ -1,0 +1,4 @@
+LengthError
+DigitError
+LetterError
+Success!

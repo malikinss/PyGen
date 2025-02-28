@@ -1,0 +1,9 @@
+LetterError
+DigitError
+LengthError
+LengthError
+LengthError
+LetterError
+LetterError
+LetterError
+Success!
