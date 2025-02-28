@@ -39,11 +39,13 @@ def get_weekday(number) -> str:
     """
     # Check if the argument is an integer
     if not isinstance(number, int):
-        raise TypeError('Аргумент не является целым числом')
+        raise TypeError("The argument is not an integer")
 
     # Check if the number is within the range 1 to 7
     if number not in range(1, 8):
-        raise ValueError('Аргумент не принадлежит требуемому диапазону')
+        raise ValueError(
+            "The argument does not belong to the required range"
+        )
 
     # Return the name of the weekday
     return days[number]
