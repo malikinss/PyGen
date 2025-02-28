@@ -1,0 +1,7 @@
+try:
+    print(get_weekday(7))
+except Exception as err:
+    print(err)
+    print(type(err))
+else:
+    print('Без ошибок')
