@@ -1,33 +1,33 @@
 '''
 TODO:
-        Let's call a password good if:
-            - its length is 9 or more characters
-            - it contains upper and lower case letters of any alphabet
-            - it contains at least one digit
+    Let's call a password good if:
+        - its length is 9 or more characters
+        - it contains upper and lower case letters of any alphabet
+        - it contains at least one digit
 
-        Write a program that requires entering a new password until a good one
-        is entered.
+    Write a program that requires entering a new password until a good one
+    is entered.
 
-        Input data format:
-            The program is given an arbitrary number of passwords, each on a
-            separate line. It is guaranteed that there is a good one
-            among them.
+    Input data format:
+        The program is given an arbitrary number of passwords, each on a
+        separate line. It is guaranteed that there is a good one
+        among them.
 
-        Output data format:
-            For each password entered, the program should output the text:
-                - LengthError, if the length of the entered password is less
-                than 9 characters
-                - LetterError, if all the letters in it have the same case or
-                are missing
-                - DigitError, if there are no digits in it
-                - Success!, if the entered password is good
+    Output data format:
+        For each password entered, the program should output the text:
+            - LengthError, if the length of the entered password is less
+            than 9 characters
+            - LetterError, if all the letters in it have the same case or
+            are missing
+            - DigitError, if there are no digits in it
+            - Success!, if the entered password is good
 
-        After entering a good password, all subsequent passwords should
-        be ignored.
+    After entering a good password, all subsequent passwords should
+    be ignored.
 
 NOTE:
-        The priority of the error message output in case of failure of several
-        conditions is LengthError, then LetterError, and then DigitError.
+    The priority of the error message output in case of failure of several
+    conditions is LengthError, then LetterError, and then DigitError.
 '''
 
 
@@ -35,15 +35,15 @@ class PasswordError(Exception):
     pass
 
 
-class LengthError(Exception):
+class LengthError(PasswordError):
     pass
 
 
-class LetterError(Exception):
+class LetterError(PasswordError):
     pass
 
 
-class DigitError(Exception):
+class DigitError(PasswordError):
     pass
 
 
@@ -99,51 +99,54 @@ def has_digit(password: str) -> bool:
     return any(char.isdigit() for char in password)
 
 
-def validate_password(password: str) -> bool:
+def validate_password(password: str):
     """
-    Checks if the password is good using the LBYL (Look Before You Leap)
-    approach.
-
-    A good password meets the following criteria:
-    - At least 9 characters long
+    Validates the password based on specific criteria:
+    - Length is 9 or more characters
     - Contains both uppercase and lowercase letters
     - Contains at least one digit
 
-    Arguments:
-        password (str): The password to check.
-
-    Returns:
-        bool: True if the password meets all criteria, otherwise False.
+    Raises:
+        LengthError: If password is less than 9 characters long.
+        LetterError: If password has no letters or all letters have the
+                     same case.
+        DigitError: If password has no digits.
     """
     if not is_sufficient_length(password):
-        raise LengthError
+        raise LengthError("Password must be at least 9 characters long.")
 
     if not has_uppercase(password) or not has_lowercase(password):
-        raise LetterError
+        raise LetterError(
+            "Password must contain both uppercase and lowercase letters."
+        )
 
     if not has_digit(password):
-        raise DigitError
-
-    return True
+        raise DigitError("Password must contain at least one digit.")
 
 
 def prompt_for_password():
     """
     Continuously prompts the user for a password until a valid one is entered.
 
-    Raises:
-        LengthError, LetterError, DigitError: If the password does not meet
-        criteria.
+    Output:
+        Prints error message for invalid passwords and 'Success!'
+        for the valid one.
     """
     while True:
+        password = input("Enter password: ")
+
         try:
-            password = input()
             validate_password(password)
+        except LengthError:
+            print("LengthError")
+        except LetterError:
+            print("LetterError")
+        except DigitError:
+            print("DigitError")
+        else:
+            print("Success!")
             break
-        except PasswordError as e:
-            print(type(e).__name__)
-
-    print('Success!')
 
 
+# Run the password prompt function
 prompt_for_password()
