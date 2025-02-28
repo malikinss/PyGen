@@ -27,23 +27,21 @@ import json
 
 def load_json_file(file_path: str) -> None:
     """
-    Reads JSON data from a file and prints it.
+    Reads and prints the contents of a JSON file.
 
     Args:
         file_path (str): Path to the JSON file.
 
-    Raises:
-        FileNotFoundError: If the file does not exist.
-        json.JSONDecodeError: If the file contains invalid JSON data.
+    If the file is not found, prints "File not found".
+    If the file contains invalid JSON, prints "Deserialization error".
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
-            content = json.load(file)
-            print(content)
+            print(json.load(file))
     except FileNotFoundError:
-        raise FileNotFoundError('Файл не найден')
+        print("File not found")
     except json.JSONDecodeError:
-        raise json.JSONDecodeError('Ошибка при десериализации')
+        print("Deserialization error")
 
 
 # Prompt user for input and call the function
