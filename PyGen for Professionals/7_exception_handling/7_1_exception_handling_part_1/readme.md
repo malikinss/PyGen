@@ -1,11 +1,11 @@
-## Lesson 7.1: Exception Handling Part 1 ⚠️
+# Lesson 7.1: Exception Handling Part 1 ⚠️
 
-### Description 📝
+## Description 📝
 
 This lesson focuses on **exception handling**, exploring different **error types**, and how to **work with return codes**.
 I'll learn to identify errors in my code, understand various error types, and handle them effectively to prevent my program from crashing.
 
-### Purpose 🎯
+## Purpose 🎯
 
 The lesson will teach me how to:
 
@@ -13,7 +13,7 @@ The lesson will teach me how to:
 -   Work with return codes to handle errors in my program gracefully.
 -   Correct faulty code by using exception handling mechanisms.
 
-### Study Material 🔍
+## Study Material 🔍
 
 1. **Error Types** 🚨  
    I'll learn about common types of errors, such as syntax errors, runtime errors, and logical errors, and how to handle them using **try** and **except** blocks.
@@ -24,7 +24,7 @@ The lesson will teach me how to:
 3. **Practical Tasks** 💻  
    The lesson presents 4 tasks where I will fix errors in different programs by applying exception handling techniques.
 
-### Tasks and Code Snippets 🔍
+## Tasks and Code Snippets 🔍
 
 1. **7_1_1_review_code** - Line Counter 📝  
    The program counts the number of lines in a given text file and prints the result.
@@ -50,7 +50,7 @@ The lesson will teach me how to:
 
     **Goal:** Handle scenarios where the list might be empty or contain invalid elements.
 
-### Conclusion 🚀
+## Conclusion 🚀
 
 By the end of this lesson, I'll be equipped with the knowledge to handle errors in my programs using exception handling techniques.
 I’ll also learn how to work with return codes to control my program flow more efficiently.
