@@ -1,0 +1,4 @@
+try:
+    print(is_good_password('4abcdABC8'))
+except Exception as err:
+    print(type(err))

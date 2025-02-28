@@ -1,0 +1,4 @@
+try:
+    print(is_good_password('!@#$%^&*()_+'))
+except Exception as err:
+    print(type(err))
