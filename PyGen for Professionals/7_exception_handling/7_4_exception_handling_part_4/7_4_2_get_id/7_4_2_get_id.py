@@ -33,41 +33,38 @@ from typing import List
 
 def is_name_correct(name: str) -> bool:
     """
-    Check if the name is a valid student name.
+    Checks if the given name is valid.
     A valid name starts with a capital letter followed by lowercase letters.
 
     Args:
-        name (str): The name to be checked.
+        name (str): The name to check.
 
     Returns:
         bool: True if the name is valid, False otherwise.
     """
-    return name.isalpha() and name.istitle()
+    return name.isalpha() and name[0].isupper() and name[1:].islower()
 
 
-def get_id(names: List[str], name) -> int:
+def get_id(names: List[str], name: str) -> int:
     """
-    Get the identification number for a new student.
+    Returns the identification number for a new student.
     The ID is the current number of students plus one.
 
     Args:
-        student_names (List[str]): List of names of current students.
-        new_student_name (str): The name of the incoming student.
+        names (List[str]): A list of current students' names.
+        name (str): The name of the new student.
 
     Returns:
         int: The new student's identification number.
 
     Raises:
-        TypeError: If new_student_name is not a string.
-        ValueError: If new_student_name is not a valid name.
+        TypeError: If name is not a string.
+        ValueError: If name is not a valid student name.
     """
     if not isinstance(name, str):
-        raise TypeError('Имя не является строкой')
+        raise TypeError("Name is not a string")
 
     if not is_name_correct(name):
-        raise ValueError('Имя не является корректным')
+        raise ValueError("Name is not valid")
 
-    # The new student's ID is the current number of students plus one
-    new_student_id = len(names) + 1
-
-    return new_student_id
+    return len(names) + 1
