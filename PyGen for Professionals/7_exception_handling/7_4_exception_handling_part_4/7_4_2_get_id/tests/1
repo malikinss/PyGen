@@ -1,0 +1,4 @@
+names = ['Timur', 'Anri', 'Dima']
+name = 'Arthur'
+
+print(get_id(names, name))

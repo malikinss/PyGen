@@ -1,0 +1,7 @@
+names = ['Timur', 'Anri', 'Dima', 'Arthur']
+name = '123Ruslan'
+
+try:
+    print(get_id(names, name))
+except ValueError as e:
+    print(e)
