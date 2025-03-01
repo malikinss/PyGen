@@ -13,27 +13,26 @@ TODO:
 from typing import List, Union
 
 
-def recursive_sum(nested_list: Union[int, List[Union[int, List]]]) -> int:
+def recursive_sum(nested_list: List[Union[int, List]]) -> int:
     """
     Recursively calculates the sum of all integers in a nested list.
 
     Args:
-        nested_list (int | list): A list containing integers or other nested
-        lists.
+        nested_list (list): A list that contains integers or other nested
+        lists (which can also contain integers or nested lists).
 
     Returns:
-        total (int): The sum of all integers in the nested list.
+        int: The sum of all integers in the nested list, or 0 if the list
+        is empty.
     """
     total = 0
 
-    # If the current element is an integer, add it to the total
-    if isinstance(nested_list, int):
-        total += nested_list
-    else:
-        # If the current element is a list, recursively sum its elements
-        # No need to check if the list is empty because if it is,
-        # the 'for' loop will simply not execute and 'total' will remain 0.
-        for element in nested_list:
+    # Traverse each element in the nested list
+    for element in nested_list:
+        if isinstance(element, int):
+            total += element  # If element is an integer, add it to the total
+        else:
+            # If element is a list, recurse into it
             total += recursive_sum(element)
 
     return total
