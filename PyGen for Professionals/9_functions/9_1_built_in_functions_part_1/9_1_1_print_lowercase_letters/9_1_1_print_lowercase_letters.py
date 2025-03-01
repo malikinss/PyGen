@@ -13,10 +13,13 @@ NOTE:
 from string import ascii_lowercase
 
 
-def print_lowercase_letters_1() -> None:
+def print_lowercase_letters() -> None:
     """
-    Prints all lowercase Latin letters, each on a separate line using unicode
-    manipulation.
+    Prints all lowercase Latin letters, each on a separate line using
+    different approaches:
+    1. Using ord() and chr()
+    2. Using ascii_lowercase from string module
+    3. Using unpacking with newline separator
 
     Args:
         None
@@ -24,37 +27,16 @@ def print_lowercase_letters_1() -> None:
     Returns:
         None
     """
+    # Method 1: Using ord() and chr()
     for unicode_id in range(ord('a'), ord('z') + 1):
         print(chr(unicode_id))
 
-
-def print_lowercase_letters_2() -> None:
-    """
-    Prints all lowercase Latin letters, each on a separate line using
-    ascii_lowercase from string module.
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
+    # Method 2: Using ascii_lowercase from string module
     for letter in ascii_lowercase:
         print(letter)
 
-
-def print_lowercase_letters_3() -> None:
-    """
-    Prints all lowercase Latin letters, each on a separate line using
-    unpacking with newline separator.
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
+    # Method 3: Using unpacking with newline separator
     print(*ascii_lowercase, sep='\n')
 
 
-print_lowercase_letters_1()
+print_lowercase_letters()
