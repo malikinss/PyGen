@@ -26,8 +26,12 @@ def draw_hourglass() -> None:
     """
     Draws an hourglass shape using digits 1 through 4, recursively.
 
-    The hourglass is symmetrical with decreasing and increasing layers
-    from top to bottom.
+    This function prints the top and bottom halves of the hourglass,
+    with decreasing and then increasing numbers of repeated digits.
+
+    The hourglass shape is formed by starting with '1' repeated 16 times
+    and decreasing by 4 digits at each step until '4', then reversing
+    the pattern.
     """
 
     def draw_layer(digit_value: int, repeat_count: int) -> None:
