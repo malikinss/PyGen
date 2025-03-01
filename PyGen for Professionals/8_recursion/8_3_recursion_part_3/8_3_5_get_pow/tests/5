@@ -1,0 +1,1 @@
+print(get_pow(8, 4))
