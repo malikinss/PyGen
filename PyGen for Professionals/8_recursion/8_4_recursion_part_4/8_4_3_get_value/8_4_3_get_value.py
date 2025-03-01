@@ -18,7 +18,9 @@ NOTE:
 from typing import Dict, Hashable, Any
 
 
-def get_value(nested_dict: Dict[str, Any], key: Hashable) -> Any:
+def get_value(
+    nested_dict: Dict[Hashable, Any], key: Hashable
+) -> Any:
     """
     Retrieve the value associated with the given key from a nested dictionary.
 
@@ -29,18 +31,20 @@ def get_value(nested_dict: Dict[str, Any], key: Hashable) -> Any:
     Returns:
         Any: The value associated with the given key.
     """
+    # Check if the key is directly in the current dictionary
     if key in nested_dict:
         return nested_dict[key]
 
-    for sub_dict in nested_dict.values():
-        if isinstance(sub_dict, dict):
-            found_value = get_value(sub_dict, key)
+    # Otherwise, recursively check all values that are dictionaries
+    for value in nested_dict.values():
+        if isinstance(value, dict):
+            found_value = get_value(value, key)
 
-            # If found_value is not None, return it
             if found_value is not None:
                 return found_value
 
 
+# Example data
 data = {
     'firstName': 'Тимур',
     'lastName': 'Гуев',
