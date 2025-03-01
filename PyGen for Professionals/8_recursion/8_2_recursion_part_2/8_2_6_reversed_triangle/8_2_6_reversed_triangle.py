@@ -40,6 +40,3 @@ def triangle(h: int) -> None:
             print('*' * current_height)
 
     print_triangle_lines(h)
-
-
-triangle(5)
