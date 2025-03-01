@@ -20,22 +20,24 @@ NOTE:
 from typing import Dict, Hashable, Any, Set
 
 
-def get_all_values(nested_dicts: Dict[str, Any],
-                   key: Hashable) -> Set[Any]:
+def get_all_values(
+    nested_dicts: Dict[Hashable, Any],
+    key: Hashable
+) -> Set[Any]:
     """
     Retrieve all values associated with the given key from a nested dictionary.
 
     Args:
-        nested_dicts (Dict[str, Any]): A dictionary that may contain other
-        dictionaries.
+        nested_dicts (Dict[Hashable, Any]): A dictionary that may contain other
+                                            dictionaries or arbitrary objects.
         key (Hashable): The key to search for in the nested dictionaries.
 
     Returns:
-        values (Set[Any]): A set of values associated with the given key.
+        Set[Any]: A set of values associated with the given key.
     """
     values = set()
 
-    # Check if the key exists at the current level and add it to the set
+    # If the key exists at the current level, add it to the result set
     if key in nested_dicts:
         values.add(nested_dicts[key])
 
@@ -47,19 +49,19 @@ def get_all_values(nested_dicts: Dict[str, Any],
     return values
 
 
+# Example dictionary
 my_dict = {
-           'Arthur': {'hobby': 'videogames', 'drink': 'cacao'},
-           'Timur': {'hobby': 'math'},
-           'Dima': {
-                   'hobby': 'CS',
-                   'sister':
-                       {
-                         'name': 'Anna',
-                         'hobby': 'TV',
-                         'age': 14
-                       }
-                   }
-           }
+    'Arthur': {'hobby': 'videogames', 'drink': 'cacao'},
+    'Timur': {'hobby': 'math'},
+    'Dima': {
+        'hobby': 'CS',
+        'sister': {
+            'name': 'Anna',
+            'hobby': 'TV',
+            'age': 14
+        }
+    }
+}
 
 result = get_all_values(my_dict, 'hobby')
 print(*sorted(result))
