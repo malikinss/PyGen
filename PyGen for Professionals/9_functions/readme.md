@@ -26,7 +26,14 @@ By the end of this lesson, I will:
 2. 9_2_built_in_functions_part_2
 
 ```
-
+# Lesson 9.2: Built-in Functions part 2 🔧
+This lesson focuses on **useful built-in functions** in Python, specifically functions like `callable()`, `hasattr()`, `help()`, `repr()`, `hash()`, `eval()`, and `exec()`.
+These functions are key tools for checking attributes, evaluating expressions, debugging, and interacting with Python objects and the runtime environment.
+By the end of this lesson, I will:
+-   Understand how to use **`callable()`** and **`hasattr()`** to interact with functions and objects.
+-   Learn how to utilize **`help()`** and **`repr()`** for debugging and providing better object representations.
+-   Be able to apply **`hash()`** to manage hashable objects in data structures.
+-   Use **`eval()`** and **`exec()`** to dynamically evaluate expressions and execute Python code.
 ```
 
 3. 9_3_anonymous_functions_map_filter
