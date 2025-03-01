@@ -15,6 +15,7 @@ TODO:
 def recursive_sum(a: int, b: int) -> int:
     """
     Calculate the sum of two non-negative integers using recursion.
+    This function only uses +1 and -1 operations and no loops.
 
     Args:
         a (int): The first non-negative integer.
@@ -24,9 +25,13 @@ def recursive_sum(a: int, b: int) -> int:
         int: The sum of the two integers.
     """
     if a == 0:
-        return b  # If 'a' is 0, return 'b' as the sum.
+        return b  # Base case: when 'a' is 0, return 'b'.
     elif b == 0:
-        return a  # If 'b' is 0, return 'a' as the sum.
+        return a  # Base case: when 'b' is 0, return 'a'.
 
-    # Recurse by decreasing 'a' and increasing 'b'.
+    # Recursive case: Decrease 'a' by 1 and increase 'b' by 1.
     return recursive_sum(a - 1, b + 1)
+
+
+# Test the function
+print(recursive_sum(5, 3))  # Output should be 8
