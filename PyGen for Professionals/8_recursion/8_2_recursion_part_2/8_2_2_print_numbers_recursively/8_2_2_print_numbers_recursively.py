@@ -13,19 +13,10 @@ def print_numbers_recursively(start: int, end: int) -> None:
         start (int): The starting number of the sequence.
         end (int): The ending number of the sequence.
     """
-    def print_single_number(num: int) -> None:
-        """
-        Recursively prints a single number and calls itself for the next
-        number.
-
-        Args:
-            num (int): The current number to print.
-        """
-        if num <= end:
-            print(num)
-            print_single_number(num + 1)
-
-    print_single_number(start)
+    if start <= end:
+        print(start)
+        print_numbers_recursively(start + 1, end)
 
 
+# Call the function to print numbers from 1 to 100
 print_numbers_recursively(1, 100)
