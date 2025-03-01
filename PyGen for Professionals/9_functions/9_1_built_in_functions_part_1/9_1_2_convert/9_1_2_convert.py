@@ -16,22 +16,6 @@ NOTE:
 from typing import Tuple
 
 
-def strip_prefix(number_str: str) -> str:
-    """
-    Remove the prefix from a string representation of a number.
-
-    Args:
-        number_str (str): String representation of a number with prefix.
-
-    Returns:
-        cleaned_str (str): String representation without prefix.
-    """
-    if number_str.startswith('-'):
-        return '-' + number_str[3:]
-
-    return number_str[2:]
-
-
 def convert(number: int) -> Tuple[str, str, str]:
     """
     Convert an integer to its binary, octal, and hexadecimal representations.
@@ -41,12 +25,13 @@ def convert(number: int) -> Tuple[str, str, str]:
 
     Returns:
         Tuple[str, str, str]: A tuple containing the binary, octal, and
-        hexadecimal
-        representations of the number.
+        hexadecimal representations of the number.
     """
-    binary_str = strip_prefix(bin(number))
-    octal_str = strip_prefix(oct(number))
-    hexadecimal_str = strip_prefix(hex(number)).upper()
+    binary_str = bin(number)[2:]  # Remove '0b' prefix
+    octal_str = oct(number)[2:]   # Remove '0o' prefix
+
+    # Remove '0x' prefix and make uppercase
+    hexadecimal_str = hex(number)[2:].upper()
 
     return (binary_str, octal_str, hexadecimal_str)
 
