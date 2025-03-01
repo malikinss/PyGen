@@ -24,25 +24,25 @@ def linear(nested_lists: Union[int, List[Union[int, List]]]) -> List[int]:
     Recursively linearize a nested list of integers.
 
     Args:
-        nested_lists (Union[int, List[Union[int, List]]]): A nested list or
-        integer.
+        nested_lists (Union[int, List[Union[int, List]]]): A list or an
+        integer, where the list may contain other nested lists or integers.
 
     Returns:
-        List[int]: A linearized list of integers.
+        List[int]: A new list that is the linearized version of the input.
     """
-    # Check if the current element is an integer; if so, return it in a list
+    # Base case: If the element is an integer, return it inside a list
     if isinstance(nested_lists, int):
         return [nested_lists]
-    else:
-        # If the current element is a list, recursively linearize its elements
-        result = []
 
-        for element in nested_lists:
-            result.extend(linear(element))
+    # Recursive case: If the element is a list,
+    # recursively linearize each element
+    result = []
+    for element in nested_lists:
+        result.extend(linear(element))  # Flatten the current element
 
-        return result
+    return result
 
 
+# Example usage:
 my_list = [3, [4], [5, [6, [7, 8]]]]
-
-print(linear(my_list))
+print(linear(my_list))  # Output: [3, 4, 5, 6, 7, 8]
