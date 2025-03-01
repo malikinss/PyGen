@@ -1,0 +1,1 @@
+print(non_negative_even([0, 0, 0, 0, 0]))
