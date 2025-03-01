@@ -19,31 +19,38 @@ TODO:
 
 def number_of_frogs(year: int) -> int:
     """
-    Calculate the number of frogs in the pond in a given year.
+    Calculate the number of frogs in the pond in the given year using
+    recursion.
 
     Args:
-        year (int): The year for which the number of frogs is calculated.
+        year (int): The year for which the number of frogs is to be calculated.
 
     Returns:
         int: The number of frogs in the pond in the given year.
     """
-    def calculate_frogs(year: int, value: int = 77) -> int:
+    def calculate_frogs(current_year: int, frogs: int) -> int:
         """
-        Recursively calculate the number of frogs for a specific year.
+        Recursively calculates the number of frogs for a specific year.
 
         Args:
-            year (int): The year for which the number of frogs is calculated.
-            value (int): The current number of frogs.
+            current_year (int): The current year for the calculation.
+            frogs (int): The current number of frogs.
 
         Returns:
             int: The number of frogs in the pond in the given year.
         """
-        if year == 1:
-            return value
+        # Base case: year 1 starts with 77 frogs
+        if current_year == 1:
+            return frogs
 
-        return calculate_frogs(year - 1, (value - 30) * 3)
+        # Recursive case: each year, the frogs are multiplied by 3
+        # after catching 30
+        return calculate_frogs(current_year - 1, (frogs - 30) * 3)
 
-    return calculate_frogs(year)
+    # Start the recursive calculation from year 1 with an initial frog
+    # count of 77
+    return calculate_frogs(year, 77)
 
 
+# Test the function with an input year
 print(number_of_frogs(int(input())))
