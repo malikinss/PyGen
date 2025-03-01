@@ -25,5 +25,5 @@ def triangle(h: int) -> None:
         None
     """
     if h > 0:
-        print('*' * h)
-        triangle(h - 1)
+        print('*' * h)  # Print the row with h stars
+        triangle(h - 1)  # Recursively call with h-1 to print the next row
