@@ -1,0 +1,3 @@
+from operator import mul
+
+print_operation_table(mul, 5, 10)
