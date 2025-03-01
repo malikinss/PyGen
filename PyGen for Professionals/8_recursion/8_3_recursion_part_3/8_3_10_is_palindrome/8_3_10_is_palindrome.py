@@ -26,10 +26,14 @@ def is_palindrome(string: str) -> bool:
         bool: True if the string is a palindrome, False otherwise.
     """
     if len(string) in (0, 1):
+        # An empty string and a single-character string are palindromes.
         return True
-    if string[0] != string[-1]:  # Compare first and last characters
+
+    if string[0] != string[-1]:  # Compare the first and last characters.
         return False
-    return is_palindrome(string[1:-1])  # Check the remaining substring
+
+    # Recursively check the substring without the first and last characters.
+    return is_palindrome(string[1:-1])
 
 
 # Example usage
