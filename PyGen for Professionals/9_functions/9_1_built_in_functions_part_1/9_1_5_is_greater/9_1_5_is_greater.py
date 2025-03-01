@@ -22,23 +22,23 @@ def is_greater(nested_lists: List[List[int]], number: int) -> bool:
     Args:
         nested_lists (List[List[int]]): A list of lists containing integers.
         number (int): The number to compare the sum of the nested lists
-        against.
+                      against.
 
     Returns:
         bool: True if at least one nested list's sum is greater than the given
-        number, False otherwise.
+              number, False otherwise.
     """
     return any(sum(nested_list) > number for nested_list in nested_lists)
 
 
 # Test case where sum of one of the nested lists is greater than 10
 data = [[-3, 4, 0, 1], [1, 1, -4], [0, 0], [9, 3]]
-print(is_greater(data, 10))
+print(is_greater(data, 10))  # Expected output: True
 
 # Test case where no nested list has a sum greater than 2
 data = [[0, 0, 1], [0, 1, 0], [1, 0, 0]]
-print(is_greater(data, 2))
+print(is_greater(data, 2))  # Expected output: False
 
 # Test case where sum of one of the nested lists is equal to 3
 data = [[0, 1, 2], [0, 3], [1, 1, 1], [3]]
-print(is_greater(data, 3))
+print(is_greater(data, 3))  # Expected output: False
