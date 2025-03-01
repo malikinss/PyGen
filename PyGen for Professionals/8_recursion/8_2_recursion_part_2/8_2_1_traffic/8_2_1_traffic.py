@@ -1,17 +1,18 @@
 '''
 TODO:
-        You can see the traffic() function implemented using a while loop that
-        takes a number n as an argument and prints the string "Do not park"
-        n times.
+    You can see the traffic() function implemented using a while loop that
+    takes a number n as an argument and prints the string "Do not park"
+    n times.
 
-        Rewrite this function using recursion to do the same thing.
+    Rewrite this function using recursion to do the same thing.
 '''
 
-
+'''
 def traffic(n):
     while n > 0:
         print("Do not park")
         n -= 1
+'''
 
 
 def traffic(n: int) -> None:
