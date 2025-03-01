@@ -1,0 +1,1 @@
+[(1, 'repeat', 90), (2, 'itertools', 100), (3, 'recursion', 10), (4, 'add', 40), (5, 'add', 'add')]

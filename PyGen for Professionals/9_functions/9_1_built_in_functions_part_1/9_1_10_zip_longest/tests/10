@@ -1,0 +1,2 @@
+data = [['is_lower', 'is_upper'], [True, False, 'string', 'int', 'float', 'double', 'char', 'bool'], [False, False, True, True]]
+print(zip_longest(*data, fill='skip'))

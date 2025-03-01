@@ -1,0 +1,1 @@
+[('is_lower', True, False), ('is_upper', False, False), ('skip', 'string', True), ('skip', 'int', True), ('skip', 'float', 'skip'), ('skip', 'double', 'skip'), ('skip', 'char', 'skip'), ('skip', 'bool', 'skip')]

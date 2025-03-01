@@ -1,0 +1,2 @@
+data = [[], ['one'], [], ['uno']]
+print(zip_longest(*data))

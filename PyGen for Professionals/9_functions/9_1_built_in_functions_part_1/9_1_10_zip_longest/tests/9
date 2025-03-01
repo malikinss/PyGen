@@ -1,0 +1,2 @@
+data = [[1, 2, 3, 4, 5], ['repeat', 'itertools', 'recursion'], [90, 100, 10, 40]]
+print(zip_longest(*data))
