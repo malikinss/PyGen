@@ -1,0 +1,2 @@
+print(polynom(5))
+print(polynom.values)

@@ -1,0 +1,5 @@
+polynom(1)
+polynom(2)
+polynom(3)
+
+print(*sorted(polynom.values))
