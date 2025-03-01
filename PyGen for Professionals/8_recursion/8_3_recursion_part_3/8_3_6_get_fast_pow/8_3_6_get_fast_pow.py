@@ -32,30 +32,14 @@ def get_fast_pow(a: int, n: int) -> int:
     """
     if n == 0:
         return 1
-
-    def recursive_fast_pow(base: int, exponent: int) -> int:
-        """
-        Recursively calculate base raised to the power of exponent using
-        fast exponentiation.
-
-        Args:
-            base (int): The base value.
-            exponent (int): The exponent value.
-
-        Returns:
-            int: The result of base raised to the power of exponent.
-        """
-        # Base case: when exponent is 0, return 1
-        if exponent == 0:
-            return 1
-        # If exponent is even, apply the first recurrence relation
-        elif exponent % 2 == 0:
-            return recursive_fast_pow(base * base, exponent // 2)
-        # If exponent is odd, apply the second recurrence relation
-        else:
-            return base * recursive_fast_pow(base, exponent - 1)
-
-    return recursive_fast_pow(a, n)
+    # If n is even, use (a * a)^(n // 2)
+    elif n % 2 == 0:
+        half_pow = get_fast_pow(a, n // 2)
+        return half_pow * half_pow
+    # If n is odd, use a * a^(n - 1)
+    else:
+        return a * get_fast_pow(a, n - 1)
 
 
-print(get_fast_pow(5, 3))
+# Test the function
+print(get_fast_pow(5, 3))  # Output should be 125
