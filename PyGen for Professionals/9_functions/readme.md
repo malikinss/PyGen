@@ -39,7 +39,13 @@ By the end of this lesson, I will:
 3. 9_3_anonymous_functions_map_filter
 
 ```
-
+# Lesson 9.3: Anonymous Functions, Map(), Filter() Functions 🔧
+This lesson focuses on **anonymous functions** (lambda functions) and higher-order functions **`map()`** and **`filter()`**, which we previously encountered in the course.
+These functions allow for cleaner and more functional code when manipulating and transforming data.
+By the end of this lesson, I will:
+-   Be able to use **anonymous functions (lambda functions)** for concise function definitions.
+-   Understand how to apply **`map()`** and **`filter()`** functions to manipulate and filter data in Python.
+-   Learn to combine **`map()`** and **`filter()`** with **lambda functions** to write more efficient and functional code.
 ```
 
 4. 9_4_functions_as_objects
