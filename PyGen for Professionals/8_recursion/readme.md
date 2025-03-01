@@ -35,7 +35,13 @@ By the end of this lesson, I will be able to:
 3. 8_3_recursion_part_3
 
 ```
-
+# Lesson 8.3: Recursion (part 3) 🧑‍💻
+This lesson focuses on **recursion**, a powerful technique where a function calls itself to solve problems.
+The lesson covers various recursive problems, including **memoization**, which optimizes recursion by storing previously computed results.
+By the end of this lesson, I will:
+-   Gain hands-on experience solving problems using recursion.
+-   Understand how to use **memoization** to optimize recursive functions.
+-   Be able to apply recursion to mathematical and real-world problems efficiently.
 ```
 
 4. 8_4_recursion_part_4
