@@ -1,11 +1,11 @@
 '''
 TODO:
-        Write a program that takes as input a valid non-empty list, a valid
-        non-empty tuple, or a valid set of arbitrary length, and
-        does the following:
-            - if the input is a list, output its last element
-            - if the input is a tuple, output its first element
-            - if the input is a set, output the number of its elements
+    Write a program that takes as input a valid non-empty list, a valid
+    non-empty tuple, or a valid set of arbitrary length, and does the
+    following:
+        - if the input is a list, output its last element
+        - if the input is a tuple, output its first element
+        - if the input is a set, output the number of its elements
 '''
 
 
@@ -25,7 +25,9 @@ def process_input(data: str) -> None:
     try:
         parsed_data = eval(data)  # Convert string to list, tuple, or set
     except (ValueError, SyntaxError):
-        raise ValueError("Input string must represent a valid list, tuple, or set.")
+        raise ValueError(
+            "Input string must represent a valid list, tuple, or set."
+        )
 
     operations = {
         list: lambda x: x[-1],  # Last element of list
@@ -38,7 +40,9 @@ def process_input(data: str) -> None:
     if data_type in operations:
         print(operations[data_type](parsed_data))
     else:
-        raise TypeError("Unsupported data type. Please input correct data type.")
+        raise TypeError(
+            "Unsupported data type. Please input correct data type."
+        )
 
 
 # Example usage
