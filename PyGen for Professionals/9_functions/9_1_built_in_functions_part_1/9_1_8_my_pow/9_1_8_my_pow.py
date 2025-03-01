@@ -17,7 +17,7 @@ NOTE:
 """
 
 
-def my_pow(number: int) -> int:
+def sum_of_powers_of_digits(number: int) -> int:
     """
     Calculate the sum of digits each raised to the power of their position.
 
@@ -28,7 +28,7 @@ def my_pow(number: int) -> int:
         int: The sum of digits raised to the power of their respective
         positions.
     """
-    if not isinstance(number, int) or number < 0:
+    if number < 0:
         raise ValueError("The number must be a non-negative integer.")
 
     digits = enumerate(str(number), start=1)
@@ -36,4 +36,6 @@ def my_pow(number: int) -> int:
     return sum(int(digit) ** exponent for exponent, digit in digits)
 
 
-print(my_pow(139))
+# Test case
+# Expected output: 739 (1^1 + 3^2 + 9^3)
+print(sum_of_powers_of_digits(139))
