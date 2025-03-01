@@ -1,0 +1,2 @@
+words = [['black', 'white', 'grey', 'black-1', 'white-1', 'python']]
+print(*words, sep=' to ', end=' LOVE')

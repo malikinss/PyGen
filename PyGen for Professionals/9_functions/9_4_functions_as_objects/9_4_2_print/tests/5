@@ -1,0 +1,2 @@
+words = ['a', 2, 'b', 3, ['1a', '2a', '3a', '4a'], '5A', True, 8.763, ('python', 'c++')]
+print(*words)
