@@ -23,4 +23,5 @@ def get_digits_sum(number: int) -> int:
     return number % 10 + get_digits_sum(number // 10)
 
 
-print(get_digits_sum(111211))
+# Test the function
+print(get_digits_sum(111211))  # Output should be 7 (1+1+1+2+1+1)
