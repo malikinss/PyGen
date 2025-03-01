@@ -32,11 +32,12 @@ def reverse_sequence() -> None:
         Returns:
             None
         """
-        number = int(input())
+        number = int(input())  # Read input
 
         if number != 0:
-            _print_element_recursive()
+            _print_element_recursive()  # Recursively call until 0 is reached
 
+        # Print the number after recursion ends (reversing the sequence)
         print(number)
 
     _print_element_recursive()
