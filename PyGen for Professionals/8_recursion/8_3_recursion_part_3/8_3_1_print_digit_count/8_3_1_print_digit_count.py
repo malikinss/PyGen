@@ -12,25 +12,24 @@ def print_digit_count(number: int) -> None:
     Args:
         number (int): The number to count digits in.
     """
-    digit_count = 0
-
-    def count_digits(number: int, digit_count: int) -> int:
+    def count_digits(number: int) -> int:
         """
         Recursively counts the number of digits in the given number.
 
         Args:
             number (int): The number to count digits in.
-            digit_count (int): The current count of digits.
 
         Returns:
-            digit_count (int): The final count of digits.
+            int: The count of digits.
         """
         if 0 <= number < 10:
-            return digit_count + 1
+            return 1  # Base case: if the number is a single digit
 
-        return count_digits(number // 10, digit_count + 1)
+        # Recursive case: divide the number by 10
+        return 1 + count_digits(number // 10)
 
-    print(count_digits(number, digit_count))
+    print(count_digits(number))
 
 
+# Test the function
 print_digit_count(11111)
