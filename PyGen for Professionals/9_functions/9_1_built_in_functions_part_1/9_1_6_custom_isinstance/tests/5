@@ -1,0 +1,2 @@
+objects = [{2, 3, 4}, (5, 7, 1243), ["Hello World", "Тимур"]]
+print(custom_isinstance(objects, (tuple, list)))
