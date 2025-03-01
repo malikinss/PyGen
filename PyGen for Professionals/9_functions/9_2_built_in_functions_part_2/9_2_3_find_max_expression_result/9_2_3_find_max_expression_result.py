@@ -1,14 +1,13 @@
 '''
 TODO:
-        Write a program that takes as input an arbitrary number of lines
-        containing valid mathematical expressions and outputs the value
-        of the largest of them.
+    Write a program that takes as input an arbitrary number of lines
+    containing valid mathematical expressions and outputs the value
+    of the largest of them.
 
 NOTE:
-        A valid mathematical expression is one that fully complies with
-        Python syntax.
+    A valid mathematical expression is one that fully complies with
+    Python syntax.
 '''
-
 import sys
 from typing import List
 
@@ -20,7 +19,7 @@ def read_input() -> List[str]:
     Returns:
         List[str]: A list of stripped lines.
     """
-    return [line.strip() for line in sys.stdin.readlines()]
+    return [line.strip() for line in sys.stdin.readlines() if line.strip()]
 
 
 def find_max_expression_result() -> float:
@@ -37,9 +36,21 @@ def find_max_expression_result() -> float:
 
     for operation in operations:
         try:
-            results.append(eval(operation))
-        except (SyntaxError, NameError) as e:
-            print(f"Error evaluating expression '{operation}': {e}", file=sys.stderr)
+            # Safely evaluate the mathematical expression
+            result = eval(operation)
+            if isinstance(result, (int, float)):  # Ensure it's a valid number
+                results.append(result)
+            else:
+                print(
+                    f"Warning: Expression '{operation}'"
+                    f"did not return a valid number.",
+                    file=sys.stderr
+                )
+        except (SyntaxError, NameError, ZeroDivisionError, ValueError) as e:
+            print(
+                f"Error evaluating expression '{operation}': {e}",
+                file=sys.stderr
+            )
 
     return max(results) if results else float('-inf')
 
