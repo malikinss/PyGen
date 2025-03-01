@@ -1,0 +1,4 @@
+text = 'Application for drivers!'
+marks = ' p!'
+print(remove_marks(text, marks))
+print(remove_marks.count)

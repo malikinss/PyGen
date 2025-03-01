@@ -1,0 +1,7 @@
+marks = '.,!?'
+text = 'Are you listening? Meet my family! There are my parents, my brother and me.'
+
+for mark in marks:
+    print(remove_marks(text, mark))
+    
+print(remove_marks.count)

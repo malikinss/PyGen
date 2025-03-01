@@ -1,0 +1,4 @@
+text = 'Qwerty'
+marks = 'qwerty'
+print(remove_marks(text, marks))
+print(remove_marks.count)
