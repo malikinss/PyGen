@@ -1,0 +1,3 @@
+my_list = [12, 13, 53, 632, 6, 2342341, [98]]
+
+print(recursive_sum(my_list))
