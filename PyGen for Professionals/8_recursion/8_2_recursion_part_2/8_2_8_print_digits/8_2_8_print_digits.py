@@ -21,8 +21,10 @@ def print_digits(number: int) -> None:
         None: This function does not return a value.
     """
     if number > 0:
-        print(number % 10)
+        print(number % 10)  # Print the least significant digit
+        # Recursively call with the remaining number
         print_digits(number // 10)
 
 
+# Test the function
 print_digits(12345)
