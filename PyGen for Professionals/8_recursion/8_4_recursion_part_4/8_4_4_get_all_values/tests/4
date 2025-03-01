@@ -1,0 +1,16 @@
+my_dict = {
+           'Arthur': {'hobby': 'videogames', 'drink': 'cacao'}, 
+           'Timur': {'hobby': 'math'},
+           'Dima': {
+                   'hobby': 'CS',
+                   'sister':
+                       {
+                         'name': 'Anna',
+                         'hobby': 'TV',
+                         'age': 14
+                       }
+                   }
+           }
+
+result = get_all_values(my_dict, 'hobby')
+print(*sorted(result))

@@ -1,0 +1,4 @@
+my_dict = {'Arthur': {'hobby': 'videogames', 'drink': 'cacao'}, 'Timur': {'hobby': 'math'}}
+result = get_all_values(my_dict, 'top_grade')
+
+print(len(sorted(result)))
