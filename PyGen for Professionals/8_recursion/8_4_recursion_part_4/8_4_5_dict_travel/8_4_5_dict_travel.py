@@ -47,8 +47,9 @@ def dict_travel(nested_dicts: dict) -> None:
         None: The function prints key-value pairs to the console.
     """
 
-    def traverse_recursive(data: dict,
-                           current_prefix: str = '') -> List[Tuple[str, any]]:
+    def traverse_recursive(
+        data: dict, current_prefix: str = ''
+    ) -> List[Tuple[str, any]]:
         """
         Recursively traverse nested dictionaries and collect key-value pairs.
 
@@ -63,22 +64,18 @@ def dict_travel(nested_dicts: dict) -> None:
         """
         result = []
 
-        for key, value in data.items():
+        for key, value in sorted(data.items()):
             full_key = f"{current_prefix}{key}"
 
             if isinstance(value, dict):
                 result.extend(traverse_recursive(value, f'{full_key}.'))
             else:
-
                 result.append((full_key, value))
 
         return result
 
-    try:
-        result = traverse_recursive(nested_dicts)
-        print_result(result)
-    except TypeError:
-        print("Error: The provided input is not a valid dictionary")
+    result = traverse_recursive(nested_dicts)
+    print_result(result)
 
 
 def print_result(result: List[Tuple[str, any]]) -> None:
@@ -92,10 +89,11 @@ def print_result(result: List[Tuple[str, any]]) -> None:
     Returns:
         None: The function prints the result to the console.
     """
-    for key, value in sorted(result):
+    for key, value in result:
         print(f'{key}: {value}')
 
 
+# Test data
 data = {'b': {'c': 30, 'a': 10, 'b': {'d': 40, 'e': 50}}}
 
 dict_travel(data)
