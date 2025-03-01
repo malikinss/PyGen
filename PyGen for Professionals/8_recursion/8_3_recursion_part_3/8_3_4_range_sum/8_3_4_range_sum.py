@@ -28,8 +28,9 @@ def range_sum(numbers: List[int], start: int, end: int) -> int:
     Returns:
         int: The sum of the specified range of numbers.
     """
-    def calculate_sum(current_index: int, end_index: int,
-                      numbers: List[int], total: int = 0) -> int:
+    def calculate_sum(
+        current_index: int, end_index: int, numbers: List[int], total: int = 0
+    ) -> int:
         """
         Recursively calculate the sum of elements in a list from current_index
         to end_index.
@@ -48,10 +49,15 @@ def range_sum(numbers: List[int], start: int, end: int) -> int:
 
         current_element = numbers[current_index]
 
-        return calculate_sum(current_index + 1, end_index,
-                             numbers, total + current_element)
+        return calculate_sum(
+            current_index + 1,
+            end_index,
+            numbers,
+            total + current_element
+        )
 
     return calculate_sum(start, end, numbers)
 
 
+# Test the function
 print(range_sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 3, 7))
