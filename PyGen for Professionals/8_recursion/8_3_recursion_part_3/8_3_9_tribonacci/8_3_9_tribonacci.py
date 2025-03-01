@@ -23,6 +23,10 @@ def tribonacci(n: int) -> int:
     Returns:
         int: The n-th term of the Tribonacci sequence.
     """
+    if n <= 0:
+        raise ValueError("n must be a positive integer.")
+
+    # Memoization dictionary to store computed Tribonacci numbers
     memo: Dict[int, int] = {1: 1, 2: 1, 3: 1}
 
     def _tribonacci_recursive(n: int) -> int:
@@ -37,12 +41,16 @@ def tribonacci(n: int) -> int:
             int: The n-th term of the Tribonacci sequence.
         """
         if n not in memo:
-            memo[n] = _tribonacci_recursive(n - 3) + _tribonacci_recursive(n - 2) + _tribonacci_recursive(n - 1)
-        return memo[n]
+            memo[n] = (
+                _tribonacci_recursive(n - 3)
+                + _tribonacci_recursive(n - 2)
+                + _tribonacci_recursive(n - 1)
+            )
 
     return _tribonacci_recursive(n)
 
 
-print(tribonacci(1))
-print(tribonacci(7))
-print(tribonacci(4))
+# Test cases
+print(tribonacci(1))  # Output: 1
+print(tribonacci(7))  # Output: 17
+print(tribonacci(4))  # Output: 3
