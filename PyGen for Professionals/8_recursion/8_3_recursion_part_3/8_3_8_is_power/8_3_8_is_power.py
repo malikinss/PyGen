@@ -18,13 +18,27 @@ def is_power(number: int) -> bool:
     Returns:
         bool: True if number is a power of 2, False otherwise.
     """
-    # Base cases: 1 and 2 are powers of 2
-    if number in (1, 2):
-        return True
-
-    # If the number is not divisible by 2, it's not a power of 2
-    elif number % 2 != 0:
+    # Edge case: If the number is less than or equal to 0,
+    # it's not a power of 2.
+    if number <= 0:
         return False
 
-    # Recursively check if the number divided by 2 is a power of 2
-    return is_power(number // 2)
+    # Base case: If the number is 1, it is a power of 2 (2^0 = 1).
+    if number == 1:
+        return True
+
+    # If the number is divisible by 2, recursively check if the result
+    # is a power of 2.
+    if number % 2 == 0:
+        return is_power(number // 2)
+
+    # If none of the conditions match, it's not a power of 2.
+    return False
+
+
+# Test cases
+print(is_power(16))  # True, 2^4 = 16
+print(is_power(18))  # False, not a power of 2
+print(is_power(1))   # True, 2^0 = 1
+print(is_power(0))   # False, 0 is not a power of 2
+print(is_power(-8))  # False, negative numbers can't be powers of 2
