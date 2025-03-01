@@ -29,25 +29,8 @@ def get_pow(a: int, n: int) -> int:
     if n == 0:
         return 1
 
-    def recursive_pow(base: int, exponent: int) -> int:
-        """
-        Recursively calculates the power of a number.
-
-        Args:
-            base (int): The base number.
-            exponent (int): The current exponent.
-
-        Returns:
-            int: The result of base raised to the power of exponent.
-        """
-        # Base case: when exponent is 0, return 1
-        if exponent == 0:
-            return 1
-
-        # Recursive case: multiply base with the result of base^(exponent-1)
-        return base * recursive_pow(base, exponent - 1)
-
-    return recursive_pow(a, n)
+    return a * get_pow(a, n - 1)
 
 
+# Test the function with an example
 print(get_pow(5, 2))  # Output should be 25
