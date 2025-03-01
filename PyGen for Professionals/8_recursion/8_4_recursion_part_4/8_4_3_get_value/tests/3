@@ -1,0 +1,3 @@
+data = {'first_name': 'Alyson', 'last_name': 'Hannigan', 'birthday': {'day': 24, 'month': 'March', 'year': 1974}}
+
+print(get_value(data, 'day'))
