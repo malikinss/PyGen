@@ -1,0 +1,8 @@
+@make_html('small')
+@make_html('mark')
+@make_html('i')
+@make_html('del')
+def get_text(text):
+    return text
+    
+print(get_text('ANRIANRIANRI'))
