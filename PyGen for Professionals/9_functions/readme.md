@@ -63,7 +63,15 @@ By the end of this lesson, I will:
 5. 9_5_nested_functions_closures
 
 ```
-
+# Lesson 9.5: Nested Functions, Closures 🏗️
+This lesson covers **nested functions** and **closures** in Python.
+It explains how an inner function can access variables from its outer function even after the outer function has finished executing.
+It also introduces the `nonlocal` keyword and the `closure` attribute, crucial for understanding how variables from outer functions persist in inner functions.
+By the end of this lesson, I will:
+✅ Understand the concept of **nested functions** and how they work.
+✅ Learn about **closures** and how an inner function can remember and access variables from its enclosing scope.
+✅ Understand the use of the **`nonlocal`** keyword to modify variables in an outer but non-global scope.
+✅ Implement practical use cases such as **function generators** and **URL query string builders**.
 ```
 
 6. 9_6_type_annotations
