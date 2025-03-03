@@ -1,0 +1,12 @@
+counter = 0
+
+@repeat(11)
+def change_counter():
+    global counter
+    counter += 1
+    print(counter)
+    
+print(change_counter.__name__)
+print(change_counter.__doc__)
+change_counter()
+print(counter)

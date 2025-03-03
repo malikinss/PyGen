@@ -1,0 +1,6 @@
+@repeat(3)
+def say_beegeek():
+    '''documentation'''
+    print('beegeek')
+    
+say_beegeek()

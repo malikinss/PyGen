@@ -1,0 +1,5 @@
+@repeat(5)
+def say(word):
+    print(word)
+
+say(word="Hey!")

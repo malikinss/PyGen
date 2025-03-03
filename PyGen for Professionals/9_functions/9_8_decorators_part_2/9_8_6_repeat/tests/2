@@ -1,0 +1,7 @@
+@repeat(4)
+def say_beegeek():
+    '''documentation'''
+    print('beegeek')
+    
+print(say_beegeek.__name__)
+print(say_beegeek.__doc__)
