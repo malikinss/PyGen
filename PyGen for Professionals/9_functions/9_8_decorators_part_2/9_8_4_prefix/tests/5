@@ -1,0 +1,11 @@
+@prefix('online-school ')
+def make_lower(string, lower=True):
+    '''makes string upper or lower'''
+    if lower:
+        return string.lower()
+    return string.upper()
+       
+
+print(make_lower.__name__)
+print(make_lower.__doc__)
+print(make_lower('beegeek', False))

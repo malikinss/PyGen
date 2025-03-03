@@ -1,0 +1,9 @@
+@prefix('online-school ')
+def beegeek():
+    '''beegeek docs'''
+    return 'beegeek'
+       
+
+print(beegeek.__name__)
+print(beegeek.__doc__)
+print(beegeek())

@@ -1,0 +1,5 @@
+@prefix('€')
+def get_bonus():
+    return '2000'
+    
+print(get_bonus())
