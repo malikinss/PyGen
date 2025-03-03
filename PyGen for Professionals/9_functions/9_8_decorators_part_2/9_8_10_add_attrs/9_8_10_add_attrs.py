@@ -43,6 +43,7 @@ def add_attrs(**attributes) -> Callable:
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             return func(*args, **kwargs)
 
+        # Set attributes to the function's __dict__
         for key, value in attributes.items():
             wrapper.__dict__[key] = value
 
