@@ -24,7 +24,7 @@ def ignore_exception(*exceptions: Type[BaseException]) -> Callable:
     Decorator to handle specified exceptions during function execution.
 
     Args:
-        exception_types (Type[BaseException]): Exception types to be handled.
+        *exceptions (Type[BaseException]): Exception types to be handled.
 
     Returns:
         Callable: Wrapped function with exception handling.
@@ -44,7 +44,9 @@ def ignore_exception(*exceptions: Type[BaseException]) -> Callable:
             try:
                 return func(*args, **kwargs)
             except exceptions as e:
-                print(f'Исключение {type(e).__name__} обработано')
+                print(f'Exception {type(e).__name__} is handled')
+            except Exception as e:  # Reraise any other unexpected exceptions
+                raise e
 
         return wrapper
 
