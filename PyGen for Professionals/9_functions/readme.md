@@ -1,134 +1,126 @@
-Chapter 9: Functions
+# Chapter 9: Functions
 
-9_functions
-├───9_1_built_in_functions_part_1
-├───9_2_built_in_functions_part_2
-├───9_3_anonymous_functions_map_filter
-├───9_4_functions_as_objects
-├───9_5_nested_functions_closures
-├───9_6_type_annotations
-├───9_7_decorators_part_1
-├───9_8_decorators_part_2
-└───9_9_functools_module
+## Description 📝
 
-1. 9_1_built_in_functions_part_1
+Chapter 9 is dedicated to **functions**—one of the core building blocks of Python programming.  
+This chapter provides a **deep theoretical explanation** along with **55 practical tasks** and **117 theoretical questions** to ensure a comprehensive understanding of functions in Python.
 
-```
-# Lesson 9.1: Built-in Functions (part 1) 🔠
-This lesson explores **built-in functions** in Python, focusing on **mathematical operations** and **functions that work with collections**.
-Python provides a vast number of built-in functions that simplify coding tasks and enhance program efficiency.
-By the end of this lesson, I will:
-✅ Learn how to use key built-in functions for working with numbers, collections, and sorting.
-✅ Implement **11 practical tasks** that strengthen my understanding of built-in functions.
-✅ Answer **3 theoretical questions** to deepen my comprehension.
-```
+The chapter is divided into **9 lessons**, covering topics ranging from built-in functions to **decorators**, **closures**, **type annotations**, and **the functools module**.
 
-2. 9_2_built_in_functions_part_2
+## Purpose 🎯
 
-```
-# Lesson 9.2: Built-in Functions part 2 🔧
-This lesson focuses on **useful built-in functions** in Python, specifically functions like `callable()`, `hasattr()`, `help()`, `repr()`, `hash()`, `eval()`, and `exec()`.
-These functions are key tools for checking attributes, evaluating expressions, debugging, and interacting with Python objects and the runtime environment.
-By the end of this lesson, I will:
--   Understand how to use **`callable()`** and **`hasattr()`** to interact with functions and objects.
--   Learn how to utilize **`help()`** and **`repr()`** for debugging and providing better object representations.
--   Be able to apply **`hash()`** to manage hashable objects in data structures.
--   Use **`eval()`** and **`exec()`** to dynamically evaluate expressions and execute Python code.
-```
+The goal of this chapter is to:
 
-3. 9_3_anonymous_functions_map_filter
+-   Strengthen my understanding of **built-in functions** and their applications.
+-   Learn about **anonymous functions (lambda functions)** and their usage with `map()` and `filter()`.
+-   Explore **functions as objects** and understand how they can be manipulated dynamically.
+-   Gain deep knowledge of **nested functions** and **closures**.
+-   Master **type annotations** to write clearer and more maintainable code.
+-   Dive into **decorators**, learning both basic and advanced concepts.
+-   Understand how to work with the **functools module** for functional programming and optimization.
 
-```
-# Lesson 9.3: Anonymous Functions, Map(), Filter() Functions 🔧
-This lesson focuses on **anonymous functions** (lambda functions) and higher-order functions **`map()`** and **`filter()`**, which we previously encountered in the course.
-These functions allow for cleaner and more functional code when manipulating and transforming data.
-By the end of this lesson, I will:
--   Be able to use **anonymous functions (lambda functions)** for concise function definitions.
--   Understand how to apply **`map()`** and **`filter()`** functions to manipulate and filter data in Python.
--   Learn to combine **`map()`** and **`filter()`** with **lambda functions** to write more efficient and functional code.
-```
+## Lesson Breakdown 🔍
 
-4. 9_4_functions_as_objects
+### 9.1: Built-in Functions (Part 1) 🔠
 
-```
-# Lesson 9.4: Functions as Objects 🏗️
-This lesson explores **functions as objects** in Python, demonstrating that functions can have attributes and be manipulated just like any other object.
-Python functions are first-class citizens, meaning they can be assigned to variables, passed as arguments, and modified dynamically.
-By the end of this lesson, I will:
-✅ Understand that **functions are objects** and can have attributes.
-✅ Learn how to access function attributes like **`__name__`**, **`__doc__`**, and **`__defaults__`**.
-✅ Modify function behavior dynamically by assigning attributes or overriding built-in functions.
-```
+This lesson introduces **essential built-in functions** in Python, focusing on:
 
-5. 9_5_nested_functions_closures
+-   **Mathematical operations** and working with **collections**.
+-   Using functions like `sum()`, `max()`, `min()`, `sorted()`, and more.
+-   Implementing **11 practical tasks**.
+-   Answering **3 theoretical questions** to reinforce learning.
 
-```
-# Lesson 9.5: Nested Functions, Closures 🏗️
-This lesson covers **nested functions** and **closures** in Python.
-It explains how an inner function can access variables from its outer function even after the outer function has finished executing.
-It also introduces the `nonlocal` keyword and the `closure` attribute, crucial for understanding how variables from outer functions persist in inner functions.
-By the end of this lesson, I will:
-✅ Understand the concept of **nested functions** and how they work.
-✅ Learn about **closures** and how an inner function can remember and access variables from its enclosing scope.
-✅ Understand the use of the **`nonlocal`** keyword to modify variables in an outer but non-global scope.
-✅ Implement practical use cases such as **function generators** and **URL query string builders**.
-```
+By the end of this lesson, I will have a solid foundation in using built-in functions for various tasks.
 
-6. 9_6_type_annotations
+### 9.2: Built-in Functions (Part 2) 🔧
 
-```
-# Lesson 9.6: Type Annotations 📝
-This lesson explores **type annotations** in Python, providing insights into how the Python typing system works and how to apply type hints to enhance code readability, maintainability, and error detection.
-It covers the basic principles of **typing in programming languages** and explains the use of the **Typing module** in Python, introducing various types and how they can be applied in different scenarios.
-By the end of this lesson, I will:
-✅ Understand the role of **type annotations** in Python and how they help define variable and function types.
-✅ Learn how to use the **Typing module** and various **useful types** provided by it, such as `List`, `Dict`, `Tuple`, `Any`, and more.
-✅ Apply type annotations to practical programming tasks to make code more predictable and robust.
-```
+This lesson explores **advanced built-in functions**, such as:
 
-7. 9_7_decorators_part_1
+-   **`callable()`**, **`hasattr()`**, **`help()`**, **`repr()`**, and **`hash()`**.
+-   **`eval()`** and **`exec()`** for dynamic expression evaluation and execution.
+-   Their role in debugging, object interactions, and runtime evaluations.
 
-```
-# Lesson 9.7: Decorators (part 1) 📝
-In this lesson, I delve into **decorators** in Python, a powerful and flexible tool for modifying the behavior of functions or methods.
-A decorator is a function that takes another function as an argument, wraps it with additional functionality, and returns it.
-I will explore various types of decorators, including those that add behavior before and after a function call, change the function’s arguments, and handle exceptions.
-By the end of this lesson, I will:
-✅ Understand the concept and syntax of **decorators** in Python.
-✅ Learn how to define and apply decorators to modify the behavior of functions.
-✅ Explore how to use multiple decorators on a single function.
-✅ Work with decorators that take arguments and return values.
-✅ Learn how to handle exceptions using decorators and validate input before function execution.
-```
+Understanding these functions will enhance my ability to work with Python's dynamic features.
 
-8. 9_8_decorators_part_2
+### 9.3: Anonymous Functions, `map()`, `filter()` 🔧
 
-```
-# Lesson 9.8: Decorators (part 2) 📝
-In this lesson, I explore more advanced aspects of **decorators** in Python.
-I will cover how to use the `functools.wraps` decorator to preserve the name and docstring of a decorated function, how to create general-purpose decorators, and various practical use cases.
-These include decorators for measuring execution time, tracking function calls, modifying return values, and handling exceptions.
-I will also learn how to create decorators that accept arguments, providing more flexibility for customizing function behavior.
-By the end of this lesson, I will:
-✅ Learn to use **`functools.wraps`** to preserve function metadata.
-✅ Understand how to create general-purpose decorators.
-✅ Create a decorator that measures function execution time.
-✅ Track the number of times a function is called using a decorator.
-✅ Implement a decorator that intentionally slows down a function’s execution.
-✅ Work with decorators that accept arguments for more control over function behavior.
-✅ Explore advanced decorators for handling exceptions and retrying failed executions.
-```
+This lesson introduces **lambda functions** and their role in functional programming:
 
-9. 9_9_functools_module
+-   Defining **anonymous functions** (lambdas).
+-   Using **`map()`** and **`filter()`** to transform and filter data.
+-   Combining **lambda functions** with `map()` and `filter()` for clean, functional code.
 
-```
-# Lesson 9.9: functools module 📝
-In this lesson, I explore the **functools** module, which provides higher-order functions and operations on callable objects.
-I will learn about several key functions in the module that help with functional programming, such as `partial()`, `update_wrapper()`, and decorators like `wraps`, as well as caching and memoization techniques with `lru_cache` and `cache`.
-These tools allow me to improve performance and reusability of my functions and work with partial applications efficiently.
-By the end of this lesson, I will:
-✅ Learn how to use **partial functions** to create reusable and customizable functions.
-✅ Understand the role of **wrapping functions** with `update_wrapper()` and `wraps` for better documentation.
-✅ Understand **caching** and **memoization** techniques to optimize performance using `lru_cache` and `cache`.
-✅ Be able to solve problems using these techniques to improve code efficiency and flexibility.
-```
+By the end of this lesson, I will be able to use these tools to write concise and efficient functions.
+
+### 9.4: Functions as Objects 🏗️
+
+This lesson covers **how functions in Python are objects**, allowing them to:
+
+-   Be assigned to variables and passed as arguments.
+-   Store attributes and metadata.
+-   Access function-specific attributes like `__name__`, `__doc__`, and `__defaults__`.
+
+Understanding functions as objects will open new possibilities for dynamic programming.
+
+### 9.5: Nested Functions & Closures 🏗️
+
+This lesson dives into **nested functions and closures**, including:
+
+-   How inner functions access variables from outer functions.
+-   The **closure property**, allowing functions to "remember" values.
+-   Using the **`nonlocal`** keyword to modify outer variables.
+
+I will also implement practical use cases like function generators and query string builders.
+
+### 9.6: Type Annotations 📝
+
+This lesson explains **type annotations** and how they improve code quality:
+
+-   Defining function argument and return types.
+-   Using the **Typing module** (`List`, `Dict`, `Tuple`, `Any`, etc.).
+-   Applying type annotations to real-world tasks.
+
+This lesson helps me write more predictable and readable code.
+
+### 9.7: Decorators (Part 1) 📝
+
+In this lesson, I explore **decorators**, a powerful tool for modifying function behavior:
+
+-   Understanding the syntax and structure of decorators.
+-   Applying multiple decorators to a function.
+-   Creating decorators that modify input, output, or execution flow.
+
+I will implement decorators for logging, validation, and exception handling.
+
+### 9.8: Decorators (Part 2) 📝
+
+Building on the previous lesson, this lesson focuses on **advanced decorators**:
+
+-   Using `functools.wraps` to preserve function metadata.
+-   Creating decorators for **timing**, **caching**, and **function call tracking**.
+-   Implementing decorators that accept arguments for greater flexibility.
+
+By the end of this lesson, I will be able to write powerful and reusable decorators.
+
+### 9.9: `functools` Module 📝
+
+This lesson explores the **functools module**, a key tool in functional programming:
+
+-   Creating **partial functions** with `partial()`.
+-   Preserving function metadata with `update_wrapper()` and `wraps`.
+-   Using `lru_cache` and `cache` for **memoization and performance optimization**.
+
+Mastering `functools` will allow me to write more efficient and reusable Python code.
+
+## Key Features 🚀
+
+-   **117 Theoretical Questions**: Reinforce my understanding of function-related concepts.
+-   **55 Practical Tasks**: Apply the knowledge through hands-on coding exercises.
+-   **Comprehensive Coverage**: Covers **built-in functions, lambda functions, closures, decorators, and `functools`**.
+-   **Hands-on Learning**: Practical lessons ensure deeper understanding and problem-solving skills.
+
+## Conclusion 🚀
+
+By completing Chapter 9, I will have a **deep and well-rounded understanding of functions in Python**.  
+I will be able to write **efficient, readable, and reusable code**, utilize **decorators for function modification**, work with **closures**, and **optimize performance with `functools`**.
+This chapter significantly enhances my ability to write professional-grade Python code.
