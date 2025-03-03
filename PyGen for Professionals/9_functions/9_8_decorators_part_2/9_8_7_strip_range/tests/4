@@ -1,0 +1,5 @@
+@strip_range(1, 2, '-')
+def beegeek():
+    return 'beegeek'
+    
+print(beegeek())

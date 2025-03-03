@@ -1,0 +1,8 @@
+@strip_range(0, 1)
+def beegeek(word, end=" "):
+    """This is... Requiem. What you are seeing is indeed the truth"""
+    return word + end
+
+print(beegeek("beegee", end="k"))
+print(beegeek.__name__)
+print(beegeek.__doc__)
