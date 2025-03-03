@@ -1,0 +1,6 @@
+@add_attrs(attr1='bee', attr2='geek')
+def beegeek():
+    return 'beegeek'
+    
+print(beegeek.attr1)
+print(beegeek.attr2)

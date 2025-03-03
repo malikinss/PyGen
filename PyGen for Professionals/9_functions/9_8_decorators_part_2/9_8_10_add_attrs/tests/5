@@ -1,0 +1,6 @@
+@add_attrs(func_attr='i am attribute')
+def func(a, b):
+    '''func docs'''
+    return
+    
+print(func.func_attr)
