@@ -1,0 +1,8 @@
+@retry(3)
+def no_way():
+    raise ValueError
+   
+try:
+    no_way()
+except Exception as e:
+    print(type(e))

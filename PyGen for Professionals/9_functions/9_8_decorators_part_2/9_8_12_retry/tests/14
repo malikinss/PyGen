@@ -1,0 +1,11 @@
+@retry(99)
+def calculate(a, b, c):
+    calculate.calls = calculate.__dict__.get('calls', 0) + 1
+    if calculate.calls < 4:
+        raise ValueError
+    return a + b + c
+    
+try:
+    print(calculate(10, b=1, c=2))
+except Exception as e:
+    print(type(e))

@@ -1,0 +1,11 @@
+@retry(7)
+def beegeek():
+    beegeek.calls = beegeek.__dict__.get('calls', 0) + 1
+    if beegeek.calls < 7:
+        raise ValueError
+    print('beegeek')
+    
+try:
+    beegeek()
+except Exception as e:
+    print(type(e))

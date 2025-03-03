@@ -1,0 +1,11 @@
+@retry(10)
+def add(a, b):
+    add.calls = add.__dict__.get('calls', 0) + 1
+    if add.calls < 10:
+        raise ValueError
+    return a + b
+    
+try:
+    print(add(10, 30))
+except Exception as e:
+    print(type(e))
