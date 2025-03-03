@@ -15,10 +15,10 @@ def do_twice(func: Callable[..., Any]) -> Callable[..., Any]:
     A decorator that calls the decorated function twice.
 
     Args:
-        function (Callable[..., Any]): The function to be called twice.
+        func (Callable[..., Any]): The function to be called twice.
 
     Returns:
-        Callable[..., Any]: The wrapper function.
+        Callable[..., Any]: The wrapper function that calls `func` twice.
     """
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         """
@@ -29,9 +29,11 @@ def do_twice(func: Callable[..., Any]) -> Callable[..., Any]:
             **kwargs (Any): Named arguments for the original function.
 
         Returns:
-            Any: The return value of the original function.
+            Any: The return value of the original function from the second
+            call.
         """
-        func(*args, **kwargs)
-        return func(*args, **kwargs)
+        # Call the function twice
+        func(*args, **kwargs)  # First call, result is not used
+        return func(*args, **kwargs)  # Second call, result is returned
 
     return wrapper
