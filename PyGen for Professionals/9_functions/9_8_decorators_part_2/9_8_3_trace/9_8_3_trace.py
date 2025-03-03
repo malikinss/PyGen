@@ -34,11 +34,14 @@ def trace(function: Callable) -> Callable:
     """
     @wraps(function)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        # This decorator ensures that the decorated function's name
-        # and docstring are preserved.
-        print(f'TRACE: вызов {wrapper.__name__}() с аргументами: {args}, {kwargs}')
+        # Trace function call with arguments and keyword arguments
+        print(
+            f'TRACE: call {function.__name__}()'
+            f' with arguments: {args}, {kwargs}'
+        )
         result = function(*args, **kwargs)
-        print(f'TRACE: возвращаемое значение {wrapper.__name__}(): {repr(result)}')
+        # Trace the return value
+        print(f'TRACE: return value {function.__name__}(): {repr(result)}')
 
         return result
 
