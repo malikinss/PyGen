@@ -44,7 +44,7 @@ def process_words(words: List[str]) -> None:
     Args:
         words (List[str]): A list of words to process.
     """
-    @lru_cache(maxsize=None)
+    @lru_cache(maxsize=None)  # Cache results of sorted words
     def learn_word(word: str) -> str:
         """
         Sorts the letters in a word in lexicographic order.
@@ -61,4 +61,5 @@ def process_words(words: List[str]) -> None:
         print(learn_word(word))
 
 
+# Process input and output
 process_words(read_input())
