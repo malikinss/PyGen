@@ -1,0 +1,2 @@
+result = power(1)(-2948492393)
+print(result)

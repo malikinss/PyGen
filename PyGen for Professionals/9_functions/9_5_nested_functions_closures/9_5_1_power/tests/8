@@ -1,0 +1,2 @@
+result = power(17)(17)
+print(result)
