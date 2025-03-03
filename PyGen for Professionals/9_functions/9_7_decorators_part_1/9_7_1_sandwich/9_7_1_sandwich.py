@@ -13,20 +13,28 @@ NOTE:
 from typing import Callable, Any
 
 
-def sandwich(func: Callable[..., Any]) -> Callable[..., Any]:
+def sandwich(original_func: Callable[..., Any]) -> Callable[..., Any]:
     """
     Decorator that adds bread slices before and after the function call.
 
     Args:
-        func (Callable[..., Any]): The function to be decorated.
+        original_func (Callable[..., Any]): The function to be decorated.
 
     Returns:
-        Callable[..., Any]: The wrapped function.
+        Callable[..., Any]: The wrapped function that adds "bread slices"
+        before and after the original function call.
     """
     def wrapper(*args: Any, **kwargs: Any) -> Any:
+        # Print top slice of bread
         print('---- Top slice of bread ----')
-        result = func(*args, **kwargs)
+
+        # Call the original function with arguments
+        result = original_func(*args, **kwargs)
+
+        # Print bottom slice of bread
         print('---- Bottom slice of bread ----')
+
+        # Return the result of the original function
         return result
 
     return wrapper
