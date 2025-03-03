@@ -30,7 +30,7 @@ def upper_print(func: Callable[..., None]) -> Callable[..., None]:
     """
 
     def wrapper(*args: Any, **kwargs: dict[str, Any]) -> None:
-        def _is_str(obj):
+        def is_string(obj: Any) -> bool:
             """
             Check if the object is a string.
 
@@ -42,7 +42,7 @@ def upper_print(func: Callable[..., None]) -> Callable[..., None]:
             """
             return isinstance(obj, str)
 
-        def _convert_to_uppercase(value: Any) -> Any:
+        def convert_to_uppercase(value: Any) -> Any:
             """
             Convert the value to uppercase if it is a string.
 
@@ -53,14 +53,21 @@ def upper_print(func: Callable[..., None]) -> Callable[..., None]:
                 Any: The converted value if it was a string, otherwise the
                 original value.
             """
-            return value.upper() if _is_str(value) else value
+            return value.upper() if is_string(value) else value
 
-        uppercased_args = tuple(_convert_to_uppercase(arg) for arg in args)
-        uppercased_kwargs = {key: _convert_to_uppercase(value) for key, value in kwargs.items() if key in {'sep', 'end'}}
+        # Convert arguments and specified keyword arguments to uppercase
+        uppercased_args = tuple(convert_to_uppercase(arg) for arg in args)
+        uppercased_kwargs = {
+            key: convert_to_uppercase(value)
+            for key, value in kwargs.items()
+            if key in {'sep', 'end'}
+        }
 
+        # Call the original print function with the converted arguments
         return func(*uppercased_args, **uppercased_kwargs)
 
     return wrapper
 
 
+# Decorate the built-in print function to convert all text to uppercase
 print = upper_print(print)
