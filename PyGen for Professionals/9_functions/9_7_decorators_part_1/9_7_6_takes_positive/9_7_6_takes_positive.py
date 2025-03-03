@@ -38,16 +38,16 @@ def takes_positive(func: Callable[..., Any]) -> Callable[..., Any]:
         ValueError: If any argument is an integer but is not positive.
     """
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        # Combine all positional and keyword arguments
+        # Combine all positional and keyword arguments into one list
         all_arguments = [*args, *kwargs.values()]
 
         for arg in all_arguments:
             # Check if the argument is not an integer
             if not isinstance(arg, int):
-                raise TypeError
+                raise TypeError(f"Argument {arg} is not an integer")
             # Check if the integer argument is positive
             if arg <= 0:
-                raise ValueError
+                raise ValueError(f"Argument {arg} is not a positive integer")
 
         return func(*args, **kwargs)
 
