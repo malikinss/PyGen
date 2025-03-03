@@ -36,11 +36,10 @@ def count_ways(n: int) -> int:
     Returns:
         result (int): The number of ways to reach the n-th step.
     """
-
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
 
-    @lru_cache
+    @lru_cache(maxsize=None)  # Memoization to cache the results
     def count_inner_ways(n: int) -> int:
         """
         Helper function that recursively calculates the number of ways
@@ -52,11 +51,21 @@ def count_ways(n: int) -> int:
         Returns:
             result (int): The number of ways to reach the n-th step.
         """
-        if n < 4:
-            return 1
+        # Base cases
+        if n == 1:
+            return 1  # Only one way: [1]
+        elif n == 2:
+            # No way to reach step 2 because Dima doesn't climb 2 steps
+            return 0
+        elif n == 3:
+            return 1  # Only one way: [1+1+1]
         elif n == 4:
-            return 2
+            return 2  # Two ways: [1+1+1+1] or [1+3]
         else:
-            return count_inner_ways(n-1) + count_inner_ways(n-3) + count_inner_ways(n-4)
+            return (
+                count_inner_ways(n-1) +
+                count_inner_ways(n-3) +
+                count_inner_ways(n-4)
+            )
 
     return count_inner_ways(n)
