@@ -89,7 +89,16 @@ By the end of this lesson, I will:
 7. 9_7_decorators_part_1
 
 ```
-
+# Lesson 9.7: Decorators (part 1) 📝
+In this lesson, I delve into **decorators** in Python, a powerful and flexible tool for modifying the behavior of functions or methods.
+A decorator is a function that takes another function as an argument, wraps it with additional functionality, and returns it.
+I will explore various types of decorators, including those that add behavior before and after a function call, change the function’s arguments, and handle exceptions.
+By the end of this lesson, I will:
+✅ Understand the concept and syntax of **decorators** in Python.
+✅ Learn how to define and apply decorators to modify the behavior of functions.
+✅ Explore how to use multiple decorators on a single function.
+✅ Work with decorators that take arguments and return values.
+✅ Learn how to handle exceptions using decorators and validate input before function execution.
 ```
 
 8. 9_8_decorators_part_2
