@@ -8,38 +8,32 @@ TODO:
 from typing import List
 
 
-numbers = [100, 70, 34, 45, 30,
-           83, 12, 83, -28, 49,
-           -8, -2, 6, 62, 64,
-           -22, -19, 61, 13, 5,
-           80, -17, 7, 3, 21,
-           73, 88, -11, 16, -22]
-
-
 def print_last_element(any_list: List[int]) -> None:
     """
-    Print the last element of the given list.
+    Print the last element of the given list using iter() and next().
 
     Args:
-        any_list (list[int]): The list from which the last element is to be
-        printed.
+        any_list (List[int]): The list from which the last element is to
+        be printed.
 
     Returns:
         None
+
+    Raises:
+        ValueError: If the list is empty.
     """
     if not any_list:
         raise ValueError("The list is empty and has no last element.")
 
-    # Create an iterator for the list
-    iterator = iter(any_list)
-
-    # Iterate through the list to reach the last element
-    for _ in range(len(any_list) - 1):
-        next(iterator)
-
-    # Print the last element
-    print(next(iterator))
+    print(next(iter(reversed(any_list))))
 
 
-# Test the function
+# Пример списка
+numbers = [
+    100, 70, 34, 45, 30, 83, 12, 83, -28, 49,
+    -8, -2, 6, 62, 64, -22, -19, 61, 13, 5,
+    80, -17, 7, 3, 21, 73, 88, -11, 16, -22
+]
+
+# Вызов функции
 print_last_element(numbers)
