@@ -1,0 +1,9 @@
+@ignore_exception()
+def func():
+    '''func docs'''
+    raise ValueError
+  
+try:    
+    func()
+except Exception as e:
+    print(type(e))

@@ -1,0 +1,5 @@
+@ignore_exception(ValueError, TypeError, ZeroDivisionError, NameError)
+def beegeek():
+    return 'beegeek'
+    
+print(beegeek())
