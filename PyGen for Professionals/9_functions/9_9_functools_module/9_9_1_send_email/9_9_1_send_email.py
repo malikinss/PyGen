@@ -46,7 +46,10 @@ def send_email(name: str, email_address: str, text: str) -> str:
     """
     try:
         # Simulate email sending logic
-        return f'В письме для {name} на адрес {email_address} сказано следующее: {text}'
+        return (
+            f'В письме для {name} на адрес {email_address}'
+            f' сказано следующее: {text}'
+        )
     except Exception as e:
         return f"Ошибка при отправке письма: {e}"
 
@@ -54,16 +57,16 @@ def send_email(name: str, email_address: str, text: str) -> str:
 # Partial function to send an email to Timur
 to_timur = partial(
     send_email,
-    'Тимур',
-    'timyrik20@beegeek.ru'
+    'Тимур',  # Fixed name
+    'timyrik20@beegeek.ru'  # Fixed email address
 )
 
-# Partial function to send an invitation
+# Partial function to send an invitation with a default message
 send_an_invitation = partial(
     send_email,
-    text='Школа BEEGEEK приглашает Вас на новый курс по программированию на языке Python. Здесь...'
+    text='Школа BEEGEEK приглашает Вас на новый курс по программированию \
+        на языке Python. Здесь...'
 )
 
-# Пример вызова функций
-# print(to_timur(text="Добро пожаловать в наш курс!"))
-# print(send_an_invitation(name="Анна", email_address="anna@example.com"))
+print(to_timur(text="Добро пожаловать в наш курс!"))
+print(send_an_invitation(name="Анна", email_address="anna@example.com"))
