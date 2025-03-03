@@ -51,7 +51,13 @@ By the end of this lesson, I will:
 4. 9_4_functions_as_objects
 
 ```
-
+# Lesson 9.4: Functions as Objects 🏗️
+This lesson explores **functions as objects** in Python, demonstrating that functions can have attributes and be manipulated just like any other object.
+Python functions are first-class citizens, meaning they can be assigned to variables, passed as arguments, and modified dynamically.
+By the end of this lesson, I will:
+✅ Understand that **functions are objects** and can have attributes.
+✅ Learn how to access function attributes like **`__name__`**, **`__doc__`**, and **`__defaults__`**.
+✅ Modify function behavior dynamically by assigning attributes or overriding built-in functions.
 ```
 
 5. 9_5_nested_functions_closures
