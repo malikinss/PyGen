@@ -122,5 +122,13 @@ By the end of this lesson, I will:
 9. 9_9_functools_module
 
 ```
-
+# Lesson 9.9: functools module 📝
+In this lesson, I explore the **functools** module, which provides higher-order functions and operations on callable objects.
+I will learn about several key functions in the module that help with functional programming, such as `partial()`, `update_wrapper()`, and decorators like `wraps`, as well as caching and memoization techniques with `lru_cache` and `cache`.
+These tools allow me to improve performance and reusability of my functions and work with partial applications efficiently.
+By the end of this lesson, I will:
+✅ Learn how to use **partial functions** to create reusable and customizable functions.
+✅ Understand the role of **wrapping functions** with `update_wrapper()` and `wraps` for better documentation.
+✅ Understand **caching** and **memoization** techniques to optimize performance using `lru_cache` and `cache`.
+✅ Be able to solve problems using these techniques to improve code efficiency and flexibility.
 ```
