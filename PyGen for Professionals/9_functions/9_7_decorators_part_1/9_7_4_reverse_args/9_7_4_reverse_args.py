@@ -19,8 +19,8 @@ def reverse_args(func: Callable[..., Any]) -> Callable[..., Any]:
         func (Callable[..., Any]): The function to be decorated.
 
     Returns:
-        Callable[..., Any]: The wrapped function with reversed
-        positional arguments.
+        Callable[..., Any]: The wrapped function with reversed positional
+        arguments.
     """
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         """
@@ -33,6 +33,8 @@ def reverse_args(func: Callable[..., Any]) -> Callable[..., Any]:
         Returns:
             Any: The result of the decorated function call.
         """
+        # Reverse only positional arguments (args), leave keyword
+        # arguments (kwargs) unchanged
         return func(*args[::-1], **kwargs)
 
     return wrapper
