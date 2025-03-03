@@ -38,7 +38,7 @@ def repeat(times: int) -> Callable:
             wrapper (Callable): The wrapped function with added repeat logic.
         """
         @wraps(func)
-        def wrapper(*args: Any, **kwargs: Any) -> str:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             """
             The wrapper function that executes the original function multiple
             times.
@@ -50,6 +50,7 @@ def repeat(times: int) -> Callable:
             Returns:
                 result (Any): The return value of the last function execution.
             """
+            result = None
             for _ in range(times):
                 result = func(*args, **kwargs)
             return result
