@@ -1,0 +1,4 @@
+try:
+    print(send_an_invitation("Тимур"))
+except:
+    print("Ошибка, и где же? Хм-м-м")

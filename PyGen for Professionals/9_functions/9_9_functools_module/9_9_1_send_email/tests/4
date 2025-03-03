@@ -1,0 +1,4 @@
+try:
+    to_Timur()
+except:
+    print('ok')

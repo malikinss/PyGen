@@ -1,0 +1,5 @@
+try:
+    to_Timur('beegeek')
+    print('ok')
+except:
+    print('ne ok')

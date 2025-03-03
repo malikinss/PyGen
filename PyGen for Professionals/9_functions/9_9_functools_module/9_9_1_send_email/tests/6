@@ -1,0 +1,4 @@
+try:
+    to_Timur('первое', 'второе', 'третье')
+except:
+    print('ok')
