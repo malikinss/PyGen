@@ -1,0 +1,3 @@
+info = {'name': 'Roman', 'grades': [40]}
+
+print(top_grade(info))

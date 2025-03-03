@@ -1,0 +1,4 @@
+info = {'name': 'Artur', 'grades': [100, 28, 3, 97, 5]}
+result = top_grade(info)
+
+print(result)

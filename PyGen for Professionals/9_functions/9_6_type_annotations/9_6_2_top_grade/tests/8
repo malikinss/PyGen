@@ -1,0 +1,1 @@
+print(*top_grade.__annotations__.values())

@@ -1,0 +1,1 @@
+{'name': 'Artur', 'top_grade': 100}
