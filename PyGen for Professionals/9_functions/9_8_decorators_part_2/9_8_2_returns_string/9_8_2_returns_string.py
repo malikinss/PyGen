@@ -21,7 +21,7 @@ def returns_string(func: callable) -> callable:
     is a string.
 
     Args:
-        function (callable): The function to be decorated.
+        func (callable): The function to be decorated.
 
     Returns:
         callable: The wrapped function that checks its return type.
@@ -35,7 +35,10 @@ def returns_string(func: callable) -> callable:
 
         # Ensure the return value is a string
         if not isinstance(result, str):
-            raise TypeError
+            raise TypeError(
+                f"Expected return type 'str', got {type(result).__name__}."
+            )
 
         return result
+
     return wrapper
