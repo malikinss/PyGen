@@ -19,7 +19,15 @@ This chapter has good theory explonation, 76 programing practical tasks and 143 
 1. 10_1_iterators_part_1
 
 ```
-
+# Lesson 10.1: Iterators (Part 1) 📝
+In this lesson, I explore **iterators** and **iterable objects** in Python.
+I learn the difference between **iterables** (objects that can be looped over) and **iterators** (objects that produce values one at a time).
+I also get familiar with built-in functions like `iter()` and `next()` and understand how they work under the hood to traverse sequences efficiently.
+By the end of this lesson, I will:
+✅ Understand what **iterable objects** are and how they differ from **iterators**.
+✅ Learn how to manually retrieve elements from an iterable using `iter()` and `next()`.
+✅ Be able to work with **collections and sequences** in an iterator-based approach.
+✅ Solve problems using iterators instead of direct indexing, enhancing my Python skills.
 ```
 
 2. 10_2_iterators_part_2
