@@ -25,7 +25,7 @@ def returns(datatype) -> Callable:
     Decorator to check the return type of the decorated function.
 
     Args:
-        expected_type (type): The type that the return value of the function
+        datatype (type): The type that the return value of the function
         should have.
 
     Returns:
@@ -33,7 +33,7 @@ def returns(datatype) -> Callable:
     """
     def decorator(func: Callable) -> Callable:
         @wraps(func)
-        def wrapper(*args: Any, **kwargs: Any) -> str:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             """
             Wrapper function that checks the return type of
             the decorated function.
@@ -51,7 +51,9 @@ def returns(datatype) -> Callable:
             result = func(*args, **kwargs)
 
             if not isinstance(result, datatype):
-                raise TypeError
+                raise TypeError(
+                    f"Expected return type {datatype}, but got {type(result)}"
+                )
 
             return result
 
