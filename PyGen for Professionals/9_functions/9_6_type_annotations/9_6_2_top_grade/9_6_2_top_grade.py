@@ -20,22 +20,22 @@ NOTE:
 '''
 
 
-def top_grade(grades: dict[str, str | list[int]]) -> dict[str, str | int]:
+def top_grade(grades: dict[str, list[int]]) -> dict[str, str | int]:
     """
     Calculate the top grade for a student.
 
     Args:
-        grades (dict[str, list[int]]): A dictionary with the student's name
-        and a list of grades.
+        grades (dict[str, list[int]]): A dictionary where the keys are student
+        names and the values are lists of grades.
 
     Returns:
-        student_result (dict[str, int]): A dictionary containing the student's
-        name and their highest grade.
+        dict[str, str | int]: A dictionary containing the student's name and
+        their highest grade.
     """
     student_result = {}
 
-    student_result['name'] = grades['name']
-
-    student_result['top_grade'] = max(grades['grades'])
+    for student_name, student_grades in grades.items():
+        student_result['name'] = student_name
+        student_result['top_grade'] = max(student_grades)
 
     return student_result
