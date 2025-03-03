@@ -77,7 +77,13 @@ By the end of this lesson, I will:
 6. 9_6_type_annotations
 
 ```
-
+# Lesson 9.6: Type Annotations 📝
+This lesson explores **type annotations** in Python, providing insights into how the Python typing system works and how to apply type hints to enhance code readability, maintainability, and error detection.
+It covers the basic principles of **typing in programming languages** and explains the use of the **Typing module** in Python, introducing various types and how they can be applied in different scenarios.
+By the end of this lesson, I will:
+✅ Understand the role of **type annotations** in Python and how they help define variable and function types.
+✅ Learn how to use the **Typing module** and various **useful types** provided by it, such as `List`, `Dict`, `Tuple`, `Any`, and more.
+✅ Apply type annotations to practical programming tasks to make code more predictable and robust.
 ```
 
 7. 9_7_decorators_part_1
