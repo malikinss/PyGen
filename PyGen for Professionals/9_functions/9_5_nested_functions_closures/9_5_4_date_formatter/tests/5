@@ -1,0 +1,3 @@
+date_ru = date_formatter('fr')
+today = date(2025, 1, 5)
+print(date_ru(today))
