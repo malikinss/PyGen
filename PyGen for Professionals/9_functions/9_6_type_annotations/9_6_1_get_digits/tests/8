@@ -1,0 +1,2 @@
+print(*get_digits.__annotations__.keys())
+print(*get_digits.__annotations__.values())
