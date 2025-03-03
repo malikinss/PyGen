@@ -18,15 +18,17 @@ NOTE:
 
     It is guaranteed that start < end.
 
-    Remember that the decorator must not consume the return value
-    of the decorated function, and must be able to decorate functions with
-    an arbitrary number of positional and named arguments.
+    Remember that the decorator must not consume the return value of the
+    decorated function, and must be able to decorate functions with an
+    arbitrary number of positional and named arguments.
 '''
 from functools import wraps
 from typing import Callable, Any
 
 
-def strip_range(start: int, end: int, char: str = '.') -> Callable:
+def strip_range(
+    start: int, end: int, char: str = '.'
+) -> Callable:
     """
     Decorator to replace characters in a specified range with
     a given character.
@@ -43,7 +45,9 @@ def strip_range(start: int, end: int, char: str = '.') -> Callable:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> str:
             original_str = func(*args, **kwargs)
-            replacement_str = len(original_str[start:end]) * char
+
+            # Fill the range with 'char'
+            replacement_str = char * (end - start)
 
             return original_str[:start] + replacement_str + original_str[end:]
 
