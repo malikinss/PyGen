@@ -104,7 +104,19 @@ By the end of this lesson, I will:
 8. 9_8_decorators_part_2
 
 ```
-
+# Lesson 9.8: Decorators (part 2) 📝
+In this lesson, I explore more advanced aspects of **decorators** in Python.
+I will cover how to use the `functools.wraps` decorator to preserve the name and docstring of a decorated function, how to create general-purpose decorators, and various practical use cases.
+These include decorators for measuring execution time, tracking function calls, modifying return values, and handling exceptions.
+I will also learn how to create decorators that accept arguments, providing more flexibility for customizing function behavior.
+By the end of this lesson, I will:
+✅ Learn to use **`functools.wraps`** to preserve function metadata.
+✅ Understand how to create general-purpose decorators.
+✅ Create a decorator that measures function execution time.
+✅ Track the number of times a function is called using a decorator.
+✅ Implement a decorator that intentionally slows down a function’s execution.
+✅ Work with decorators that accept arguments for more control over function behavior.
+✅ Explore advanced decorators for handling exceptions and retrying failed executions.
 ```
 
 9. 9_9_functools_module
