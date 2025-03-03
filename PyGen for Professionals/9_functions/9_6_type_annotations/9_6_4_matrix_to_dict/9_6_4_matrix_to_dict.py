@@ -20,12 +20,13 @@ NOTE:
 
     The matrix elements in the list must be in their original order.
 '''
+# Define a type for the rows of the matrix
 MatrixRow = list[int | float]
 
 
 def matrix_to_dict(matrix: list[MatrixRow]) -> dict[int, MatrixRow]:
     """
-    Convert a matrix to a dictionary.
+    Convert a matrix to a dictionary where each key is the row number.
 
     Args:
         matrix (list[list[int | float]]): A matrix of arbitrary dimension
@@ -36,4 +37,5 @@ def matrix_to_dict(matrix: list[MatrixRow]) -> dict[int, MatrixRow]:
         row number (starting from 1) and the value is a list of
         elements of this row.
     """
-    return dict(enumerate(matrix, 1))
+    # Convert the matrix into a dictionary with row numbers as keys
+    return {index: row for index, row in enumerate(matrix, start=1)}
