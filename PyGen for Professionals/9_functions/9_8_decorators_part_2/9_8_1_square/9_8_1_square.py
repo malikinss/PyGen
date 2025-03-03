@@ -28,8 +28,10 @@ def square(func: callable) -> callable:
         callable: A new function that returns the square of the
         original function's return value.
     """
-    @wraps(func)
+    @wraps(func)  # Preserve the original function's name and docstring
     def squared_result_wrapper(*args, **kwargs) -> int | float:
+        # Call the original function and square its result
         result = func(*args, **kwargs)
-        return result ** 2
+        return result ** 2  # Return the squared result
+
     return squared_result_wrapper
