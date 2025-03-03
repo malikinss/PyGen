@@ -1,0 +1,4 @@
+numbers = list(range(100, -100, -1))
+sort_priority(numbers, (98, 97, 100, 5, -9, -34))
+
+print(numbers)
