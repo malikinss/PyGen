@@ -31,8 +31,11 @@ def cyclic_shift(numbers: list[int | float], step: int) -> None:
     Returns:
         None: The list is modified in place.
     """
+    # Create a deque from the list to utilize the rotate function
     rotated_deque = deque(numbers)
 
+    # Perform cyclic rotation
     rotated_deque.rotate(step)
 
+    # Modify the original list in place
     numbers[:] = list(rotated_deque)
