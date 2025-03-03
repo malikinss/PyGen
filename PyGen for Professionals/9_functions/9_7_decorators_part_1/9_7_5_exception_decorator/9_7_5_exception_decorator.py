@@ -31,7 +31,12 @@ def exception_decorator(func: Callable[..., Any]) -> Callable[..., Any]:
     def wrapper(*args: Any, **kwargs: Any) -> Tuple[Any, str]:
         try:
             # Execute the function and return the result with a success message
-            return func(*args, **kwargs), 'Функция выполнилась без ошибок'
-        except Exception:
-            return None, 'При вызове функции произошла ошибка'
+            return (
+                func(*args, **kwargs),
+                'The function completed without errors'
+            )
+        except Exception as e:
+            # In case of an error, return None and an error message
+            return None, f'An error occurred while calling the function: {e}'
+
     return wrapper
