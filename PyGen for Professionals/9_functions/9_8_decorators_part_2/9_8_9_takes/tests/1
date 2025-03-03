@@ -1,0 +1,5 @@
+@takes(int, str)
+def repeat_string(string, times):
+    return string * times
+
+print(repeat_string('bee', 3))

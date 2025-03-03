@@ -1,0 +1,8 @@
+@takes(str)
+def beegeek(word, repeat):
+    return word * repeat
+    
+try:
+    print(beegeek('beegeek', repeat=2))
+except TypeError as e:
+    print(type(e))

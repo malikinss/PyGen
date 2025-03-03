@@ -1,0 +1,6 @@
+@takes()
+def beegeek():
+    '''beegeek docs'''
+    return 'beegeek'
+    
+print(beegeek())
