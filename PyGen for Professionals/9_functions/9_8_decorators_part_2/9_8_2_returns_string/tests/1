@@ -1,0 +1,5 @@
+@returns_string
+def beegeek():
+    return 'beegeek'
+    
+print(beegeek())

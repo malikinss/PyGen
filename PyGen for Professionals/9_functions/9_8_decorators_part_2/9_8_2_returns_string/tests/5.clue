@@ -1,0 +1,3 @@
+add
+docs
+<class 'TypeError'>

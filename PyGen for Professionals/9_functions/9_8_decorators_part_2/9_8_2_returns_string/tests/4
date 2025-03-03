@@ -1,0 +1,11 @@
+@returns_string
+def nothing():
+    return
+
+print(nothing.__name__)
+print(nothing.__doc__)
+
+try:
+    nothing()
+except TypeError as e:
+    print(type(e))

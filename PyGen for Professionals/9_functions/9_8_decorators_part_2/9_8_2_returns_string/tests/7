@@ -1,0 +1,5 @@
+@returns_string
+def concat(*args, **kwargs):
+    return "".join([*args, *kwargs.values()])
+
+print(concat("Hello ", x="world", y="!!!"))
