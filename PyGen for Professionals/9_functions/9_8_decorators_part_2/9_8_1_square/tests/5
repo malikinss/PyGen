@@ -1,0 +1,7 @@
+@square
+def add(a, b, c, d, e):
+    return a + b + c + d + e
+
+print(add(1, 2, 3, 4, 5))
+print(add.__name__)
+print(add.__doc__)

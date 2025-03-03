@@ -1,0 +1,8 @@
+@square
+def func(x):
+    '''classic f(x)'''
+    return (x + 1) ** 3
+
+print(func(7))
+print(func.__name__)
+print(func.__doc__)

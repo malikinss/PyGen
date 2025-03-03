@@ -1,0 +1,8 @@
+@square
+def beegeek():
+    '''beegeek docs'''
+    return 99
+
+print(beegeek())
+print(beegeek.__name__)
+print(beegeek.__doc__)
