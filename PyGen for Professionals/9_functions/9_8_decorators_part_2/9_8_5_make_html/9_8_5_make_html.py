@@ -18,8 +18,8 @@ NOTE:
     The return value of the decorated function is guaranteed to be an object
     of type str.
 
-    Remember that the decorator must not consume the return value
-    of the decorated function, and must be able to decorate functions with
+    Remember that the decorator must not consume the return value of the
+    decorated function, and must be able to decorate functions with
     an arbitrary number of positional and named arguments.
 '''
 from functools import wraps
