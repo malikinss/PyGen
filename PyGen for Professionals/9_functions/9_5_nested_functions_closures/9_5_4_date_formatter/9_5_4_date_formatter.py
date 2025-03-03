@@ -1,25 +1,25 @@
 '''
 TODO:
-        Often, different countries use different date formats.
-        Let's look at some of them:
-            country code    | date format
-            ru              | DD.MM.YYYY
-            us              | MM-DD-YYYY
-            ca              | YYYY-MM-DD
-            br              | DD/MM/YYYY
-            fr              | DD.MM.YYYY
-            pt              | DD-MM-YYYY
+    Often, different countries use different date formats.
+    Let's look at some of them:
+        country code    | date format
+        ru              | DD.MM.YYYY
+        us              | MM-DD-YYYY
+        ca              | YYYY-MM-DD
+        br              | DD/MM/YYYY
+        fr              | DD.MM.YYYY
+        pt              | DD-MM-YYYY
 
-        Implement the date_formatter() function that takes one argument:
-        country_code — country code
+    Implement the date_formatter() function that takes one argument:
+    country_code — country code
 
-        The date_formatter() function must return a function that takes
-        a date (date type) as an argument and returns a string with this date
-        in the format of the country with the country_code code.
+    The date_formatter() function must return a function that takes
+    a date (date type) as an argument and returns a string with this date
+    in the format of the country with the country_code code.
 
 NOTE:
-        It is guaranteed that only those country codes listed in the table
-        above are passed to the date_formatter() function.
+    It is guaranteed that only those country codes listed in the table
+    above are passed to the date_formatter() function.
 '''
 from typing import Callable
 from datetime import date, datetime
@@ -37,6 +37,7 @@ def date_formatter(country_code: str) -> Callable[[date], str]:
         format_date (Callable[[date], str]): Function that formats the date.
     """
 
+    # Map of country codes to their respective date formats
     date_formats = {
         'ru': '%d.%m.%Y',
         'us': '%m-%d-%Y',
@@ -45,6 +46,10 @@ def date_formatter(country_code: str) -> Callable[[date], str]:
         'fr': '%d.%m.%Y',
         'pt': '%d-%m-%Y'
     }
+
+    # Validate the provided country code
+    if country_code not in date_formats:
+        raise ValueError(f"Unsupported country code: {country_code}")
 
     def format_date(given_date: date) -> str:
         """
@@ -61,6 +66,7 @@ def date_formatter(country_code: str) -> Callable[[date], str]:
     return format_date
 
 
+# Example usage
 date_ru = date_formatter('ru')
 today = date(2022, 1, 25)
-print(date_ru(today))
+print(date_ru(today))  # Output: "25.01.2022"
