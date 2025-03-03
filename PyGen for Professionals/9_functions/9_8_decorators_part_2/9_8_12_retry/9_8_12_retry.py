@@ -21,7 +21,8 @@ from typing import Callable, Any
 
 
 class MaxRetriesException(Exception):
-    pass
+    def __init__(self, message: str):
+        super().__init__(message)
 
 
 def retry(times: int) -> Callable:
@@ -29,21 +30,30 @@ def retry(times: int) -> Callable:
     Decorator to retry a function call if an exception occurs.
 
     Args:
-        max_retries (int): Maximum number of retry attempts.
+        times (int): Maximum number of retry attempts.
 
     Returns:
         Callable: Wrapped function that retries on failure.
+
+    Raises:
+        MaxRetriesException: If the function fails after the maximum number
+        of retries.
     """
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
-            for _ in range(times):
+            last_exception = None
+            for attempt in range(1, times + 1):
                 try:
                     return func(*args, **kwargs)
-                except Exception:
-                    pass
-
-            raise MaxRetriesException
+                except Exception as e:
+                    last_exception = e
+                    print(f"Attempt {attempt} failed with exception: {e}")
+                    if attempt == times:
+                        raise MaxRetriesException(
+                            f"Function failed after {times} retries."
+                        ) from last_exception
+            return None
 
         return wrapper
 
