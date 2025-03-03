@@ -1,0 +1,2 @@
+f = generator_square_polynom(1, 2, 1)
+print(f(5))

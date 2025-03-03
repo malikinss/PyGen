@@ -1,0 +1,1 @@
+print(generator_square_polynom(9, 52, 64)(8))

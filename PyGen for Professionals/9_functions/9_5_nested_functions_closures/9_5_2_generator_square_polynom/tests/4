@@ -1,0 +1,1 @@
+print(generator_square_polynom(26, 83, 22)(0))
