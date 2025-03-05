@@ -1,0 +1,5 @@
+geek = Repeater('geek')
+
+print(next(geek))
+print(next(geek))
+print(next(geek))

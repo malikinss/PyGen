@@ -1,0 +1,4 @@
+repeater = Repeater((1, 2, 3, 4))
+
+for _ in range(55):
+    print(next(repeater))

@@ -1,0 +1,4 @@
+repeater = Repeater(['bee', 'geek'])
+
+for _ in range(22):
+    print(next(repeater))

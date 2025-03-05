@@ -1,0 +1,3 @@
+bee = Repeater('bee')
+
+print(next(bee))
