@@ -1,0 +1,8 @@
+iterator = random_numbers(5, 5)
+
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))

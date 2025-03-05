@@ -1,0 +1,12 @@
+iterator = random_numbers(1000, 1001)
+
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))

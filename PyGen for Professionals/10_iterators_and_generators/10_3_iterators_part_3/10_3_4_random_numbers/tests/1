@@ -1,0 +1,4 @@
+iterator = random_numbers(1, 1)
+
+print(next(iterator))
+print(next(iterator))
