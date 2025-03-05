@@ -1,0 +1,1 @@
+print(is_iterable(18731))
