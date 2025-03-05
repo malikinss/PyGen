@@ -21,8 +21,10 @@ NOTE:
 from typing import Callable, Iterable, Iterator, Optional, Any
 
 
-def filterfalse(predicate: Optional[Callable[[Any], bool]],
-                iterable: Iterable[Any]) -> Iterator[Any]:
+def filterfalse(
+    predicate: Optional[Callable[[Any], bool]],
+    iterable: Iterable[Any]
+) -> Iterator[Any]:
     """
     Filters elements from the iterable for which the predicate returns False.
 
