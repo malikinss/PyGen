@@ -1,0 +1,3 @@
+squares = Square(9)
+
+print(*squares)

@@ -1,0 +1,4 @@
+squares = Square(2)
+
+print(next(squares))
+print(next(squares))

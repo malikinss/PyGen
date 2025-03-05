@@ -1,0 +1,12 @@
+squares = Square(5)
+
+next(squares)
+next(squares)
+next(squares)
+next(squares)
+next(squares)
+
+try:
+    next(squares)
+except StopIteration:
+    print('Error')

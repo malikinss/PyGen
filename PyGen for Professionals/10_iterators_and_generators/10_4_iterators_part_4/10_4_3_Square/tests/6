@@ -1,0 +1,8 @@
+squares = Square(2)
+
+try:
+    print(next(squares))
+    print(next(squares))
+    print(next(squares))
+except:
+    print('Error')

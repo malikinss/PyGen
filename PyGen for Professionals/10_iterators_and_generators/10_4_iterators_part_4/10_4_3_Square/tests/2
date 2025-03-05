@@ -1,0 +1,3 @@
+squares = Square(10)
+
+print(list(squares))
