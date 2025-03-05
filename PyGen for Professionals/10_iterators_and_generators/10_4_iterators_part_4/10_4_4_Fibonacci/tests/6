@@ -1,0 +1,13 @@
+fibonacci = Fibonacci()
+
+for _ in range(76):
+    next(fibonacci)
+
+next(fibonacci)
+next(fibonacci)
+next(fibonacci)
+next(fibonacci)
+
+print(next(fibonacci))
+print(next(fibonacci))
+print(next(fibonacci))

@@ -1,0 +1,6 @@
+fibonacci = Fibonacci()
+
+for _ in range(100):
+    next(fibonacci)
+
+print(next(fibonacci))

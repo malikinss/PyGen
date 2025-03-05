@@ -1,0 +1,3 @@
+fibonacci = Fibonacci()
+
+print(next(fibonacci))
