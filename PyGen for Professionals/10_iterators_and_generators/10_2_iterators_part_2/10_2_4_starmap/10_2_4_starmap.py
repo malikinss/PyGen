@@ -32,25 +32,13 @@ TODO:
         func must take not one argument - a collection (an element of iterable)
         but each element of this collection as an independent argument.
 '''
-from typing import List, Callable, Iterable, Any
+from typing import Callable, Iterable, Any
 
 
-def transpose_collections(collections: List[List[Any]]) -> List[List[Any]]:
-    """
-    Transpose a list of collections.
-
-    Args:
-        collections (List[List[Any]]): A list where each element is
-        a collection.
-
-    Returns:
-        List[List[Any]]: The transposed list of collections.
-    """
-    return [list(row) for row in zip(*collections)]
-
-
-def starmap(function: Callable[..., Any],
-            collections: Iterable[Iterable[Any]]) -> Iterable[Any]:
+def starmap(
+    function: Callable[..., Any],
+    collections: Iterable[Iterable[Any]]
+) -> Iterable[Any]:
     """
     Apply a function to unpacked elements of each collection in an iterable.
 
@@ -64,4 +52,11 @@ def starmap(function: Callable[..., Any],
         Iterable[Any]: An iterator yielding the results of applying the
         function to the unpacked elements.
     """
-    return map(function, *transpose_collections(collections))
+    return map(function, *zip(*collections))
+
+
+# Example usage:
+persons = [('Timur', 'Guev'), ('Arthur', 'Kharisov')]
+full_names = starmap(lambda name, surname: f'{name} {surname}', persons)
+
+print(list(full_names))  # Output: ['Timur Guev', 'Arthur Kharisov']
