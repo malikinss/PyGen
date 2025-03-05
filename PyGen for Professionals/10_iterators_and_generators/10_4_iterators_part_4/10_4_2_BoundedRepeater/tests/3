@@ -1,0 +1,11 @@
+repeater = BoundedRepeater(['bee', 'geek'], 10)
+
+for _ in range(9):
+    next(repeater)
+
+print(next(repeater))
+
+try:
+    next(repeater)
+except StopIteration:
+    print('Error')

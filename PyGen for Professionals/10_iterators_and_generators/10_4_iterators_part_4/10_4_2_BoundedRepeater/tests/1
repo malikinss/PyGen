@@ -1,0 +1,4 @@
+bee = BoundedRepeater('bee', 2)
+
+print(next(bee))
+print(next(bee))

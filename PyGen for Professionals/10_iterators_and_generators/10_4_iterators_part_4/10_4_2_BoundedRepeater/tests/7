@@ -1,0 +1,3 @@
+repeater = BoundedRepeater(1, 10)
+
+print(list(repeater))

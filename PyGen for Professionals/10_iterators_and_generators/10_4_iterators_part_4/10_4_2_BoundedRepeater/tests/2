@@ -1,0 +1,10 @@
+geek = BoundedRepeater('geek', 3)
+
+print(next(geek))
+print(next(geek))
+print(next(geek))
+
+try:
+    print(next(geek))
+except StopIteration:
+    print('Error')

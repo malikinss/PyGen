@@ -1,0 +1,4 @@
+repeater = BoundedRepeater({'bee': 'geek'}, 55)
+
+for elem in repeater:
+    print(elem)

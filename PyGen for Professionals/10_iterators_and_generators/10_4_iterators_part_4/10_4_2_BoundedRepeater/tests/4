@@ -1,0 +1,7 @@
+repeater = BoundedRepeater(9999, 1)
+
+try:
+    print(next(repeater))
+    print(next(repeater))
+except StopIteration:
+    print('Error')

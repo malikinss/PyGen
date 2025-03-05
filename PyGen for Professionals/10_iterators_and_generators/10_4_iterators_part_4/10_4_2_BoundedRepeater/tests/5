@@ -1,0 +1,15 @@
+repeater = BoundedRepeater((1, 2, 3, 4), 15)
+
+for _ in range(10):
+    next(repeater)
+
+next(repeater)
+next(repeater)
+next(repeater)
+next(repeater)
+next(repeater)
+
+try:
+    print(next(repeater))
+except StopIteration:
+    print('Error')
