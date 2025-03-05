@@ -1,0 +1,3 @@
+beegeek = 199999111199991919191
+
+print(is_iterator(beegeek))

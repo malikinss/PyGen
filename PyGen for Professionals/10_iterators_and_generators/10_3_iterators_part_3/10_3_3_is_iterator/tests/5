@@ -1,0 +1,3 @@
+beegeek = enumerate('beegeek', start=1)
+
+print(is_iterator(beegeek))

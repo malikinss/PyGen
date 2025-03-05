@@ -1,0 +1,3 @@
+beegeek = map(str.upper, 'beegeek')
+
+print(is_iterator(beegeek))
