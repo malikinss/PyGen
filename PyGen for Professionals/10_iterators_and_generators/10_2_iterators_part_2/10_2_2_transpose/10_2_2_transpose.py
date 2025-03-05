@@ -27,15 +27,31 @@ NOTE:
 '''
 from typing import List, Any
 
+Matrix = List[List[Any]]
 
-def transpose(matrix: List[List[Any]]) -> List[List[Any]]:
+
+def transpose(matrix: Matrix) -> Matrix:
     """
-    Transpose a matrix.
+    Transpose a matrix, switching rows with columns.
 
     Args:
-        matrix (List[List[Any]]): A matrix of arbitrary dimension
+        matrix (Matrix): A matrix of arbitrary dimension, represented
+        as a list of lists.
 
     Returns:
-        List[List[Any]]: The transposed matrix
+        Matrix: The transposed matrix, with rows and columns swapped.
     """
+    # Using zip to group elements of the original matrix by columns
+    # and convert each group into a list
     return [list(row) for row in zip(*matrix)]
+
+
+# Example usage
+original_matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+transposed_matrix = transpose(original_matrix)
+print(transposed_matrix)
