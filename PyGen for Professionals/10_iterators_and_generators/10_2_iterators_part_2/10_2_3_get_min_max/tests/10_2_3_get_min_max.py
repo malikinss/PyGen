@@ -33,16 +33,22 @@ def get_min_max(data: List[Any]) -> Optional[Tuple[int, int]]:
     if not data:
         return None
 
-    # Initialize min and max values and their indices
+    # Initialize indices for min and max elements
     min_index = 0
     max_index = 0
 
-    # Iterate through the list to find min and max indices
+    # Iterate through the list to find the indices of min and max values
     for i, item in enumerate(data):
         if item < data[min_index]:
             min_index = i
-
-        if item > data[max_index]:
+        elif item > data[max_index]:
             max_index = i
 
     return (min_index, max_index)
+
+
+# Example usage
+data = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# Output should be (1, 5) since 1 is the min and 9 is the max
+print(get_min_max(data))
