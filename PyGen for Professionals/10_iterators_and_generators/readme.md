@@ -33,7 +33,14 @@ By the end of this lesson, I will:
 2. 10_2_iterators_part_2
 
 ```
-
+# Lesson 10.2: Iterators (Part 2) 📝
+In this lesson, I dive deeper into **iterator features** and explore some **built-in functions** that generate iterators in Python.
+These functions allow me to apply operations on sequences and iterables more efficiently.
+I also learn how to utilize Python's built-in tools to manipulate collections like lists, tuples, and other iterables.
+By the end of this lesson, I will:
+✅ Understand advanced iterator concepts and features.
+✅ Learn how to use built-in functions like `filterfalse()`, `transpose()`, `starmap()`, and others to work with iterables.
+✅ Be able to perform tasks like matrix transposition and finding the minimum and maximum values in a sequence.
 ```
 
 3. 10_3_iterators_part_3
