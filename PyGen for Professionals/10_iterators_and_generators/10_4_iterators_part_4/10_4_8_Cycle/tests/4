@@ -1,0 +1,6 @@
+cycle = Cycle(range(10_000_000))
+
+for _ in range(1000):
+    next(cycle)
+
+print(next(cycle))

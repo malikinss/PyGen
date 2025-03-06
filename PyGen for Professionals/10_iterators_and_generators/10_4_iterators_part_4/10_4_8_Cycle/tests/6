@@ -1,0 +1,17 @@
+cycle = Cycle((0, 9, 8, 7, 6, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 0, 9, 8, 87, 5666666))
+
+for _ in range(2000):
+    next(cycle)
+
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))

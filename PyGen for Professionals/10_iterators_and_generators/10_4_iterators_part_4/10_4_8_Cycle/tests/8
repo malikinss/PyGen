@@ -1,0 +1,13 @@
+cycle = Cycle('B')
+
+for _ in range(500):
+    next(cycle)
+
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))

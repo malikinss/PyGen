@@ -1,0 +1,6 @@
+cycle = Cycle('be')
+
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))
+print(next(cycle))

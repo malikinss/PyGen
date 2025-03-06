@@ -1,0 +1,4 @@
+cycle = Cycle(range(100_000_000))
+
+print(next(cycle))
+print(next(cycle))

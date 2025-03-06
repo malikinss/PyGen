@@ -1,0 +1,3 @@
+cycle = Cycle([1])
+
+print(next(cycle) + next(cycle) + next(cycle))

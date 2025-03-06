@@ -1,0 +1,6 @@
+cycle = Cycle('AJFHKJSDHFWIEFJIOFKDKSVNCVNJVDJSFNdfkdsjfiwej943257438j2j123')
+
+for _ in range(666):
+    next(cycle)
+
+print(next(cycle))
