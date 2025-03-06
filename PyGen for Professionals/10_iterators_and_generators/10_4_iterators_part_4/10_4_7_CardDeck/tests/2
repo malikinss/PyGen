@@ -1,0 +1,6 @@
+cards = list(CardDeck())
+
+print(cards[9])
+print(cards[23])
+print(cards[37])
+print(cards[51])

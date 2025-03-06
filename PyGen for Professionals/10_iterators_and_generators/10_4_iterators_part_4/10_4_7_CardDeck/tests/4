@@ -1,0 +1,7 @@
+cards1 = list(CardDeck())
+cards2 = tuple(CardDeck())
+cards3 = list(CardDeck())
+
+print(cards1)
+print(cards2)
+print(cards3)

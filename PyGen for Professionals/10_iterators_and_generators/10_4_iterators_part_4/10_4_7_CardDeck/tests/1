@@ -1,0 +1,4 @@
+cards = CardDeck()
+
+print(next(cards))
+print(next(cards))

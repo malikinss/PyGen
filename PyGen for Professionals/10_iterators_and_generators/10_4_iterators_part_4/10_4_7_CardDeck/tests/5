@@ -1,0 +1,6 @@
+cards = list(CardDeck())
+
+try:
+    next(cards)
+except:
+    print('Error')
