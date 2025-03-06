@@ -1,0 +1,4 @@
+power_of_two = PowerOf(1)
+
+for _ in range(55):
+    print(next(power_of_two))
