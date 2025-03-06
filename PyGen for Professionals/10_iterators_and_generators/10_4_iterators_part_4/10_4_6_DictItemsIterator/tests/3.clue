@@ -1,0 +1,1 @@
+[('Arthur', 100), ('Timur', 100), ('Dima', 100), ('Anri', 101), ('Roma', 99), ('German', 98)]
