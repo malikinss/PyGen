@@ -46,13 +46,29 @@ By the end of this lesson, I will:
 3. 10_3_iterators_part_3
 
 ```
-
+# Lesson 10.3: Iterators (Part 3) 💻
+This lesson dives into **magic methods** (also known as **dunders**), the **iterator protocol**, and the **iter()** function features.
+Magic methods allow objects to behave like iterators, which is crucial for creating custom iterables.
+The lesson also explores how to determine whether an object is iterable or an iterator, and how to create infinite iterators.
+By the end of this lesson, I will:
+✅ Learn about the **iterator protocol** and how to use magic methods to create custom iterables.
+✅ Understand the **features of the iter() function**.
+✅ Be able to check whether an object is iterable or an iterator.
+✅ Gain the ability to create **infinite iterators** for scenarios requiring endless data streams.
 ```
 
 4. 10_4_iterators_part_4
 
 ```
-
+# Lesson 10.4: Iterators (Part 4) 📝
+In this lesson, I dive into creating custom iterators in Python using **class definitions**.
+This lesson introduces how to build iterators from scratch, adhering to the **iterator protocol**.
+I learn to define the necessary methods to create my own iterator objects and customize them for various use cases.
+By the end of this lesson, I will:
+✅ Learn how to create my own iterators by writing custom iterator classes.
+✅ Understand the **iterator protocol** that requires the implementation of `__iter__()` and `__next__()` methods.
+✅ Gain the ability to use these custom iterators in real-world scenarios.
+✅ Explore common use cases like infinite loops, bounded repetitions, mathematical sequences, and more.
 ```
 
 5. 10_5_generators_part_1
