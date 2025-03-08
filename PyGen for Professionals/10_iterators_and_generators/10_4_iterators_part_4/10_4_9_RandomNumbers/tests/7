@@ -1,0 +1,8 @@
+iterator = RandomNumbers(-1000, -900, 1)
+
+print(next(iterator) in range(-1000, -899))
+
+try:
+    next(iterator)
+except StopIteration:
+    print('Error')

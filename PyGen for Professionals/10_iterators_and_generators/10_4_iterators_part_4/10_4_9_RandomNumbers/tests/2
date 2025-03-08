@@ -1,0 +1,4 @@
+iterator = RandomNumbers(1, 10, 2)
+
+print(next(iterator) in range(1, 11))
+print(next(iterator) in range(1, 11))

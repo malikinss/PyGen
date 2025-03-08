@@ -1,0 +1,12 @@
+iterator = RandomNumbers(1000, 1001, 108)
+
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
+print(next(iterator) in range(1000, 1002))
