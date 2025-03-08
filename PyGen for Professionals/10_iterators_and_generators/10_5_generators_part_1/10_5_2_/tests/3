@@ -1,0 +1,3 @@
+generator = alternating_sequence(100)
+
+print(*generator)

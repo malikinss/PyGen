@@ -1,0 +1,7 @@
+generator = alternating_sequence(1)
+
+try:
+    print(next(generator))
+    print(next(generator))
+except StopIteration:
+    print('Error')

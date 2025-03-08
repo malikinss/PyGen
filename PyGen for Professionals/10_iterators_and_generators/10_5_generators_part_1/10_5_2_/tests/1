@@ -1,0 +1,4 @@
+generator = alternating_sequence()
+
+print(next(generator))
+print(next(generator))

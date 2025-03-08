@@ -1,0 +1,15 @@
+generator = alternating_sequence()
+
+for _ in range(10_124_421):
+    next(generator)
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
