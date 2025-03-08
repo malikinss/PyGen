@@ -1,0 +1,5 @@
+ru_alpha = Alphabet('ru')
+
+print(next(ru_alpha))
+print(next(ru_alpha))
+print(next(ru_alpha))

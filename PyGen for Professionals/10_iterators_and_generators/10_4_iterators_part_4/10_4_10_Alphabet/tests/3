@@ -1,0 +1,4 @@
+en_alpha = Alphabet('en')
+
+for _ in range(100):
+    print(next(en_alpha))

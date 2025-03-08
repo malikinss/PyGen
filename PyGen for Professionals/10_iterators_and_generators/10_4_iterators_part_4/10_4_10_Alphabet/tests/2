@@ -1,0 +1,5 @@
+en_alpha = Alphabet('en')
+
+letters = [next(en_alpha) for _ in range(28)]
+
+print(*letters)

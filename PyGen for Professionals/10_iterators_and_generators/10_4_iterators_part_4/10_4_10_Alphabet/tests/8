@@ -1,0 +1,12 @@
+en_alpha = Alphabet('en')
+
+for _ in range(40):
+    next(en_alpha)
+
+for _ in range(40):
+    next(en_alpha)
+
+for _ in range(40):
+    next(en_alpha)
+
+print(next(en_alpha))

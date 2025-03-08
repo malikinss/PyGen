@@ -1,0 +1,4 @@
+ru_alpha = Alphabet('ru')
+
+for _ in range(50):
+    print(next(ru_alpha))
