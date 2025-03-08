@@ -1,0 +1,3 @@
+generator = primes(39, 83)
+
+print(*generator)

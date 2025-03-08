@@ -1,0 +1,4 @@
+generator = primes(6, 36)
+
+print(next(generator))
+print(next(generator))

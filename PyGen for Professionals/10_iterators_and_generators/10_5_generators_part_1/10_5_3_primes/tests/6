@@ -1,0 +1,3 @@
+generator = primes(43, 72)
+
+print(*generator)

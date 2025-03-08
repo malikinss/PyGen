@@ -1,0 +1,7 @@
+generator = primes(37, 37)
+
+try:
+    print(next(generator))
+    print(next(generator))
+except StopIteration:
+    print('Error')
