@@ -1,0 +1,11 @@
+xrange = Xrange(5, 1, -1)
+
+next(xrange)
+next(xrange)
+next(xrange)
+next(xrange)
+
+try:
+    next(xrange)
+except StopIteration:
+    print('Error')

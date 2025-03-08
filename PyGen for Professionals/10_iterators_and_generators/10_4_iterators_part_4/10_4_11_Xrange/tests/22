@@ -1,0 +1,3 @@
+xrange = Xrange(5.1, 55, 1.1)
+
+print(tuple(xrange))

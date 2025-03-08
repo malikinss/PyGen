@@ -1,0 +1,3 @@
+xrange = Xrange(24, 89, 13)
+
+print(list(xrange))

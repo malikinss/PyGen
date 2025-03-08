@@ -1,0 +1,3 @@
+xrange = Xrange(-20, 12, 4)
+
+print(*xrange)

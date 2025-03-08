@@ -1,0 +1,3 @@
+evens = Xrange(0, 10, 2)
+
+print(*evens)
