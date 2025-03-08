@@ -1,0 +1,4 @@
+generator = simple_sequence()
+numbers = [next(generator) for _ in range(10)]
+
+print(*numbers)

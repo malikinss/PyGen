@@ -1,0 +1,9 @@
+generator = simple_sequence()
+
+for _ in range(1000):
+    next(generator)
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))

@@ -1,0 +1,13 @@
+generator = simple_sequence()
+
+for _ in range(10_000_000):
+    next(generator)
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
