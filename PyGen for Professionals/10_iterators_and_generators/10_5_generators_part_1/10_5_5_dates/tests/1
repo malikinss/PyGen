@@ -1,0 +1,5 @@
+generator = dates(date(2022, 3, 8))
+
+print(next(generator))
+print(next(generator))
+print(next(generator))

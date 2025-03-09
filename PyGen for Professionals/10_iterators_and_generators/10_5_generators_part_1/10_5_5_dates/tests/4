@@ -1,0 +1,9 @@
+generator = dates(date(2024, 9, 13), 1)
+
+try:
+    d = next(generator)
+    print(type(d))
+    print(d)
+    next(generator)
+except StopIteration:
+    print('Error')
