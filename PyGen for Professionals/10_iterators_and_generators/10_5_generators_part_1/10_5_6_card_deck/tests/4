@@ -1,0 +1,5 @@
+generator = card_deck('червей')
+
+cards = [next(generator) for _ in range(60)]
+
+print(*cards)

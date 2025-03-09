@@ -1,0 +1,4 @@
+generator = card_deck('треф')
+cards = [next(generator) for _ in range(40)]
+
+print(*cards)

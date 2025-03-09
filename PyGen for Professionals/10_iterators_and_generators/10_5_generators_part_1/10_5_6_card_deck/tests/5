@@ -1,0 +1,5 @@
+generator = card_deck('пик')
+
+cards = [next(generator) for _ in range(80)]
+
+print(*cards)

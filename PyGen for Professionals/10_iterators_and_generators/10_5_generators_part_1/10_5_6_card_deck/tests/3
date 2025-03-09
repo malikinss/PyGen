@@ -1,0 +1,5 @@
+generator = card_deck('бубен')
+
+cards = [next(generator) for _ in range(50)]
+
+print(*cards)

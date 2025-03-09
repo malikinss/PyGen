@@ -1,0 +1,5 @@
+generator = card_deck('пик')
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
