@@ -1,0 +1,1 @@
+print(*cubes_of_odds([1, 2, 3, 4, 5]))

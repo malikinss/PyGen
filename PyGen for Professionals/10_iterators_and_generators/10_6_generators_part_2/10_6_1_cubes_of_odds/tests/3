@@ -1,0 +1,3 @@
+data = tuple(range(432, 3845, 17))
+
+print(*cubes_of_odds(data))

@@ -1,0 +1,3 @@
+data = filter(lambda x: x % 13, range(101, 982))
+
+print(*cubes_of_odds(data))
