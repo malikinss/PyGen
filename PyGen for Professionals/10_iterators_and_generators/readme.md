@@ -74,13 +74,30 @@ By the end of this lesson, I will:
 5. 10_5_generators_part_1
 
 ```
-
+# Lesson 10.5: Generators (Part 1) 📝
+In this lesson, I explore **generator functions** in Python, which allow for lazy evaluation of sequences and memory-efficient handling of large data.
+I will study the `yield` keyword, the creation of simple and recursive generator functions, and the advantages of using generators for various tasks, such as generating sequences, processing large datasets, and more.
+By the end of this lesson, I will:
+✅ Understand the basics of **generator functions**.
+✅ Learn how to use the `yield` keyword for creating generators.
+✅ Study the use cases and limitations of generators.
+✅ Be able to implement **recursive generators** and use **`yield from`** for simplification.
+✅ Practice solving problems with practical generator-based tasks.
 ```
 
 6. 10_6_generators_part_2
 
 ```
-
+# Lesson 10.6: Generators (Part 2) 📝
+This lesson dives deeper into **generator expressions**.
+I learn how to use generator expressions in Python to create more efficient and memory-friendly code.
+The lesson explains the differences between **generator expressions** and other techniques like **map()**, **filter()**, and **generator functions**.
+By the end of this lesson, I’ll be able to use generator expressions to optimize the processing of iterables in Python.
+By the end of this lesson, I will:
+✅ Understand how **generator expressions** work in Python and their features.
+✅ Learn how generator expressions differ from **map()**, **filter()**, and **generator functions**.
+✅ Be able to apply generator expressions to solve common tasks like generating cubes of odd numbers, checking for prime numbers, counting elements in an iterable, merging iterables, and interleaving sequences.
+✅ Write memory-efficient code using generator expressions to avoid storing large results in memory.
 ```
 
 7. 10_7_generators_part_3
