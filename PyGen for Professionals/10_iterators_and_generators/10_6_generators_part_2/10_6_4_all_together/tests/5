@@ -1,0 +1,5 @@
+_map = map(str.upper, 'beegeek')
+_filter = filter(str.islower, 'BEEgeek')
+_zip = zip('bee', '123')
+
+print(*all_together(_map, _filter, _zip))

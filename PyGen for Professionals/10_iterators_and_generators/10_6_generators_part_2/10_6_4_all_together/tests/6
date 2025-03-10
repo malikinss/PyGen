@@ -1,0 +1,7 @@
+_map = map(str.upper, 'stepik')
+_filter = filter(str.islower, 'beeGEEK')
+_zip = zip('zip', '321')
+_reversed = reversed([1, 2, 3, 4])
+_enumerate = enumerate('bee')
+
+print(*all_together(_map, _filter, _zip, _reversed, _enumerate))
