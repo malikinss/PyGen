@@ -1,0 +1,3 @@
+data = zip('beegeek', 'stepik')
+
+print(count_iterable(data))

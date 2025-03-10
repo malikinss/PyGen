@@ -1,0 +1,3 @@
+data = filter(None, range(100_000_001))
+
+print(count_iterable(data))
