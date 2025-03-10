@@ -1,0 +1,5 @@
+numbers = parse_ranges('1-3')
+
+print(next(numbers))
+print(next(numbers))
+print(next(numbers))

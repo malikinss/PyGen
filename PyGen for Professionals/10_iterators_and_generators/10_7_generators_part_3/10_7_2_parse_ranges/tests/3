@@ -1,0 +1,1 @@
+print(*parse_ranges('7-32'))
