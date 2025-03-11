@@ -1,0 +1,3 @@
+data = ['Dima', 'Timur', 'Arthur', 'Anri20', 'Arina', 'German', 'Ruslan']
+
+print(*filter_names(data, 'D', 3))

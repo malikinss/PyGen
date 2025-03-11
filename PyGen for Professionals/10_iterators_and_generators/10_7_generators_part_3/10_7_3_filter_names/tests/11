@@ -1,0 +1,3 @@
+data = []
+
+print(list(filter_names(data, 'B', 1)))

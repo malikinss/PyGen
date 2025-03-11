@@ -1,0 +1,3 @@
+data = ['Arthur', 'Anri', 'Arina', 'Albert', 'Angel', 'Ariel']
+
+print(next(filter_names(data, 'R', 1)))
