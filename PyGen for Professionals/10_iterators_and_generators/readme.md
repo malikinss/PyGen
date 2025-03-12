@@ -103,7 +103,16 @@ By the end of this lesson, I will:
 7. 10_7_generators_part_3
 
 ```
-
+# Lesson 10.7: Generators (part 3) 📝
+This lesson focuses on **generator pipelines** and how to efficiently process large datasets or perform tasks that require handling sequences of data.
+I will explore how Python generators can be chained together to form pipelines, as well as how they can be used to handle large files or datasets in a memory-efficient manner.
+The lesson covers various practical tasks where I can apply these concepts to real-world problems.
+By the end of this lesson, I will:
+✅ Understand **generator pipelines** and how they work.
+✅ Learn how to use generators to process large files and datasets efficiently.
+✅ Explore the features of **range objects** and how they can be used with generators.
+✅ Gain insight into the performance benefits of using generators for memory-intensive tasks.
+✅ Learn how to implement and use 12 practical tasks that demonstrate the power of generators in Python.
 ```
 
 8. 10_8_itertools_module_part_1
