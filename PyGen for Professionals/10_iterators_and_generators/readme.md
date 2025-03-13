@@ -118,7 +118,15 @@ By the end of this lesson, I will:
 8. 10_8_itertools_module_part_1
 
 ```
-
+# Lesson 10.8: `itertools` module (part 1) 📝
+In this lesson, I explore the **`itertools`** module, a collection of tools in Python for handling iterators that work on data streams.
+The module is ideal for creating efficient, memory-friendly code when working with large or infinite datasets.
+I will learn how to use the functions from `itertools` that generate sequences and cycle through data.
+By the end of this lesson, I will:
+✅ Understand the purpose and functions of the **`itertools`** module.
+✅ Learn how to generate infinite sequences using functions like `count()`, `cycle()`, and `repeat()`.
+✅ Master the `starmap()`, `accumulate()`, and other functions that apply transformations to data in an efficient way.
+✅ Learn how to use iterators that combine multiple data sources, like `roundrobin()`, for more flexible data manipulation.
 ```
 
 9. 10_9_itertools_module_part_2
