@@ -146,7 +146,15 @@ By the end of this lesson, I will:
 10. 10_10_itertools_module_part_3
 
 ```
-
+# Lesson 10.10: `itertools` module (part 3) 📝
+In this lesson, I continue exploring the **`itertools`** module, focusing on functions that help in **combining and splitting data** efficiently. These functions allow me to merge multiple iterables, handle uneven sequences, create independent iterators, and process elements in pairs.
+I'll work with functions like `chain()`, `zip_longest()`, `tee()`, and `pairwise()`, which are essential for processing large datasets and optimizing iteration performance.
+By the end of this lesson, I will:
+✅ Learn how to **combine multiple iterables** into a single sequence using `chain()` and `chain.from_iterable()`.
+✅ Master handling **iterables of different lengths** with `zip_longest()`.
+✅ Understand **creating independent iterators** from a single iterable using `tee()`.
+✅ Use `pairwise()` to **generate consecutive pairs** from an iterable.
+✅ Complete several practical tasks to apply these functions in real-world scenarios.
 ```
 
 11. 10_11_itertools_module_part_4
