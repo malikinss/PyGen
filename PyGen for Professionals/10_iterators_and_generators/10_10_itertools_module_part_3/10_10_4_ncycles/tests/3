@@ -1,0 +1,3 @@
+iterator = iter([1])
+
+print(*ncycles(iterator, 10))

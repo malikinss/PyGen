@@ -1,0 +1,3 @@
+iterator = ncycles(iter('b'), 1)
+
+print(next(iterator))

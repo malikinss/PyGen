@@ -1,0 +1,3 @@
+iterator = iter('bee')
+
+print(*ncycles(iterator, 4))
