@@ -1,0 +1,1 @@
+print(sum_of_digits([13, 20, 41, 2, 2, 5]))

@@ -1,0 +1,4 @@
+numbers = [10]*100
+
+iterator = iter(numbers)
+print(sum_of_digits(iterator))
