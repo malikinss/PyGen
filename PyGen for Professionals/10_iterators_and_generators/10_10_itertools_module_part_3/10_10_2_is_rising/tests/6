@@ -1,0 +1,3 @@
+iterator = iter([10]*50)
+
+print(is_rising(iterator))

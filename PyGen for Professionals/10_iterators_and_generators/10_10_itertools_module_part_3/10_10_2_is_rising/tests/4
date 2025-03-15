@@ -1,0 +1,3 @@
+iterator = iter(list(range(200, 100, -1)))
+
+print(is_rising(iterator))
