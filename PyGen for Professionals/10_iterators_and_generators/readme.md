@@ -132,7 +132,15 @@ By the end of this lesson, I will:
 9. 10_9_itertools_module_part_2
 
 ```
-
+# Lesson 10.9: `itertools` module (part 2) 📝
+In this lesson, I dive deeper into the **`itertools`** module and explore functions that filter data from iterables.
+These functions are useful when I need to process or extract specific subsets of data efficiently.
+I'll work with filtering functions like `dropwhile()`, `takewhile()`, `filterfalse()`, `compress()`, and `islice()`, which allow me to skip or extract elements based on certain conditions.
+By the end of this lesson, I will:
+✅ Learn how to filter data from iterables using various **`itertools`** functions.
+✅ Understand the **`dropwhile()`**, **`takewhile()`**, and **`filterfalse()`** functions for skipping and filtering elements based on conditions.
+✅ Master how to use **`compress()`** and **`islice()`** for more advanced filtering and slicing.
+✅ Complete several practical tasks to apply these filtering functions to real-world problems.
 ```
 
 10. 10_10_itertools_module_part_3
