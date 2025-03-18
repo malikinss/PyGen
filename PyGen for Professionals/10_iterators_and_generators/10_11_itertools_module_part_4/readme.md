@@ -1,87 +1,82 @@
-Lesson 10.11: `itertools` module (part 4)
+# Lesson 10.11: `itertools` module (part 4) 📝
 
-https://stepik.org/lesson/674986/step/1?unit=673426
+## Description 📝
 
-Lesson Topic: itertools module
-The groupby() function
-Examples of using the groupby() function
-Abstract. The lesson is devoted to studying the groupby() function of the itertools module.
+In this lesson, I explore the **`groupby()`** function from the **`itertools`** module, which is used to group consecutive elements in an iterable based on a specified key function.  
+I will learn how to structure and categorize data efficiently by grouping elements with common attributes.
 
-This lesson has good theory explonation, 6 programing practical tasks and 8 theoretical questions presented on the website.
+This lesson includes:  
+✅ A detailed explanation of **`groupby()`** and its behavior.  
+✅ Practical examples showcasing how **`groupby()`** can be applied in real-world scenarios.  
+✅ **6 programming tasks** to reinforce my understanding.  
+✅ **8 theoretical questions** to test my knowledge.
 
-10_11_itertools_module_part_4
-├───10_11_1_group_by_height
-├───10_11_2_most_popular_student_name
-├───10_11_3_group_by_word_len
-├───10_11_4_get_structured_tasks
-├───10_11_5_group_anagrams
-└───10_11_6_ranges
+## Purpose 🎯
 
-1. 10_11_1_group_by_height
+By the end of this lesson, I will:  
+✅ Understand how the **`groupby()`** function works and when to use it.  
+✅ Learn to group elements in an iterable efficiently based on different attributes.  
+✅ Gain hands-on experience by solving real-world tasks using **`groupby()`**.  
+✅ Be able to sort and process data before applying **`groupby()`** for optimal results.
 
-```
-# `group_by_height()`: Group People by Height
-The `group_by_height()` function groups a list of `Person` named tuples by their height.
-It then prints the names of individuals in each height group, **sorted alphabetically**, in the specified format.
-✔ **Organizing data efficiently** by grouping people based on height.
-✔ **Sorting results properly**:
--   **Ascending order** of height.
--   **Alphabetical order** of names within each height group.
-    ✔ **Using `itertools.groupby`** to process sorted data efficiently.
-```
+## How It Works 🔍
 
-2. 10_11_2_most_popular_student_name
+The **`groupby()`** function groups **consecutive** elements in an iterable based on a key function.  
+For **`groupby()`** to work correctly, the input must be **sorted** by the same key function used for grouping.
 
-```
-# `most_popular_student_name()` - Find the Most Common First Name
-The function `most_popular_student_name()` returns the most common first name among the students in the provided list of `Student` named tuples.
-✔ **Find the most frequent first name** in a list of students.
-✔ **Efficient grouping** of students based on first name.
-✔ **Handles the case where the name is unique**.
+Example:
 
+```python
+from itertools import groupby
+
+data = ['apple', 'banana', 'apricot', 'blueberry', 'blackberry', 'cherry']
+sorted_data = sorted(data, key=lambda x: x[0])  # Sort by first letter
+
+for key, group in groupby(sorted_data, key=lambda x: x[0]):
+    print(f"{key}: {', '.join(group)}")
 ```
 
-3. 10_11_3_group_by_word_len
+### Tasks Covered in This Lesson
 
-```
-# `group_by_word_len()` - Group Words by Length
-The function `group_by_word_len()` receives a sequence of lowercase Latin words, groups them by their length, and prints them in increasing order of length.
-Each group contains words sorted alphabetically.
-✔ **Groups words** based on their length.
-✔ **Sorts words alphabetically** within each group.
-✔ **Prints the groups** in order of increasing length.
-```
+1. **10_11_1_group_by_height**  
+   **Goal**: Group people by height and list their names alphabetically within each group.
 
-4. 10_11_4_get_structured_tasks
+    - Uses **`groupby()`** to process sorted height data efficiently.
 
-```
-# `get_structured_tasks()` - Display Tasks and Actions
-The `get_structured_tasks()` function processes a list of tasks with their respective actions and orders, then displays them in alphabetical order of the task name.
-Each task is listed with its corresponding actions, ordered by their respective sequence numbers.
-✔ **Sorts tasks alphabetically** by name.
-✔ **Groups actions** by task, sorting actions by their order.
-✔ **Prints tasks and actions** in a formatted structure.
-```
+2. **10_11_2_most_popular_student_name**  
+   **Goal**: Find the most common first name among students.
 
-5. 10_11_5_group_anagrams
+    - Groups students by first name and determines the most frequent one.
 
-```
-# `group_anagrams()` - Group Words that are Anagrams
-The `group_anagrams()` function takes a list of words and groups the words that are anagrams into tuples.
-It then returns a list of these tuples.
-The order of the tuples and the order of the words within each tuple do not matter.
-✔ **Groups anagram words** into tuples.
-✔ **Returns a list** of tuples containing words that are anagrams of each other.
-✔ **Handles any number of words** in the input list.
-```
+3. **10_11_3_group_by_word_len**  
+   **Goal**: Group words by their length and print them in ascending order.
 
-6. 10_11_6_ranges
+    - Words are sorted alphabetically within each group.
 
-```
-# `ranges()` - Convert Numbers into Segments
-The `ranges()` function takes a sorted list of distinct natural numbers and transforms consecutive numbers into segments.
-Each segment is represented as a tuple, where the first element is the left border and the second is the right border.
-✔ **Groups consecutive numbers** into segments.
-✔ **Preserves the original order** of numbers in the input list.
-✔ **Handles single numbers correctly** by treating them as segments with identical borders.
-```
+4. **10_11_4_get_structured_tasks**  
+   **Goal**: Organize a list of tasks and their actions, displaying them in a structured format.
+
+    - Tasks are sorted alphabetically, and their actions are ordered by sequence.
+
+5. **10_11_5_group_anagrams**  
+   **Goal**: Group words that are anagrams into tuples.
+
+    - Words are grouped based on their sorted character sequences.
+
+6. **10_11_6_ranges**  
+   **Goal**: Convert a sorted list of distinct natural numbers into segments.
+    - Consecutive numbers form ranges represented as tuples.
+
+## Output 📜
+
+After completing this lesson, I will:  
+✅ Be able to efficiently **group** elements in an iterable using **`groupby()`**.  
+✅ Understand the importance of **sorting data** before applying **`groupby()`**.  
+✅ Gain experience in structuring and categorizing data effectively.  
+✅ Be able to apply these concepts in real-world data processing tasks.
+
+## Conclusion 🚀
+
+The **`groupby()`** function is a powerful tool in Python for organizing data based on shared attributes.  
+By mastering it, I can **process large datasets** more efficiently and **structure data meaningfully**.  
+This lesson equips me with the skills to **sort, group, and analyze data** in a structured and efficient way.
