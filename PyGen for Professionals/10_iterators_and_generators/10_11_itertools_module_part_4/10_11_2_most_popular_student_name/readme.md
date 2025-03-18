@@ -1,4 +1,4 @@
-### `most_popular_student_name()` - Find the Most Common First Name
+# `most_popular_student_name()` - Find the Most Common First Name
 
 ## Description 📝
 
@@ -96,4 +96,5 @@ most_popular_student_name(students_data)
 
 ## Conclusion 🚀
 
-This function is an efficient solution for finding the **most popular first name** among students in a list, using sorting, grouping, and `max()` to identify the most frequent name. It's a compact and clear approach to the problem.
+This function is an efficient solution for finding the **most popular first name** among students in a list, using sorting, grouping, and `max()` to identify the most frequent name.
+It's a compact and clear approach to the problem.
