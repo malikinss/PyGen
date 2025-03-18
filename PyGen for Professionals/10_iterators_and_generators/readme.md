@@ -160,7 +160,19 @@ By the end of this lesson, I will:
 11. 10_11_itertools_module_part_4
 
 ```
-
+# Lesson 10.11: `itertools` module (part 4) 📝
+In this lesson, I explore the **`groupby()`** function from the **`itertools`** module, which is used to group consecutive elements in an iterable based on a specified key function.
+I will learn how to structure and categorize data efficiently by grouping elements with common attributes.
+This lesson includes:
+✅ A detailed explanation of **`groupby()`** and its behavior.
+✅ Practical examples showcasing how **`groupby()`** can be applied in real-world scenarios.
+✅ **6 programming tasks** to reinforce my understanding.
+✅ **8 theoretical questions** to test my knowledge.
+By the end of this lesson, I will:
+✅ Understand how the **`groupby()`** function works and when to use it.
+✅ Learn to group elements in an iterable efficiently based on different attributes.
+✅ Gain hands-on experience by solving real-world tasks using **`groupby()`**.
+✅ Be able to sort and process data before applying **`groupby()`** for optimal results.
 ```
 
 12. 10_12_itertools_module_part_5
