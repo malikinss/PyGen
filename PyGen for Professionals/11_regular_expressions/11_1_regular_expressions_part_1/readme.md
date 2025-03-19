@@ -28,3 +28,13 @@ where `d` represents a digit from 0 to 9.
 This function helps identify and extract phone numbers from any text input.
 It can be useful for data validation, text processing, and contact information extraction.
 ```
+
+2. 11_1_2_beegeek
+
+```
+# Regular Expression Matching
+The code snippet provides a regular expression that matches the string `beegeek`.
+This simple regex is designed to directly match the exact sequence of characters "beegeek" in any input string.
+This regular expression can be used for text searching, validation, or extraction when the target string is exactly "beegeek".
+It's ideal for use cases where you need to confirm the presence of this specific word in a larger text.
+```
