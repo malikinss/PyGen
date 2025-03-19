@@ -33,7 +33,15 @@ By the end of this lesson, I will:
 2. 11_2_regular_expressions_part_2
 
 ```
-
+# Lesson 11.2: Regular Expressions (Part 2) 🔍
+This lesson explores **regular expressions** in more depth, focusing on advanced pattern matching techniques.
+It covers how to match **specific character sets**, **ranges**, **excluded characters**, and even **multiple expressions** at once.
+The lesson includes **9 practical programming tasks** and **12 theoretical questions** available on [Stepik](https://stepik.org/lesson/683127/step/1?unit=681950).
+By the end of this lesson, I will:
+✅ Learn how to match **one of multiple characters** using square brackets `[]`.
+✅ Understand how to define **character ranges** and **excluded characters** in regex.
+✅ Be able to construct **regular expressions that match multiple conditions**.
+✅ Gain hands-on experience with **real-world regex applications**, including validating phone numbers, dates, and times.
 ```
 
 3. 11_3_regular_expressions_part_3
