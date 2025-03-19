@@ -60,8 +60,15 @@ This regular expression can be used in various applications, such as:
 -   Extracting relevant numerical values from text.
 ```
 
-5.
+5. 11_1_5_phone_numbers
 
 ```
+# Regular Expression for Matching Phone Numbers
+This code defines a **regular expression** that matches **phone numbers** in the format `xxx-xxx-xxxx`, where `x` is any digit (`0-9`).
+The pattern ensures that the input strictly follows this format.
+This regular expression can be used for:
+-   **Validating phone numbers** in forms or user input.
+-   **Extracting phone numbers** from text data.
+-   **Formatting and filtering** structured data.
 
 ```
