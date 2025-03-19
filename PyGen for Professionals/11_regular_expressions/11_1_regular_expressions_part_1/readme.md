@@ -1,74 +1,72 @@
-Lesson 11.1: Regular Expressions (part 1)
+# Lesson 11.1: Regular Expressions (Part 1) 🔍
 
-Lesson Topic: Regular Expressions
-Regular Expressions
-Raw Strings and Character Escaping
-Searching for a Specified Text
-Searching for Any Character
-Searching for a Dot Character.
-Searching for Numbers
-Searching for Space Characters
-Searching for Alphanumeric Characters
-Abstract: The lesson is devoted to studying regular expressions.
+## Description 📝
 
-This lesson has good theory explonation, 5 practical programming tasks and 16 thoretical questions presented on the website
+This lesson introduces **regular expressions** and their application in Python.
+Regular expressions (regex) provide a powerful way to search, match, and manipulate text using patterns.
+I will learn about raw strings, character escaping, and different regex patterns for identifying numbers, spaces, alphanumeric characters, and specific text sequences.
 
-https://stepik.org/lesson/640164/step/1?unit=636683
+## Purpose 🎯
 
-1. 11_1_1_find_phone_numbers
+By the end of this lesson, I will:  
+✅ Understand **how regular expressions work** in Python.  
+✅ Learn to use regex for **searching and matching patterns** in text.  
+✅ Apply **various regex patterns** to find phone numbers, specific words, and sequences.  
+✅ Get comfortable with **special characters**, such as `.` for any character and `\d` for digits.
 
-```
-# Phone Number Finder
-The `find_phone_numbers()` function extracts phone numbers from a given text that match specific formats.
-The supported formats are:
--   `7-ddd-ddd-dd-dd`
--   `8-ddd-dddd-dddd`
--   `+7-ddd-ddd-dd-dd` (converted to `7-ddd-ddd-dd-dd`)
-where `d` represents a digit from 0 to 9.
-This function helps identify and extract phone numbers from any text input.
-It can be useful for data validation, text processing, and contact information extraction.
-```
+## How It Works 🔍
 
-2. 11_1_2_beegeek
+The lesson covers the following key topics:
 
-```
-# Regular Expression Matching
-The code snippet provides a regular expression that matches the string `beegeek`.
-This simple regex is designed to directly match the exact sequence of characters "beegeek" in any input string.
-This regular expression can be used for text searching, validation, or extraction when the target string is exactly "beegeek".
-It's ideal for use cases where you need to confirm the presence of this specific word in a larger text.
-```
+-   **Raw strings and escaping characters**: Understanding how `r"pattern"` works to avoid conflicts with Python string syntax.
+-   **Searching for specified text**: Finding exact matches using regex.
+-   **Using metacharacters (`.` and `\d`)**: Matching any character and digits.
+-   **Finding space and alphanumeric characters**: Using `\s` and `\w` for text search.
 
-3. 11_1_3_sequence
+This lesson includes **5 programming tasks** to practice regex:
 
-```
-# Regular Expression for Matching Sequences
-The code snippet demonstrates how to write a regular expression to match sequences in the format `xxx.xxx`, where each `x` represents any character.
-The provided regular expression should match three characters, followed by a dot (`.`), and then three more characters.
-This regular expression can be used to validate or search for patterns such as IP addresses (without strict digit validation), version numbers, or any text with similar structure, where the format consists of three characters, a dot, and three more characters.
-```
+1.  **11_1_1_find_phone_numbers**  
+    **Goal**: Extract phone numbers from a given text that match specific formats.
 
-4. 11_1_4_integers
+-   **Supported formats**:
+    -   `7-ddd-ddd-dd-dd`
+    -   `8-ddd-dddd-dddd`
+    -   `+7-ddd-ddd-dd-dd` (converted to `7-ddd-ddd-dd-dd`)
+-   **Key Concepts**: Regular expressions for extracting and validating structured text.
 
-```
-# Regular Expression for Matching Integers Between 100 and 199
-This code defines a regular expression that matches sequences of digits representing integers in the range **100 to 199**, inclusive.
-The pattern ensures that only three-digit numbers starting with `1` are matched.
-This regular expression can be used in various applications, such as:
--   Filtering numbers within a specific range.
--   Validating input data to check if it falls within 100–199.
--   Extracting relevant numerical values from text.
-```
+2.  **11_1_2_beegeek**  
+    **Goal**: Create a regex pattern to match the exact string **"beegeek"** in any input.
 
-5. 11_1_5_phone_numbers
+-   **Key Concepts**: Simple string matching using regex, useful for text validation and keyword detection.
 
-```
-# Regular Expression for Matching Phone Numbers
-This code defines a **regular expression** that matches **phone numbers** in the format `xxx-xxx-xxxx`, where `x` is any digit (`0-9`).
-The pattern ensures that the input strictly follows this format.
-This regular expression can be used for:
--   **Validating phone numbers** in forms or user input.
--   **Extracting phone numbers** from text data.
--   **Formatting and filtering** structured data.
+3.  **11_1_3_sequence**  
+    **Goal**: Match text sequences in the format **`xxx.xxx`**, where each `x` represents any character.
 
-```
+-   **Example Matches**: `abc.123`, `xyz.abc`
+-   **Key Concepts**: Using the `.` metacharacter for flexible pattern matching.
+
+4.  **11_1_4_integers**  
+    **Goal**: Match **integers in the range 100-199** using regex.
+
+-   **Key Concepts**: Number validation using regex patterns.
+-   **Use Cases**: Filtering numbers in a dataset, validating input values.
+
+5.  **11_1_5_phone_numbers**  
+    **Goal**: Match phone numbers in the **xxx-xxx-xxxx** format.
+
+-   **Example Matches**: `123-456-7890`, `987-654-3210`
+-   **Key Concepts**: Regex for structured numeric data validation.
+-   **Use Cases**: Input validation for forms, data extraction.
+
+## Output 📜
+
+After completing this lesson, I will be able to:  
+✅ Use **regular expressions** to search and extract patterns in text.  
+✅ Understand **raw strings (`r""`)** and their importance in regex.  
+✅ Apply **regex metacharacters (`.`, `\d`, `\w`, `\s`)** for different search patterns.  
+✅ Validate and extract **structured data** such as phone numbers and numeric ranges.
+
+## Conclusion 🚀
+
+Regular expressions are a crucial tool for **text processing**, **data validation**, and **pattern matching** in Python.
+By mastering regex, I will enhance my ability to work with strings efficiently, making tasks like data extraction and text validation much easier.
