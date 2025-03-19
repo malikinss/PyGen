@@ -38,3 +38,12 @@ This simple regex is designed to directly match the exact sequence of characters
 This regular expression can be used for text searching, validation, or extraction when the target string is exactly "beegeek".
 It's ideal for use cases where you need to confirm the presence of this specific word in a larger text.
 ```
+
+3.
+
+```
+# Regular Expression for Matching Sequences
+The code snippet demonstrates how to write a regular expression to match sequences in the format `xxx.xxx`, where each `x` represents any character.
+The provided regular expression should match three characters, followed by a dot (`.`), and then three more characters.
+This regular expression can be used to validate or search for patterns such as IP addresses (without strict digit validation), version numbers, or any text with similar structure, where the format consists of three characters, a dot, and three more characters.
+```
