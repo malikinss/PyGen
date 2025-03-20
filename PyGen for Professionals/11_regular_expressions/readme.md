@@ -47,7 +47,15 @@ By the end of this lesson, I will:
 3. 11_3_regular_expressions_part_3
 
 ```
-
+# Lesson 11.3: Regular Expressions (Part 3) 🔍
+This lesson continues the deep dive into **regular expressions (regex)**, focusing on pattern matching techniques.
+It covers how to match **repeating patterns**, including **one or more characters**, **zero or more characters**, and **optional characters**.
+Additionally, the lesson explores **interval-based matching**, as well as the concepts of **greedy and lazy quantifiers**.
+By the end of this lesson, I will:
+✅ Understand how to use **quantifiers** like `+`, `*`, and `?` for flexible pattern matching.
+✅ Learn how to specify **character repetition intervals** using `{n,m}`.
+✅ Differentiate between **greedy** and **lazy matching** in regex.
+✅ Be able to apply regex to real-world problems like **PAN validation**, **HTML comment extraction**, **ID validation**, and **postcode verification**.
 ```
 
 4. 11_4_regular_expressions_part_4
