@@ -1,0 +1,1 @@
+A synthesizer (also spelled synthesiser) is an electronic musical instrument that generates audio signals.
