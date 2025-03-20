@@ -61,7 +61,15 @@ By the end of this lesson, I will:
 4. 11_4_regular_expressions_part_4
 
 ```
-
+# Lesson 11.4: Regular Expressions (Part 4) 💻
+This lesson covers advanced topics in **regular expressions**, specifically focusing on using **boundaries** in patterns.
+I will explore **word boundaries**, **line boundaries**, and various other practical applications of regular expressions to match specific patterns in text.
+Regular expressions are an essential tool for string matching, making them invaluable for text processing, validation, and searching.
+By the end of this lesson, I will:
+✅ Understand how to use **word boundaries** and **line boundaries** in regular expressions.
+✅ Be proficient in creating patterns to match specific string conditions.
+✅ Learn how to handle cases like capitalized words, specific characters, and titles.
+✅ Apply the knowledge gained in real-world tasks, such as validating and searching strings.
 ```
 
 5. 11_5_regular_expressions_part_5
