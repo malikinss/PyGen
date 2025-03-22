@@ -90,7 +90,18 @@ By the end of this lesson, I will:
 6. 11_6_re_module_part_1
 
 ```
-
+# Lesson 11.6: re module (Part 1) 💻
+This lesson introduces the **re module** in Python, which provides powerful tools to work with regular expressions.
+I will explore several key functions such as `search()`, `match()`, `fullmatch()`, and the concept of **Match objects**.
+Additionally, I will dive into flags and the `escape()` function to help with escaping special characters.
+The primary focus will be on understanding how regular expressions can be used in various practical tasks for text processing.
+By the end of this lesson, I will:
+✅ Understand the core functions in the **re module** and how to use them.
+✅ Learn the differences between `search()`, `match()`, and `fullmatch()` functions.
+✅ Be able to work with **Match objects** for extracting details from matches.
+✅ Explore various flags and how to use them for advanced pattern matching.
+✅ Learn to escape special characters using the `escape()` function.
+✅ Apply these concepts to solve real-world text processing tasks.
 ```
 
 7. 11_7_re_module_part_2
