@@ -75,7 +75,16 @@ By the end of this lesson, I will:
 5. 11_5_regular_expressions_part_5
 
 ```
-
+# Lesson 11.5: Regular Expressions (Part 5) 💻
+In this lesson, I will delve deeper into **advanced regular expressions**, focusing on the concept of **lookahead** and **lookbehind** assertions.
+These assertions allow us to match patterns based on what precedes or follows them without including that text in the match itself.
+I'll also explore the differences between **positive** and **negative** lookaheads and lookbehinds, and understand their applications in more complex text matching scenarios.
+Mastering these techniques enhances the flexibility of regular expressions for text validation, searching, and manipulation.
+By the end of this lesson, I will:
+✅ Understand how to use **lookahead** and **lookbehind** assertions in regular expressions.
+✅ Be able to create patterns that match specific conditions before or after a certain string, without including those conditions in the match itself.
+✅ Learn how to use **positive** and **negative** lookaheads and lookbehinds.
+✅ Apply this knowledge to real-world tasks like validating email addresses, phone numbers, or complex patterns in large datasets.
 ```
 
 6. 11_6_re_module_part_1
