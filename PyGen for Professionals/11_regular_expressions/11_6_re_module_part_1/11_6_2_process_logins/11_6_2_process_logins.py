@@ -20,17 +20,15 @@ import sys
 from typing import List
 
 
-def read_code_from_input() -> List[str]:
+def read_lines_from_input() -> List[str]:
     """
-    Reads the phone number lines from the input.
+    Reads input lines from stdin.
 
-    This function reads all input lines and strips any trailing
-    whitespace characters from each line. It returns the input as a list of
-    strings.
+    This function reads all input lines, strips trailing
+    whitespace, and returns them as a list of strings.
 
     Returns:
-        List[str]: A list of phone number strings, each representing a phone
-        number line.
+        List[str]: A list of strings representing the input lines.
     """
     return [line.strip() for line in sys.stdin.readlines()]
 
@@ -61,4 +59,4 @@ def process_logins(logins: List[str]) -> None:
             print(False)
 
 
-process_logins(read_code_from_input())
+process_logins(read_lines_from_input())
