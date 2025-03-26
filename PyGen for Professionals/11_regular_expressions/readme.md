@@ -107,7 +107,16 @@ By the end of this lesson, I will:
 7. 11_7_re_module_part_2
 
 ```
-
+# Lesson 11.7: re module (Part 2) 💻
+This lesson covers the **re module** in Python, which is used for working with regular expressions.
+In this part, I will focus on two important functions: `findall()` and `finditer()`.
+These functions help to find all occurrences of a pattern in a given text, but they do so in different ways.
+Understanding their differences and applications will be crucial for text manipulation and pattern matching tasks.
+By the end of this lesson, I will:
+✅ Be proficient in using the `findall()` and `finditer()` functions from the `re` module.
+✅ Understand when to use `findall()` for simple pattern matching and `finditer()` for more complex cases that require additional information like match positions.
+✅ Apply regular expressions to practical programming tasks such as text analysis, hyperlink extraction, and word count analysis.
+✅ Be able to extract data from HTML fragments and process it for web scraping and data analysis.
 ```
 
 8. 11_8_re_module_part_3
