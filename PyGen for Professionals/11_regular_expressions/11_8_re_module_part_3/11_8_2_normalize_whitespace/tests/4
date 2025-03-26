@@ -1,0 +1,1 @@
+print(normalize_whitespace('K L  L    O    I!  !  I OP    PPPppdj O   P'))

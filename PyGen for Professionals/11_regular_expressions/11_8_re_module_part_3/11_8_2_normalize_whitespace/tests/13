@@ -1,0 +1,1 @@
+print(normalize_whitespace('There are no unnecessary gaps.'))

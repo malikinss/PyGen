@@ -1,0 +1,1 @@
+print(normalize_whitespace('1 9  2  8   3   7    6    5'))
