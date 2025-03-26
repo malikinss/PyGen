@@ -1,0 +1,1 @@
+print(normalize_jpeg('Это тест.JpEg'))
