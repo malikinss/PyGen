@@ -1,0 +1,1 @@
+Can't buy me love No, no
