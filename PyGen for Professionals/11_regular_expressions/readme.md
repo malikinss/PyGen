@@ -122,7 +122,19 @@ By the end of this lesson, I will:
 8. 11_8_re_module_part_3
 
 ```
-
+# Lesson 11.8: re Module (Part 3) 🔍
+This lesson continues exploring Python’s **`re` module**, focusing on the powerful **`sub()`** and **`subn()`** functions for **string substitution** using regular expressions.
+These functions allow me to find and replace text patterns efficiently.
+I will learn how to:
+✅ Use **`re.sub()`** to replace occurrences of patterns in a string.
+✅ Use **`re.subn()`** to replace patterns while also counting replacements.
+✅ Apply these functions in real-world tasks like text normalization, keyword replacement, and comment removal.
+Regular expressions are a core tool for text processing, allowing me to **modify and clean** textual data effectively.
+By the end of this lesson, I will:
+✅ Master **`sub()`** and **`subn()`** for **text replacement**.
+✅ Learn how to **normalize, transform, and clean** text using regular expressions.
+✅ Solve practical tasks such as **formatting file extensions, handling whitespace, removing duplicates, and more**.
+✅ Understand how to apply **pattern-based transformations** in various real-world applications.
 ```
 
 9. 11_9_re_module_part_4
