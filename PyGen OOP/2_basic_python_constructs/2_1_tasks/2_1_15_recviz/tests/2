@@ -1,0 +1,5 @@
+@recviz
+def add(a, b, c, d, e):
+    return (a + b + c) * (d + e)
+
+add('a', b='b', c='c', d=3, e=True)
