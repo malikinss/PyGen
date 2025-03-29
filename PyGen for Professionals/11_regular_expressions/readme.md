@@ -140,5 +140,16 @@ By the end of this lesson, I will:
 9. 11_9_re_module_part_4
 
 ```
-
+# Lesson 11.9: re Module (Part 4) 🔍
+In this lesson, I will continue exploring the **`re` module** in Python with two new functions: **`split()`** and **`compile()`**.
+These functions are useful for **splitting strings based on patterns** and **pre-compiling regular expressions** for repeated use.
+I will cover how to:
+✅ Use **`re.split()`** to split strings based on patterns.
+✅ Leverage **`re.compile()`** to **compile regular expressions** for efficiency.
+✅ Solve practical programming tasks involving string manipulation, logical expression parsing, and number extraction.
+Regular expressions are a powerful tool for **pattern matching** and **text processing**, and mastering these functions will improve my ability to manipulate strings in Python.
+By the end of this lesson, I will:
+✅ Understand how to **split strings** using **`re.split()`** with custom delimiters.
+✅ Learn to **compile regular expressions** with **`re.compile()`** to improve performance.
+✅ Solve practical problems such as **splitting logical expressions** and **extracting numbers from text**.
 ```
