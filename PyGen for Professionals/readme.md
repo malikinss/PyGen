@@ -3,14 +3,14 @@
 ## Description 📝
 
 Welcome to the **Python Generation: Course for Professionals**!  
-This course is a continuation of the **Python Generation** courses for beginners and advanced users, designed for those who want to deepen their knowledge of Python.  
+This course is a continuation of the **Python Generation** courses for beginners and advanced users, designed for those who want to deepen their knowledge of `Python`.  
 I will explore a range of important topics, including advanced data types, working with dates and times, file handling, recursion, exception handling, and much more.
 
-By the end of this course, I will have mastered professional Python programming skills and be capable of solving complex real-world problems with Python.
+By the end of this course, I will have mastered professional `Python` programming skills and be capable of solving complex real-world problems with `Python`.
 
 The course includes **394 practical programming tasks** and **798 theoretical questions**, ensuring that I gain hands-on experience and a thorough understanding of each topic.
 
-Upon successful completion, I will receive a **certificate of completion** ![Certificate](./pygen_professional_certificate.png), validating my expertise in Python programming.
+Upon successful completion, I will receive a **certificate of completion** ![Certificate](./pygen_professional_certificate.png), validating my expertise in `Python` programming.
 
 ## Purpose 🎯
 
