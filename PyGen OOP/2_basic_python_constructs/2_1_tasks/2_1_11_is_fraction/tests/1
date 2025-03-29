@@ -1,0 +1,1 @@
+print(is_fraction('1000/1'))
