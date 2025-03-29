@@ -1,0 +1,1 @@
+['John Warner Backus', '—', 5, '—', 'Niklaus Emil Wirth', '—', True, '—', 'Lawrence Gordon Tesler', '—', None, '—', {1, 2, 3}, '—', {'hello': 'world'}]

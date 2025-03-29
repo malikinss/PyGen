@@ -1,0 +1,3 @@
+iterable = iter('Beegeek')
+
+print(*intersperse(iterable, '+'))

@@ -1,0 +1,4 @@
+inter = intersperse('beegeek', '!')
+print(next(inter))
+print(next(inter))
+print(*inter)

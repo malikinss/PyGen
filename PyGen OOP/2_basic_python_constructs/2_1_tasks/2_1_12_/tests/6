@@ -1,0 +1,3 @@
+iterable = iter('Be')
+
+print(*intersperse(iterable, '---'))

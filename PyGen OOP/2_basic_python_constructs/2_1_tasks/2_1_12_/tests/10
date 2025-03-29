@@ -1,0 +1,2 @@
+data = intersperse(range(5), '!!!')
+print(list(data))

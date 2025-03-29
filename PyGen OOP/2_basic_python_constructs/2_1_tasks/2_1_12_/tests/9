@@ -1,0 +1,2 @@
+data = intersperse(range(5), -1)
+print(list(data))
