@@ -1,0 +1,3 @@
+iterable = iter(['cdddddd', 'ca', 'caa', 'caaa', 'cbbbb', 'ccccc', 'c'])
+
+print(quantify(iterable, lambda elem: elem.endswith('A')))

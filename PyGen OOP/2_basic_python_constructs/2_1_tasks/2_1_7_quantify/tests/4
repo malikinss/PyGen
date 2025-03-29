@@ -1,0 +1,3 @@
+iterable = ['dddddd', 'a', 'aa', 'aaa', 'bbbb', 'ccccc']
+
+print(quantify(iterable, lambda elem: len(elem) > 3))
