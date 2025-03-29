@@ -1,0 +1,2 @@
+for value in annual_return(70000, 8, 10):
+    print(round(value))
