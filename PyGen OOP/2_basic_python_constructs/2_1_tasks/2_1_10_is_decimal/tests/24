@@ -1,0 +1,4 @@
+print(is_decimal('0.99.'))
+print(is_decimal('-0.99.'))
+print(is_decimal('.99.'))
+print(is_decimal('-.99.'))
