@@ -1,0 +1,2 @@
+print(is_integer('-0001'))
+print(is_integer('0001'))
