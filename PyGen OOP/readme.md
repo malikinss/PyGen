@@ -40,7 +40,14 @@ By the end of this lesson, I will:
 3. 3_oop_introduction
 
 ```
-
+# Chapter 3: Introduction to OOP 📘
+Chapter 3 dives into the heart of **Object-Oriented Programming (OOP)**. In this chapter, I will introduce the core concepts of OOP, compare it with procedural programming, and explore the foundational principles that shape the way I design and build software.
+By understanding these principles, I will gain the necessary skills to start writing maintainable and reusable code.
+In this chapter, I will:
+-   Learn the fundamentals of **Object-Oriented Programming (OOP)**.
+-   Understand how **OOP** differs from **procedural programming**.
+-   Explore key principles of OOP, including **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
+-   Understand how to apply these principles to solve real-world programming problems.
 ```
 
 4. 4_attributes_properties_methods
