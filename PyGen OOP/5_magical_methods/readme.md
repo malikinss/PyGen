@@ -1,5 +1,7 @@
 Chapter 5: Magical methods
 
+This chapter separated on 11 lessons that have good theory explonation, 46 practical programming tasks and 131 theoretical questions presented on the course website.
+
 5_magical_methods
 ├───5_1_objects_creation_initialization_clearing
 ├───5_2_objects_string_representation
