@@ -1,0 +1,6 @@
+@jsonify
+def make_bool(flag):
+    return not flag
+    
+print(make_bool(True))
+print(make_bool(False))

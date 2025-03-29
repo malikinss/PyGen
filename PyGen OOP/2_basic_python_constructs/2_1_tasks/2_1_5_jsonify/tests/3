@@ -1,0 +1,5 @@
+@jsonify
+def make_str(s1, s2):
+    return (s1 + s2) * 5
+    
+print(make_str('bee', 'geek'))

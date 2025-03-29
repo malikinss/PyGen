@@ -1,0 +1,5 @@
+@jsonify
+def make_None():
+    return None
+    
+print(make_None())

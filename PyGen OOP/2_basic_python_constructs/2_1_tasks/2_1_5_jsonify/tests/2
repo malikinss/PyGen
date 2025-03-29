@@ -1,0 +1,5 @@
+@jsonify
+def make_list(n):
+    return list(range(1, n + 1))
+    
+print(make_list(10))
