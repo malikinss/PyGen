@@ -104,4 +104,6 @@ By completing this lesson, I will:
 
 ## Conclusion 🚀
 
-Attributes are essential in Python's OOP, allowing objects to store and manage data efficiently. Learning how to manipulate attributes dynamically gives me greater flexibility in designing object-oriented applications. By completing this lesson, I will develop a solid foundation for working with attributes in Python. 💡
+Attributes are essential in Python's OOP, allowing objects to store and manage data efficiently.
+Learning how to manipulate attributes dynamically gives me greater flexibility in designing object-oriented applications.
+By completing this lesson, I will develop a solid foundation for working with attributes in Python. 💡
