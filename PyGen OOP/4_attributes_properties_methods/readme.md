@@ -32,7 +32,17 @@ By the end of this lesson, I will:
 2. 4_2_class_instance_methods_part_1
 
 ```
+# Lesson 4.2: Class Instance Methods (Part 1) 📌
+In this lesson, I will explore:
+-   **Class instance methods** and their role in OOP.
+-   The **`__init__()` method**, which initializes new objects.
+-   The importance of the **`self` argument** in instance methods.
 
+This lesson provides a strong foundation for understanding how classes create and manage instances in Python.
+By the end of this lesson, I will:
+✅ Understand how instance methods work in Python.
+✅ Learn about the **`__init__()` method** and its role in object initialization.
+✅ Know why the **`self` argument** is essential for instance methods.
 ```
 
 3. 4_3_class_instance_methods_part_2
