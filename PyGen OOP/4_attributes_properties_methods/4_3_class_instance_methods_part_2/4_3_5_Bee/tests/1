@@ -1,0 +1,3 @@
+bee = Bee()
+
+print(bee.x, bee.y)

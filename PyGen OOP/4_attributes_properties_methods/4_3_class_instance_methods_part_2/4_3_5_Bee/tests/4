@@ -1,0 +1,14 @@
+bee = Bee(3, 4)
+print(bee.x, bee.y)
+
+bee.move_right(3)
+print(bee.x, bee.y)
+
+bee.move_up(5)
+print(bee.x, bee.y)
+
+bee.move_left(2)
+print(bee.x, bee.y)
+
+bee.move_down(10)
+print(bee.x, bee.y)
