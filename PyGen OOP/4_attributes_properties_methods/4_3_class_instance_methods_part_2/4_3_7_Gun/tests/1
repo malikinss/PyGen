@@ -1,0 +1,7 @@
+gun = Gun()
+
+print(gun.shots_count())
+gun.shoot()
+print(gun.shots_count())
+gun.shoot()
+print(gun.shots_count())
