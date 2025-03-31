@@ -1,0 +1,7 @@
+user = User('Timur')
+
+user.add_friends(2)
+user.add_friends(2)
+user.add_friends(3)
+
+print(user.friends)
