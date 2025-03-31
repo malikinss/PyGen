@@ -1,0 +1,4 @@
+texthandler = TextHandler()
+
+print(texthandler.get_shortest_words())
+print(texthandler.get_longest_words())
