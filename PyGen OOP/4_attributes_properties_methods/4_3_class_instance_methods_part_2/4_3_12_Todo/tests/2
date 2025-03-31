@@ -1,0 +1,7 @@
+todo = Todo()
+
+todo.add('Проснуться', 3)
+todo.add('Помыться', 2)
+todo.add('Поесть', 2)
+
+print(todo.get_by_priority(2))
