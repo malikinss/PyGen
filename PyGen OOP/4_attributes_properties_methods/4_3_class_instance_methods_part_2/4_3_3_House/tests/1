@@ -1,0 +1,4 @@
+house = House('white', 4)
+
+print(house.color)
+print(house.rooms)

@@ -1,0 +1,7 @@
+house = House('white', 4)
+
+house.paint('black')
+house.add_rooms(1)
+
+print(house.color)
+print(house.rooms)
