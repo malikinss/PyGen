@@ -1,0 +1,3 @@
+wordplay = Wordplay(['o', 'to', 'otto', 'top', 't'])
+
+print(wordplay.only('o', 't'))

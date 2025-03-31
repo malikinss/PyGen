@@ -1,0 +1,4 @@
+wordplay = Wordplay(['bee', 'geek', 'cool', 'stepik'])
+
+wordplay.add_word('python')
+print(wordplay.words_with_length(4))

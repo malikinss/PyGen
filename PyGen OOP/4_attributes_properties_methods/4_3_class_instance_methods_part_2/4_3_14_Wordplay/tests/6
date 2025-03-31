@@ -1,0 +1,2 @@
+wordplay = Wordplay()
+print(wordplay.words)

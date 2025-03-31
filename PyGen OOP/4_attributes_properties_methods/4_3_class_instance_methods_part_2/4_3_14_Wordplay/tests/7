@@ -1,0 +1,4 @@
+wordplay = Wordplay(['Тьюринг', 'Торвальдс', 'Россум', 'Гейтс', 'Гамильтон', 'Бэкус', 'Кнут'])
+
+print(wordplay.words_with_length(6))
+print(wordplay.avoid('ь'))

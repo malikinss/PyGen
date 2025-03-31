@@ -1,0 +1,3 @@
+wordplay = Wordplay(['a', 'arthur', 'timur', 'bee', 'geek', 'python', 'stepik'])
+
+print(wordplay.avoid('a', 'b', 'c'))

@@ -1,0 +1,5 @@
+wordplay = Wordplay()
+
+print(wordplay.words_with_length(1))
+print(wordplay.only('a', 'b', 'c'))
+print(wordplay.avoid('a', 'b', 'c'))

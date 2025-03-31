@@ -1,0 +1,6 @@
+wordplay = Wordplay()
+
+print(wordplay.words)
+wordplay.add_word('bee')
+wordplay.add_word('geek')
+print(wordplay.words)

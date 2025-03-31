@@ -1,0 +1,7 @@
+wordplay = Wordplay(['a', 'arthur', 'timur', 'bee', 'geek', 'python', 'stepik'])
+
+print(wordplay.words)
+wordplay.add_word('stepik')
+wordplay.add_word('bee')
+wordplay.add_word('geek')
+print(wordplay.words)
