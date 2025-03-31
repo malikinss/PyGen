@@ -1,0 +1,4 @@
+circle = Circle(20)
+print(hasattr(circle, 'radius'))
+print(hasattr(circle, 'diameter'))
+print(hasattr(circle, 'area'))
