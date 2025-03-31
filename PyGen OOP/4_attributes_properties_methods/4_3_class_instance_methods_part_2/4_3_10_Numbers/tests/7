@@ -1,0 +1,7 @@
+numbers = Numbers()
+
+for n in range(0, 100, 2):
+    numbers.add_number(n)
+
+print(numbers.get_even())
+print(numbers.get_odd())

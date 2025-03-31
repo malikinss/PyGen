@@ -1,0 +1,8 @@
+numbers = Numbers()
+
+numbers.add_number(2)
+numbers.add_number(2)
+numbers.add_number(4)
+
+print(numbers.get_even())
+print(numbers.get_odd())
