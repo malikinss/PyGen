@@ -1,0 +1,4 @@
+vector = Vector(3, 4)
+
+print(vector.x, vector.y)
+print(vector.abs())

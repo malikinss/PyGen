@@ -1,0 +1,4 @@
+vector = Vector(18, 23)
+
+print(vector.x, vector.y)
+print(vector.abs())
