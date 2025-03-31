@@ -1,0 +1,3 @@
+scales = Scales()
+
+print(scales.get_result())

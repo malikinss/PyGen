@@ -1,0 +1,6 @@
+scales = Scales()
+
+scales.add_right(2)
+scales.add_left(1)
+
+print(scales.get_result())
