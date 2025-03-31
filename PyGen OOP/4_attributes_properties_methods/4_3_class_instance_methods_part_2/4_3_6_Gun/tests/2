@@ -1,0 +1,6 @@
+gun = Gun()
+
+gun.shoot()
+gun.shoot()
+gun.shoot()
+gun.shoot()
