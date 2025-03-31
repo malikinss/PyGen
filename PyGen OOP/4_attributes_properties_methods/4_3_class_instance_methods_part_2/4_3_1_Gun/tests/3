@@ -1,0 +1,7 @@
+gun1 = Gun()
+gun2 = Gun()
+
+gun1.shoot()
+gun2.shoot()
+gun1.shoot()
+gun2.shoot()
