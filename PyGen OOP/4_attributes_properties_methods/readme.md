@@ -48,7 +48,18 @@ By the end of this lesson, I will:
 3. 4_3_class_instance_methods_part_2
 
 ```
-
+# Lesson 4.3: Class Instance Methods (Part 2) 🔍
+This lesson focuses on designing and implementing classes with instance methods.
+It provides a deeper understanding of object-oriented programming by exploring real-world examples of class structures.
+Topics covered:
+-   Class design and structuring.
+-   Implementing instance methods.
+-   Handling attributes and encapsulation.
+-   Various use cases for classes in simulations and utilities.
+By the end of this lesson, I will:
+✅ Learn how to design and implement classes effectively.
+✅ Understand the role of instance methods in object-oriented programming.
+✅ Gain hands-on experience with class-based problem-solving.
 ```
 
 4. 4_4_access_modifiers_and_accessors
