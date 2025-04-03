@@ -65,7 +65,15 @@ By the end of this lesson, I will:
 4. 4_4_access_modifiers_and_accessors
 
 ```
-
+# Lesson 4.4: Access Modifiers and Accessors 🔐
+This lesson covers:
+-   **Access Modifiers** (public, private, and protected)
+-   **Accessor Methods** (Getters and Setters)
+-   How to **encapsulate data** and enforce **data integrity** in object-oriented programming.
+By the end of this lesson, I will:
+✅ Understand the role of access modifiers in controlling access to class attributes.
+✅ Learn how to use getters and setters to safely access and modify object data.
+✅ Implement access control in practical programming tasks.
 ```
 
 5. 4_5_properties_property_function
