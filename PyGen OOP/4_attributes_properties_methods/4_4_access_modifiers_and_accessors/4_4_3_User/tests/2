@@ -1,0 +1,7 @@
+user = User('Гвидо', 67)
+
+user.set_name('Тимур')
+user.set_age(30)
+
+print(user.get_name())
+print(user.get_age())

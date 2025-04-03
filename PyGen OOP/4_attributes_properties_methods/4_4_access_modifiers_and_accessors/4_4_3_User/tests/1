@@ -1,0 +1,4 @@
+user = User('Гвидо', 67)
+
+print(user.get_name())
+print(user.get_age())

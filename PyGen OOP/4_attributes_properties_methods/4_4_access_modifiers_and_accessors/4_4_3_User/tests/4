@@ -1,0 +1,8 @@
+user = User('Меган', 37)
+
+invalid_ages = ('ten', [], '', [True], -1, 111, 136, -50, 18.5)
+for age in invalid_ages:
+    try:
+        user.set_age(age)
+    except ValueError as e:
+        print(e)

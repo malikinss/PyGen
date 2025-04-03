@@ -1,0 +1,4 @@
+try:
+    user = User('Gvido_1956', '67')
+except ValueError as e:
+    print(e)

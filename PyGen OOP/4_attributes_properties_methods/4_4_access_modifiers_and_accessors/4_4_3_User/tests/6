@@ -1,0 +1,6 @@
+invalid_ages = ('ten', [], '', [True], -1, 111, 136, -50)
+for age in invalid_ages:
+    try:
+        user = User('Меган', age)
+    except ValueError as e:
+        print(e)
