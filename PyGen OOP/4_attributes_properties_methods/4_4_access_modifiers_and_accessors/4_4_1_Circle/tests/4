@@ -1,0 +1,5 @@
+circle = Circle(18.32)
+
+print(circle.get_radius())
+print(circle.get_diameter())
+print(round(circle.get_area()))
