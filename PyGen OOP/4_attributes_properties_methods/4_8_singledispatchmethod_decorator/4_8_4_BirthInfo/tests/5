@@ -1,0 +1,7 @@
+errors = [20200918, True, {1: 'one'}, {1, 2, 3}, 100.9]
+
+for obj in errors:
+    try:
+        BirthInfo(obj)
+    except TypeError as e:
+        print(e)

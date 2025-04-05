@@ -1,0 +1,6 @@
+birthday = date(2020, 9, 18)
+today = date.today()
+birthinfo = BirthInfo(birthday)
+true_age = current_age(birthday, today)
+
+print(birthinfo.age == true_age)

@@ -1,0 +1,7 @@
+birthinfo1 = BirthInfo('2020-09-18')
+birthinfo2 = BirthInfo(date(2010, 10, 10))
+birthinfo3 = BirthInfo([2016, 1, 1])
+
+print(type(birthinfo1.birth_date))
+print(type(birthinfo2.birth_date))
+print(type(birthinfo3.birth_date))
