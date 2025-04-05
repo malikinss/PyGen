@@ -108,6 +108,16 @@ By the end of this lesson, I will:
 7. 4_7_classmethod_staticmethod_decorators
 
 ```
+# Lesson 4.7: The `@classmethod` and `@staticmethod` Decorators 🏗️
+This lesson is focused on:
+-   **Instance Methods**: Methods that operate on an instance of the class
+-   **Class Methods**: Methods that operate on the class itself rather than on an instance, created using the `@classmethod` decorator
+-   **Static Methods**: Methods that don't depend on either the instance or the class, created using the `@staticmethod` decorator
+By the end of this lesson, I will:
+✅ Understand the difference between instance methods, class methods, and static methods
+✅ Learn how to use `@classmethod` and `@staticmethod` decorators in Python
+✅ Implement class and static methods for flexible class design and functionality
+✅ Enhance code structure with more specialized methods
 
 ```
 
