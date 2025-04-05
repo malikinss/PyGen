@@ -53,7 +53,14 @@ In this chapter, I will:
 4. 4_attributes_properties_methods
 
 ```
-
+# Chapter 4: Attributes, Properties, and Methods 🧠
+This chapter is dedicated to deepening **my understanding of classes and objects** in Python by learning how to define, access, and control **attributes**, as well as how to use **methods** and **decorators** to structure my code more efficiently.
+It consists of **8 detailed lessons** with solid theoretical explanations, **38 hands-on coding tasks**, and **98 theoretical questions** available on the course platform.
+In this chapter, I will:
+-   Learn how to work with **object and class attributes**.
+-   Understand the difference between **instance methods**, **class methods**, and **static methods**.
+-   Use **access modifiers**, **accessors**, and **property decorators** to enforce data encapsulation and maintain clean code.
+-   Practice building real-world classes and designing flexible, reusable objects.
 ```
 
 5. 5_magical_methods
