@@ -1,0 +1,5 @@
+circle1 = Circle(51.5)
+circle2 = Circle.from_diameter(45)
+
+print(circle1.radius)
+print(circle2.radius)

@@ -1,0 +1,2 @@
+circle = Circle.from_diameter(120)
+print(hasattr(circle, 'radius'))

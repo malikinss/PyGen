@@ -1,0 +1,3 @@
+circle = Circle(5)
+
+print(circle.radius)
