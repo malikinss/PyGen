@@ -1,0 +1,2 @@
+print(CaseHelper.to_upper_camel('beegeek'))
+print(CaseHelper.to_upper_camel('bee_geek'))

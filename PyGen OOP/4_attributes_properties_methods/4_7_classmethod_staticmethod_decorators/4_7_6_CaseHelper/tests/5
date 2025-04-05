@@ -1,0 +1,4 @@
+cases = ['assert_equal', 'tear_down', 'assertEqual', 'setUp', 'tearDown', 'run', 'exit', 'setup', 'its_wednesday_my_dudes']
+
+for case in cases:
+    print(CaseHelper.is_snake(case))

@@ -1,0 +1,5 @@
+obj = CaseHelper()
+print(type(obj.is_snake))
+print(type(obj.is_upper_camel))
+print(type(obj.to_snake))
+print(type(obj.to_upper_camel))

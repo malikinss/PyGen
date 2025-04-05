@@ -1,0 +1,2 @@
+print(CaseHelper.to_snake('Beegeek'))
+print(CaseHelper.to_snake('BeeGeek'))

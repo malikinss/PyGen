@@ -1,0 +1,4 @@
+cases = ['assert_equal', 'tear_down', 'assert_raises_regex', 'assert_almost_equal', 'assert_not_almost_equal', 'beegeek']
+
+for case in cases:
+    print(CaseHelper.to_upper_camel(case))

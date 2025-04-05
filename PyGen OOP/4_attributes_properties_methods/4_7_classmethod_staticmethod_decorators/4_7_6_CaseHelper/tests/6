@@ -1,0 +1,4 @@
+cases = ['assert_equal', 'tear_down', 'assertEqual', 'setUp', 'tearDown', 'run', 'exit', 'setup', 'AssertEqual', 'SetUp', 'ItsWednesdayMyDudes']
+
+for case in cases:
+    print(CaseHelper.is_upper_camel(case))

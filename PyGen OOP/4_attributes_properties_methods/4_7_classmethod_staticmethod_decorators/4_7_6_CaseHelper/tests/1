@@ -1,0 +1,4 @@
+print(CaseHelper.is_snake('beegeek'))
+print(CaseHelper.is_snake('bee_geek'))
+print(CaseHelper.is_snake('Beegeek'))
+print(CaseHelper.is_snake('BeeGeek'))
