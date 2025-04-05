@@ -1,0 +1,5 @@
+time = HourClock(7)
+
+print(time.hours)
+time.hours = 9
+print(time.hours)

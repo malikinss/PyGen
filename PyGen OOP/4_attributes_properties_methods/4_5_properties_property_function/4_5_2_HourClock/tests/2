@@ -1,0 +1,6 @@
+time = HourClock(7)
+
+try:
+    time.hours = 15
+except ValueError as e:
+    print(e)

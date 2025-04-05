@@ -1,0 +1,4 @@
+try:
+    HourClock('ten o`clock')
+except ValueError as e:
+    print(e)

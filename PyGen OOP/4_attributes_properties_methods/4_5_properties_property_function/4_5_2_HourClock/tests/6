@@ -1,0 +1,6 @@
+time = HourClock(1)
+
+print(time.hours)
+for _ in range(11):
+    time.hours += 1
+    print(time.hours)

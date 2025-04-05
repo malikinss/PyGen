@@ -1,0 +1,4 @@
+try:
+    HourClock('pizza time 🕷')
+except ValueError as e:
+    print(e)

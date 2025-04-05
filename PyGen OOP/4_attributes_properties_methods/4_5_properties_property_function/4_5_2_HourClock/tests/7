@@ -1,0 +1,2 @@
+time = HourClock(1)
+print(hasattr(HourClock, 'hours'))
