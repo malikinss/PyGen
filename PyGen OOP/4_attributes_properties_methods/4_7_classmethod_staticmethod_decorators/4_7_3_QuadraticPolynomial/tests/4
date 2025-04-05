@@ -1,0 +1,5 @@
+polynom = QuadraticPolynomial.from_str('-19 40 148')
+
+print(polynom.a)
+print(polynom.b)
+print(polynom.c)

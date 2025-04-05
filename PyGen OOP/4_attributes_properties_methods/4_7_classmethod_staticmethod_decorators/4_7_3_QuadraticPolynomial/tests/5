@@ -1,0 +1,5 @@
+polynom = QuadraticPolynomial.from_iterable([25, 132, -18])
+
+print(polynom.a)
+print(polynom.b)
+print(polynom.c)

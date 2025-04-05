@@ -1,0 +1,5 @@
+polynom = QuadraticPolynomial(1, -5, 6)
+
+print(polynom.a)
+print(polynom.b)
+print(polynom.c)
