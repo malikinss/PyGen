@@ -1,0 +1,6 @@
+config = Config()
+
+print(config.program_name)
+print(config.environment)
+print(config.loglevel)
+print(config.version)

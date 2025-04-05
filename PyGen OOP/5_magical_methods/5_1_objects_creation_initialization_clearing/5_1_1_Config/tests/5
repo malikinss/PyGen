@@ -1,0 +1,5 @@
+config = Config()
+print('program_name' in config.__dict__)
+print('environment' in config.__dict__)
+print('loglevel' in config.__dict__)
+print('version' in config.__dict__)

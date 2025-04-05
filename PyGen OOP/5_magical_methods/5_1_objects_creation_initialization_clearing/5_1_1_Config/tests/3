@@ -1,0 +1,7 @@
+config1 = Config()
+config2 = Config()
+
+print(config1.program_name is config2.program_name)
+print(config1.environment is config2.environment)
+print(config1.loglevel is config2.loglevel)
+print(config1.version is config2.version)

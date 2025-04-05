@@ -1,0 +1,3 @@
+config = Config()
+configs = [Config() for _ in range(1000)]
+print(all(item is config for item in configs))

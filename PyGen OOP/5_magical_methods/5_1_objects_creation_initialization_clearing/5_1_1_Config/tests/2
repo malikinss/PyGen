@@ -1,0 +1,6 @@
+config1 = Config()
+config2 = Config()
+config3 = Config()
+
+print(config1 is config2)
+print(config1 is config3)
