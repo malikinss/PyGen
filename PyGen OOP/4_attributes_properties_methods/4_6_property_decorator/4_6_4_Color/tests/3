@@ -1,0 +1,14 @@
+color = Color('0000FF')
+
+print(color.hexcode)
+print(color.r)
+print(color.g)
+print(color.b)
+
+print()
+
+color.hexcode = 'A782E3'
+print(color.hexcode)
+print(color.r)
+print(color.g)
+print(color.b)
