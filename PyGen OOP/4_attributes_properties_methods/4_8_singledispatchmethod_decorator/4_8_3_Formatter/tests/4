@@ -1,0 +1,4 @@
+try:
+    Formatter.format('All them years, Dutch, for this snake?')
+except TypeError as e:
+    print(e)

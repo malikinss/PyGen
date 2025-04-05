@@ -1,0 +1,3 @@
+Formatter.format({'Cuphead': 1, 'Mugman': 3})
+Formatter.format({1: 'one', 2: 'two'})
+Formatter.format({1: True, 0: False})

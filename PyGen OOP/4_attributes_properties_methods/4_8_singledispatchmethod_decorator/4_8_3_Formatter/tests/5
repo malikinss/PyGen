@@ -1,0 +1,7 @@
+not_supported = [str, type, bool, dict, tuple, list]
+
+for item in not_supported:
+    try:
+        Formatter.format(item)
+    except TypeError as e:
+        print(e)
