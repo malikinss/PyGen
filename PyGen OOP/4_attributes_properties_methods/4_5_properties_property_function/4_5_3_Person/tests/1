@@ -1,0 +1,5 @@
+person = Person('Меган', 'Фокс')
+
+print(person.name)
+print(person.surname)
+print(person.fullname)

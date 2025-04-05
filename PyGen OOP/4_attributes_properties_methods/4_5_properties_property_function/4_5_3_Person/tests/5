@@ -1,0 +1,4 @@
+person = Person('Брайан', 'Керниган')
+print(hasattr(person, 'name'))
+print(hasattr(person, 'surname'))
+print(hasattr(person, 'fullname'))
