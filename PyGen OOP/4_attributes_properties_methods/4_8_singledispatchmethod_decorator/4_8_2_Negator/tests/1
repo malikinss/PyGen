@@ -1,0 +1,4 @@
+print(Negator.neg(11.0))
+print(Negator.neg(-12))
+print(Negator.neg(True))
+print(Negator.neg(False))

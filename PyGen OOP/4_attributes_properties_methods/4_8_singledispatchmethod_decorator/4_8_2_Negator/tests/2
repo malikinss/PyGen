@@ -1,0 +1,4 @@
+try:
+    Negator.neg('number')
+except TypeError as e:
+    print(e)
