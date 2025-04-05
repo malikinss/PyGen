@@ -1,0 +1,8 @@
+names = ['Mia', 'Tutti', 'Erin', 'Loki', 'Kelly', 'Hussy', 'Abbey', 'Luna', 'Isha', 'Diva', 'Brandy', 'Petra', 'Mandy', 'Baby', 'Caitlyn', 'Taffy', 'Odie', 'Roxxy', 'Gabby', 'Shelby', 'Dolly', 'Ashley', 'Vanilla', 'Cori']
+
+for name in names:
+    pet = Pet(name)
+
+print(Pet.first_pet().name)
+print(Pet.last_pet().name)
+print(Pet.num_of_pets())

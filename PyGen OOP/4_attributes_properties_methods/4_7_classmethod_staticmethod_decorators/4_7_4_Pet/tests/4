@@ -1,0 +1,5 @@
+pet = Pet('Кемаль')
+
+print(Pet.first_pet().name)
+print(Pet.last_pet().name)
+print(Pet.num_of_pets())
