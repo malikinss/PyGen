@@ -18,7 +18,17 @@ This chapter separated on 11 lessons that have good theory explonation, 46 pract
 1. 5_1_objects_creation_initialization_clearing
 
 ```
-
+# Lesson 5.1: Creation, Initialization, and Clearing of Objects 🛠️
+This lesson covers:
+-   Magic methods in Python
+-   The **`new()`** and **`init()`** magic methods
+-   Singleton design pattern implementation
+-   The **`del()`** magic method for object deletion
+By the end of this lesson, I will:
+✅ Understand how Python creates and initializes objects using `new()` and `init()`
+✅ Implement the **Singleton** pattern to ensure a class has only one instance
+✅ Learn how to manage object lifecycle using `del()`
+✅ Be able to apply these concepts to optimize code for object creation and clearing
 ```
 
 2. 5_2_objects_string_representation
