@@ -1,128 +1,137 @@
-Chapter 4: Attributes, properties and methods
+# Chapter 4: Attributes, Properties, and Methods 🧠
 
-This chapter separated on 8 lessons that have good theory explonation, 38 practical programming tasks and 98 theoretical questions presented on the website.
+## Description 📝
 
-4_attributes_properties_methods
-├───4_1_attributes_of_objects_and_classes
-├───4_2_class_instance_methods_part_1
-├───4_3_class_instance_methods_part_2
-├───4_4_access_modifiers_and_accessors
-├───4_5_properties_property_function
-├───4_6_property_decorator
-├───4_7_classmethod_staticmethod_decorators
-└───4_8_singledispatchmethod_decorator
+This chapter is dedicated to deepening **my understanding of classes and objects** in Python by learning how to define, access, and control **attributes**, as well as how to use **methods** and **decorators** to structure my code more efficiently.  
+It consists of **8 detailed lessons** with solid theoretical explanations, **38 hands-on coding tasks**, and **98 theoretical questions** available on the course platform.
 
-1. 4_1_attributes_of_objects_and_classes
+## Purpose 🎯
 
-```
-# Lesson 4.1: Attributes of Objects and Classes 🏛️
+In this chapter, I will:
+
+-   Learn how to work with **object and class attributes**.
+-   Understand the difference between **instance methods**, **class methods**, and **static methods**.
+-   Use **access modifiers**, **accessors**, and **property decorators** to enforce data encapsulation and maintain clean code.
+-   Practice building real-world classes and designing flexible, reusable objects.
+
+## Course Modules 📚
+
+### Lesson 4.1: Attributes of Objects and Classes 🏛️
+
 In this lesson, I will explore:
+
 -   Object-Oriented Programming (OOP) in Python.
 -   Understanding the `dir()` function.
--   Differentiating between object attributes and class attributes.
+-   Differentiating between **object** attributes and **class** attributes.
 -   Using the `__dict__` attribute.
 -   Working with `getattr()`, `setattr()`, `hasattr()`, and `delattr()` functions.
-This lesson provides a strong foundation for working with attributes in Python, helping me understand how objects and classes store and manage data.
+
 By the end of this lesson, I will:
-✅ Understand the difference between object and class attributes.
-✅ Learn how to inspect and manipulate attributes dynamically.
-✅ Gain hands-on experience with practical programming tasks.
-```
 
-2. 4_2_class_instance_methods_part_1
+-   ✅ Understand the difference between **object** and **class** attributes.
+-   ✅ Learn how to **inspect** and **manipulate** attributes dynamically.
+-   ✅ Gain **hands-on experience** through practical programming tasks.
 
-```
-# Lesson 4.2: Class Instance Methods (Part 1) 📌
+### Lesson 4.2: Class Instance Methods (Part 1) 📌
+
 In this lesson, I will explore:
--   **Class instance methods** and their role in OOP.
--   The **`__init__()` method**, which initializes new objects.
--   The importance of the **`self` argument** in instance methods.
 
-This lesson provides a strong foundation for understanding how classes create and manage instances in Python.
+-   What **instance methods** are and why they're essential in OOP.
+-   How the `__init__()` method initializes new objects.
+-   The purpose of the `self` argument.
+
 By the end of this lesson, I will:
-✅ Understand how instance methods work in Python.
-✅ Learn about the **`__init__()` method** and its role in object initialization.
-✅ Know why the **`self` argument** is essential for instance methods.
-```
 
-3. 4_3_class_instance_methods_part_2
+-   ✅ Understand how **instance methods** work in Python.
+-   ✅ Learn about the `__init__()` method and its role in object construction.
+-   ✅ Know why the `self` keyword is essential.
 
-```
-# Lesson 4.3: Class Instance Methods (Part 2) 🔍
-This lesson focuses on designing and implementing classes with instance methods.
-It provides a deeper understanding of object-oriented programming by exploring real-world examples of class structures.
-Topics covered:
--   Class design and structuring.
--   Implementing instance methods.
--   Handling attributes and encapsulation.
--   Various use cases for classes in simulations and utilities.
+### Lesson 4.3: Class Instance Methods (Part 2) 🔍
+
+This lesson builds on the previous one, focusing on **real-world use cases** and **class design**.  
+I will explore:
+
+-   Structuring classes properly.
+-   Writing and organizing instance methods.
+-   Managing attributes and applying encapsulation.
+-   Using classes to solve practical problems.
+
 By the end of this lesson, I will:
-✅ Learn how to design and implement classes effectively.
-✅ Understand the role of instance methods in object-oriented programming.
-✅ Gain hands-on experience with class-based problem-solving.
-```
 
-4. 4_4_access_modifiers_and_accessors
+-   ✅ Know how to design and implement well-structured classes.
+-   ✅ Understand the role of instance methods in **data management and behavior**.
+-   ✅ Strengthen my coding skills with problem-solving tasks.
 
-```
-# Lesson 4.4: Access Modifiers and Accessors 🔐
+### Lesson 4.4: Access Modifiers and Accessors 🔐
+
 This lesson covers:
--   **Access Modifiers** (public, private, and protected)
--   **Accessor Methods** (Getters and Setters)
--   How to **encapsulate data** and enforce **data integrity** in object-oriented programming.
+
+-   Using **public**, **protected**, and **private** access modifiers.
+-   Defining **getter** and **setter** methods.
+-   Implementing **data encapsulation** and enforcing **data integrity**.
+
 By the end of this lesson, I will:
-✅ Understand the role of access modifiers in controlling access to class attributes.
-✅ Learn how to use getters and setters to safely access and modify object data.
-✅ Implement access control in practical programming tasks.
-```
 
-5. 4_5_properties_property_function
+-   ✅ Understand access control in classes.
+-   ✅ Know how to use **accessor methods** to manage internal state.
+-   ✅ Protect data while keeping my code clean and maintainable.
 
-```
-# Lesson 4.5: Properties and the `property()` Function 🧩
-This lesson covers:
--   **Properties in Python**
--   The **`property()` function**
--   The **Property object** and how it improves encapsulation and readability
+### Lesson 4.5: Properties and the `property()` Function 🧩
+
+In this lesson, I will explore:
+
+-   How Python **properties** work.
+-   The role of the **`property()` function**.
+-   Creating **read-only** and **read-write** properties.
+
 By the end of this lesson, I will:
-✅ Understand the concept of properties in Python
-✅ Learn how to use the built-in `property()` function
-✅ Be able to create read-only and read-write properties
-✅ Replace manual getters/setters with more Pythonic property syntax
-```
 
-6. 4_6_property_decorator
+-   ✅ Understand how properties improve encapsulation and readability.
+-   ✅ Replace manual accessors with more Pythonic alternatives.
+-   ✅ Use `property()` to simplify my class interface.
 
-```
-# Lesson 4.6: The `@property` Decorator 🎨
-This lesson is focused on:
--   The **`@property` decorator** in Python
--   How to use the `@property` decorator to define properties that can be accessed like attributes
+### Lesson 4.6: The `@property` Decorator 🎨
+
+In this lesson, I will dive deeper into:
+
+-   The **`@property` decorator**.
+-   Writing **Pythonic getters and setters** using decorators.
+
 By the end of this lesson, I will:
-✅ Understand the usage of the `@property` decorator in Python
-✅ Learn how to make **getter** and **setter** methods more Pythonic
-✅ Implement read-only and read-write properties using the decorator
-✅ Enhance code readability and encapsulation in Python classes
-```
 
-7. 4_7_classmethod_staticmethod_decorators
+-   ✅ Use the `@property` decorator effectively.
+-   ✅ Build clean, elegant APIs for my classes.
+-   ✅ Create both read-only and read-write properties using decorators.
 
-```
-# Lesson 4.7: The `@classmethod` and `@staticmethod` Decorators 🏗️
-This lesson is focused on:
--   **Instance Methods**: Methods that operate on an instance of the class
--   **Class Methods**: Methods that operate on the class itself rather than on an instance, created using the `@classmethod` decorator
--   **Static Methods**: Methods that don't depend on either the instance or the class, created using the `@staticmethod` decorator
+### Lesson 4.7: `@classmethod` and `@staticmethod` Decorators 🧭
+
+In this lesson, I will learn:
+
+-   The **difference** between **instance methods**, **class methods**, and **static methods**.
+-   How to use the `@classmethod` and `@staticmethod` decorators appropriately.
+-   When to use each type of method.
+
 By the end of this lesson, I will:
-✅ Understand the difference between instance methods, class methods, and static methods
-✅ Learn how to use `@classmethod` and `@staticmethod` decorators in Python
-✅ Implement class and static methods for flexible class design and functionality
-✅ Enhance code structure with more specialized methods
 
-```
+-   ✅ Know how and when to use `@classmethod` and `@staticmethod`.
+-   ✅ Improve the flexibility and clarity of my class designs.
+-   ✅ Write reusable methods that don’t depend on object instances.
 
-8. 4_8_singledispatchmethod_decorator
+### Lesson 4.8: `@singledispatchmethod` Decorator 🎯
 
-```
+This lesson introduces:
 
-```
+-   The **`@singledispatchmethod`** decorator from `functools`.
+-   How to create **method overloading** based on argument types.
+-   Real-world use cases of **generic function dispatching**.
+
+By the end of this lesson, I will:
+
+-   ✅ Understand the idea of **method overloading** in Python.
+-   ✅ Use `@singledispatchmethod` to write more elegant and extensible code.
+-   ✅ Build generic methods that adapt to different data types.
+
+## Conclusion 🚀
+
+By completing Chapter 4, I will have mastered the foundational tools for managing class and object behavior in Python.
+These skills will make my code more organized, maintainable, and powerful — preparing me for more advanced OOP topics and real-world applications.
