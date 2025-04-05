@@ -1,0 +1,4 @@
+polynom = QuadraticPolynomial(1, 2, -3)
+
+print(polynom.view)
+print(polynom.coefficients)

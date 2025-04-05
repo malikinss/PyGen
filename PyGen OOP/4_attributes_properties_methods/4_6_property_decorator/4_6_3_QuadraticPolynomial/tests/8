@@ -1,0 +1,16 @@
+polynom = QuadraticPolynomial(500, -601, 101)
+
+print(polynom.a, polynom.b, polynom.c)
+print(polynom.x1)
+print(polynom.x2)
+print(polynom.coefficients)
+print(polynom.view)
+
+print()
+
+polynom.coefficients = (-1000, 1202, -202)
+print(polynom.a, polynom.b, polynom.c)
+print(polynom.x1)
+print(polynom.x2)
+print(polynom.coefficients)
+print(polynom.view)
