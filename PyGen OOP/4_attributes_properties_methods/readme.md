@@ -79,7 +79,16 @@ By the end of this lesson, I will:
 5. 4_5_properties_property_function
 
 ```
-
+# Lesson 4.5: Properties and the `property()` Function 🧩
+This lesson covers:
+-   **Properties in Python**
+-   The **`property()` function**
+-   The **Property object** and how it improves encapsulation and readability
+By the end of this lesson, I will:
+✅ Understand the concept of properties in Python
+✅ Learn how to use the built-in `property()` function
+✅ Be able to create read-only and read-write properties
+✅ Replace manual getters/setters with more Pythonic property syntax
 ```
 
 6. 4_6_property_decorator
