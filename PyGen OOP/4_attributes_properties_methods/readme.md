@@ -94,7 +94,15 @@ By the end of this lesson, I will:
 6. 4_6_property_decorator
 
 ```
-
+# Lesson 4.6: The `@property` Decorator 🎨
+This lesson is focused on:
+-   The **`@property` decorator** in Python
+-   How to use the `@property` decorator to define properties that can be accessed like attributes
+By the end of this lesson, I will:
+✅ Understand the usage of the `@property` decorator in Python
+✅ Learn how to make **getter** and **setter** methods more Pythonic
+✅ Implement read-only and read-write properties using the decorator
+✅ Enhance code readability and encapsulation in Python classes
 ```
 
 7. 4_7_classmethod_staticmethod_decorators
