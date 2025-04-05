@@ -1,0 +1,7 @@
+objects = [None, {1, 2, 3}, {1: 'one', 2: 'two'}]
+
+for obj in objects:
+    try:
+        Processor.process(obj)
+    except TypeError as e:
+        print(e)

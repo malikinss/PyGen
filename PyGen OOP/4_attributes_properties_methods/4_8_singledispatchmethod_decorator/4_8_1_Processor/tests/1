@@ -1,0 +1,5 @@
+print(Processor.process(10))
+print(Processor.process(5.2))
+print(Processor.process('hello'))
+print(Processor.process((4, 3, 2, 1)))
+print(Processor.process([3, 2, 1]))
