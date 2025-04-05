@@ -1,0 +1,6 @@
+array = [(99, 297), (215, 472), (270, 80), (453, 215), (333, 360), (52, 426), (307, 257), (425, 493), (291, 437), (57, 415)]
+
+
+for length, width in array:
+    rectangle = Rectangle(length, width)
+    print(f'Длина = {rectangle.length}, Ширина = {rectangle.width}')

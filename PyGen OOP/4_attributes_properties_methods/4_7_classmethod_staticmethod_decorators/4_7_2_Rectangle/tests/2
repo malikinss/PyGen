@@ -1,0 +1,4 @@
+rectangle = Rectangle.square(5)
+
+print(rectangle.length)
+print(rectangle.width)

@@ -1,0 +1,3 @@
+rectangle = Rectangle(1, 2)
+print(hasattr(rectangle, 'length'))
+print(hasattr(rectangle, 'width'))
