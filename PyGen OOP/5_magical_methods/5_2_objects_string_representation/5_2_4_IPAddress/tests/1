@@ -1,0 +1,4 @@
+ip = IPAddress('8.8.1.1')
+
+print(str(ip))
+print(repr(ip))

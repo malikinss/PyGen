@@ -1,0 +1,4 @@
+ip = IPAddress([1, 1, 10, 10])
+
+print(str(ip))
+print(repr(ip))
