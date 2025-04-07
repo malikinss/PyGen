@@ -34,7 +34,18 @@ By the end of this lesson, I will:
 2. 5_2_objects_string_representation
 
 ```
-
+# Lesson 5.2: String Representation of Objects 📜
+This lesson covers:
+-   Functions **`str()`** and **`repr()`** in Python
+-   Magic methods **`__str__()`** and **`__repr__()`**
+-   Formal and informal string representations of objects
+-   Practical implementation across various classes
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 11 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the difference between **`str()`** and **`repr()`** functions
+✅ Implement **`__str__()`** and **`__repr__()`** magic methods for custom string representations
+✅ Learn to create formal (developer-friendly) and informal (user-friendly) object descriptions
+✅ Apply these concepts to real-world class examples for better object management
 ```
 
 3. 5_3_objects_comparison
