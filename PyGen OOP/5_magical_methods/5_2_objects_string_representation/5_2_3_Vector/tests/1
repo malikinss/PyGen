@@ -1,0 +1,4 @@
+vector = Vector(1, 2)
+
+print(str(vector))
+print(repr(vector))

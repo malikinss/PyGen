@@ -1,0 +1,1 @@
+[Vector(1, 2), Vector(3, 4), Vector(-1, 1), Vector(0, 0), Vector(-100, -100), Vector(25.5, -10.2), Vector(100.0, 0.5)]
