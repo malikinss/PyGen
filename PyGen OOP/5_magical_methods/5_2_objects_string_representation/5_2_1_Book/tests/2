@@ -1,0 +1,4 @@
+book = Book('Программируем на Python', 'Майкл Доусон', 2023)
+
+print(str(book))
+print(repr(book))
