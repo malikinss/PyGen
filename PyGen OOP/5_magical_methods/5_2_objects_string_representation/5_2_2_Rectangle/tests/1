@@ -1,0 +1,4 @@
+rectangle = Rectangle(1, 2)
+
+print(str(rectangle))
+print(repr(rectangle))

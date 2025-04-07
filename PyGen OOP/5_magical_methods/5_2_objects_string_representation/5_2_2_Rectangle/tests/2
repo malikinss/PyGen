@@ -1,0 +1,5 @@
+rectangle1 = Rectangle(1, 2)
+rectangle2 = Rectangle(3, 4)
+
+print(rectangle1)
+print(repr(rectangle2))
