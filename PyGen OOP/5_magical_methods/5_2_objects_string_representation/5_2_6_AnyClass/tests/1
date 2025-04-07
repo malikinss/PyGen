@@ -1,0 +1,4 @@
+any = AnyClass()
+
+print(str(any))
+print(repr(any))

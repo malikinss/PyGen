@@ -1,0 +1,4 @@
+cowboy = AnyClass(name='John', surname='Marston')
+
+print(str(cowboy))
+print(repr(cowboy))

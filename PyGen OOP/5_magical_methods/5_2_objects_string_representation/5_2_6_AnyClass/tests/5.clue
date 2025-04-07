@@ -1,0 +1,1 @@
+AnyClass: name='Margaret Heafield Hamilton', birth_date='17.09.1936', age=86, career='computer scientist'

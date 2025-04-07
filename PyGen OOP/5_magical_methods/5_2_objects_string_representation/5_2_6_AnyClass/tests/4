@@ -1,0 +1,7 @@
+obj1 = AnyClass(name='Gvido', language='Python', age=67)
+obj2 = AnyClass(name='Поколение Python', language='Python', age=4, best=True)
+
+print(obj1, obj2, sep=', ')
+print([obj1, obj2])
+print((obj1))
+print((obj2,))
