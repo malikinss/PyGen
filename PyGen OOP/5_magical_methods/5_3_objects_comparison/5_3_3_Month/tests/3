@@ -1,0 +1,4 @@
+months = [Month(1998, 12), Month(2000, 1), Month(1999, 12)]
+
+print(min(months))
+print(max(months))

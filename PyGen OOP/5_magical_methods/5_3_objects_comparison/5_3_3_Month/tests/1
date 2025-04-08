@@ -1,0 +1,5 @@
+print(Month(1999, 12) == Month(1999, 12))
+print(Month(1999, 12) < Month(2000, 1))
+print(Month(1999, 12) > Month(2000, 1))
+print(Month(1999, 12) <= Month(1999, 12))
+print(Month(1999, 12) >= Month(2000, 1))
