@@ -51,7 +51,20 @@ By the end of this lesson, I will:
 3. 5_3_objects_comparison
 
 ```
-
+# Lesson 5.3: Comparison of Objects ⚖️
+This lesson covers:
+-   Magic methods **`__eq__()`** and **`__ne__()`** for equality and inequality
+-   The **`NotImplemented`** constant for unsupported comparisons
+-   Magic methods **`__lt__()`** and **`__gt__()`** for less than and greater than
+-   Magic methods **`__le__()`** and **`__ge__()`** for less than or equal and greater than or equal
+-   The **`@total_ordering`** decorator for complete comparison support
+-   Practical implementation of object comparison
+This lesson includes a detailed theoretical explanation, 4 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to implement object comparison using magic methods
+✅ Use **`NotImplemented`** to handle invalid comparison cases
+✅ Apply **`@total_ordering`** to simplify comparison logic
+✅ Be able to compare objects in practical scenarios like vectors, words, dates, and versions
 ```
 
 4. 5_4_unary_operators_anf_functions
