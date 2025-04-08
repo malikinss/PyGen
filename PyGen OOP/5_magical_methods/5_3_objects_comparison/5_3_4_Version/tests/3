@@ -1,0 +1,5 @@
+versions = [Version('2'), Version('2.1'), Version('1.9.1')]
+
+print(sorted(versions))
+print(min(versions))
+print(max(versions))

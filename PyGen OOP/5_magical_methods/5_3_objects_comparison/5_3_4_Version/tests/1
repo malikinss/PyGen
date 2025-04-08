@@ -1,0 +1,5 @@
+print(Version('3.0.3') == Version('1.11.28'))
+print(Version('3.0.3') < Version('1.11.28'))
+print(Version('3.0.3') > Version('1.11.28'))
+print(Version('3.0.3') <= Version('1.11.28'))
+print(Version('3.0.3') >= Version('1.11.28'))
