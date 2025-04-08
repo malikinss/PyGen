@@ -1,0 +1,1 @@
+[Vector(-2, -12), Vector(-78, -22), Vector(-90, 58), Vector(10, -37), Vector(25, 60)]

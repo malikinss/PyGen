@@ -1,0 +1,3 @@
+coordinates = [(-2, -12), (-78, -22), (-90, 58), (10, -37), (25, 60)]
+vectors = [Vector(x, y) for x, y in coordinates]
+print(vectors)

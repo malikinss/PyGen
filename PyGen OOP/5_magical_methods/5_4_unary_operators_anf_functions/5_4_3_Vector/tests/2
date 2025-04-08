@@ -1,0 +1,6 @@
+vector = Vector(-8, -6)
+
+print(+vector)
+print(-vector)
+print(abs(vector))
+print(repr(vector))
