@@ -70,7 +70,17 @@ By the end of this lesson, I will:
 4. 5_4_unary_operators_anf_functions
 
 ```
-
+# Lesson 5.4: Unary Operators and Functions ➕➖
+This lesson covers:
+-   Magic methods **`__pos__()`**, **`__neg__()`**, and **`__invert__()`** for unary operators
+-   Magic methods **`__abs__()`**, **`__round__()`**, and similar functions
+-   Practical implementation of unary operations on objects
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to implement unary operators using magic methods
+✅ Use **`__abs__()`** and **`__round__()`** to extend object functionality
+✅ Apply unary operations to manipulate objects in practical scenarios
+✅ Be able to overload operators for custom behavior in classes
 ```
 
 5. 5_5_arithmetic_operations
