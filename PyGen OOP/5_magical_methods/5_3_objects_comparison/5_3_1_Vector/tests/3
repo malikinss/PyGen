@@ -1,0 +1,8 @@
+a = Vector(1, 2)
+pair1 = (1, 2)
+pair2 = ('1', '2')
+pair3 = (5, 6)
+
+print(a == pair1)
+print(a == pair2)
+print(a == pair3)
