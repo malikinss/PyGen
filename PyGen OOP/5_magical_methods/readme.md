@@ -86,7 +86,19 @@ By the end of this lesson, I will:
 5. 5_5_arithmetic_operations
 
 ```
-
+# Lesson 5.5: Arithmetic Operations 🧮
+This lesson covers:
+-   Magic methods **`__add__()`**, **`__sub__()`**, and **`__mul__()`** for basic arithmetic
+-   Magic methods **`__truediv__()`**, **`__floordiv__()`**, and **`__mod__()`** for division and modulo
+-   Reflected arithmetic operations (e.g., handling `scalar * obj`)
+-   In-place magic methods **`__iadd__()`**, **`__isub__()`**, **`__imul__()`**, **`__itruediv__()`**, **`__ifloordiv__()`**, and **`__imod__()`**
+-   Practical implementation of arithmetic operations on objects
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to implement arithmetic operations using magic methods
+✅ Handle reflected arithmetic for flexible operand ordering
+✅ Use in-place operations for efficient object updates
+✅ Apply arithmetic operations to practical scenarios like nutrition, vectors, and queues
 ```
 
 6. 5_6_callable_objects
