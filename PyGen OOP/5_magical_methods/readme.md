@@ -104,7 +104,17 @@ By the end of this lesson, I will:
 6. 5_6_callable_objects
 
 ```
-
+# Lesson 5.6: Callable Objects 📞
+This lesson covers:
+-   Callable objects in Python
+-   Magic method **`__call__()`** for enabling object invocation
+-   Practical implementation of callable objects and decorators
+This lesson includes a detailed theoretical explanation, 10 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to make objects callable using **`__call__()`**
+✅ Create callable objects for diverse tasks like arithmetic, formatting, and sorting
+✅ Use callable objects as decorators for function enhancement
+✅ Apply these concepts to simplify code and improve functionality
 ```
 
 7. 5_7_type_conversion
