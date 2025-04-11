@@ -74,7 +74,12 @@ This class is designed for date localization, suitable for internationalization,
 8.
 
 ```
-
+# CountCalls Decorator Call Counter
+The `CountCalls` class is a Python decorator that wraps a function to count how many times it is invoked.
+The call count is stored in an accessible `calls` attribute on the decorator instance.
+It is designed to be non-intrusive, preserving the original function’s return value and supporting any number of positional and keyword arguments, making it versatile for a wide range of use cases.
+This decorator serves as a utility for tracking function call frequency, making it ideal for debugging, performance monitoring, logging function usage in applications, or teaching the concept of decorators in Python.
+Its simplicity and flexibility make it a valuable tool in both development and educational contexts.
 ```
 
 9.
