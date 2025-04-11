@@ -62,10 +62,13 @@ When called with an iterable, it returns a list of elements where the predicate 
 This class is designed for data filtering, suitable for list processing, educational examples of callable objects, or applications needing custom iterable refinement.
 ```
 
-7.
+7. 5_6_7_DateFormatter
 
 ```
-
+# DateFormatter Class Regional Converter
+The `DateFormatter` class creates callable instances that format `date` objects into strings based on a country-specific format, determined by a `country_code` provided during instantiation.
+It supports formats for countries like `ru` (DD.MM.YYYY), `us` (MM-DD-YYYY), and others from a predefined table.
+This class is designed for date localization, suitable for internationalization, educational examples of callable objects, or applications needing region-specific date displays.
 ```
 
 8.
