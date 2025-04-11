@@ -16,3 +16,60 @@ The `Calculator` class creates callable instances for performing basic arithmeti
 It uses a dictionary of operator functions and handles division by zero with a `ValueError`.
 This class is designed for simple arithmetic tasks, suitable for educational examples of callable objects, basic computation utilities, or applications needing flexible operation execution.
 ```
+
+2. 5_6_2_RaiseTo
+
+```
+# RaiseTo Class Power Function
+The `RaiseTo` class creates callable instances that raise a number to a fixed exponent specified during instantiation.
+It takes one argument (`degree`) at creation and one argument (`x`) when called, returning `x` raised to `degree`.
+This class is designed for exponentiation tasks, suitable for mathematical utilities, educational examples of callable objects, or applications needing repeated power operations.
+```
+
+3.
+
+```
+
+```
+
+4.
+
+```
+
+```
+
+5.
+
+```
+
+```
+
+6.
+
+```
+
+```
+
+7.
+
+```
+
+```
+
+8.
+
+```
+
+```
+
+9.
+
+```
+
+```
+
+10.
+
+```
+
+```
