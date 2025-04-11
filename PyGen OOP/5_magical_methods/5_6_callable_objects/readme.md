@@ -26,10 +26,13 @@ It takes one argument (`degree`) at creation and one argument (`x`) when called,
 This class is designed for exponentiation tasks, suitable for mathematical utilities, educational examples of callable objects, or applications needing repeated power operations.
 ```
 
-3.
+3. 5_6_3_Dice
 
 ```
-
+# Dice Class Random Roller
+The `Dice` class models a die with a specified number of sides, set during instantiation.
+It’s a callable object that, when invoked with no arguments, returns a random integer from 1 to the number of sides, simulating a dice roll using `random.randint`.
+This class is designed for random number generation within a range, ideal for games, simulations, educational examples of callable objects, or applications needing dice-like randomness.
 ```
 
 4.
