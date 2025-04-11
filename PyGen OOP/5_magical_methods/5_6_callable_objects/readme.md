@@ -53,10 +53,13 @@ It takes a string `chars` during instantiation, defining the characters to strip
 This class is designed for string cleaning, suitable for text preprocessing, educational examples of callable objects, or applications needing custom trimming logic.
 ```
 
-6.
+6. 5_6_6_Filter
 
 ```
-
+# Filter Class Iterable Sifter
+The `Filter` class creates callable instances that filter elements from an iterable based on a predicate function, defaulting to `bool()` if no predicate is provided.
+When called with an iterable, it returns a list of elements where the predicate evaluates to `True`.
+This class is designed for data filtering, suitable for list processing, educational examples of callable objects, or applications needing custom iterable refinement.
 ```
 
 7.
