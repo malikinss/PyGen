@@ -1,107 +1,97 @@
-Lesson 5.6: callable objects
+# Lesson 5.6: Callable Objects 📞
 
-Callable Objects
-Magic Method **call**()
-Abstract. The lesson is devoted to callable objects.
+## Description 📝
 
-https://stepik.org/lesson/805787/step/1?unit=808914
+This lesson covers:
 
-This lesson has good theory explonation, 10 programing practical tasks and 7 theoretical questions presented on the website.
+-   Callable objects in Python
+-   Magic method **`__call__()`** for enabling object invocation
+-   Practical implementation of callable objects and decorators
 
-1. 5_6_1_Calculator
+This lesson includes a detailed theoretical explanation, 10 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
 
-```
-# Calculator Class Arithmetic Engine
-The `Calculator` class creates callable instances for performing basic arithmetic operations (`+`, `-`, `*`, `/`) on two numbers, requiring no initialization arguments.
-It uses a dictionary of operator functions and handles division by zero with a `ValueError`.
-This class is designed for simple arithmetic tasks, suitable for educational examples of callable objects, basic computation utilities, or applications needing flexible operation execution.
-```
+## Purpose 🎯
 
-2. 5_6_2_RaiseTo
+By the end of this lesson, I will:  
+✅ Understand how to make objects callable using **`__call__()`**  
+✅ Create callable objects for diverse tasks like arithmetic, formatting, and sorting  
+✅ Use callable objects as decorators for function enhancement  
+✅ Apply these concepts to simplify code and improve functionality
 
-```
-# RaiseTo Class Power Function
-The `RaiseTo` class creates callable instances that raise a number to a fixed exponent specified during instantiation.
-It takes one argument (`degree`) at creation and one argument (`x`) when called, returning `x` raised to `degree`.
-This class is designed for exponentiation tasks, suitable for mathematical utilities, educational examples of callable objects, or applications needing repeated power operations.
-```
+## Concepts & Theory 🔍
 
-3. 5_6_3_Dice
+### 🔹 Callable Objects
 
-```
-# Dice Class Random Roller
-The `Dice` class models a die with a specified number of sides, set during instantiation.
-It’s a callable object that, when invoked with no arguments, returns a random integer from 1 to the number of sides, simulating a dice roll using `random.randint`.
-This class is designed for random number generation within a range, ideal for games, simulations, educational examples of callable objects, or applications needing dice-like randomness.
-```
+-   **Purpose**: Objects that can be invoked like functions using parentheses.
+-   **How It Works**: Any class with a **`__call__()`** method becomes callable.
 
-4. 5_6_4_QuadraticPolynomial
+### 🔹 **`__call__()`** Magic Method
 
-```
-# QuadraticPolynomial Class Function Evaluator
-The `QuadraticPolynomial` class represents a quadratic trinomial `ax^2 + bx + c`, initialized with coefficients `a`, `b`, and `c`.
-It’s a callable object that takes a number `x` and returns the polynomial’s value at that point, computed as `ax^2 + bx + c`.
-This class is designed for evaluating quadratic expressions, suitable for mathematical modeling, educational examples of callable objects, or applications needing polynomial calculations.
-```
+-   **Purpose**: Defines behavior when an object is called (e.g., `obj(arg)`).
+-   **When Used**: To give objects function-like behavior with custom logic.
 
-5. 5_6_5_Strip
+## Practical Task 🧪
 
-```
-# Strip Class String Trimmer
-The `Strip` class creates callable instances that remove specified characters from both ends of a string.
-It takes a string `chars` during instantiation, defining the characters to strip, and when called with a string, returns the result using Python’s `strip()` method.
-This class is designed for string cleaning, suitable for text preprocessing, educational examples of callable objects, or applications needing custom trimming logic.
-```
+### 1️⃣ **Callable Objects Across Classes**
 
-6. 5_6_6_Filter
+The lesson includes 10 practical tasks, each implementing callable objects for unique use cases:
 
-```
-# Filter Class Iterable Sifter
-The `Filter` class creates callable instances that filter elements from an iterable based on a predicate function, defaulting to `bool()` if no predicate is provided.
-When called with an iterable, it returns a list of elements where the predicate evaluates to `True`.
-This class is designed for data filtering, suitable for list processing, educational examples of callable objects, or applications needing custom iterable refinement.
-```
+1. **`Calculator` Class**: Performs arithmetic operations (`+`, `-`, `*`, `/`).
 
-7. 5_6_7_DateFormatter
+    - Callable with two numbers and an operator, raises `ValueError` for division by zero.
 
-```
-# DateFormatter Class Regional Converter
-The `DateFormatter` class creates callable instances that format `date` objects into strings based on a country-specific format, determined by a `country_code` provided during instantiation.
-It supports formats for countries like `ru` (DD.MM.YYYY), `us` (MM-DD-YYYY), and others from a predefined table.
-This class is designed for date localization, suitable for internationalization, educational examples of callable objects, or applications needing region-specific date displays.
-```
+2. **`RaiseTo` Class**: Raises a number to a fixed exponent.
 
-8. 5_6_8_CountCalls
+    - Initialized with `degree`, called with `x` to compute `x ** degree`.
 
-```
-# CountCalls Decorator Call Counter
-The `CountCalls` class is a Python decorator that wraps a function to count how many times it is invoked.
-The call count is stored in an accessible `calls` attribute on the decorator instance.
-It is designed to be non-intrusive, preserving the original function’s return value and supporting any number of positional and keyword arguments, making it versatile for a wide range of use cases.
-This decorator serves as a utility for tracking function call frequency, making it ideal for debugging, performance monitoring, logging function usage in applications, or teaching the concept of decorators in Python.
-Its simplicity and flexibility make it a valuable tool in both development and educational contexts.
-```
+3. **`Dice` Class**: Simulates a die roll.
 
-9. 5_6_9_CachedFunction
+    - Initialized with sides, returns random integer from 1 to sides when called.
 
-```
-# CachedFunction Decorator Result Storer
-The `CachedFunction` class is a Python decorator designed to enhance the efficiency of function calls by caching their return values based on the input arguments.
-It maintains a persistent `cache` attribute, implemented as a dictionary where each key is a tuple of positional arguments passed to the function, and the corresponding value is the result returned by the function for those arguments.
-This caching mechanism ensures that subsequent calls with the same arguments retrieve the precomputed result instead of recalculating it, making it particularly useful for functions with computationally expensive operations or frequent repeated invocations.
-The decorator is tailored to work seamlessly with functions that accept only positional arguments, ensuring unambiguous caching as specified.
-The primary purpose of the `CachedFunction` decorator is to optimize performance by memoizing function results, thereby reducing redundant computations.
-It is an excellent tool for scenarios such as recursive algorithms (e.g., Fibonacci calculations), data processing tasks with repetitive inputs, or any application where the same function calls occur multiple times with identical arguments.
-Beyond practical use, it serves as an educational resource for demonstrating the power of decorators and caching strategies in Python, offering a clear example of how to implement stateful behavior in a functional context.
-Its design balances simplicity with utility, making it accessible to both novice and experienced developers.
-```
+4. **`QuadraticPolynomial` Class**: Evaluates a quadratic polynomial `ax^2 + bx + c`.
 
-10. 5_6_10_SortKey
+    - Initialized with coefficients, called with `x` to compute the result.
 
-```
-# SortKey Class Attribute-Based Sorting Tool
-The `SortKey` class simplifies sorting objects by their attributes, acting as a callable key for Python’s `sorted()` function.
-It accepts attribute names during instantiation, prioritizing them in order, and returns a tuple of their values when called with an object, enabling multi-level sorting based on natural comparison.
-This class eliminates the need for lambda functions in sorting, enhancing readability and maintainability.
-It’s ideal for sorting custom class instances (e.g., users by age or name) in data processing or educational contexts.
-```
+5. **`Strip` Class**: Removes specified characters from a string.
+
+    - Initialized with `chars`, called with a string to strip matching characters.
+
+6. **`Filter` Class**: Filters iterables based on a predicate.
+
+    - Initialized with optional predicate (defaults to `bool`), returns filtered list when called.
+
+7. **`DateFormatter` Class**: Formats dates by country code.
+
+    - Initialized with `country_code`, formats `date` objects (e.g., `ru`: DD.MM.YYYY).
+
+8. **`CountCalls` Class**: Decorator to count function calls.
+
+    - Tracks invocations via `calls` attribute, works with any arguments.
+
+9. **`CachedFunction` Class**: Decorator to cache function results.
+
+    - Stores results in `cache` dictionary for positional arguments, optimizes repeated calls.
+
+10. **`SortKey` Class**: Simplifies sorting by object attributes.
+    - Initialized with attribute names, returns tuple of values for sorting.
+
+💡 These tasks showcase the versatility of callable objects in arithmetic, data processing, and function enhancement.
+
+## Benefits ✅
+
+-   **`__call__()`** enables function-like behavior for objects.
+-   Callable objects simplify complex logic with intuitive interfaces.
+-   Decorators like `CountCalls` and `CachedFunction` enhance function performance and tracking.
+-   Classes like `SortKey` improve code readability for common tasks.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Create callable objects using **`__call__()`**  
+✅ Implement callable classes for arithmetic, formatting, and sorting  
+✅ Use decorators to track and optimize function behavior
+
+## Conclusion 🚀
+
+Mastering callable objects with **`__call__()`** empowers me to design flexible, function-like Python classes.  
+From simulating dice rolls to optimizing sort operations, these tools simplify code, enhance performance, and unlock creative solutions across diverse applications. 🧑‍💻✨
