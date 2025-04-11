@@ -44,10 +44,13 @@ It’s a callable object that takes a number `x` and returns the polynomial’s 
 This class is designed for evaluating quadratic expressions, suitable for mathematical modeling, educational examples of callable objects, or applications needing polynomial calculations.
 ```
 
-5.
+5. 5_6_5_Strip
 
 ```
-
+# Strip Class String Trimmer
+The `Strip` class creates callable instances that remove specified characters from both ends of a string.
+It takes a string `chars` during instantiation, defining the characters to strip, and when called with a string, returns the result using Python’s `strip()` method.
+This class is designed for string cleaning, suitable for text preprocessing, educational examples of callable objects, or applications needing custom trimming logic.
 ```
 
 6.
