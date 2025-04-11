@@ -71,7 +71,7 @@ It supports formats for countries like `ru` (DD.MM.YYYY), `us` (MM-DD-YYYY), and
 This class is designed for date localization, suitable for internationalization, educational examples of callable objects, or applications needing region-specific date displays.
 ```
 
-8.
+8. 5_6_8_CountCalls
 
 ```
 # CountCalls Decorator Call Counter
@@ -96,8 +96,12 @@ Beyond practical use, it serves as an educational resource for demonstrating the
 Its design balances simplicity with utility, making it accessible to both novice and experienced developers.
 ```
 
-10.
+10. 5_6_10_SortKey
 
 ```
-
+# SortKey Class Attribute-Based Sorting Tool
+The `SortKey` class simplifies sorting objects by their attributes, acting as a callable key for Python’s `sorted()` function.
+It accepts attribute names during instantiation, prioritizing them in order, and returns a tuple of their values when called with an object, enabling multi-level sorting based on natural comparison.
+This class eliminates the need for lambda functions in sorting, enhancing readability and maintainability.
+It’s ideal for sorting custom class instances (e.g., users by age or name) in data processing or educational contexts.
 ```
