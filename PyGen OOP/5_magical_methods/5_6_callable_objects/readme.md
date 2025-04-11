@@ -82,10 +82,18 @@ This decorator serves as a utility for tracking function call frequency, making 
 Its simplicity and flexibility make it a valuable tool in both development and educational contexts.
 ```
 
-9.
+9. 5_6_9_CachedFunction
 
 ```
-
+# CachedFunction Decorator Result Storer
+The `CachedFunction` class is a Python decorator designed to enhance the efficiency of function calls by caching their return values based on the input arguments.
+It maintains a persistent `cache` attribute, implemented as a dictionary where each key is a tuple of positional arguments passed to the function, and the corresponding value is the result returned by the function for those arguments.
+This caching mechanism ensures that subsequent calls with the same arguments retrieve the precomputed result instead of recalculating it, making it particularly useful for functions with computationally expensive operations or frequent repeated invocations.
+The decorator is tailored to work seamlessly with functions that accept only positional arguments, ensuring unambiguous caching as specified.
+The primary purpose of the `CachedFunction` decorator is to optimize performance by memoizing function results, thereby reducing redundant computations.
+It is an excellent tool for scenarios such as recursive algorithms (e.g., Fibonacci calculations), data processing tasks with repetitive inputs, or any application where the same function calls occur multiple times with identical arguments.
+Beyond practical use, it serves as an educational resource for demonstrating the power of decorators and caching strategies in Python, offering a clear example of how to implement stateful behavior in a functional context.
+Its design balances simplicity with utility, making it accessible to both novice and experienced developers.
 ```
 
 10.
