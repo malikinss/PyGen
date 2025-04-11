@@ -35,10 +35,13 @@ It’s a callable object that, when invoked with no arguments, returns a random 
 This class is designed for random number generation within a range, ideal for games, simulations, educational examples of callable objects, or applications needing dice-like randomness.
 ```
 
-4.
+4. 5_6_4_QuadraticPolynomial
 
 ```
-
+# QuadraticPolynomial Class Function Evaluator
+The `QuadraticPolynomial` class represents a quadratic trinomial `ax^2 + bx + c`, initialized with coefficients `a`, `b`, and `c`.
+It’s a callable object that takes a number `x` and returns the polynomial’s value at that point, computed as `ax^2 + bx + c`.
+This class is designed for evaluating quadratic expressions, suitable for mathematical modeling, educational examples of callable objects, or applications needing polynomial calculations.
 ```
 
 5.
