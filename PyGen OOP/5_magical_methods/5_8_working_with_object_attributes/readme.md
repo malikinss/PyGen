@@ -76,10 +76,15 @@ This class is designed for scenarios where tracking the number of attributes on 
 It’s particularly valuable in educational contexts to illustrate Python’s attribute management and dynamic behavior, or in applications like configuration objects, metadata tracking, or flexible data structures where monitoring attribute counts enhances functionality and transparency.
 ```
 
-7.
+7. 5_8_7_Const
 
 ```
-
+# Const Class Immutable Attribute Container
+The `Const` class is a robust utility designed to create objects with immutable attributes in Python, accepting an arbitrary number of named arguments during instantiation.
+These arguments are set as attributes, which can be retrieved but neither modified nor deleted.
+Attempting to change an attribute’s value raises an `AttributeError` with the message "Changing the attribute value is not allowed," and attempting to delete an attribute raises an `AttributeError` with "Deleting the attribute is not allowed," ensuring strict immutability after initialization.
+This class is crafted for scenarios requiring constant, unchangeable data, such as configuration settings, fixed metadata, or immutable data structures in applications like scientific computing, configuration management, or secure data handling.
+It’s also an excellent educational tool for demonstrating Python’s attribute access control, offering a clear example of how to enforce immutability in object-oriented programming, making it valuable for developers aiming to prevent unintended modifications in critical systems.
 ```
 
 8.
