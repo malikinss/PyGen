@@ -1,94 +1,100 @@
-Lesson 5.8: working with object attributes
+# Lesson 5.8: Working with Object Attributes 🔧
 
-Attribute Operations
-Magic Methods **getattribute**() and **getattr**()
-Magic Method **setattr**()
-Magic Method **delattr**()
+## Description 📝
 
-https://stepik.org/lesson/906773/step/1?unit=912312
+This lesson covers:
 
-This lesson has good theory explonation, 8 programing practical tasks and 6 theoretical questions presented on the website.
+-   Attribute operations in Python
+-   Magic methods **`__getattribute__()`** and **`__getattr__()`** for attribute access
+-   Magic method **`__setattr__()`** for attribute modification
+-   Magic method **`__delattr__()`** for attribute deletion
 
-1. 5_8_1_Item
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 6 theoretical questions available on the Stepik platform.
 
-```
-# Item Class Product Descriptor
-The `Item` class models a product with attributes for `name`, `price`, and `quantity`, accepting these as arguments during instantiation.
-It ensures the `name` attribute is returned with a capital letter (title case) and provides a `total` attribute that computes the product of `price` and `quantity` dynamically.
-This implementation corrects an assumed faulty prior version by properly handling attribute access to meet the specified requirements.
-This class is designed for inventory or e-commerce scenarios, enabling easy tracking of item details and their total cost.
-It’s suitable for retail applications, educational examples of custom attribute access in Python, or any context where products need to be represented with dynamic calculations, such as shopping carts or stock management systems.
-```
+## Purpose 🎯
 
-2. 5_8_2_Logger
+By the end of this lesson, I will:  
+✅ Understand how to control attribute access, modification, and deletion  
+✅ Implement custom attribute behavior using magic methods  
+✅ Apply attribute operations to create flexible, secure, and dynamic objects  
+✅ Use these techniques in practical scenarios like logging, immutability, and access control
 
-```
-# Logger Class Attribute Tracker
-The `Logger` class is a utility designed to monitor and log modifications to its instance attributes without requiring initialization arguments.
-Whenever an attribute is set or updated, it prints a message indicating the attribute name and its new value.
-Similarly, when an attribute is deleted, it logs the deletion event with the attribute’s name.
-This implementation corrects any prior incorrect attempts by properly handling attribute operations using Python’s special methods.
-This class is tailored for debugging, auditing, or tracking changes to object state in Python applications.
-It’s ideal for scenarios where developers need visibility into attribute modifications, such as in configuration management, testing environments, or educational settings to illustrate dynamic attribute handling.
-Its logging behavior provides a clear audit trail for attribute interactions, enhancing transparency in object lifecycle management.
-```
+## Concepts & Theory 🔍
 
-3. 5_8_3_Ord
+### 🔹 **`__getattribute__()`** Magic Method
 
-```
-# Ord Class Unicode Accessor
-The `Ord` class serves as an alternative interface to Python’s built-in `ord()` function, designed to return the Unicode code point of a single-character attribute name when accessed.
-It requires no arguments during instantiation and dynamically handles attribute requests, providing the Unicode value for valid single-character names or raising an `AttributeError` for invalid ones.
-This class is crafted for scenarios where accessing Unicode code points via attribute syntax is preferred over function calls, offering a novel way to interact with character encodings.
-It’s ideal for educational purposes to demonstrate Python’s dynamic attribute handling, or in specialized applications like text processing, character mapping, or creative coding projects where attribute-based access to Unicode values enhances code expressiveness.
-```
+-   **Purpose**: Controls access to all attribute requests, invoked before checking if an attribute exists.
+-   **When Used**: To customize or intercept every attribute access attempt.
 
-4. 5_8_4_DefaultObject
+### 🔹 **`__getattr__()`** Magic Method
 
-```
-# DefaultObject Class Flexible Attribute Handler
-The `DefaultObject` class is a dynamic container that accepts a named `default` argument (with a default value of `None`) and any number of additional named arguments during instantiation.
-These additional arguments are set as instance attributes, while accessing any non-existent attribute returns the specified `default` value.
-This implementation provides a flexible way to create objects with predefined attributes and a fallback for undefined ones.
-This class is designed for scenarios requiring objects with customizable attributes and a predictable fallback mechanism, such as configuration management, prototyping, or testing environments.
-It’s particularly useful in educational contexts to illustrate Python’s attribute access customization, or in applications like data modeling, where missing attributes should yield a consistent default without raising errors, enhancing robustness and simplicity.
-```
+-   **Purpose**: Handles access to non-existent attributes, invoked only if the attribute is not found.
+-   **When Used**: To provide fallback behavior or dynamic attribute generation.
 
-5. 5_8_5_NonNegativeObject
+### 🔹 **`__setattr__()`** Magic Method
 
-```
-# NonNegativeObject Class Positive Attribute Setter
-The `NonNegativeObject` class is a flexible container that accepts an arbitrary number of named arguments during instantiation, setting them as instance attributes.
-For any attribute value that is a negative number (integer or float), it automatically converts it to its positive equivalent by taking the absolute value, while non-numeric or non-negative values are stored unchanged.
-This ensures all numeric attributes are non-negative, providing a consistent and predictable object state.
-This class is designed for scenarios where objects must maintain non-negative numeric attributes, such as in financial applications (e.g., ensuring positive balances), simulations (e.g., non-negative distances or quantities), or educational exercises demonstrating dynamic attribute manipulation in Python.
-Its ability to transparently handle negative inputs makes it valuable for robust data modeling where negative values are invalid or undesirable, simplifying downstream logic.
-```
+-   **Purpose**: Defines behavior for setting attribute values.
+-   **When Used**: To enforce rules or perform actions when attributes are modified.
 
-6. 5_8_6_AttrsNumberObject
+### 🔹 **`__delattr__()`** Magic Method
 
-```
-# AttrsNumberObject Class Dynamic Attribute Counter
-The `AttrsNumberObject` class is a versatile container that accepts an arbitrary number of named arguments during instantiation, setting them as instance attributes.
-It includes a special attribute, `attrs_num`, which dynamically tracks the total number of attributes on the instance, including `attrs_num` itself.
-This count updates automatically whenever attributes are added or removed, providing a real-time reflection of the object’s state.
-This class is designed for scenarios where tracking the number of attributes on an object is essential, such as in debugging, object introspection, or data modeling with variable attribute sets.
-It’s particularly valuable in educational contexts to illustrate Python’s attribute management and dynamic behavior, or in applications like configuration objects, metadata tracking, or flexible data structures where monitoring attribute counts enhances functionality and transparency.
-```
+-   **Purpose**: Defines behavior for deleting attributes.
+-   **When Used**: To control or restrict attribute removal.
 
-7. 5_8_7_Const
+## Practical Task 🧪
 
-```
-# Const Class Immutable Attribute Container
-The `Const` class is a robust utility designed to create objects with immutable attributes in Python, accepting an arbitrary number of named arguments during instantiation.
-These arguments are set as attributes, which can be retrieved but neither modified nor deleted.
-Attempting to change an attribute’s value raises an `AttributeError` with the message "Changing the attribute value is not allowed," and attempting to delete an attribute raises an `AttributeError` with "Deleting the attribute is not allowed," ensuring strict immutability after initialization.
-This class is crafted for scenarios requiring constant, unchangeable data, such as configuration settings, fixed metadata, or immutable data structures in applications like scientific computing, configuration management, or secure data handling.
-It’s also an excellent educational tool for demonstrating Python’s attribute access control, offering a clear example of how to enforce immutability in object-oriented programming, making it valuable for developers aiming to prevent unintended modifications in critical systems.
-```
+### 1️⃣ **Attribute Operations Across Classes**
 
-8.
+The lesson includes 8 practical tasks, each implementing custom attribute handling for a unique class:
 
-```
+1. **`Item` Class**: Represents a product with `name`, `price`, and `quantity`.
 
-```
+    - Capitalizes `name` on access, computes `total` dynamically (`price * quantity`).
+
+2. **`Logger` Class**: Tracks attribute modifications.
+
+    - Logs attribute setting and deletion with name and value.
+
+3. **`Ord` Class**: Returns Unicode code points for single-character attribute names.
+
+    - Raises `AttributeError` for invalid names.
+
+4. **`DefaultObject` Class**: Provides a fallback for non-existent attributes.
+
+    - Returns a specified `default` value (defaults to `None`).
+
+5. **`NonNegativeObject` Class**: Ensures numeric attributes are non-negative.
+
+    - Converts negative numbers to positive using absolute value.
+
+6. **`AttrsNumberObject` Class**: Tracks the number of attributes.
+
+    - Updates `attrs_num` dynamically when attributes change.
+
+7. **`Const` Class**: Enforces immutable attributes.
+
+    - Raises `AttributeError` on attempts to modify or delete attributes.
+
+8. **`ProtectedObject` Class**: Restricts access to attributes starting with `_`.
+    - Raises `AttributeError` for protected attribute operations.
+
+💡 These tasks demonstrate diverse applications of attribute management, from logging to immutability.
+
+## Benefits ✅
+
+-   **`__getattribute__()`** and **`__getattr__()`** enable flexible attribute access control.
+-   **`__setattr__()`** enforces rules for attribute modification.
+-   **`__delattr__()`** protects against unauthorized attribute removal.
+-   Custom attribute handling enhances object robustness and functionality.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Control attribute access, modification, and deletion with magic methods  
+✅ Implement dynamic, secure, and immutable attribute behaviors  
+✅ Apply attribute operations to practical examples like logging and protected objects
+
+## Conclusion 🚀
+
+Mastering attribute operations with magic methods empowers me to create dynamic, secure, and efficient Python objects.  
+From enforcing immutability to logging changes and protecting sensitive data, these tools unlock advanced object-oriented design, making code more robust and versatile. 🧑‍💻✨
