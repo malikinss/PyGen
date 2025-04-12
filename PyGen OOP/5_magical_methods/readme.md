@@ -152,7 +152,20 @@ By the end of this lesson, I will:
 9. 5_9_object_hashing_part_1
 
 ```
-
+# Lesson 5.9: Object Hashing (Part 1) 🔢
+This lesson covers:
+-   Hashing and its role in Python
+-   Applications of hashing in data structures
+-   Built-in function **`hash()`**
+-   Narrowing the range of hash values
+-   Characteristics of a good hash function
+-   Creating custom hash functions
+This lesson includes a detailed theoretical explanation, 2 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the concept of hashing and its applications
+✅ Use the built-in **`hash()`** function effectively
+✅ Create custom hash functions with specific properties
+✅ Apply hashing techniques to constrain hash values within a range
 ```
 
 10. 5_10_object_hashing_part_2
