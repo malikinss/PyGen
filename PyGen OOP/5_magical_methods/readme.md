@@ -120,7 +120,16 @@ By the end of this lesson, I will:
 7. 5_7_type_conversion
 
 ```
-
+# Lesson 5.7: Type Conversion 🔄
+This lesson covers:
+-   Magic method **`__bool__()`** for boolean conversion
+-   Magic methods **`__int__()`**, **`__float__()`**, and **`__complex__()`** for numeric conversions
+-   Practical implementation of type conversion for objects
+This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to implement type conversion using magic methods
+✅ Enable objects to behave like booleans and numbers in different contexts
+✅ Apply type conversion to practical scenarios like vectors, temperatures, and Roman numerals
 ```
 
 8. 5_8_working_with_object_attributes
