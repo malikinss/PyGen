@@ -65,10 +65,15 @@ This class is designed for scenarios where objects must maintain non-negative nu
 Its ability to transparently handle negative inputs makes it valuable for robust data modeling where negative values are invalid or undesirable, simplifying downstream logic.
 ```
 
-6.
+6. 5_8_6_AttrsNumberObject
 
 ```
-
+# AttrsNumberObject Class Dynamic Attribute Counter
+The `AttrsNumberObject` class is a versatile container that accepts an arbitrary number of named arguments during instantiation, setting them as instance attributes.
+It includes a special attribute, `attrs_num`, which dynamically tracks the total number of attributes on the instance, including `attrs_num` itself.
+This count updates automatically whenever attributes are added or removed, providing a real-time reflection of the object’s state.
+This class is designed for scenarios where tracking the number of attributes on an object is essential, such as in debugging, object introspection, or data modeling with variable attribute sets.
+It’s particularly valuable in educational contexts to illustrate Python’s attribute management and dynamic behavior, or in applications like configuration objects, metadata tracking, or flexible data structures where monitoring attribute counts enhances functionality and transparency.
 ```
 
 7.
