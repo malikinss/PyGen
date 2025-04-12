@@ -188,5 +188,16 @@ By the end of this lesson, I will:
 11. 5_11_dicr_and_set_features_of_work
 
 ```
-
+# Lesson 5.11: Features of Dictionaries and Sets 📚
+This lesson covers:
+-   Features of dictionaries and sets in Python
+-   Performance characteristics and memory consumption
+-   Handling mutable keys and their implications
+-   Pitfalls and downsides of dictionary and set implementations
+This lesson includes a detailed theoretical explanation and 10 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the internal workings of dictionaries and sets
+✅ Recognize factors affecting their performance and memory usage
+✅ Identify risks associated with mutable keys
+✅ Be aware of common pitfalls and implementation limitations
 ```
