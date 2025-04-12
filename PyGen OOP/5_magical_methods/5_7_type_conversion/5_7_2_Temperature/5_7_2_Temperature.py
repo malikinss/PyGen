@@ -91,7 +91,7 @@ class Temperature:
         Returns:
             str: Temperature rounded to two decimal places with '°C'.
         """
-        return f'{self.temperature:.2f}°C'
+        return f'{round(self.temperature, 2)}°C'
 
     def __bool__(self) -> bool:
         """
