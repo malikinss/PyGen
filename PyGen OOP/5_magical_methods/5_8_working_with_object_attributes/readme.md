@@ -43,16 +43,26 @@ This class is crafted for scenarios where accessing Unicode code points via attr
 It’s ideal for educational purposes to demonstrate Python’s dynamic attribute handling, or in specialized applications like text processing, character mapping, or creative coding projects where attribute-based access to Unicode values enhances code expressiveness.
 ```
 
-4.
+4. 5_8_4_DefaultObject
 
 ```
-
+# DefaultObject Class Flexible Attribute Handler
+The `DefaultObject` class is a dynamic container that accepts a named `default` argument (with a default value of `None`) and any number of additional named arguments during instantiation.
+These additional arguments are set as instance attributes, while accessing any non-existent attribute returns the specified `default` value.
+This implementation provides a flexible way to create objects with predefined attributes and a fallback for undefined ones.
+This class is designed for scenarios requiring objects with customizable attributes and a predictable fallback mechanism, such as configuration management, prototyping, or testing environments.
+It’s particularly useful in educational contexts to illustrate Python’s attribute access customization, or in applications like data modeling, where missing attributes should yield a consistent default without raising errors, enhancing robustness and simplicity.
 ```
 
-5.
+5. 5_8_5_NonNegativeObject
 
 ```
-
+# NonNegativeObject Class Positive Attribute Setter
+The `NonNegativeObject` class is a flexible container that accepts an arbitrary number of named arguments during instantiation, setting them as instance attributes.
+For any attribute value that is a negative number (integer or float), it automatically converts it to its positive equivalent by taking the absolute value, while non-numeric or non-negative values are stored unchanged.
+This ensures all numeric attributes are non-negative, providing a consistent and predictable object state.
+This class is designed for scenarios where objects must maintain non-negative numeric attributes, such as in financial applications (e.g., ensuring positive balances), simulations (e.g., non-negative distances or quantities), or educational exercises demonstrating dynamic attribute manipulation in Python.
+Its ability to transparently handle negative inputs makes it valuable for robust data modeling where negative values are invalid or undesirable, simplifying downstream logic.
 ```
 
 6.
