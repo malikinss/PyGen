@@ -1,0 +1,3 @@
+point = NonNegativeObject(x=-1, y=-2, z=-5, color='black')
+for k, v in point.__dict__.items():
+    print(k, v)
