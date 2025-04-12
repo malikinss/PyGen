@@ -33,10 +33,14 @@ It’s ideal for scenarios where developers need visibility into attribute modif
 Its logging behavior provides a clear audit trail for attribute interactions, enhancing transparency in object lifecycle management.
 ```
 
-3.
+3. 5_8_3_Ord
 
 ```
-
+# Ord Class Unicode Accessor
+The `Ord` class serves as an alternative interface to Python’s built-in `ord()` function, designed to return the Unicode code point of a single-character attribute name when accessed.
+It requires no arguments during instantiation and dynamically handles attribute requests, providing the Unicode value for valid single-character names or raising an `AttributeError` for invalid ones.
+This class is crafted for scenarios where accessing Unicode code points via attribute syntax is preferred over function calls, offering a novel way to interact with character encodings.
+It’s ideal for educational purposes to demonstrate Python’s dynamic attribute handling, or in specialized applications like text processing, character mapping, or creative coding projects where attribute-based access to Unicode values enhances code expressiveness.
 ```
 
 4.
