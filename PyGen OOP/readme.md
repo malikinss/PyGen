@@ -66,7 +66,14 @@ In this chapter, I will:
 5. 5_magical_methods
 
 ```
-
+# Chapter 5: Magic Methods ✨
+This chapter is dedicated to mastering **magic methods** in Python, enabling me to customize the behavior of objects and make them more intuitive and powerful.
+It consists of **11 comprehensive lessons** with in-depth theoretical explanations, **46 hands-on programming tasks**, and **131 theoretical questions** available on the course platform.
+In this chapter, I will:
+-   Learn how to use **magic methods** to control object creation, representation, and behavior.
+-   Understand how to implement **custom operators**, **type conversions**, and **attribute access**.
+-   Explore **hashing** and its role in creating hashable objects for dictionaries and sets.
+-   Practice building flexible and reusable classes with real-world applications.
 ```
 
 6. 6_protocols
