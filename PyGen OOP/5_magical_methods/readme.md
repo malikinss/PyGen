@@ -135,7 +135,18 @@ By the end of this lesson, I will:
 8. 5_8_working_with_object_attributes
 
 ```
-
+# Lesson 5.8: Working with Object Attributes 🔧
+This lesson covers:
+-   Attribute operations in Python
+-   Magic methods **`__getattribute__()`** and **`__getattr__()`** for attribute access
+-   Magic method **`__setattr__()`** for attribute modification
+-   Magic method **`__delattr__()`** for attribute deletion
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 6 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to control attribute access, modification, and deletion
+✅ Implement custom attribute behavior using magic methods
+✅ Apply attribute operations to create flexible, secure, and dynamic objects
+✅ Use these techniques in practical scenarios like logging, immutability, and access control
 ```
 
 9. 5_9_object_hashing_part_1
