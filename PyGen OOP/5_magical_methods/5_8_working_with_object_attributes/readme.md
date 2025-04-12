@@ -20,10 +20,17 @@ This class is designed for inventory or e-commerce scenarios, enabling easy trac
 It’s suitable for retail applications, educational examples of custom attribute access in Python, or any context where products need to be represented with dynamic calculations, such as shopping carts or stock management systems.
 ```
 
-2.
+2. 5_8_2_Logger
 
 ```
-
+# Logger Class Attribute Tracker
+The `Logger` class is a utility designed to monitor and log modifications to its instance attributes without requiring initialization arguments.
+Whenever an attribute is set or updated, it prints a message indicating the attribute name and its new value.
+Similarly, when an attribute is deleted, it logs the deletion event with the attribute’s name.
+This implementation corrects any prior incorrect attempts by properly handling attribute operations using Python’s special methods.
+This class is tailored for debugging, auditing, or tracking changes to object state in Python applications.
+It’s ideal for scenarios where developers need visibility into attribute modifications, such as in configuration management, testing environments, or educational settings to illustrate dynamic attribute handling.
+Its logging behavior provides a clear audit trail for attribute interactions, enhancing transparency in object lifecycle management.
 ```
 
 3.
