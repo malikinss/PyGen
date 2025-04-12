@@ -171,7 +171,18 @@ By the end of this lesson, I will:
 10. 5_10_object_hashing_part_2
 
 ```
-
+# Lesson 5.10: Object Hashing (Part 2) 🔢
+This lesson covers:
+-   Hashability and immutability in Python
+-   Hashing custom classes
+-   Magic method **`__hash__()`** for custom hash values
+-   The hash-equal contract for consistent object behavior
+This lesson includes a detailed theoretical explanation, 2 programming practical tasks, and 11 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the relationship between hashability and immutability
+✅ Implement custom hashing for classes using **`__hash__()`**
+✅ Ensure the hash-equal contract for consistent object behavior
+✅ Apply hashing to create hashable objects for sets and dictionaries
 ```
 
 11. 5_11_dicr_and_set_features_of_work
