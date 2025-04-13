@@ -35,10 +35,15 @@ Its iterable nature simplifies integration into workflows that process team memb
 Additionally, it serves as an educational example for teaching Python’s iterability, list management, and method design, offering a practical illustration of organizing structured data in a class.
 ```
 
-3.
+3. 6_1_3_AttrsIterator
 
 ```
-
+# AttrsIterator Class Object Attribute Explorer
+The `AttrsIterator` class creates an iterator that traverses the attributes of a given object, yielding each as a tuple containing the attribute name and its value.
+It is initialized with a single argument, `obj`, and generates tuples in the order defined by the object’s `__dict__`.
+By implementing the iterator protocol with `__iter__` and `__next__`, it ensures seamless integration with Python’s iteration mechanisms, such as for-loops or `next()` calls, providing a structured way to inspect an object’s attributes.
+This class is designed for introspecting object attributes in a controlled, sequential manner, making it ideal for debugging, serialization, or dynamic analysis in applications like data processing, object inspection tools, or configuration auditing.
+Its iterator-based approach allows efficient attribute access without modifying the source object, and it serves as an educational example for teaching Python’s iterator protocol and dictionary iteration, offering a practical demonstration of custom iterator design.
 ```
 
 4.
