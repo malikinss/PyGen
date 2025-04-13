@@ -56,7 +56,7 @@ This class is ideal for sampling data from sequences, such as extracting every n
 It’s also a great educational tool for teaching Python’s iterator protocol and custom iteration logic.
 ```
 
-5.
+5. 6_1_5_RandomLooper
 
 ```
 
