@@ -46,10 +46,14 @@ This class is designed for introspecting object attributes in a controlled, sequ
 Its iterator-based approach allows efficient attribute access without modifying the source object, and it serves as an educational example for teaching Python’s iterator protocol and dictionary iteration, offering a practical demonstration of custom iterator design.
 ```
 
-4.
+4. 6_1_4_SkipIterator
 
 ```
-
+# SkipIterator Class Element Skipper
+The `SkipIterator` class creates an iterator that processes an iterable, yielding every `(n+1)`-th element by skipping `n` elements after each yield.
+It takes an `iterable` and an integer `n` during initialization, implements the iterator protocol with `__iter__` and `__next__`, and ensures that elements are returned in sequence while respecting the skip count, stopping when the iterable is exhausted.
+This class is ideal for sampling data from sequences, such as extracting every nth item from a dataset, filtering large streams, or creating sparse views of lists in applications like data analysis, signal processing, or UI rendering.
+It’s also a great educational tool for teaching Python’s iterator protocol and custom iteration logic.
 ```
 
 5.
