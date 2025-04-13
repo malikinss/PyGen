@@ -22,10 +22,17 @@ It’s also an excellent educational tool for teaching Python’s special method
 
 ```
 
-2.
+2. 6_1_2_DevelopmentTeam
 
 ```
-
+# DevelopmentTeam Class Developer Organizer
+The `DevelopmentTeam` class models a team of developers categorized into two levels: junior and senior.
+It requires no arguments during instantiation and provides two methods, `add_junior` and `add_senior`, to add developers’ names to their respective groups.
+The class is iterable, yielding tuples in the format `(name, 'junior')` for junior developers followed by `(name, 'senior')` for senior developers, preserving the order in which they were added.
+This structure ensures a clear and sequential representation of the team’s composition.
+This class is designed for managing developer teams in software projects, HR systems, or organizational tools, where distinguishing between junior and senior roles is crucial for task allocation, reporting, or team planning.
+Its iterable nature simplifies integration into workflows that process team members sequentially, such as generating rosters or assigning tasks.
+Additionally, it serves as an educational example for teaching Python’s iterability, list management, and method design, offering a practical illustration of organizing structured data in a class.
 ```
 
 3.
