@@ -80,10 +80,18 @@ This class is suited for scenarios requiring a dictionary with fixed values once
 Its familiar dictionary interface makes it ideal for integration into existing systems, while also serving as an educational tool for teaching Python’s mapping protocol and controlled mutability.
 ```
 
-7.
+7. 6_2_7_HistoryDict
 
 ```
-
+# HistoryDict Class Value Chronicle
+The `HistoryDict` class implements a dictionary that tracks the history of values for each key.
+It accepts an optional dictionary `data` during instantiation (defaulting to empty), ensuring independence from the source.
+The class provides methods `keys()`, `values()`, `items()`, `history()` (returns all values for a key), and `all_history()` (returns histories for current keys).
+It supports length queries via `len()`, iteration over keys, and operations to get, set, and delete key-value pairs.
+Deleting a key removes its history, and `history()` returns an empty list for non-existent or deleted keys.
+This class is ideal for applications needing to audit changes, such as versioned configurations, undo/redo systems, or logging key-value updates in databases or UI states.
+Its ability to recall past values enhances debugging or historical analysis, while its dictionary interface ensures ease of use.
+It’s also a valuable educational tool for teaching Python’s mapping protocol and state tracking.
 ```
 
 8.
