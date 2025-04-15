@@ -1,131 +1,99 @@
-Lesson 6.2: Sequence Protocol
+# Lesson 6.2: Sequence Protocol 📋
 
-Magic Method `__len__()`
-Magic Methods `__getitem__()`, `__setitem__()` and `__delitem__()`
-Magic Method `__contains__()`
-Abstract: The lesson is about sequence protocol.
+## Description 📝
 
-https://stepik.org/lesson/805785/step/1?unit=816644
+This lesson covers:
 
-This lesson has good theory explonation, has 9 programing practical tasks and 8 theoretical questions presented on the website.
+-   Magic method **`__len__()`** for sequence length
+-   Magic methods **`__getitem__()`**, **`__setitem__()`**, and **`__delitem__()`** for indexing
+-   Magic method **`__contains__()`** for membership testing
+-   Practical implementation of the sequence protocol
 
-6_2_sequence_protocol
-├───6_2_1_ReversedSequence
-├───6_2_2_SparseArray
-├───6_2_3_CyclicList
-├───6_2_4_SequenceZip
-├───6_2_5_OrderedSet
-├───6_2_6_PermaDict
-├───6_2_7_HistoryDict
-├───6_2_8_MutableString
-└───6_2_9_Grouper
+This lesson includes a detailed theoretical explanation, 9 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
 
-1. 6_2_1_ReversedSequence
+## Purpose 🎯
 
-```
-# ReversedSequence Class Backward Sequence Accessor
-The `ReversedSequence` class provides a view into a sequence that accesses its elements in reverse order.
-It accepts a single `sequence` argument during instantiation, supports length queries via `len()`, iterates over elements in reverse, and allows indexing where index `0` maps to the last element, `1` to the penultimate, and so on.
-The class maintains a live dependency on the original sequence, reflecting any changes to it, and assumes non-negative indices as guaranteed.
-This class is designed for applications needing reversed access to sequences without copying, such as parsing data backward, displaying lists in reverse, or processing time-series data in reverse chronological order.
-Its live link to the original sequence makes it ideal for dynamic datasets in GUI applications, data analysis, or algorithms like reverse traversals, while also serving as an educational tool for teaching Python’s sequence protocol and dynamic referencing.
-```
+By the end of this lesson, I will:  
+✅ Understand how to implement sequence behavior using magic methods  
+✅ Create custom sequences with indexing, length, and membership operations  
+✅ Apply the sequence protocol to diverse scenarios like sparse arrays and mutable strings  
+✅ Build sequence-like objects that integrate with Python’s ecosystem
 
-2. 6_2_2_SparseArray
+## Concepts & Theory 🔍
 
-```
-# SparseArray Class Efficient Element Storage
-The `SparseArray` class implements a sparse array that stores only non-default elements, using a dictionary to track defined indices and their values.
-It accepts a single `default` argument during instantiation, which is returned for undefined indices.
-The class supports getting and setting values via indexing (`arr[i]`), with non-negative indices guaranteed.
-Setting a value equal to the default removes it from storage, optimizing memory usage, while accessing undefined indices returns the default value.
-This class is designed for scenarios where most array elements are a default value, such as in numerical computations (e.g., sparse matrices in scientific computing), game development (e.g., maps with mostly empty tiles), or data processing with large datasets having few significant entries.
-Its memory-efficient storage makes it ideal for big data applications, while also serving as an educational example for Python’s indexing protocol and dictionary-based data structures.
-```
+### 🔹 **`__len__()`** Magic Method
 
-3. 6_2_3_CyclicList
+-   **Purpose**: Returns the length of a sequence, invoked by `len()`.
+-   **When Used**: To define how many elements a sequence contains.
 
-```
-# CyclicList Class Infinite Sequence Looper
-The `CyclicList` class implements a cyclic list that stores elements from an optional iterable provided during instantiation (defaulting to empty).
-It supports adding elements with `append()`, removing elements with `pop()` (by index or last element), and querying length via `len()`.
-The class is iterable, yielding elements infinitely in a cyclic manner, and allows cyclic indexing, where indices wrap around using modulo (e.g., index `4` in `[1, 2, 3]` accesses index `4 % 3 = 1`, yielding `2`).
-It maintains an independent copy of the initial iterable and assumes non-negative indices.
-This class is designed for applications requiring cyclic data access, such as round-robin scheduling, circular buffers, or game mechanics (e.g., cycling through player turns).
-Its infinite iteration and cyclic indexing make it ideal for simulations, animations, or data streaming, while its independence from the source iterable ensures stability.
-It’s also a great educational tool for teaching Python’s sequence and iterator protocols.
-```
+### 🔹 **`__getitem__()`**, **`__setitem__()`**, **`__delitem__()`** Magic Methods
 
-4. 6_2_4_SequenceZip
+-   **Purpose**: Handle accessing (`obj[i]`), setting (`obj[i] = val`), and deleting (`del obj[i]`) elements.
+-   **When Used**: To support indexing and slicing like built-in sequences.
 
-```
-# SequenceZip Class Tuple Combiner
-The `SequenceZip` class creates a sequence of tuples by combining elements from multiple input sequences, akin to Python’s `zip()` function.
-It accepts arbitrary positional arguments (sequences) during instantiation, stores independent copies, and supports length queries via `len()`, iteration over zipped tuples, and indexing to access tuples by position.
-The class ensures independence from the original sequences, uses only non-negative indices as guaranteed, and provides a memory-efficient way to access combined elements.
-This class is designed for tasks requiring synchronized access to multiple sequences, such as merging datasets, processing parallel lists (e.g., names and scores), or generating paired outputs in data processing, machine learning, or reporting.
-Its independence and sequence-like interface make it ideal for static snapshots of zipped data, while also serving as an educational tool for teaching Python’s sequence protocol and zipping mechanics.
-```
+### 🔹 **`__contains__()`** Magic Method
 
-5. 6_2_5_OrderedSet
+-   **Purpose**: Defines membership testing, invoked by `in`.
+-   **When Used**: To check if an element exists in a sequence efficiently.
 
-```
-# OrderedSet Class Unique Element Sequencer
-The `OrderedSet` class represents an ordered set that maintains the insertion order of unique elements.
-It accepts an optional `iterable` during instantiation (defaulting to empty), ensures independence from the source, and provides methods `add()` (appends unique elements) and `discard()` (removes elements if present).
-It supports length queries via `len()`, iteration, membership testing with `in`, and equality comparisons (`==`, `!=`) with both `OrderedSet` and `set` instances.
-Comparisons with `OrderedSet` check for identical ordered elements, while with `set`, they verify equal elements regardless of order, returning `NotImplemented` for invalid comparisons.
-This class is suited for applications needing a set-like structure with predictable order, such as tracking unique events in logs, maintaining ordered task lists, or deduplicating data while preserving sequence.
-Its comparison flexibility makes it ideal for testing equivalence with unordered sets or ordered collections, and it’s a strong educational tool for teaching Python’s container protocols, comparison methods, and ordered data structures.
-```
+## Practical Task 🧪
 
-6. 6_2_6_PermaDict
+### 1️⃣ **Custom Sequences**
 
-```
-# PermaDict Class Immutable-Key Dictionary
-The `PermaDict` class implements a dictionary that allows adding and removing key-value pairs but prohibits changing values for existing keys.
-It accepts an optional dictionary `data` during instantiation (defaulting to empty), ensuring independence from the source.
-The class provides methods `keys()`, `values()`, and `items()` for accessing components, supports length queries via `len()`, iterates over keys, and enables key-based access (`d[key]`), addition (`d[key] = value`), and deletion (`del d[key]`).
-Attempting to modify an existing key’s value raises a `KeyError` with the message "Changing the value by key is impossible."
-This class is suited for scenarios requiring a dictionary with fixed values once keys are set, such as configuration stores, immutable mappings in data pipelines, or audit logs where updates to existing entries are restricted.
-Its familiar dictionary interface makes it ideal for integration into existing systems, while also serving as an educational tool for teaching Python’s mapping protocol and controlled mutability.
-```
+The lesson includes 9 practical tasks, each implementing sequence behavior:
 
-7. 6_2_7_HistoryDict
+1. **`ReversedSequence` Class**: Reverses a sequence’s access order.
 
-```
-# HistoryDict Class Value Chronicle
-The `HistoryDict` class implements a dictionary that tracks the history of values for each key.
-It accepts an optional dictionary `data` during instantiation (defaulting to empty), ensuring independence from the source.
-The class provides methods `keys()`, `values()`, `items()`, `history()` (returns all values for a key), and `all_history()` (returns histories for current keys).
-It supports length queries via `len()`, iteration over keys, and operations to get, set, and delete key-value pairs.
-Deleting a key removes its history, and `history()` returns an empty list for non-existent or deleted keys.
-This class is ideal for applications needing to audit changes, such as versioned configurations, undo/redo systems, or logging key-value updates in databases or UI states.
-Its ability to recall past values enhances debugging or historical analysis, while its dictionary interface ensures ease of use.
-It’s also a valuable educational tool for teaching Python’s mapping protocol and state tracking.
-```
+    - Reflects changes in the original sequence, maps index `0` to last element.
 
-8. 6_2_8_MutableString
+2. **`SparseArray` Class**: Stores non-default elements efficiently.
 
-```
-# MutableString Class Editable Text Buffer
-The `MutableString` class represents a mutable string, initialized with an optional `string` (defaulting to empty).
-It provides methods `lower()` and `upper()` to convert characters in place, informal (`str()`) and formal (`repr()`) string representations, and supports length queries via `len()`.
-The class is iterable over its characters, allows getting, setting, and deleting characters or slices using positive/negative indices, and returns new `MutableString` instances for indexing/slicing.
-It also supports concatenation with other `MutableString` instances using `+`, producing a new `MutableString`.
-This class is designed for scenarios requiring a string-like object with in-place modifications, such as text editors, string manipulation in algorithms, or interactive applications like command-line interfaces.
-Its flexibility with indexing, slicing, and concatenation makes it ideal for dynamic text processing, while its mutable nature distinguishes it from Python’s immutable `str`.
-It’s also a strong educational tool for teaching Python’s sequence protocol, mutability, and operator overloading.
-```
+    - Uses dictionary for defined indices, returns `default` for others.
 
-9. 6_2_9_Grouper
+3. **`CyclicList` Class**: Cycles elements infinitely.
 
-```
-# Grouper Class Element Organizer
-The `Grouper` class groups elements from an iterable based on a key function, accepting an `iterable` and a `key` callable during instantiation.
-It stores elements independently, adding them to groups where `key(elem)` determines the group key.
-The class provides `add()` to append elements and `group_for()` to find an element’s group key.
-It supports length queries via `len()` (number of groups), iteration over groups as `(key, elements)` tuples, membership checks with `in` for group keys, and indexing to retrieve group element lists in insertion order.
-This class is ideal for data aggregation tasks, such as categorizing records by attributes (e.g., grouping words by length), summarizing statistics, or organizing database query results.
-Its flexible grouping and ordered element lists suit applications in data analysis, reporting, or UI categorization, while also serving as an educational example for Python’s container protocols and functional grouping.
-```
+    - Supports `append()`, `pop()`, cyclic indexing, and iteration.
+
+4. **`SequenceZip` Class**: Combines sequences into tuples.
+
+    - Mimics `zip()`, supports `len()`, iteration, and indexing.
+
+5. **`OrderedSet` Class**: Maintains unique elements in insertion order.
+
+    - Supports `add()`, `discard()`, `in`, and equality with sets/`OrderedSet`.
+
+6. **`PermaDict` Class**: Dictionary with immutable keys.
+
+    - Blocks value changes for existing keys, supports standard dict operations.
+
+7. **`HistoryDict` Class**: Tracks value history per key.
+
+    - Provides `history()` and `all_history()` for auditing changes.
+
+8. **`MutableString` Class**: Editable string buffer.
+
+    - Supports indexing, slicing, concatenation, and in-place case changes.
+
+9. **`Grouper` Class**: Groups elements by key function.
+    - Supports `add()`, `group_for()`, iteration, and indexing of groups.
+
+💡 These tasks showcase versatile sequence implementations for real-world use.
+
+## Benefits ✅
+
+-   **`__len__()`** ensures sequences report size correctly.
+-   Indexing methods enable intuitive element access and modification.
+-   **`__contains__()`** optimizes membership checks.
+-   Sequence protocol integrates custom objects with Python’s looping and slicing.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Implement custom sequences with full indexing support  
+✅ Use sequence protocol for efficient data structures  
+✅ Apply sequence behavior to practical examples like ordered sets and history tracking
+
+## Conclusion 🚀
+
+Mastering the sequence protocol with **`__len__()`**, **`__getitem__()`**, and related methods empowers me to create powerful, Pythonic objects.  
+From cyclic lists to immutable dictionaries, these tools enable intuitive, efficient data handling for diverse applications. 🧑‍💻✨
