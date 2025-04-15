@@ -32,7 +32,18 @@ By the end of this lesson, I will:
 2. 6_2_sequence_protocol
 
 ```
-
+# Lesson 6.2: Sequence Protocol 📋
+This lesson covers:
+-   Magic method **`__len__()`** for sequence length
+-   Magic methods **`__getitem__()`**, **`__setitem__()`**, and **`__delitem__()`** for indexing
+-   Magic method **`__contains__()`** for membership testing
+-   Practical implementation of the sequence protocol
+This lesson includes a detailed theoretical explanation, 9 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to implement sequence behavior using magic methods
+✅ Create custom sequences with indexing, length, and membership operations
+✅ Apply the sequence protocol to diverse scenarios like sparse arrays and mutable strings
+✅ Build sequence-like objects that integrate with Python’s ecosystem
 ```
 
 3. 6_3_with_operator
