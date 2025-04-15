@@ -9,6 +9,17 @@ https://stepik.org/lesson/805785/step/1?unit=816644
 
 This lesson has good theory explonation, has 9 programing practical tasks and 8 theoretical questions presented on the website.
 
+6_2_sequence_protocol
+├───6_2_1_ReversedSequence
+├───6_2_2_SparseArray
+├───6_2_3_CyclicList
+├───6_2_4_SequenceZip
+├───6_2_5_OrderedSet
+├───6_2_6_PermaDict
+├───6_2_7_HistoryDict
+├───6_2_8_MutableString
+└───6_2_9_Grouper
+
 1. 6_2_1_ReversedSequence
 
 ```
@@ -107,8 +118,14 @@ Its flexibility with indexing, slicing, and concatenation makes it ideal for dyn
 It’s also a strong educational tool for teaching Python’s sequence protocol, mutability, and operator overloading.
 ```
 
-9.
+9. 6_2_9_Grouper
 
 ```
-
+# Grouper Class Element Organizer
+The `Grouper` class groups elements from an iterable based on a key function, accepting an `iterable` and a `key` callable during instantiation.
+It stores elements independently, adding them to groups where `key(elem)` determines the group key.
+The class provides `add()` to append elements and `group_for()` to find an element’s group key.
+It supports length queries via `len()` (number of groups), iteration over groups as `(key, elements)` tuples, membership checks with `in` for group keys, and indexing to retrieve group element lists in insertion order.
+This class is ideal for data aggregation tasks, such as categorizing records by attributes (e.g., grouping words by length), summarizing statistics, or organizing database query results.
+Its flexible grouping and ordered element lists suit applications in data analysis, reporting, or UI categorization, while also serving as an educational example for Python’s container protocols and functional grouping.
 ```
