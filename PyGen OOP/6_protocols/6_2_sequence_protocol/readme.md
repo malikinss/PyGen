@@ -1,8 +1,8 @@
 Lesson 6.2: Sequence Protocol
 
-Magic Method **len**()
-Magic Methods **getitem**(), **setitem**() and **delitem**()
-Magic Method **contains**()
+Magic Method `__len__()`
+Magic Methods `__getitem__()`, `__setitem__()` and `__delitem__()`
+Magic Method `__contains__()`
 Abstract: The lesson is about sequence protocol.
 
 https://stepik.org/lesson/805785/step/1?unit=816644
@@ -94,10 +94,17 @@ Its ability to recall past values enhances debugging or historical analysis, whi
 It’s also a valuable educational tool for teaching Python’s mapping protocol and state tracking.
 ```
 
-8.
+8. 6_2_8_MutableString
 
 ```
-
+# MutableString Class Editable Text Buffer
+The `MutableString` class represents a mutable string, initialized with an optional `string` (defaulting to empty).
+It provides methods `lower()` and `upper()` to convert characters in place, informal (`str()`) and formal (`repr()`) string representations, and supports length queries via `len()`.
+The class is iterable over its characters, allows getting, setting, and deleting characters or slices using positive/negative indices, and returns new `MutableString` instances for indexing/slicing.
+It also supports concatenation with other `MutableString` instances using `+`, producing a new `MutableString`.
+This class is designed for scenarios requiring a string-like object with in-place modifications, such as text editors, string manipulation in algorithms, or interactive applications like command-line interfaces.
+Its flexibility with indexing, slicing, and concatenation makes it ideal for dynamic text processing, while its mutable nature distinguishes it from Python’s immutable `str`.
+It’s also a strong educational tool for teaching Python’s sequence protocol, mutability, and operator overloading.
 ```
 
 9.
