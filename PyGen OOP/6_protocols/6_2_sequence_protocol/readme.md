@@ -68,10 +68,16 @@ This class is suited for applications needing a set-like structure with predicta
 Its comparison flexibility makes it ideal for testing equivalence with unordered sets or ordered collections, and it’s a strong educational tool for teaching Python’s container protocols, comparison methods, and ordered data structures.
 ```
 
-6.
+6. 6_2_6_PermaDict
 
 ```
-
+# PermaDict Class Immutable-Key Dictionary
+The `PermaDict` class implements a dictionary that allows adding and removing key-value pairs but prohibits changing values for existing keys.
+It accepts an optional dictionary `data` during instantiation (defaulting to empty), ensuring independence from the source.
+The class provides methods `keys()`, `values()`, and `items()` for accessing components, supports length queries via `len()`, iterates over keys, and enables key-based access (`d[key]`), addition (`d[key] = value`), and deletion (`del d[key]`).
+Attempting to modify an existing key’s value raises a `KeyError` with the message "Changing the value by key is impossible."
+This class is suited for scenarios requiring a dictionary with fixed values once keys are set, such as configuration stores, immutable mappings in data pipelines, or audit logs where updates to existing entries are restricted.
+Its familiar dictionary interface makes it ideal for integration into existing systems, while also serving as an educational tool for teaching Python’s mapping protocol and controlled mutability.
 ```
 
 7.
