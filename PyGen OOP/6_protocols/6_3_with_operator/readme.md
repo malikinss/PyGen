@@ -19,10 +19,13 @@ Designed for basic file reading tasks, such as displaying logs, configurations, 
 Error handling ensures clear feedback for missing files, fitting automation, debugging, or educational file I/O demonstrations.
 ```
 
-2.
+2. 6_3_2_non_closed_files
 
 ```
-
+# non_closed_files Function Open File Filter
+The `non_closed_files` function accepts a list of file objects (`files`) and returns a new list containing only the open file objects, preserving their original order from the input list.
+Designed for scenarios requiring identification of active file handles, such as resource management, debugging file leaks, or cleanup in applications handling multiple files.
+It ensures only open files are processed, useful in scripting or system administration tasks.
 ```
 
 3.
