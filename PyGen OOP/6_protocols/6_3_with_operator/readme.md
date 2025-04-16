@@ -1,45 +1,69 @@
-Lesson 6.3: with operator
+# Lesson 6.3: With Operator 🔒
 
-Resource Management in Python
-with operator
-Abstract: This lesson is about the with operator.
+## Description 📝
 
-https://stepik.org/lesson/810855/step/1?unit=816646
+This lesson covers:
 
-This lesson has good theory explonation, has 3 programing practical tasks and 11 theoretical questions presented on the website.
+-   Resource management in Python
+-   The `with` operator for context management
+-   Practical implementation of file handling with context managers
 
-6_3_with_operator
-├───6_3_1_print_file_content
-├───6_3_2_non_closed_files
-└───6_3_3_log_for
+This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 11 theoretical questions available on the Stepik platform.
 
-1. 6_3_1_print_file_content
+## Purpose 🎯
 
-```
-# print_file_content Function File Display Utility
-The `print_file_content` function accepts a `filename` parameter, a string representing a text file’s name (including extension).
-It prints the file’s contents using UTF-8 encoding.
-If the file is absent from the program’s folder, it outputs "File not found".
-Designed for basic file reading tasks, such as displaying logs, configurations, or text data in scripts or command-line tools.
-Error handling ensures clear feedback for missing files, fitting automation, debugging, or educational file I/O demonstrations.
-```
+By the end of this lesson, I will:  
+✅ Understand resource management using the `with` operator  
+✅ Implement context managers for safe file handling  
+✅ Apply the `with` operator to manage resources in practical scenarios  
+✅ Recognize the benefits of automatic resource cleanup
 
-2. 6_3_2_non_closed_files
+## Concepts & Theory 🔍
 
-```
-# non_closed_files Function Open File Filter
-The `non_closed_files` function accepts a list of file objects (`files`) and returns a new list containing only the open file objects, preserving their original order from the input list.
-Designed for scenarios requiring identification of active file handles, such as resource management, debugging file leaks, or cleanup in applications handling multiple files.
-It ensures only open files are processed, useful in scripting or system administration tasks.
-```
+### 🔹 Resource Management in Python
 
-3. 6_3_3_log_for
+-   **Purpose**: Ensures resources (e.g., files, connections) are properly acquired and released.
+-   **How It Works**: Context managers automate setup and cleanup, preventing leaks.
 
-```
-# log_for Function Date-Specific Log Extractor
-The `log_for` function processes a log file to extract events for a specified date, creating a new file with these events.
-It takes two arguments: `logfile` (the input log file name, including extension) and `date_str` (a date in `YYYY-MM-DD` format).
-The function generates a file named `log_for_<date_str>.txt`, writing events from `logfile` that match `date_str`, omitting the date prefix, and preserving their original order, using UTF-8 encoding.
-Designed for log analysis tasks, such as filtering system or application logs by date for auditing, debugging, or reporting.
-The function’s focused output simplifies reviewing specific events, fitting use cases in system administration, error tracking, or educational exercises on file processing.
-```
+### 🔹 `with` Operator
+
+-   **Purpose**: Simplifies resource management by encapsulating setup and teardown.
+-   **When Used**: With objects implementing `__enter__()` and `__exit__()` methods, like files, to ensure cleanup even if errors occur.
+
+## Practical Task 🧪
+
+### 1️⃣ **File Handling with `with`**
+
+The lesson includes 3 practical tasks, each implementing resource management with the `with` operator:
+
+1. **`print_file_content` Function**: Displays a text file’s contents.
+
+    - Reads `filename` using UTF-8, prints "File not found" if absent.
+
+2. **`non_closed_files` Function**: Filters open file objects.
+
+    - Returns a list of open files from a given list, preserving order.
+
+3. **`log_for` Function**: Extracts log events for a specific date.
+    - Creates `log_for_<date_str>.txt` with matching events from `logfile`, omitting date prefix.
+
+💡 These tasks demonstrate safe file handling and resource management using the `with` operator.
+
+## Benefits ✅
+
+-   The `with` operator ensures resources are closed automatically.
+-   Context managers simplify error-prone resource handling.
+-   Safe file operations prevent leaks and improve reliability.
+-   Clear error handling enhances user experience in file tasks.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Use the `with` operator for safe resource management  
+✅ Implement file handling with context managers  
+✅ Apply resource cleanup to practical file processing tasks
+
+## Conclusion 🚀
+
+Mastering the `with` operator and context managers enables me to manage resources safely and efficiently in Python.  
+From reading files to filtering logs, these tools ensure robust, leak-free code, enhancing reliability in file-based applications. 🧑‍💻✨
