@@ -49,7 +49,17 @@ By the end of this lesson, I will:
 3. 6_3_with_operator
 
 ```
-
+# Lesson 6.3: With Operator 🔒
+This lesson covers:
+-   Resource management in Python
+-   The `with` operator for context management
+-   Practical implementation of file handling with context managers
+This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 11 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand resource management using the `with` operator
+✅ Implement context managers for safe file handling
+✅ Apply the `with` operator to manage resources in practical scenarios
+✅ Recognize the benefits of automatic resource cleanup
 ```
 
 4. 6_4_context_manager_protocol_part_1
