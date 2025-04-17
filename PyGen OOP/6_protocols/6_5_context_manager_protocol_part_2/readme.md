@@ -43,10 +43,21 @@ Intended for managing resources that require explicit closure, such as files, da
 It provides a unified way to ensure cleanup while handling non-closable objects gracefully, suitable for resource-heavy applications, scripting, or educational demonstrations of Python’s context manager protocol.
 ```
 
-4.
+4. 6_5_4_ReadableTextFile
 
 ```
+# ReadableTextFile Class Line-Stripping File Reader
 
+## Description 📝
+
+The `ReadableTextFile` class is a context manager that opens a text file specified by `filename` for reading in UTF-8 encoding.
+It provides access to file lines without trailing newline characters (`\n`) via iteration and closes the file after the `with` block.
+The class implements the context manager protocol with `__enter__` and `__exit__` methods and supports iteration with `__iter__` and `__next__` to yield stripped lines.
+
+## Purpose 🎯
+
+Designed for reading text files in a controlled manner, such as processing logs, configuration files, or data inputs where newline characters are unwanted.
+The context manager ensures proper file closure, making it suitable for scripting, data parsing, or educational examples of Python’s context manager and iterator protocols.
 ```
 
 5.
