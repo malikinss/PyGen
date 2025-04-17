@@ -94,10 +94,22 @@ Intended for scenarios requiring temporary modification of console output, such 
 It’s also valuable for educational purposes, demonstrating Python’s context manager protocol and manipulation of `sys.stdout`.
 ```
 
-7.
+7. 6_5_7_Suppress
 
 ```
+# Suppress Class Selective Exception Silencer
 
+## Description 📝
+
+The `Suppress` class is a context manager that accepts an arbitrary number of exception types as positional arguments during instantiation.
+It suppresses exceptions of the specified types raised within a `with` block, storing the suppressed exception in its `exception` attribute (set to `None` if no exception is suppressed or no exception occurs).
+The class implements the context manager protocol with `__enter__` and `__exit__` methods.
+
+## Purpose 🎯
+
+Designed for scenarios requiring targeted exception handling, such as ignoring specific errors in data processing, testing, or user input validation, while preserving others.
+The `exception` attribute enables post-block inspection of suppressed errors, making it useful for logging or debugging.
+It also serves as an educational tool for Python’s context manager protocol and exception handling.
 ```
 
 8.
