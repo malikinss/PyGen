@@ -19,10 +19,15 @@ Intended for scenarios where exceptions can be safely ignored, such as non-criti
 It streamlines error handling in scripts and serves as a clear example for learning Python’s context manager protocol.
 ```
 
-2.
+2. 6_5_2_Greeter
 
 ```
-
+# Greeter Class Polite Context Manager
+The `Greeter` class is a context manager that takes a single argument, `name` (a string), during instantiation.
+It stores `name` as an attribute and implements the context manager protocol with `__enter__` and `__exit__` methods.
+Upon entering a `with` block, it prints `Hello, <name>!`, and upon exiting, it prints `See you there, <name>!`, providing a greeting and farewell around the block’s execution.
+Intended for scenarios requiring structured user interaction, such as command-line interfaces, logging user sessions, or scripted dialogues in applications.
+It ensures consistent entry/exit messaging, making it useful for user-facing tools or as an educational example of Python’s context manager protocol.
 ```
 
 3.
