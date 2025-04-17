@@ -1,25 +1,78 @@
-Lesson 6.4: context manager protocol (part 1)
+# Lesson 6.4: Context Manager Protocol (Part 1) 🔐
 
-Context manager protocol
-Magic methods **enter**() and **exit**()
-Exception handling inside the with block
-Examples of using built-in context managers
-Examples of creating custom context managers
-Abstract. The lesson is devoted to the context manager protocol.
+## Description 📝
 
-https://stepik.org/lesson/897941/step/1?unit=903008
+This lesson covers:
 
-This lesson has good theory explonation, has 1 programing practical tasks and 22 theoretical questions presented on the website.
+-   The context manager protocol in Python
+-   Magic methods **`__enter__()`** and **`__exit__()`**
+-   Exception handling inside `with` blocks
+-   Examples of built-in context managers
+-   Examples of creating custom context managers
 
-6_4_context_manager_protocol_part_1
-|\_\_ 6_4_1_is_context_manager
+This lesson includes a detailed theoretical explanation, 1 programming practical task, and 22 theoretical questions available on the Stepik platform.
 
-1. 6_4_1_is_context_manager
+## Purpose 🎯
 
-```
-# is_context_manager Function Context Protocol Checker
-The `is_context_manager` function accepts an arbitrary object `obj` and returns `True` if it qualifies as a context manager, otherwise `False`.
-A context manager is identified by the presence of both `__enter__` and `__exit__` methods, as required by Python’s context management protocol.
-Designed for introspection tasks, such as validating objects before use in `with` statements, debugging, or framework development where context manager compatibility must be confirmed.
-It’s useful in testing, dynamic type checking, or educational contexts exploring Python’s protocols.
-```
+By the end of this lesson, I will:  
+✅ Understand the context manager protocol and its components  
+✅ Implement custom context managers using **`__enter__()`** and **`__exit__()`**  
+✅ Handle exceptions within `with` blocks effectively  
+✅ Apply context managers to manage resources in practical scenarios
+
+## Concepts & Theory 🔍
+
+### 🔹 Context Manager Protocol
+
+-   **Purpose**: Defines a framework for resource management with setup and cleanup.
+-   **How It Works**: Objects with `__enter__()` and `__exit__()` methods work with the `with` statement.
+
+### 🔹 **`__enter__()`** Magic Method
+
+-   **Purpose**: Sets up the context, returning a value accessible in the `with` block.
+-   **When Used**: Called when entering a `with` statement.
+
+### 🔹 **`__exit__()`** Magic Method
+
+-   **Purpose**: Cleans up resources and handles exceptions.
+-   **When Used**: Called when exiting a `with` block, even if an error occurs.
+
+### 🔹 Exception Handling in `with` Blocks
+
+-   **Purpose**: Allows context managers to manage errors gracefully.
+-   **How It Works**: `__exit__()` receives exception details and can suppress or handle them.
+
+### 🔹 Built-in and Custom Context Managers
+
+-   **Built-in Examples**: File objects (`open()`), locks (`threading.Lock`).
+-   **Custom Examples**: User-defined classes for managing resources like timers or database connections.
+
+## Practical Task 🧪
+
+### 1️⃣ **Context Manager Validation**
+
+The lesson includes 1 practical task focused on context manager identification:
+
+1. **`is_context_manager` Function**: Checks if an object is a context manager.
+    - Returns `True` if `obj` has both `__enter__` and `__exit__` methods, else `False`.
+
+💡 This task reinforces understanding of the context manager protocol through introspection.
+
+## Benefits ✅
+
+-   Context managers ensure reliable resource cleanup.
+-   **`__enter__()`** and **`__exit__()`** enable custom resource management.
+-   Exception handling in `with` blocks improves code robustness.
+-   Custom context managers extend Python’s resource management capabilities.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Understand and implement the context manager protocol  
+✅ Validate context managers using introspection  
+✅ Recognize the role of exception handling in `with` blocks
+
+## Conclusion 🚀
+
+Mastering the context manager protocol with **`__enter__()`** and **`__exit__()`** empowers me to create robust, resource-efficient Python code.  
+By understanding and applying context managers, I can ensure clean resource handling and error management, enhancing code reliability across applications. 🧑‍💻✨
