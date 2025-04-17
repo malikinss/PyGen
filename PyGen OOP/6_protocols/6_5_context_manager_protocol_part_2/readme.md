@@ -60,16 +60,38 @@ Designed for reading text files in a controlled manner, such as processing logs,
 The context manager ensures proper file closure, making it suitable for scripting, data parsing, or educational examples of Python’s context manager and iterator protocols.
 ```
 
-5.
+5. 6_5_5_Reloopable
 
 ```
+# Reloopable Class Re-Iterable File Manager
 
+## Description 📝
+
+The `Reloopable` class is a context manager that accepts a file object open for reading (`file`) during instantiation.
+It enables multiple iterations over the file’s contents within a `with` block by resetting the file pointer and closes the file upon exiting the block.
+The class implements the context manager protocol with `__enter__` and `__exit__` methods and supports iteration via `__iter__`.
+
+## Purpose 🎯
+
+Intended for scenarios requiring repeated iteration over a file’s contents without reopening, such as parsing logs multiple times, analyzing data in passes, or testing file processing.
+The automatic file closure ensures resource cleanup, making it suitable for scripting, data processing, or educational examples of Python’s context manager and iterator protocols.
 ```
 
-6.
+6. 6_5_6_UpperPrint
 
 ```
+# UpperPrint Class Uppercase Output Transformer
 
+## Description 📝
+
+The `UpperPrint` class is a context manager that takes no arguments during instantiation.
+It modifies `sys.stdout.write` within a `with` block to convert all text output to uppercase, restoring the original `write` method upon exit.
+The class implements the context manager protocol with `__enter__` and `__exit__` methods, ensuring seamless integration with standard output operations.
+
+## Purpose 🎯
+
+Intended for scenarios requiring temporary modification of console output, such as formatting logs, debugging with emphasized text, or creating stylized command-line interfaces.
+It’s also valuable for educational purposes, demonstrating Python’s context manager protocol and manipulation of `sys.stdout`.
 ```
 
 7.
