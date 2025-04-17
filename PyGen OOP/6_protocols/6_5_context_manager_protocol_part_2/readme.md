@@ -30,10 +30,17 @@ Intended for scenarios requiring structured user interaction, such as command-li
 It ensures consistent entry/exit messaging, making it useful for user-facing tools or as an educational example of Python’s context manager protocol.
 ```
 
-3.
+3. 6_5_3_Closer
 
 ```
-
+# Closer Class Resource Cleanup Manager
+The `Closer` class is a context manager that takes an arbitrary object `obj` during instantiation.
+It implements the context manager protocol with `__enter__` and `__exit__` methods.
+Upon exiting a `with` block, it attempts to call `obj.close()`.
+If the object lacks a `close` method, it prints "Unclosed object".
+The class ensures proper resource cleanup for objects supporting `close`, such as file handles or sockets.
+Intended for managing resources that require explicit closure, such as files, database connections, or network sockets, in a `with` block.
+It provides a unified way to ensure cleanup while handling non-closable objects gracefully, suitable for resource-heavy applications, scripting, or educational demonstrations of Python’s context manager protocol.
 ```
 
 4.
