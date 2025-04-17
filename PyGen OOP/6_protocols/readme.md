@@ -65,7 +65,19 @@ By the end of this lesson, I will:
 4. 6_4_context_manager_protocol_part_1
 
 ```
-
+# Lesson 6.4: Context Manager Protocol (Part 1) 🔐
+This lesson covers:
+-   The context manager protocol in Python
+-   Magic methods **`__enter__()`** and **`__exit__()`**
+-   Exception handling inside `with` blocks
+-   Examples of built-in context managers
+-   Examples of creating custom context managers
+This lesson includes a detailed theoretical explanation, 1 programming practical task, and 22 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the context manager protocol and its components
+✅ Implement custom context managers using **`__enter__()`** and **`__exit__()`**
+✅ Handle exceptions within `with` blocks effectively
+✅ Apply context managers to manage resources in practical scenarios
 ```
 
 5. 6_5_context_manager_protocol_part_2
