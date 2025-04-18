@@ -130,10 +130,22 @@ Designed for scenarios requiring mirrored writes to multiple files, such as logg
 The ability to control file closure and check file states makes it suitable for resource management in scripting, logging systems, or educational demonstrations of Python’s context manager protocol and file handling.
 ```
 
-9.
+9. 6_5_9_Atomic
 
 ```
+# Atomic Class Transactional Data Manager
 
+## Description 📝
+
+The `Atomic` class is a context manager that enables atomic operations on a list, set, or dictionary (`data`), with a boolean `deep` parameter (defaulting to `False`).
+It ensures that modifications within a `with` block are either fully applied (if no exceptions occur) or discarded (if an exception is raised), restoring the original state.
+The `deep` parameter controls whether nested structures are also restored: `False` preserves nested changes, while `True` reverts them.
+The class implements the context manager protocol with `__enter__` and `__exit__` methods.
+
+## Purpose 🎯
+
+Designed for scenarios requiring transactional updates to collections, such as configuration management, database-like operations, or undoable edits in applications.
+The ability to control nested structure behavior makes it versatile for complex data, suitable for robust scripting, data processing, or educational demonstrations of Python’s context manager protocol and copy mechanics.
 ```
 
 10.
