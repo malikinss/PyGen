@@ -148,10 +148,22 @@ Designed for scenarios requiring transactional updates to collections, such as c
 The ability to control nested structure behavior makes it versatile for complex data, suitable for robust scripting, data processing, or educational demonstrations of Python’s context manager protocol and copy mechanics.
 ```
 
-10.
+10. 6_5_10_AdvancedTimer
 
 ```
+# AdvancedTimer Class Execution Time Tracker
 
+## Description 📝
+
+The `AdvancedTimer` class is a reusable context manager that measures the execution time of code within `with` blocks.
+It takes no arguments during instantiation and implements the context manager protocol with `__enter__` and `__exit__` methods.
+The class maintains four attributes: `last_run` (time of the most recent block), `runs` (list of all block times), `min` (minimum time across blocks), and `max` (maximum time across blocks).
+If no measurements have been made, `last_run`, `min`, and `max` are `None`.
+
+## Purpose 🎯
+
+Intended for performance profiling, benchmarking, or debugging where precise timing of code blocks is needed, such as optimizing algorithms, measuring API response times, or comparing function performance.
+The reusable nature and detailed statistics make it suitable for iterative testing or educational demonstrations of Python’s context manager protocol and timing utilities.
 ```
 
 11.
