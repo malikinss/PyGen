@@ -112,10 +112,22 @@ The `exception` attribute enables post-block inspection of suppressed errors, ma
 It also serves as an educational tool for Python’s context manager protocol and exception handling.
 ```
 
-8.
+8. 6_5_8_WriteSpy
 
 ```
+# WriteSpy Class Dual File Writer
 
+## Description 📝
+
+The `WriteSpy` class is a context manager that accepts two file objects (`file1`, `file2`) and a boolean `to_close` (defaulting to `False`) during instantiation.
+It enables simultaneous writing to both files within a `with` block, optionally closing them upon exit based on `to_close`.
+The class provides methods `write` (writes text to both files), `close` (closes both files), `writable` (checks if both files are writable), and `closed` (checks if both files are closed).
+It implements the context manager protocol with `__enter__` and `__exit__` methods.
+
+## Purpose 🎯
+
+Designed for scenarios requiring mirrored writes to multiple files, such as logging to dual destinations, creating redundant backups, or synchronizing outputs.
+The ability to control file closure and check file states makes it suitable for resource management in scripting, logging systems, or educational demonstrations of Python’s context manager protocol and file handling.
 ```
 
 9.
