@@ -166,10 +166,23 @@ Intended for performance profiling, benchmarking, or debugging where precise tim
 The reusable nature and detailed statistics make it suitable for iterative testing or educational demonstrations of Python’s context manager protocol and timing utilities.
 ```
 
-11.
+11. 6_5_11_HtmlTag
 
 ```
+# HtmlTag Class Structured HTML Generator
 
+## Description 📝
+
+The `HtmlTag` class is a reentrant context manager that generates HTML code with proper indentation and tag nesting.
+It accepts a `tag` (HTML tag name) and an optional `inline` boolean (defaulting to `False`) during instantiation.
+Within a `with` block, it prints opening and closing tags, and its `print` method outputs content.
+The `inline` parameter determines formatting: `True` places tags and content on the same line, while `False` uses separate lines with two-space indentation per nesting level.
+The class implements the context manager protocol with `__enter__` and `__exit__` methods.
+
+## Purpose 🎯
+
+Designed for generating structured HTML in scripts, templates, or web development tools, ensuring correct tag nesting and formatting.
+Its reentrant nature supports nested tags, making it suitable for dynamic HTML generation, static site builders, or educational examples of Python’s context manager protocol and indentation logic.
 ```
 
 12.
