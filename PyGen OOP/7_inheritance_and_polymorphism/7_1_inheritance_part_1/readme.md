@@ -43,10 +43,21 @@ Intended to establish a foundational class structure for modeling geometric shap
 The empty classes provide a framework that can be extended with attributes (e.g., dimensions) and methods (e.g., area calculation), suitable for object-oriented design or educational examples of inheritance in Python.
 ```
 
-3.
+3. 7_1_3_Animal
 
 ```
+# Animal Class Hierarchy
 
+## Description 📝
+
+The provided code defines a hierarchy of classes representing animals, structured according to the given diagram.
+The hierarchy uses inheritance to model relationships between a base `Animal` class and its subclasses (`Fish`, `Bird`, `FlyingBird`).
+Each class includes specific empty methods as specified: `Animal` has `sleep` and `eat`, `Fish` has `swim`, `Bird` has `lay_eggs`, and `FlyingBird` has `fly`.
+
+## Purpose 🎯
+
+Intended to establish a foundational class structure for modeling animals in applications such as zoological simulations, educational tools, or behavioral studies.
+The empty methods provide a framework for implementing specific behaviors, suitable for object-oriented design or educational examples of inheritance and method specialization in Python.
 ```
 
 4.
