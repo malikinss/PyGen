@@ -1,85 +1,97 @@
-Lesson 7.1: inheritance (part 1)
+# Lesson 7.1: Inheritance (Part 1) 🧬
 
-Introduction to inheritance
-Inheritance in Python
-Defining and overriding attributes and methods
-Implicit inheritance, class object
-Multilevel inheritance
-Abstract. The lesson is devoted to inheritance in Python.
+## Description 📝
 
-https://stepik.org/lesson/794707/step/1?unit=797459
+This lesson covers:
 
-This lesson has good theory explonation, has 6 programing practical tasks and 21 theoretical questions presented on the website.
+-   Introduction to inheritance in Python
+-   Defining and overriding attributes and methods
+-   Implicit inheritance and the `object` class
+-   Multilevel inheritance
 
-7_1_inheritance_part_1
-├───7_1_1_Vehicle
-├───7_1_2_Shape
-├───7_1_3_Animal
-├───7_1_4_User
-├───7_1_5_Validator
-└───7_1_6_Counter
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
 
-1. 7_1_1_Vehicle
+## Purpose 🎯
 
-```
-# Vehicle Class Hierarchy
-The provided code defines a hierarchy of empty classes representing vehicles, structured according to the given diagram.
-The hierarchy uses inheritance to model relationships between a base `Vehicle` class and its subclasses, categorized by their operating environment (land, water, air) and further specialized into specific vehicle types.
-Intended to establish a foundational class structure for modeling vehicles in applications such as transportation systems, simulations, or inventory management.
-The empty classes provide a framework that can be extended with attributes and methods, suitable for object-oriented design or educational examples of inheritance in Python.
-```
+By the end of this lesson, I will:  
+✅ Understand the fundamentals of inheritance in Python  
+✅ Define and override methods and attributes in subclasses  
+✅ Apply implicit and multilevel inheritance effectively  
+✅ Create class hierarchies for practical use cases
 
-2. 7_1_2_Shape
+## Concepts & Theory 🔍
 
-```
-# Geometric Shape Class Hierarchy
-The provided code defines a hierarchy of empty classes representing geometric shapes, structured according to the given diagram.
-The hierarchy uses inheritance to model relationships between a base `Shape` class and its subclasses, categorized by shape type (circle, polygon) and further specialized into specific shapes like quadrilaterals, triangles, and their variants.
-Intended to establish a foundational class structure for modeling geometric shapes in applications such as graphics, CAD systems, or mathematical simulations.
-The empty classes provide a framework that can be extended with attributes (e.g., dimensions) and methods (e.g., area calculation), suitable for object-oriented design or educational examples of inheritance in Python.
-```
+### 🔹 Introduction to Inheritance
 
-3. 7_1_3_Animal
+-   **Purpose**: Allows classes to inherit attributes and methods from others.
+-   **How It Works**: Subclasses extend or specialize base class behavior.
 
-```
-# Animal Class Hierarchy
-The provided code defines a hierarchy of classes representing animals, structured according to the given diagram.
-The hierarchy uses inheritance to model relationships between a base `Animal` class and its subclasses (`Fish`, `Bird`, `FlyingBird`).
-Each class includes specific empty methods as specified: `Animal` has `sleep` and `eat`, `Fish` has `swim`, `Bird` has `lay_eggs`, and `FlyingBird` has `fly`.
-Intended to establish a foundational class structure for modeling animals in applications such as zoological simulations, educational tools, or behavioral studies.
-The empty methods provide a framework for implementing specific behaviors, suitable for object-oriented design or educational examples of inheritance and method specialization in Python.
-```
+### 🔹 Inheritance in Python
 
-4. 7_1_4_User
+-   **Purpose**: Enables code reuse and hierarchical organization.
+-   **Syntax**: Subclasses are defined with `class SubClass(BaseClass)`.
 
-```
-# User and PremiumUser Class Hierarchy
-The provided code implements two classes: `User` and `PremiumUser`.
-The `User` class represents a basic user of an internet resource, initialized with a `name` (string) and featuring a `skip_ads` method that always returns `False`.
-The `PremiumUser` class, a subclass of `User`, represents a user with a premium subscription, initialized identically to `User` and overriding `skip_ads` to always return `True`.
-Intended to model users of an internet resource, distinguishing between standard and premium users based on their ability to skip ads.
-This structure is suitable for applications like streaming platforms, content websites, or subscription-based services, as well as educational examples of inheritance and method overriding in Python.
-```
+### 🔹 Defining and Overriding Attributes and Methods
 
-5. 7_1_5_Validator
+-   **Purpose**: Customizes subclass behavior by redefining inherited members.
+-   **When Used**: To specialize or extend functionality in subclasses.
 
-```
-# Validator and NumberValidator Class Hierarchy
-The provided code implements two classes: `Validator` and `NumberValidator`.
-The `Validator` class represents a generic validator that accepts an arbitrary object (`obj`) during initialization and has an `is_valid` method that always returns `None`.
-The `NumberValidator` class, a subclass of `Validator`, inherits the same initialization process and overrides `is_valid` to return `True` if the stored object is an `int` or `float`, and `False` otherwise.
-Intended to model a validation framework where values need to be checked for correctness, with extensibility for specific validation rules.
-The `Validator` class provides a base for generic validation, while `NumberValidator` specializes in numeric type checking, suitable for data processing, form validation, or educational examples of inheritance and method overriding in Python.
-```
+### 🔹 Implicit Inheritance and `object` Class
 
-6. 7_1_6_Counter
+-   **Purpose**: All classes implicitly inherit from `object` if no base is specified.
+-   **Benefits**: Provides default methods like `__init__` and `__str__`.
 
-```
-# Counter Class Hierarchy
-The provided code implements three classes: `Counter`, `NonDecCounter`, and `LimitedCounter`.
-The `Counter` class represents a non-negative counter with a `value` attribute and methods to increment (`inc`) and decrement (`dec`) it.
-`NonDecCounter`, a subclass of `Counter`, allows only incrementing, with an empty `dec` method. `LimitedCounter`, another subclass of `Counter`, restricts incrementing to a specified `limit`.
-All classes adhere to their respective initialization and behavior requirements.
-Intended to model counters with varying constraints, suitable for applications like score tracking, resource limits, or inventory management.
-The hierarchy demonstrates inheritance and method overriding, making it ideal for robust systems or educational examples of object-oriented programming in Python.
-```
+### 🔹 Multilevel Inheritance
+
+-   **Purpose**: Allows a class to inherit from a subclass, forming a chain.
+-   **When Used**: To create deep hierarchies for complex relationships.
+
+## Practical Task 🧪
+
+### 1️⃣ **Class Hierarchies with Inheritance**
+
+The lesson includes 6 practical tasks, each implementing inheritance:
+
+1. **`Vehicle` Class Hierarchy**: Empty classes modeling vehicles.
+
+    - Structured by environment (land, water, air) and vehicle types.
+
+2. **`Shape` Class Hierarchy**: Empty classes for geometric shapes.
+
+    - Organized by shape type (circle, polygon) and subtypes.
+
+3. **`Animal` Class Hierarchy**: Classes with specific methods.
+
+    - `Animal`: `sleep`, `eat`; `Fish`: `swim`; `Bird`: `lay_eggs`; `FlyingBird`: `fly`.
+
+4. **`User` and `PremiumUser` Classes**: Models internet users.
+
+    - `User`: `skip_ads` returns `False`; `PremiumUser`: overrides to `True`.
+
+5. **`Validator` and `NumberValidator` Classes**: Validation framework.
+
+    - `Validator`: `is_valid` returns `None`; `NumberValidator`: checks for `int`/`float`.
+
+6. **`Counter` Class Hierarchy**: Non-negative counters.
+    - `Counter`: `inc`, `dec`; `NonDecCounter`: no `dec`; `LimitedCounter`: capped `inc`.
+
+💡 These tasks demonstrate inheritance for modeling real-world hierarchies and behaviors.
+
+## Benefits ✅
+
+-   Inheritance promotes code reuse and modularity.
+-   Method overriding enables specialized behavior.
+-   Multilevel inheritance supports complex hierarchies.
+-   Implicit `object` inheritance ensures consistent base functionality.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Create and extend class hierarchies using inheritance  
+✅ Override methods and attributes for specialized behavior  
+✅ Apply multilevel inheritance to model complex relationships
+
+## Conclusion 🚀
+
+Mastering inheritance in Python empowers me to build modular, extensible class hierarchies.  
+From vehicle taxonomies to specialized counters, these tools enable efficient, organized code for diverse applications. 🧑‍💻✨
