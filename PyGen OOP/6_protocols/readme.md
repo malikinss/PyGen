@@ -115,7 +115,19 @@ By the end of this lesson, I will:
 7. 6_7_contextlib_module_contextmanagers
 
 ```
-
+# Lesson 6.7: Context Managers of the contextlib Module 🛠️
+This lesson covers:
+-   Context manager **`closing`** for ensuring resource closure
+-   Context manager **`suppress`** for ignoring specified exceptions
+-   Context manager **`nullcontext`** for placeholder contexts
+-   Context manager **`redirect_stdout`** for redirecting console output
+-   Context manager **`ExitStack`** for managing multiple context managers
+This lesson includes a detailed theoretical explanation and 11 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand the utility of `contextlib` context managers
+✅ Know when to use `closing`, `suppress`, `nullcontext`, `redirect_stdout`, and `ExitStack`
+✅ Recognize how these tools simplify resource and exception management
+✅ Apply `contextlib` context managers effectively in Python code
 ```
 
 8. 6_8_descriptor_protocol
