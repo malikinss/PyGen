@@ -47,10 +47,21 @@ Intended for scenarios requiring strict type and range validation, such as count
 The descriptor enforces data integrity, making it suitable for robust applications or educational examples of Python’s descriptor protocol and value validation.
 ```
 
-3.
+3. 6_8_3_LimitedTakes
 
 ```
+# LimitedTakes Class Access-Restricted Descriptor
 
+## Description 📝
+
+The `LimitedTakes` class is a descriptor that restricts the number of times an attribute can be accessed, taking a single argument `times` (the access limit) during instantiation.
+It must be assigned to an attribute matching the variable name. When accessing the attribute, it returns the stored value if set and within the access limit, raises `AttributeError` with "Attribute not found" if unset, or raises `MaxCallsException` with "The number of times the attribute can be accessed has been exceeded" if the limit is exceeded.
+Setting the attribute stores the value without restrictions.
+
+## Purpose 🎯
+
+Intended for scenarios requiring controlled attribute access, such as rate-limiting data retrieval, enforcing usage quotas, or protecting sensitive data in objects.
+It’s also suitable for educational examples demonstrating Python’s descriptor protocol and custom exception handling.
 ```
 
 4.
