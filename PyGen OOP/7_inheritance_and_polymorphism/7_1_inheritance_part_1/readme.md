@@ -60,10 +60,21 @@ Intended to establish a foundational class structure for modeling animals in app
 The empty methods provide a framework for implementing specific behaviors, suitable for object-oriented design or educational examples of inheritance and method specialization in Python.
 ```
 
-4.
+4. 7_1_4_User
 
 ```
+# User and PremiumUser Class Hierarchy
 
+## Description 📝
+
+The provided code implements two classes: `User` and `PremiumUser`.
+The `User` class represents a basic user of an internet resource, initialized with a `name` (string) and featuring a `skip_ads` method that always returns `False`.
+The `PremiumUser` class, a subclass of `User`, represents a user with a premium subscription, initialized identically to `User` and overriding `skip_ads` to always return `True`.
+
+## Purpose 🎯
+
+Intended to model users of an internet resource, distinguishing between standard and premium users based on their ability to skip ads.
+This structure is suitable for applications like streaming platforms, content websites, or subscription-based services, as well as educational examples of inheritance and method overriding in Python.
 ```
 
 5.
