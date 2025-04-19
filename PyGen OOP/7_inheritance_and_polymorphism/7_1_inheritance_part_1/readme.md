@@ -27,10 +27,20 @@ Intended to establish a foundational class structure for modeling vehicles in ap
 The empty classes provide a framework that can be extended with attributes and methods, suitable for object-oriented design or educational examples of inheritance in Python.
 ```
 
-2.
+2. 7_1_2_Shape
 
 ```
+# Geometric Shape Class Hierarchy
 
+## Description 📝
+
+The provided code defines a hierarchy of empty classes representing geometric shapes, structured according to the given diagram.
+The hierarchy uses inheritance to model relationships between a base `Shape` class and its subclasses, categorized by shape type (circle, polygon) and further specialized into specific shapes like quadrilaterals, triangles, and their variants.
+
+## Purpose 🎯
+
+Intended to establish a foundational class structure for modeling geometric shapes in applications such as graphics, CAD systems, or mathematical simulations.
+The empty classes provide a framework that can be extended with attributes (e.g., dimensions) and methods (e.g., area calculation), suitable for object-oriented design or educational examples of inheritance in Python.
 ```
 
 3.
