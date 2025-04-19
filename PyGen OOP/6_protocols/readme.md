@@ -83,7 +83,17 @@ By the end of this lesson, I will:
 5. 6_5_context_manager_protocol_part_2
 
 ```
-
+# Lesson 6.5: Context Manager Protocol (Part 2) 🔐
+This lesson covers:
+-   Examples of creating context managers
+-   Single-use, reusable, and reentrant context managers
+-   Practical implementation of advanced context management
+This lesson includes a detailed theoretical explanation, 12 programming practical tasks, and 4 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Create single-use, reusable, and reentrant context managers
+✅ Implement advanced context managers for diverse use cases
+✅ Understand how to manage resources and state with context managers
+✅ Apply context management to practical scenarios like file handling and HTML generation
 ```
 
 6. 6_6_contextmanager_decorator
