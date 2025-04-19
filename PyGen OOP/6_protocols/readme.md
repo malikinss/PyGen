@@ -133,5 +133,18 @@ By the end of this lesson, I will:
 8. 6_8_descriptor_protocol
 
 ```
+# Lesson 6.8: Descriptor Protocol 🔍
+This lesson covers:
+-   Descriptors and their role in Python
+-   The descriptor protocol with magic methods
+-   Magic methods **`__get__()`**, **`__set__()`**, and **`__delete__()`**
+-   Magic method **`__set_name__()`** for automatic name assignment
+-   The attribute search chain in Python
 
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 13 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how descriptors manage attribute access
+✅ Implement custom descriptors using **`__get__()`**, **`__set__()`**, and **`__delete__()`**
+✅ Use **`__set_name__()`** for automatic attribute naming
+✅ Apply descriptors to enforce validation, track history, or control access
 ```
