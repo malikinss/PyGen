@@ -1,61 +1,78 @@
-Lesson 6.6: decorator @contextmanager
+# Lesson 6.6: Decorator @contextmanager 🔧
 
-Decorator @contextmanager
-Handling exceptions when using decorator @contextmanager
-Examples of creating context managers using decorator @contextmanager
-Abstract. This lesson is devoted to creating context managers using decorator @contextmanager.
+## Description 📝
 
-https://stepik.org/lesson/934146/step/1?unit=940038
+This lesson covers:
 
-This lesson has good theory explonation, has 4 programing practical tasks and 15 theoretical questions presented on the website.
+-   The `@contextmanager` decorator from `contextlib`
+-   Handling exceptions when using `@contextmanager`
+-   Examples of creating context managers with `@contextmanager`
 
-6_6_contextmanager_decorator
-├───6_6_1_make_tag
-├───6_6_2_reversed_print
-├───6_6_3_safe_write
-└───6_6_4_safe_open
+This lesson includes a detailed theoretical explanation, 4 programming practical tasks, and 15 theoretical questions available on the Stepik platform.
 
-1. 6_6_1_make_tag
+## Purpose 🎯
 
-```
-# make_tag Context Manager Tag Printer
-The `make_tag` context manager, implemented using the `@contextmanager` decorator, accepts a single string argument `tag`.
-It prints `tag` when entering a `with` block and again when exiting, wrapping the block’s execution with identical tag outputs.
-The context manager yields control to the block, adhering to the context manager protocol.
-Designed for scenarios requiring simple bracketing of code execution with markers, such as logging context boundaries, debugging block entry/exit, or formatting output in scripts.
-Its lightweight design makes it suitable for quick annotations or educational examples of Python’s context manager protocol using `contextlib`.
-```
+By the end of this lesson, I will:  
+✅ Understand how to create context managers using `@contextmanager`  
+✅ Handle exceptions effectively in context manager functions  
+✅ Apply `@contextmanager` to simplify context management in practical scenarios  
+✅ Build lightweight context managers for file operations and output control
 
-2. 6_6_2_reversed_print
+## Concepts & Theory 🔍
 
-```
-# reversed_print Context Manager Output Reverser
-The `reversed_print` context manager, implemented using the `@contextmanager` decorator, takes no arguments.
-It modifies `sys.stdout.write` within a `with` block to reverse the order of characters in any text written to standard output, restoring the original `write` method upon exit.
-The context manager yields control to the block, adhering to the context manager protocol.
-Designed for scenarios requiring temporary transformation of console output, such as creating stylized logs, debugging with reversed text for visual distinction, or experimenting with output formatting in scripts.
-Its simplicity makes it suitable for quick modifications or educational examples of Python’s context manager protocol and `sys.stdout` manipulation.
-```
+### 🔹 `@contextmanager` Decorator
 
-3. 6_6_3_safe_write
+-   **Purpose**: Simplifies context manager creation using generator functions.
+-   **How It Works**: Wraps a generator yielding once, mapping to `__enter__()` and `__exit__()`.
 
-```
-# safe_write Context Manager Transactional File Writer
-The `safe_write` context manager, implemented using the `@contextmanager` decorator, accepts a `filename` string and enables safe writing to the specified file.
-It yields a file-like object for writing within a `with` block.
-If an exception occurs during writing, it absorbs the exception, reverts the file to its original state by discarding changes, and prints a message: `An exception <exception type> was raised while writing to the file`.
-The context manager ensures atomic writes using a temporary file, preserving the original file’s state on failure.
-Designed for scenarios requiring robust file modifications, such as updating configuration files, logging, or saving data, where partial writes due to errors must be avoided.
-Its ability to revert changes and report errors makes it suitable for reliable file operations in scripting, data pipelines, or educational examples of Python’s context manager protocol and atomic file handling.
-```
+### 🔹 Handling Exceptions with `@contextmanager`
 
-4. 6_6_4_safe_open
+-   **Purpose**: Ensures proper exception handling within context managers.
+-   **How It Works**: Exceptions are passed to the generator, which can suppress or handle them using `try`/`except`.
 
-```
-# safe_open Context Manager Robust File Opener (Revised)
-The `safe_open` context manager, implemented using the `@contextmanager` decorator, accepts a `filename` (string) and an optional `mode` (string, defaulting to `'r'`).
-It attempts to open the file in the specified mode, yielding a tuple: `(file_object, None)` if successful, or `(None, exception)` if an exception occurs during opening.
-The context manager ensures the file is closed after the `with` block, adhering to the context manager protocol.
-Intended for safe file operations where opening might fail, such as reading data files, writing logs, or updating configurations.
-The tuple return enables error handling within the block, making it suitable for reliable file I/O in scripts, data processing, or educational examples of Python’s context manager protocol.
-```
+### 🔹 Examples of `@contextmanager`
+
+-   **Purpose**: Demonstrate practical context manager use cases.
+-   **Examples**: File operations, output modification, and tagged execution blocks.
+
+## Practical Task 🧪
+
+### 1️⃣ **Context Managers with `@contextmanager`**
+
+The lesson includes 4 practical tasks, each implementing a context manager using `@contextmanager`:
+
+1. **`make_tag` Context Manager**: Prints a tag on entry and exit.
+
+    - Accepts `tag` string, wraps block with tag outputs.
+
+2. **`reversed_print` Context Manager**: Reverses console output text.
+
+    - Modifies `sys.stdout.write` to reverse characters, restores on exit.
+
+3. **`safe_write` Context Manager**: Ensures atomic file writes.
+
+    - Reverts file on exception, reports error, uses temporary file.
+
+4. **`safe_open` Context Manager**: Safely opens files.
+    - Yields `(file_object, None)` or `(None, exception)`, closes file.
+
+💡 These tasks showcase lightweight, robust context managers for output and file handling.
+
+## Benefits ✅
+
+-   `@contextmanager` simplifies context manager implementation.
+-   Exception handling ensures reliable resource management.
+-   Lightweight generator-based context managers reduce boilerplate.
+-   Flexible designs support diverse use cases like safe file I/O.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Create context managers using `@contextmanager`  
+✅ Handle exceptions in generator-based context managers  
+✅ Apply `@contextmanager` to practical tasks like file operations
+
+## Conclusion 🚀
+
+Mastering the `@contextmanager` decorator enables me to create efficient, elegant context managers with minimal code.  
+From safe file operations to output transformations, these tools streamline resource management, enhancing code reliability and clarity. 🧑‍💻✨
