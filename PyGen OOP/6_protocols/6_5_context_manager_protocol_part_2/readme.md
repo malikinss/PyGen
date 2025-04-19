@@ -1,150 +1,81 @@
-Lesson 6.5: context manager protocol (part 2)
+# Lesson 6.5: Context Manager Protocol (Part 2) 🔐
 
-Examples of creating context managers
-Single-use, reusable and reentrant context managers
-Abstract. The lesson is devoted to the context manager protocol.
+## Description 📝
 
-https://stepik.org/lesson/933767/step/1?unit=939666
+This lesson covers:
 
-This lesson has good theory explonation, has 12 programing practical tasks and 4 theoretical questions presented on the website.
+-   Examples of creating context managers
+-   Single-use, reusable, and reentrant context managers
+-   Practical implementation of advanced context management
 
-1. 6_5_1_SuppressAll
+This lesson includes a detailed theoretical explanation, 12 programming practical tasks, and 4 theoretical questions available on the Stepik platform.
 
-```
-# SuppressAll Class Exception Silencer (Revised)
-The `SuppressAll` class implements a context manager that suppresses all exceptions raised within its `with` block.
-It accepts no arguments during instantiation and fulfills the context manager protocol through `__enter__` and `__exit__` methods.
-Exceptions occurring in the block are caught and suppressed, allowing execution to proceed uninterrupted.
-Intended for scenarios where exceptions can be safely ignored, such as non-critical operations, fallback mechanisms, or testing setups expecting failures.
-It streamlines error handling in scripts and serves as a clear example for learning Python’s context manager protocol.
-```
+## Purpose 🎯
 
-2. 6_5_2_Greeter
+By the end of this lesson, I will:  
+✅ Create single-use, reusable, and reentrant context managers  
+✅ Implement advanced context managers for diverse use cases  
+✅ Understand how to manage resources and state with context managers  
+✅ Apply context management to practical scenarios like file handling and HTML generation
 
-```
-# Greeter Class Polite Context Manager
-The `Greeter` class is a context manager that takes a single argument, `name` (a string), during instantiation.
-It stores `name` as an attribute and implements the context manager protocol with `__enter__` and `__exit__` methods.
-Upon entering a `with` block, it prints `Hello, <name>!`, and upon exiting, it prints `See you there, <name>!`, providing a greeting and farewell around the block’s execution.
-Intended for scenarios requiring structured user interaction, such as command-line interfaces, logging user sessions, or scripted dialogues in applications.
-It ensures consistent entry/exit messaging, making it useful for user-facing tools or as an educational example of Python’s context manager protocol.
-```
+## Concepts & Theory 🔍
 
-3. 6_5_3_Closer
+### 🔹 Examples of Creating Context Managers
 
-```
-# Closer Class Resource Cleanup Manager
-The `Closer` class is a context manager that takes an arbitrary object `obj` during instantiation.
-It implements the context manager protocol with `__enter__` and `__exit__` methods.
-Upon exiting a `with` block, it attempts to call `obj.close()`.
-If the object lacks a `close` method, it prints "Unclosed object".
-The class ensures proper resource cleanup for objects supporting `close`, such as file handles or sockets.
-Intended for managing resources that require explicit closure, such as files, database connections, or network sockets, in a `with` block.
-It provides a unified way to ensure cleanup while handling non-closable objects gracefully, suitable for resource-heavy applications, scripting, or educational demonstrations of Python’s context manager protocol.
-```
+-   **Purpose**: Provide structured setup and cleanup for resources or state.
+-   **How It Works**: Use `__enter__()` and `__exit__()` to define context behavior.
 
-4. 6_5_4_ReadableTextFile
+### 🔹 Single-Use Context Managers
 
-```
-# ReadableTextFile Class Line-Stripping File Reader
-The `ReadableTextFile` class is a context manager that opens a text file specified by `filename` for reading in UTF-8 encoding.
-It provides access to file lines without trailing newline characters (`\n`) via iteration and closes the file after the `with` block.
-The class implements the context manager protocol with `__enter__` and `__exit__` methods and supports iteration with `__iter__` and `__next__` to yield stripped lines.
-Designed for reading text files in a controlled manner, such as processing logs, configuration files, or data inputs where newline characters are unwanted.
-The context manager ensures proper file closure, making it suitable for scripting, data parsing, or educational examples of Python’s context manager and iterator protocols.
-```
+-   **Purpose**: Designed for one-time use, often for simple resources.
+-   **Examples**: Temporary file operations or one-off exception suppression.
 
-5. 6_5_5_Reloopable
+### 🔹 Reusable Context Managers
 
-```
-# Reloopable Class Re-Iterable File Manager
-The `Reloopable` class is a context manager that accepts a file object open for reading (`file`) during instantiation.
-It enables multiple iterations over the file’s contents within a `with` block by resetting the file pointer and closes the file upon exiting the block.
-The class implements the context manager protocol with `__enter__` and `__exit__` methods and supports iteration via `__iter__`.
-Intended for scenarios requiring repeated iteration over a file’s contents without reopening, such as parsing logs multiple times, analyzing data in passes, or testing file processing.
-The automatic file closure ensures resource cleanup, making it suitable for scripting, data processing, or educational examples of Python’s context manager and iterator protocols.
-```
+-   **Purpose**: Support multiple `with` block uses without reinstantiation.
+-   **Examples**: Timers or output formatters that track state across calls.
 
-6. 6_5_6_UpperPrint
+### 🔹 Reentrant Context Managers
 
-```
-# UpperPrint Class Uppercase Output Transformer
-The `UpperPrint` class is a context manager that takes no arguments during instantiation.
-It modifies `sys.stdout.write` within a `with` block to convert all text output to uppercase, restoring the original `write` method upon exit.
-The class implements the context manager protocol with `__enter__` and `__exit__` methods, ensuring seamless integration with standard output operations.
-Intended for scenarios requiring temporary modification of console output, such as formatting logs, debugging with emphasized text, or creating stylized command-line interfaces.
-It’s also valuable for educational purposes, demonstrating Python’s context manager protocol and manipulation of `sys.stdout`.
-```
+-   **Purpose**: Allow nested `with` blocks for the same instance.
+-   **Examples**: HTML tag generators or tree builders with nested structures.
 
-7. 6_5_7_Suppress
+## Practical Task 🧪
 
-```
-# Suppress Class Selective Exception Silencer
-The `Suppress` class is a context manager that accepts an arbitrary number of exception types as positional arguments during instantiation.
-It suppresses exceptions of the specified types raised within a `with` block, storing the suppressed exception in its `exception` attribute (set to `None` if no exception is suppressed or no exception occurs).
-The class implements the context manager protocol with `__enter__` and `__exit__` methods.
-Designed for scenarios requiring targeted exception handling, such as ignoring specific errors in data processing, testing, or user input validation, while preserving others.
-The `exception` attribute enables post-block inspection of suppressed errors, making it useful for logging or debugging.
-It also serves as an educational tool for Python’s context manager protocol and exception handling.
-```
+### 1️⃣ **Advanced Context Managers**
 
-8. 6_5_8_WriteSpy
+The lesson includes 12 practical tasks, each implementing a unique context manager:
 
-```
-# WriteSpy Class Dual File Writer
-The `WriteSpy` class is a context manager that accepts two file objects (`file1`, `file2`) and a boolean `to_close` (defaulting to `False`) during instantiation.
-It enables simultaneous writing to both files within a `with` block, optionally closing them upon exit based on `to_close`.
-The class provides methods `write` (writes text to both files), `close` (closes both files), `writable` (checks if both files are writable), and `closed` (checks if both files are closed).
-It implements the context manager protocol with `__enter__` and `__exit__` methods.
-Designed for scenarios requiring mirrored writes to multiple files, such as logging to dual destinations, creating redundant backups, or synchronizing outputs.
-The ability to control file closure and check file states makes it suitable for resource management in scripting, logging systems, or educational demonstrations of Python’s context manager protocol and file handling.
-```
+1. **`SuppressAll` Class**: Suppresses all exceptions in a `with` block.
+2. **`Greeter` Class**: Prints greeting/farewell messages with a name.
+3. **`Closer` Class**: Calls `close()` on an object, handles non-closable objects.
+4. **`ReadableTextFile` Class**: Reads text file lines without newlines, closes file.
+5. **`Reloopable` Class**: Enables multiple iterations over a file, closes on exit.
+6. **`UpperPrint` Class**: Converts console output to uppercase temporarily.
+7. **`Suppress` Class**: Suppresses specified exception types, tracks suppressed errors.
+8. **`WriteSpy` Class**: Writes to two files simultaneously, optional closure.
+9. **`Atomic` Class**: Ensures atomic updates to collections, supports deep reversion.
+10. **`AdvancedTimer` Class**: Tracks execution times with detailed statistics.
+11. **`HtmlTag` Class**: Generates indented HTML tags, supports nesting.
+12. **`TreeBuilder` Class**: Builds nested list trees with node management.
 
-9. 6_5_9_Atomic
+💡 These tasks demonstrate the versatility of context managers for resource management, output control, and data structuring.
 
-```
-# Atomic Class Transactional Data Manager
-The `Atomic` class is a context manager that enables atomic operations on a list, set, or dictionary (`data`), with a boolean `deep` parameter (defaulting to `False`).
-It ensures that modifications within a `with` block are either fully applied (if no exceptions occur) or discarded (if an exception is raised), restoring the original state.
-The `deep` parameter controls whether nested structures are also restored: `False` preserves nested changes, while `True` reverts them.
-The class implements the context manager protocol with `__enter__` and `__exit__` methods.
-Designed for scenarios requiring transactional updates to collections, such as configuration management, database-like operations, or undoable edits in applications.
-The ability to control nested structure behavior makes it versatile for complex data, suitable for robust scripting, data processing, or educational demonstrations of Python’s context manager protocol and copy mechanics.
-```
+## Benefits ✅
 
-10. 6_5_10_AdvancedTimer
+-   Context managers simplify resource setup and cleanup.
+-   Reusable and reentrant designs enhance flexibility.
+-   Custom context managers handle exceptions and state elegantly.
+-   Broad applicability improves code reliability across domains.
 
-```
-# AdvancedTimer Class Execution Time Tracker
-The `AdvancedTimer` class is a reusable context manager that measures the execution time of code within `with` blocks.
-It takes no arguments during instantiation and implements the context manager protocol with `__enter__` and `__exit__` methods.
-The class maintains four attributes: `last_run` (time of the most recent block), `runs` (list of all block times), `min` (minimum time across blocks), and `max` (maximum time across blocks).
-If no measurements have been made, `last_run`, `min`, and `max` are `None`.
-Intended for performance profiling, benchmarking, or debugging where precise timing of code blocks is needed, such as optimizing algorithms, measuring API response times, or comparing function performance.
-The reusable nature and detailed statistics make it suitable for iterative testing or educational demonstrations of Python’s context manager protocol and timing utilities.
-```
+## Output 📜
 
-11. 6_5_11_HtmlTag
+After completing this lesson, I now:  
+✅ Create single-use, reusable, and reentrant context managers  
+✅ Implement context managers for files, output, and data structures  
+✅ Apply advanced context management to practical use cases
 
-```
-# HtmlTag Class Structured HTML Generator
-The `HtmlTag` class is a reentrant context manager that generates HTML code with proper indentation and tag nesting.
-It accepts a `tag` (HTML tag name) and an optional `inline` boolean (defaulting to `False`) during instantiation.
-Within a `with` block, it prints opening and closing tags, and its `print` method outputs content.
-The `inline` parameter determines formatting: `True` places tags and content on the same line, while `False` uses separate lines with two-space indentation per nesting level.
-The class implements the context manager protocol with `__enter__` and `__exit__` methods.
-Designed for generating structured HTML in scripts, templates, or web development tools, ensuring correct tag nesting and formatting.
-Its reentrant nature supports nested tags, making it suitable for dynamic HTML generation, static site builders, or educational examples of Python’s context manager protocol and indentation logic.
-```
+## Conclusion 🚀
 
-12. 6_5_12_TreeBuilder
-
-```
-# TreeBuilder Class Nested Structure Composer
-The `TreeBuilder` class is a reentrant context manager that constructs a tree data structure as nested lists, taking no arguments during instantiation.
-It implements the context manager protocol with `__enter__` and `__exit__` methods and provides two instance methods: `add` (appends a leaf to the current node) and `structure` (returns the tree as nested lists).
-Nodes are created using `with` blocks, and only non-empty nodes are included in the final structure.
-The class supports arbitrary nesting, and the structure is only accessed after construction.
-Designed for building hierarchical data structures, such as file system trees, organizational charts, or parse trees, in a clear and controlled manner.
-Its reentrant nature supports complex nesting, making it suitable for data modeling, serialization, or educational examples of Python’s context manager protocol and tree construction.
-```
+Mastering the context manager protocol with reusable and reentrant designs empowers me to build robust, efficient Python code.  
+From exception suppression to HTML generation and tree building, these tools ensure clean resource handling and structured logic for complex applications. 🧑‍💻✨
