@@ -77,10 +77,21 @@ Intended to model users of an internet resource, distinguishing between standard
 This structure is suitable for applications like streaming platforms, content websites, or subscription-based services, as well as educational examples of inheritance and method overriding in Python.
 ```
 
-5.
+5. 7_1_5_Validator
 
 ```
+# Validator and NumberValidator Class Hierarchy
 
+## Description 📝
+
+The provided code implements two classes: `Validator` and `NumberValidator`.
+The `Validator` class represents a generic validator that accepts an arbitrary object (`obj`) during initialization and has an `is_valid` method that always returns `None`.
+The `NumberValidator` class, a subclass of `Validator`, inherits the same initialization process and overrides `is_valid` to return `True` if the stored object is an `int` or `float`, and `False` otherwise.
+
+## Purpose 🎯
+
+Intended to model a validation framework where values need to be checked for correctness, with extensibility for specific validation rules.
+The `Validator` class provides a base for generic validation, while `NumberValidator` specializes in numeric type checking, suitable for data processing, form validation, or educational examples of inheritance and method overriding in Python.
 ```
 
 6.
