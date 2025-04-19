@@ -82,10 +82,23 @@ Intended for scenarios requiring strict type validation, such as ensuring data c
 It prevents type-related errors, making it suitable for robust applications or educational examples of Python’s descriptor protocol and type checking.
 ```
 
-5.
+5. 6_8_5_RandomNumber
 
 ```
+# RandomNumber Class Random Integer Descriptor
 
+## Description 📝
+
+The `RandomNumber` class is a descriptor that generates a random integer within a specified range `[start, end]` (inclusive) when an attribute is accessed.
+It accepts three arguments during instantiation: `start` (integer), `end` (integer), and `cache` (boolean, defaulting to `False`).
+The descriptor must be assigned to an attribute matching the variable name.
+If `cache` is `True`, it returns the first generated number on subsequent accesses; otherwise, it generates a new random number each time.
+Setting the attribute raises `AttributeError` with "Change is not possible".
+
+## Purpose 🎯
+
+Intended for scenarios requiring controlled random value generation, such as simulations, testing, or game mechanics, where consistent or fresh random numbers are needed.
+The read-only nature and caching option make it suitable for applications requiring stable or dynamic randomness, as well as educational examples of Python’s descriptor protocol.
 ```
 
 6.
