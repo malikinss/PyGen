@@ -99,7 +99,17 @@ By the end of this lesson, I will:
 6. 6_6_contextmanager_decorator
 
 ```
-
+# Lesson 6.6: Decorator @contextmanager 🔧
+This lesson covers:
+-   The `@contextmanager` decorator from `contextlib`
+-   Handling exceptions when using `@contextmanager`
+-   Examples of creating context managers with `@contextmanager`
+This lesson includes a detailed theoretical explanation, 4 programming practical tasks, and 15 theoretical questions available on the Stepik platform.
+By the end of this lesson, I will:
+✅ Understand how to create context managers using `@contextmanager`
+✅ Handle exceptions effectively in context manager functions
+✅ Apply `@contextmanager` to simplify context management in practical scenarios
+✅ Build lightweight context managers for file operations and output control
 ```
 
 7. 6_7_contextlib_module_contextmanagers
