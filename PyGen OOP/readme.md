@@ -79,7 +79,14 @@ In this chapter, I will:
 6. 6_protocols
 
 ```
-
+# Chapter 6: Protocols 🛠️
+This chapter is dedicated to mastering **Python protocols**, enabling me to implement custom behavior for objects using specialized magic methods.
+It consists of **8 comprehensive lessons** with detailed theoretical explanations, **42 hands-on programming tasks**, and **96 theoretical questions** available on the course platform.
+In this chapter, I will:
+-   Learn how to implement **protocols** like iterable, sequence, context manager, and descriptor protocols.
+-   Understand how to use **magic methods** to customize object behavior for iteration, resource management, and attribute access.
+-   Practice building reusable and flexible classes for real-world applications like data processing, file handling, and attribute validation.
+-   Enhance my ability to integrate custom objects seamlessly with Python’s ecosystem.
 ```
 
 7. 7_inheritance_and_polymorphism
