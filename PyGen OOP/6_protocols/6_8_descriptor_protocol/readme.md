@@ -29,10 +29,22 @@ Designed for scenarios requiring restricted attribute values, such as configurat
 It’s also suitable for educational examples demonstrating Python’s descriptor protocol and keyword validation.
 ```
 
-2.
+2. 6_8_2_NonNegativeInteger
 
 ```
+# NonNegativeInteger Class Restricted Integer Descriptor
 
+## Description 📝
+
+The `NonNegativeInteger` class is a descriptor that ensures an attribute’s value is a non-negative integer.
+It accepts two arguments during instantiation: `name` (the attribute name) and `default` (an optional default value, defaulting to `None`).
+When accessing the attribute, it returns the stored value or the `default` value if unset; if `default` is `None` and the attribute is unset, it raises `AttributeError` with "Attribute not found".
+When setting the attribute, it verifies the value is a non-negative integer, raising `ValueError` with "Invalid value" if not.
+
+## Purpose 🎯
+
+Intended for scenarios requiring strict type and range validation, such as counters, indices, or configuration settings in data models, APIs, or frameworks.
+The descriptor enforces data integrity, making it suitable for robust applications or educational examples of Python’s descriptor protocol and value validation.
 ```
 
 3.
