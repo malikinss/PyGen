@@ -64,10 +64,22 @@ Intended for scenarios requiring controlled attribute access, such as rate-limit
 It’s also suitable for educational examples demonstrating Python’s descriptor protocol and custom exception handling.
 ```
 
-4.
+4. 6_8_4_TypeChecked
 
 ```
+# TypeChecked Class Type-Restricting Descriptor
 
+## Description 📝
+
+The `TypeChecked` class is a descriptor that ensures an attribute’s value matches one of the specified data types.
+It accepts an arbitrary number of type arguments during instantiation and must be assigned to an attribute matching the variable name.
+When accessing the attribute, it returns the stored value if set, or raises `AttributeError` with "Attribute not found" if unset.
+When setting the attribute, it verifies the value’s type against the specified types, raising `TypeError` with "Invalid value" if it doesn’t match.
+
+## Purpose 🎯
+
+Intended for scenarios requiring strict type validation, such as ensuring data consistency in configuration objects, API models, or domain-specific classes.
+It prevents type-related errors, making it suitable for robust applications or educational examples of Python’s descriptor protocol and type checking.
 ```
 
 5.
