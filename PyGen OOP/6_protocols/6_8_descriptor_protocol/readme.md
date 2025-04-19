@@ -101,8 +101,19 @@ Intended for scenarios requiring controlled random value generation, such as sim
 The read-only nature and caching option make it suitable for applications requiring stable or dynamic randomness, as well as educational examples of Python’s descriptor protocol.
 ```
 
-6.
+6. 6_8_6_Versioned
 
 ```
+# Versioned Class Attribute History Descriptor
 
+## Description 📝
+
+The `Versioned` class is a descriptor that tracks the history of an attribute’s values, allowing access to the current value and all previous values set via dot notation or `setattr()`.
+It takes no arguments during instantiation and must be assigned to an attribute matching the variable name. When accessing the attribute, it returns the current value or raises `AttributeError` with "Attribute not found" if unset. Setting the attribute adds the new value to the history.
+The class provides two methods: `get_version` (retrieves the n-th value, 1-based index) and `set_version` (sets the n-th value as current without adding to history).
+
+## Purpose 🎯
+
+Intended for scenarios requiring versioned attribute access, such as undo/redo functionality, auditing changes, or maintaining state history in data models or applications.
+The ability to restore previous values without altering history makes it suitable for robust systems or educational examples of Python’s descriptor protocol and state management.
 ```
