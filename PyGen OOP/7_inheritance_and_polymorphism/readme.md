@@ -15,7 +15,26 @@ This chapter separated on 8 lessons that have good theory explonation, 49 practi
 1. 7_1_inheritance_part_1
 
 ```
+# Lesson 7.1: Inheritance (Part 1) 🧬
 
+## Description 📝
+
+This lesson covers:
+
+-   Introduction to inheritance in Python
+-   Defining and overriding attributes and methods
+-   Implicit inheritance and the `object` class
+-   Multilevel inheritance
+
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand the fundamentals of inheritance in Python
+✅ Define and override methods and attributes in subclasses
+✅ Apply implicit and multilevel inheritance effectively
+✅ Create class hierarchies for practical use cases
 ```
 
 2. 7_2_inheritance_part_2
