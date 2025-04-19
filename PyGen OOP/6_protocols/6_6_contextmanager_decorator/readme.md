@@ -9,6 +9,12 @@ https://stepik.org/lesson/934146/step/1?unit=940038
 
 This lesson has good theory explonation, has 4 programing practical tasks and 15 theoretical questions presented on the website.
 
+6_6_contextmanager_decorator
+├───6_6_1_make_tag
+├───6_6_2_reversed_print
+├───6_6_3_safe_write
+└───6_6_4_safe_open
+
 1. 6_6_1_make_tag
 
 ```
@@ -43,8 +49,13 @@ Designed for scenarios requiring robust file modifications, such as updating con
 Its ability to revert changes and report errors makes it suitable for reliable file operations in scripting, data pipelines, or educational examples of Python’s context manager protocol and atomic file handling.
 ```
 
-4.
+4. 6_6_4_safe_open
 
 ```
-
+# safe_open Context Manager Robust File Opener (Revised)
+The `safe_open` context manager, implemented using the `@contextmanager` decorator, accepts a `filename` (string) and an optional `mode` (string, defaulting to `'r'`).
+It attempts to open the file in the specified mode, yielding a tuple: `(file_object, None)` if successful, or `(None, exception)` if an exception occurs during opening.
+The context manager ensures the file is closed after the `with` block, adhering to the context manager protocol.
+Intended for safe file operations where opening might fail, such as reading data files, writing logs, or updating configurations.
+The tuple return enables error handling within the block, making it suitable for reliable file I/O in scripts, data processing, or educational examples of Python’s context manager protocol.
 ```
