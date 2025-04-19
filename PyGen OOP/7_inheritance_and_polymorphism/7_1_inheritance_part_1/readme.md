@@ -11,6 +11,14 @@ https://stepik.org/lesson/794707/step/1?unit=797459
 
 This lesson has good theory explonation, has 6 programing practical tasks and 21 theoretical questions presented on the website.
 
+7_1_inheritance_part_1
+├───7_1_1_Vehicle
+├───7_1_2_Shape
+├───7_1_3_Animal
+├───7_1_4_User
+├───7_1_5_Validator
+└───7_1_6_Counter
+
 1. 7_1_1_Vehicle
 
 ```
@@ -94,8 +102,20 @@ Intended to model a validation framework where values need to be checked for cor
 The `Validator` class provides a base for generic validation, while `NumberValidator` specializes in numeric type checking, suitable for data processing, form validation, or educational examples of inheritance and method overriding in Python.
 ```
 
-6.
+6. 7_1_6_Counter
 
 ```
+# Counter Class Hierarchy
 
+## Description 📝
+
+The provided code implements three classes: `Counter`, `NonDecCounter`, and `LimitedCounter`.
+The `Counter` class represents a non-negative counter with a `value` attribute and methods to increment (`inc`) and decrement (`dec`) it.
+`NonDecCounter`, a subclass of `Counter`, allows only incrementing, with an empty `dec` method. `LimitedCounter`, another subclass of `Counter`, restricts incrementing to a specified `limit`.
+All classes adhere to their respective initialization and behavior requirements.
+
+## Purpose 🎯
+
+Intended to model counters with varying constraints, suitable for applications like score tracking, resource limits, or inventory management.
+The hierarchy demonstrates inheritance and method overriding, making it ideal for robust systems or educational examples of object-oriented programming in Python.
 ```
