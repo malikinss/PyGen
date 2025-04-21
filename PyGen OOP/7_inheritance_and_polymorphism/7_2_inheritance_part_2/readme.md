@@ -45,10 +45,21 @@ Intended to model a weather alert system for applications like weather forecasti
 The hierarchy allows basic and date-specific warnings, suitable for extensible warning systems or educational examples of inheritance and method overriding in Python.
 ```
 
-3.
+3. 7_2_3_Triangle
 
 ```
+# Triangle and EquilateralTriangle Class Hierarchy
 
+## Description 📝
+
+The provided code implements two classes: `Triangle` and `EquilateralTriangle`.
+The `Triangle` class represents a general triangle, initialized with three side lengths (`a`, `b`, `c`) and featuring a `perimeter` method that returns the sum of the sides.
+The `EquilateralTriangle` class, a subclass of `Triangle`, represents an equilateral triangle, initialized with a single `side` length, which is used for all three sides.
+
+## Purpose 🎯
+
+Intended to model triangles in geometric applications, such as graphics, physics simulations, or mathematical tools.
+The hierarchy supports general and specialized triangle types, making it suitable for extensible geometric modeling or educational examples of inheritance and method reuse in Python.
 ```
 
 4.
