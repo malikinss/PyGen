@@ -79,10 +79,22 @@ Intended to model a counter with amplified increment and decrement operations, s
 It’s also ideal for educational examples of inheritance and method overriding in Python.
 ```
 
-5.
+5. 7_2_5_Summator
 
 ```
+# Summator Class Hierarchy
 
+## Description 📝
+
+The provided code implements four classes: `Summator`, `SquareSummator`, `QubeSummator`, and `CustomSummator`.
+The `Summator` class calculates the sum of natural numbers from 1 to `n` (1 + 2 + ... + n) using a `total` method.
+Its subclasses—`SquareSummator` (sum of squares: 1² + 2² + ... + n²), `QubeSummator` (sum of cubes: 1³ + 2³ + ... + n³), and `CustomSummator` (sum of m-th powers: 1^m + 2^m + ... + n^m)—extend this functionality by overriding the power used in the calculation.
+The `total` method is defined only in `Summator`, reused by all subclasses via a `power` attribute.
+
+## Purpose 🎯
+
+Intended to model mathematical summation operations for natural numbers raised to specific or custom powers, suitable for mathematical computations, data analysis, or algorithm development.
+The hierarchy demonstrates inheritance and method reuse, making it ideal for extensible calculation frameworks or educational examples of object-oriented programming in Python.
 ```
 
 6.
