@@ -1,79 +1,92 @@
-Lesson 7.2: inheritance (part 2)
+# Lesson 7.2: Inheritance (Part 2) 🧬
 
-Overriding Methods
-Extending Methods
-The super() Function
-Using Descendant Methods in a Base Class
-Abstract: This lesson is about inheritance in Python.
+## Description 📝
 
-https://stepik.org/lesson/798678/step/1?unit=801641
+This lesson covers:
 
-This lesson has good theory explonation, has 6 programing practical tasks and 14 theoretical questions presented on the website.
+-   Overriding methods in subclasses
+-   Extending methods to enhance inherited behavior
+-   The `super()` function for accessing parent class methods
+-   Using descendant methods in a base class
 
-1. 7_2_1_BasicPlan
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
 
-```
-# BasicPlan, SilverPlan, and GoldPlan Class Hierarchy
-The provided code implements three classes: `BasicPlan`, `SilverPlan`, and `GoldPlan`, representing subscription tiers for an online service.
-`BasicPlan` defines a basic subscription with specific attributes. `SilverPlan` and `GoldPlan`, subclasses of `BasicPlan`, describe mid-level and high-level subscriptions, respectively, overriding certain attributes.
-All classes require no arguments for instantiation and define seven attributes as specified.
-Intended to model subscription plans for online services like streaming platforms, with tiered features and pricing.
-The hierarchy is suitable for managing user subscriptions, feature access control, or billing systems, as well as educational examples of inheritance and attribute overriding in Python.
-```
+## Purpose 🎯
 
-2. 7_2_2_WeatherWarning
+By the end of this lesson, I will:  
+✅ Override and extend methods to customize subclass behavior  
+✅ Use `super()` to leverage parent class functionality  
+✅ Design base classes that utilize descendant methods  
+✅ Apply advanced inheritance techniques to practical scenarios
 
-```
-# WeatherWarning and WeatherWarningWithDate Class Hierarchy
-The provided code implements two classes: `WeatherWarning` and `WeatherWarningWithDate`.
-The `WeatherWarning` class represents a weather warning system with three methods (`rain`, `snow`, `low_temperature`) that print specific weather alerts.
-It requires no arguments for instantiation. The `WeatherWarningWithDate` class, a subclass of `WeatherWarning`, extends the warning system to include a date, with overridden methods that accept a `date` object and prepend the date in `DD.MM.YYYY` format to the warnings.
-Both classes instantiate without arguments.
-Intended to model a weather alert system for applications like weather forecasting apps, emergency notifications, or environmental monitoring tools.
-The hierarchy allows basic and date-specific warnings, suitable for extensible warning systems or educational examples of inheritance and method overriding in Python.
-```
+## Concepts & Theory 🔍
 
-3. 7_2_3_Triangle
+### 🔹 Overriding Methods
 
-```
-# Triangle and EquilateralTriangle Class Hierarchy
-The provided code implements two classes: `Triangle` and `EquilateralTriangle`.
-The `Triangle` class represents a general triangle, initialized with three side lengths (`a`, `b`, `c`) and featuring a `perimeter` method that returns the sum of the sides.
-The `EquilateralTriangle` class, a subclass of `Triangle`, represents an equilateral triangle, initialized with a single `side` length, which is used for all three sides.
-Intended to model triangles in geometric applications, such as graphics, physics simulations, or mathematical tools.
-The hierarchy supports general and specialized triangle types, making it suitable for extensible geometric modeling or educational examples of inheritance and method reuse in Python.
-```
+-   **Purpose**: Redefines a parent class method in a subclass to alter behavior.
+-   **When Used**: To specialize functionality for a specific subclass.
 
-4. 7_2_4_Counter
+### 🔹 Extending Methods
 
-```
-# DoubledCounter Class Implementation
-The provided code implements the `DoubledCounter` class, a subclass of the given `Counter` class.
-The `Counter` class represents a non-negative counter with a `value` attribute and methods `inc` and `dec` to increment or decrement the counter, ensuring non-negativity.
-The `DoubledCounter` class extends `Counter` to double the effect of incrementing and decrementing operations, while maintaining the same initialization process and non-negative constraint.
-Intended to model a counter with amplified increment and decrement operations, suitable for applications requiring scaled counting, such as tracking events with weighted impacts or simulations.
-It’s also ideal for educational examples of inheritance and method overriding in Python.
-```
+-   **Purpose**: Enhances inherited methods by combining parent and subclass logic.
+-   **How It Works**: Uses `super()` to call the parent method and add new behavior.
 
-5. 7_2_5_Summator
+### 🔹 The `super()` Function
 
-```
-# Summator Class Hierarchy
-The provided code implements four classes: `Summator`, `SquareSummator`, `QubeSummator`, and `CustomSummator`.
-The `Summator` class calculates the sum of natural numbers from 1 to `n` (1 + 2 + ... + n) using a `total` method.
-Its subclasses—`SquareSummator` (sum of squares: 1² + 2² + ... + n²), `QubeSummator` (sum of cubes: 1³ + 2³ + ... + n³), and `CustomSummator` (sum of m-th powers: 1^m + 2^m + ... + n^m)—extend this functionality by overriding the power used in the calculation.
-The `total` method is defined only in `Summator`, reused by all subclasses via a `power` attribute.
-Intended to model mathematical summation operations for natural numbers raised to specific or custom powers, suitable for mathematical computations, data analysis, or algorithm development.
-The hierarchy demonstrates inheritance and method reuse, making it ideal for extensible calculation frameworks or educational examples of object-oriented programming in Python.
-```
+-   **Purpose**: Accesses parent class methods or constructors.
+-   **When Used**: To reuse or extend parent class functionality in subclasses.
 
-6. 7_2_6_FieldTracker
+### 🔹 Using Descendant Methods in a Base Class
 
-```
-# FieldTracker Class Implementation
-The `FieldTracker` class is a base class designed to enable its subclasses to track changes in specified attributes.
-It assumes subclasses define a `fields` tuple containing the names of attributes to track and call `FieldTracker.__init__` after setting initial attribute values.
-It provides four methods: `base` (returns an attribute's initial value), `has_changed` (checks if an attribute has changed), `changed` (returns a dictionary of changed attributes and their initial values), and `save` (resets tracking to consider current values as initial).
-Intended for scenarios requiring attribute state tracking, such as auditing changes in data models, implementing undo functionality, or monitoring configuration objects.
-It’s suitable for extensible frameworks or educational examples of state management and inheritance in Python.
-```
+-   **Purpose**: Allows base classes to call methods defined in subclasses.
+-   **When Used**: For flexible designs where base classes rely on subclass specialization.
+
+## Practical Task 🧪
+
+### 1️⃣ **Advanced Inheritance Techniques**
+
+The lesson includes 6 practical tasks, each implementing inheritance with method overriding and extension:
+
+1. **`BasicPlan` Hierarchy**: Models subscription plans.
+
+    - `BasicPlan`, `SilverPlan`, `GoldPlan` with tiered attributes.
+
+2. **`WeatherWarning` Hierarchy**: Weather alert system.
+
+    - `WeatherWarning`: Basic alerts; `WeatherWarningWithDate`: Adds date to alerts.
+
+3. **`Triangle` Hierarchy**: Geometric triangles.
+
+    - `Triangle`: General triangle; `EquilateralTriangle`: Single-side initialization.
+
+4. **`DoubledCounter` Class**: Extends `Counter`.
+
+    - Doubles increment/decrement effects while maintaining non-negativity.
+
+5. **`Summator` Hierarchy**: Mathematical summations.
+
+    - `Summator`: Sum of numbers; Subclasses: Sums of squares, cubes, custom powers.
+
+6. **`FieldTracker` Class**: Tracks attribute changes.
+    - Methods: `base`, `has_changed`, `changed`, `save` for state tracking.
+
+💡 These tasks demonstrate method overriding, extension, and base class flexibility.
+
+## Benefits ✅
+
+-   Method overriding enables tailored subclass behavior.
+-   `super()` facilitates reuse of parent class logic.
+-   Extending methods balances inheritance with specialization.
+-   Base class use of descendant methods supports flexible designs.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Override and extend methods using `super()`  
+✅ Design base classes that leverage subclass methods  
+✅ Apply advanced inheritance to practical examples like counters and trackers
+
+## Conclusion 🚀
+
+Mastering advanced inheritance techniques with `super()` and method overriding empowers me to create flexible, reusable class hierarchies.  
+From subscription plans to attribute tracking, these tools enable sophisticated, extensible designs for complex Python applications. 🧑‍💻✨
