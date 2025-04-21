@@ -40,7 +40,26 @@ By the end of this lesson, I will:
 2. 7_2_inheritance_part_2
 
 ```
+# Lesson 7.2: Inheritance (Part 2) 🧬
 
+## Description 📝
+
+This lesson covers:
+
+-   Overriding methods in subclasses
+-   Extending methods to enhance inherited behavior
+-   The `super()` function for accessing parent class methods
+-   Using descendant methods in a base class
+
+This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Override and extend methods to customize subclass behavior
+✅ Use `super()` to leverage parent class functionality
+✅ Design base classes that utilize descendant methods
+✅ Apply advanced inheritance techniques to practical scenarios
 ```
 
 3. 7_3_inheritance_part_3
