@@ -62,10 +62,21 @@ Intended to model triangles in geometric applications, such as graphics, physics
 The hierarchy supports general and specialized triangle types, making it suitable for extensible geometric modeling or educational examples of inheritance and method reuse in Python.
 ```
 
-4.
+4. 7_2_4_Counter
 
 ```
+# DoubledCounter Class Implementation
 
+## Description 📝
+
+The provided code implements the `DoubledCounter` class, a subclass of the given `Counter` class.
+The `Counter` class represents a non-negative counter with a `value` attribute and methods `inc` and `dec` to increment or decrement the counter, ensuring non-negativity.
+The `DoubledCounter` class extends `Counter` to double the effect of incrementing and decrementing operations, while maintaining the same initialization process and non-negative constraint.
+
+## Purpose 🎯
+
+Intended to model a counter with amplified increment and decrement operations, suitable for applications requiring scaled counting, such as tracking events with weighted impacts or simulations.
+It’s also ideal for educational examples of inheritance and method overriding in Python.
 ```
 
 5.
