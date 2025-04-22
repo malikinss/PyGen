@@ -7,3 +7,62 @@ Abstract: The lesson is devoted to inheritance from built-in immutable data type
 https://stepik.org/lesson/816515/step/1?unit=819845
 
 This lesson has good theory explonation, has 8 programing practical tasks and 13 theoretical questions presented on the website.
+
+1. 7_3_1_UpperPrintString
+
+```
+# UpperPrintString Class Implementation
+
+## Description 📝
+
+The provided code implements the `UpperPrintString` class, a subclass of Python's built-in `str` class.
+It inherits all behaviors of `str` and overrides the informal string representation to return the string in uppercase.
+The initialization process matches that of `str`, accepting the same arguments. When converted to a string (e.g., via `str()` or `print()`), an instance returns its value in uppercase.
+
+## Purpose 🎯
+
+Intended for scenarios where strings need to be displayed in uppercase for informal representation, such as in user interfaces, logging, or formatted outputs, while retaining all standard string functionality.
+It’s also suitable for educational examples of inheritance and method overriding in Python.
+```
+
+2.
+
+```
+
+```
+
+3.
+
+```
+
+```
+
+4.
+
+```
+
+```
+
+5.
+
+```
+
+```
+
+6.
+
+```
+
+```
+
+7.
+
+```
+
+```
+
+8.
+
+```
+
+```
