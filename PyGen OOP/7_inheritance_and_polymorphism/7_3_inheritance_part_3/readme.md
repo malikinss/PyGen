@@ -25,10 +25,21 @@ Intended for scenarios where strings need to be displayed in uppercase for infor
 It’s also suitable for educational examples of inheritance and method overriding in Python.
 ```
 
-2.
+2. 7_3_2_LowerString
 
 ```
+# LowerString Class Implementation
 
+## Description 📝
+
+The provided code implements the `LowerString` class, a subclass of Python's built-in `str` class.
+It automatically converts its initial value to lowercase during instantiation. The class accepts one optional argument, `obj`, which defines the initial string value (defaulting to an empty string).
+The resulting instance behaves like a standard string but starts with a lowercase value.
+
+## Purpose 🎯
+
+Intended for scenarios where strings need to be consistently lowercase, such as in case-insensitive data processing, user input normalization, or database key standardization.
+It’s also suitable for educational examples of inheritance and custom object creation in Python.
 ```
 
 3.
