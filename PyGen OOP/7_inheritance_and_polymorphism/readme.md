@@ -65,7 +65,24 @@ By the end of this lesson, I will:
 3. 7_3_inheritance_part_3
 
 ```
+# Lesson 7.3: Inheritance (Part 3) 🧬
 
+## Description 📝
+
+This lesson covers:
+
+-   The process of creating class instances
+-   Inheritance from immutable built-in data types (`int`, `float`, `str`, `tuple`)
+
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 13 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand how to create instances of classes inheriting from immutable types
+✅ Extend built-in immutable types (`int`, `float`, `str`, `tuple`) with custom behavior
+✅ Apply inheritance to enhance functionality of immutable data types
+✅ Implement practical subclasses for specialized string, integer, and tuple operations
 ```
 
 4. 7_4_inheritance_part_4
