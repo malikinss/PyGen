@@ -42,10 +42,22 @@ Intended for scenarios where strings need to be consistently lowercase, such as 
 It’s also suitable for educational examples of inheritance and custom object creation in Python.
 ```
 
-3.
+3. 7_3_3_FuzzyString
 
 ```
+# FuzzyString Class Implementation
 
+## Description 📝
+
+The provided code implements the `FuzzyString` class, a subclass of Python's built-in `str` class.
+It overrides comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) and the membership test (`in`, `not in`) to perform case-insensitive operations.
+The initialization process matches that of `str`, accepting the same arguments.
+Comparisons with non-string objects return `NotImplemented`.
+
+## Purpose 🎯
+
+Intended for scenarios requiring case-insensitive string comparisons or membership tests, such as user input validation, search functionality, or case-insensitive data matching.
+It’s also suitable for educational examples of operator overloading and inheritance in Python.
 ```
 
 4.
