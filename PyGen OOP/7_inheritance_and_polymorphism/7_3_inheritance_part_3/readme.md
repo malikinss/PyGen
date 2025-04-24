@@ -95,10 +95,22 @@ Intended for applications requiring enhanced integer operations, such as numeric
 The class is also suitable for teaching inheritance, operator overloading, and iterator protocols in Python.
 ```
 
-6.
+6. 7_3_6_RoundedInt
 
 ```
+# RoundedInt Class Implementation
 
+## Description 📝
+
+The provided code implements the `RoundedInt` class, a subclass of Python's built-in `int` class.
+It automatically rounds its numeric value to the nearest even or odd integer during instantiation, based on a boolean `even` parameter.
+The class accepts two arguments: `num` (the numeric value) and `even` (True for even rounding, False for odd rounding, defaulting to True).
+The resulting instance is an integer with the rounded value, retaining all `int` functionality.
+
+## Purpose 🎯
+
+Intended for scenarios requiring integers to be constrained to specific parity, such as numerical simulations, data normalization, or parity-based algorithms.
+It’s also suitable for educational examples of `int` subclassing and custom object creation in Python.
 ```
 
 7.
