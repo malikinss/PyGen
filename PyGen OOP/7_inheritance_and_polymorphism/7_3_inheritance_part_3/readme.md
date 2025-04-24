@@ -60,10 +60,22 @@ Intended for scenarios requiring case-insensitive string comparisons or membersh
 It’s also suitable for educational examples of operator overloading and inheritance in Python.
 ```
 
-4.
+4. 7_3_4_TitledText
 
 ```
+# TitledText Class Implementation
 
+## Description 📝
+
+The provided code implements the `TitledText` class, a subclass of Python's built-in `str` class.
+It represents a string with an associated title, initialized with two arguments: `content` (the text itself) and `text_title` (the title).
+The string value of the instance is the `content`, and it includes a `title` method to return the `text_title`.
+The implementation ensures the instance behaves as a string while storing and providing access to the title.
+
+## Purpose 🎯
+
+Intended for scenarios where text needs to be associated with metadata, such as titles in documents, articles, or UI elements.
+It’s useful for applications like content management systems or text processing, and suitable for educational examples of `str` subclassing and attribute management in Python.
 ```
 
 5.
