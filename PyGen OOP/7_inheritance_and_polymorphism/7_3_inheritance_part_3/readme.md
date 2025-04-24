@@ -8,6 +8,16 @@ https://stepik.org/lesson/816515/step/1?unit=819845
 
 This lesson has good theory explonation, has 8 programing practical tasks and 13 theoretical questions presented on the website.
 
+7_3_inheritance_part_3
+├───7_3_1_UpperPrintString
+├───7_3_2_LowerString
+├───7_3_3_FuzzyString
+├───7_3_4_TitledText
+├───7_3_5_SuperInt
+├───7_3_6_RoundedInt
+├───7_3_7_AdvancedTuple
+└───7_3_8_ModularTuple
+
 1. 7_3_1_UpperPrintString
 
 ```
@@ -130,8 +140,20 @@ Intended for scenarios requiring flexible tuple concatenation with various itera
 It’s also suitable for educational examples of tuple subclassing and operator overloading in Python.
 ```
 
-8.
+8. 7_3_8_ModularTuple
 
 ```
+# ModularTuple Class Implementation
 
+## Description 📝
+
+The provided code implements the `ModularTuple` class, a subclass of Python's built-in `tuple` class.
+It creates a tuple where each element from the input iterable is divided by a specified `size` (integer, default 100), retaining only the remainder (using the modulo operator `%`).
+The class accepts two arguments during instantiation: `iterable` (an iterable defining the initial elements, defaulting to an empty tuple) and `size` (the divisor).
+The resulting tuple is independent of the original iterable, ensuring immutability and isolation from external changes.
+
+## Purpose 🎯
+
+Intended for scenarios requiring modular arithmetic on sequences, such as cryptographic algorithms, cyclic data structures, or constrained numerical processing.
+It’s also suitable for educational examples of tuple subclassing and custom object creation in Python.
 ```
