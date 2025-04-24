@@ -78,10 +78,21 @@ Intended for scenarios where text needs to be associated with metadata, such as 
 It’s useful for applications like content management systems or text processing, and suitable for educational examples of `str` subclassing and attribute management in Python.
 ```
 
-5.
+5. 7_3_5_SuperInt
 
 ```
+# SuperInt Class Implementation
 
+## Description 📝
+
+The provided code implements the `SuperInt` class, a subclass of Python's built-in `int` class.
+It extends integer functionality with methods for repeating the number, converting to binary, incrementing, decrementing, and iterating over digits as `SuperInt` instances.
+The initialization process matches that of `int`, and the class supports iteration over its digits from left to right.
+
+## Purpose 🎯
+
+Intended for applications requiring enhanced integer operations, such as numerical processing, educational tools, or specialized data formats.
+The class is also suitable for teaching inheritance, operator overloading, and iterator protocols in Python.
 ```
 
 6.
