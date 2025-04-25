@@ -98,10 +98,21 @@ Intended for scenarios requiring lists strictly containing numbers, such as nume
 It’s also suitable for educational examples of list subclassing, validation, and operator overloading in Python.
 ```
 
-6.
+6. 7_4_6_ValueDict
 
 ```
+# ValueDict Class Implementation
 
+## Description 📝
+
+The provided code implements the `ValueDict` class, a subclass of Python's built-in `dict` class.
+It extends dictionary functionality with two methods: `key_of` (returns the first key associated with a given value, or `None` if none exists) and `keys_of` (returns an iterable of all keys associated with a given value).
+The initialization process matches that of `dict`, accepting the same arguments.
+
+## Purpose 🎯
+
+Intended for scenarios requiring reverse lookups in dictionaries, such as mapping values to keys in data processing, configuration management, or database-like operations.
+It’s also suitable for educational examples of dictionary subclassing and iterator usage in Python.
 ```
 
 7.
