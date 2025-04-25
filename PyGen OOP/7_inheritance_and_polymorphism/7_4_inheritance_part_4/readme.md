@@ -132,8 +132,19 @@ Intended for applications managing birthday data, such as calendars, event plann
 It’s also suitable for educational examples of dictionary subclassing and custom item-setting behavior in Python.
 ```
 
-8.
+8. 7_4_8_MutableString
 
 ```
+# MutableString Class Implementation
 
+## Description 📝
+
+The provided code implements the `MutableString` class, a subclass of `collections.UserString`.
+It represents a mutable string, allowing in-place modifications via indexing, slicing, and methods for case conversion (`lower`, `upper`) and sorting (`sort`).
+The initialization process matches that of `UserString`, and the class supports getting, setting, and deleting characters or substrings using positive or negative indices.
+
+## Purpose 🎯
+
+Intended for scenarios requiring mutable string operations, such as text editing, string manipulation, or dynamic content processing.
+It’s also suitable for educational examples of string subclassing, mutability, and indexing in Python.
 ```
