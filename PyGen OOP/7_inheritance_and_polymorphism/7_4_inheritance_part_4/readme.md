@@ -62,10 +62,21 @@ Intended for scenarios requiring bidirectional mappings, such as graph edge repr
 It’s also suitable for educational examples of dictionary subclassing and custom item-setting behavior in Python.
 ```
 
-4.
+4. 7_4_4_AdvancedList
 
 ```
+# AdvancedList Class Implementation
 
+## Description 📝
+
+The provided code implements the `AdvancedList` class, a subclass of Python's built-in `list` class.
+It extends list functionality with three methods: `join` (concatenates elements into a string with a separator), `map` (applies a function to each element in-place), and `filter` (removes elements failing a predicate function in-place).
+The initialization process matches that of `list`, accepting the same arguments.
+
+## Purpose 🎯
+
+Intended for scenarios requiring enhanced list manipulation, such as data processing, functional programming patterns, or string formatting.
+It’s also suitable for educational examples of list subclassing and in-place modifications in Python.
 ```
 
 5.
