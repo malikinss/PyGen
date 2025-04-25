@@ -88,7 +88,25 @@ By the end of this lesson, I will:
 4. 7_4_inheritance_part_4
 
 ```
+# Lesson 7.4: Inheritance (Part 4) 🧬
 
+## Description 📝
+
+This lesson covers:
+
+-   Inheritance from the `dict` type
+-   Inheritance from the `list` type
+-   Using `UserDict` and `UserList` from the `collections` module
+
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Extend `dict` and `list` types with custom functionality
+✅ Use `UserDict` and `UserList` for safer, flexible subclassing
+✅ Implement specialized dictionaries and lists for practical use cases
+✅ Apply inheritance to enhance collection types
 ```
 
 5. 7_5_abstract_classes_module_abc
