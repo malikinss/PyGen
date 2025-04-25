@@ -1,0 +1,4 @@
+easydict = EasyDict({'name': 'Artur', 'city': 'Almetevsk'})
+
+easydict.age = 21
+print(easydict)

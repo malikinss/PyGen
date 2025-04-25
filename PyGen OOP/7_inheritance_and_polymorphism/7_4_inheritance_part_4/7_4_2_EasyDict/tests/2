@@ -1,0 +1,6 @@
+easydict = EasyDict({'name': 'Timur', 'city': 'Moscow'})
+
+easydict['city'] = 'Dubai'
+easydict['age'] = 30
+print(easydict.city)
+print(easydict.age)

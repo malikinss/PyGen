@@ -1,0 +1,4 @@
+easydict = EasyDict({'name': 'Timur', 'city': 'Moscow'})
+
+print(easydict['name'])
+print(easydict.city)
