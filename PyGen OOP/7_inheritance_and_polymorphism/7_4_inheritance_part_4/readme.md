@@ -27,10 +27,21 @@ Intended for scenarios where safe index access is needed, such as data processin
 It’s also suitable for educational examples of list subclassing and custom indexing behavior in Python.
 ```
 
-2.
+2. 7_4_2_EasyDict
 
 ```
+# EasyDict Class Implementation
 
+## Description 📝
+
+The provided code implements the `EasyDict` class, a subclass of Python's built-in `dict` class. It allows dictionary values to be accessed and modified both via standard key-based access (`d[key]`) and attribute-style access (`d.key`).
+The initialization process matches that of `dict`, accepting the same arguments.
+The class supports getting, setting, and deleting values using attribute notation, mirroring dictionary key operations.
+
+## Purpose 🎯
+
+Intended for scenarios where dictionary access needs to be more intuitive or readable, such as configuration objects, data models, or API response handling.
+It’s also suitable for educational examples of dictionary subclassing and attribute access customization in Python.
 ```
 
 3.
