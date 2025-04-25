@@ -115,10 +115,21 @@ Intended for scenarios requiring reverse lookups in dictionaries, such as mappin
 It’s also suitable for educational examples of dictionary subclassing and iterator usage in Python.
 ```
 
-7.
+7. 7_4_7_BirthdayDict
 
 ```
+# BirthdayDict Class Implementation
 
+## Description 📝
+
+The provided code implements the `BirthdayDict` class, a subclass of `collections.UserDict`.
+It represents a dictionary for storing names (keys) and birthdays (values), with a feature to print a notification when a new or updated key-value pair has a birthday that already exists for another key.
+The initialization process matches that of `UserDict`, and the notification message is displayed during addition or modification of key-value pairs.
+
+## Purpose 🎯
+
+Intended for applications managing birthday data, such as calendars, event planners, or social apps, where users should be alerted to shared birthdays.
+It’s also suitable for educational examples of dictionary subclassing and custom item-setting behavior in Python.
 ```
 
 8.
