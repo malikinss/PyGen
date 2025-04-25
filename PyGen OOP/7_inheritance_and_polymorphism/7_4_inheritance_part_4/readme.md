@@ -79,10 +79,23 @@ Intended for scenarios requiring enhanced list manipulation, such as data proces
 It’s also suitable for educational examples of list subclassing and in-place modifications in Python.
 ```
 
-5.
+5. 7_4_5_NumberList
 
 ```
+# NumberList Class Implementation
 
+## Description 📝
+
+The provided code implements the `NumberList` class, a subclass of `collections.UserList`.
+It represents a list that only contains numbers (`int` or `float`), enforcing this constraint during initialization and modifications (via indexing, addition, `append`, `extend`, and `insert`).
+The class accepts an optional `iterable` argument during instantiation, defaulting to an empty tuple.
+It raises a `TypeError` with the message "The elements of the NumberList class instance must be numbers" if non-numbers are provided.
+The list is independent of the input iterable, and it supports addition (`+`, `+=`) and `extend` with any iterable of numbers.
+
+## Purpose 🎯
+
+Intended for scenarios requiring lists strictly containing numbers, such as numerical computations, statistical analysis, or data validation.
+It’s also suitable for educational examples of list subclassing, validation, and operator overloading in Python.
 ```
 
 6.
