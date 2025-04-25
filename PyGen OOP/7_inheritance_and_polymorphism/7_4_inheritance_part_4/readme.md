@@ -44,10 +44,22 @@ Intended for scenarios where dictionary access needs to be more intuitive or rea
 It’s also suitable for educational examples of dictionary subclassing and attribute access customization in Python.
 ```
 
-3.
+3. 7_4_3_TwoWayDict
 
 ```
+# TwoWayDict Class Implementation
 
+## Description 📝
+
+The provided code implements the `TwoWayDict` class, a subclass of `collections.UserDict`.
+It represents a bidirectional dictionary where adding a `key:value` pair automatically adds the reverse `value:key` pair.
+The initialization process matches that of `UserDict`, accepting the same arguments.
+The class ensures that each key-value pair is mirrored, allowing lookups in both directions.
+
+## Purpose 🎯
+
+Intended for scenarios requiring bidirectional mappings, such as graph edge representations, synonym dictionaries, or two-way lookups in data processing.
+It’s also suitable for educational examples of dictionary subclassing and custom item-setting behavior in Python.
 ```
 
 4.
