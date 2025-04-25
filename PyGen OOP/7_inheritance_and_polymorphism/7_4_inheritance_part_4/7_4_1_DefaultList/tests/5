@@ -1,0 +1,5 @@
+defaultlist = DefaultList(default='empty result')
+
+print(defaultlist[100])
+print(defaultlist[1000])
+print(defaultlist[10000])

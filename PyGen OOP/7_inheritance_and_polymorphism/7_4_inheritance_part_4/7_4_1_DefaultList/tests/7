@@ -1,0 +1,4 @@
+defaultlist = DefaultList([1, 2, 3])
+print(defaultlist[-1])
+print(defaultlist[-2])
+print(defaultlist[-3])
