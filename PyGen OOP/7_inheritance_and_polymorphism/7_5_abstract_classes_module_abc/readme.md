@@ -12,19 +12,12 @@ This lesson has good theory explonation, has 8 programing practical tasks and 16
 
 7_5_abstract_classes_module_abc
 ├───7_5_1_Middle
-│ └───tests
 ├───7_5_2_ChessPiece
-│ └───tests
 ├───7_5_3_Validator
-│ └───tests
 ├───7_5_4_is_iterable
-│ └───tests
 ├───7_5_5_CustomRange
-│ └───tests
 ├───7_5_6_BitArray
-│ └───tests
 ├───7_5_7_DNA
-│ └───tests
 └───7_5_8_SortedList
 
 1. 7_5_1_Middle
