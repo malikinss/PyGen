@@ -78,10 +78,22 @@ Intended for scenarios requiring type checking to determine whether an object ca
 It’s also suitable for educational examples of Python’s type system and iteration protocols.
 ```
 
-5.
+5. 7_5_5_CustomRange
 
 ```
+# CustomRange Class Implementation
 
+## Description 📝
+
+The provided code implements the `CustomRange` class, a subclass of `collections.abc.Sequence`.
+It represents a sequence of integers derived from single numbers and ranges (e.g., `"1-4"` for 1, 2, 3, 4).
+The class supports iteration, length calculation, reverse iteration, membership testing, and indexing (positive and negative).
+It accepts an arbitrary number of positional arguments (integers or range strings) during initialization.
+
+## Purpose 🎯
+
+Intended for scenarios requiring a flexible sequence of integers from mixed inputs (single numbers and ranges), such as data processing, range-based iteration, or custom sequence handling.
+It’s also suitable for educational examples of sequence protocols and abstract base classes in Python.
 ```
 
 6.
