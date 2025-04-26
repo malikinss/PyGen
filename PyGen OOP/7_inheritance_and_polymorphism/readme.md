@@ -112,7 +112,25 @@ By the end of this lesson, I will:
 5. 7_5_abstract_classes_module_abc
 
 ```
+# Lesson 7.5: Abstract Classes and Module abc 📚
 
+## Description 📝
+
+This lesson covers:
+
+-   Abstract classes in Python
+-   The `abc` module for defining abstract base classes
+-   The `collections.abc` module for collection-based abstract classes
+
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 16 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand and create abstract classes using the `abc` module
+✅ Use `collections.abc` to implement collection-like interfaces
+✅ Enforce interface contracts with abstract methods
+✅ Apply abstract classes to practical scenarios like DNA sequences and chess pieces
 ```
 
 6. 7_6_multiple_inheritance
