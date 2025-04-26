@@ -113,10 +113,22 @@ Intended for scenarios requiring manipulation of bit sequences, such as binary d
 It’s also suitable for educational examples of sequence protocols, bitwise operations, and abstract base classes in Python.
 ```
 
-7.
+7. 7_5_7_DNA
 
 ```
+# DNA Class Implementation
 
+## Description 📝
+
+The provided code implements the `DNA` class, a subclass of `collections.abc.Sequence`.
+It represents a double-stranded DNA helix, initialized with the first strand (a string of nitrogenous bases: A, G, T, C).
+The class supports iteration, indexing, length calculation, reverse iteration, membership testing, equality comparison, and addition, using the principle of complementarity (A-T, G-C) to derive the second strand.
+Invalid operands for comparison or addition return `NotImplemented`.
+
+## Purpose 🎯
+
+Intended for biological or bioinformatics applications, such as DNA sequence analysis, genetic simulations, or sequence alignment.
+It’s also suitable for educational examples of sequence protocols, operator overloading, and abstract base classes in Python.
 ```
 
 8.
