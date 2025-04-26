@@ -44,10 +44,21 @@ Intended for chess-related applications, such as game logic, move validation, or
 It’s also suitable for educational examples of abstract base classes, inheritance, and chess move mechanics in Python.
 ```
 
-3.
+3. 7_5_3_Validator
 
 ```
+# Validator, Number, and String Class Implementation
 
+## Description 📝
+
+The provided code implements the `Validator` abstract base class and its subclasses `Number` and `String`, which are descriptors for validating attribute values.
+`Validator` enforces a common interface for attribute access and validation, requiring subclasses to implement the `validate` method.
+`Number` validates that values are numbers (`int` or `float`) within a specified range, and `String` validates that values are strings with lengths within specified bounds and optionally passing a predicate function.
+
+## Purpose 🎯
+
+Intended for scenarios requiring robust attribute validation, such as configuration management, form input validation, or data integrity in objects.
+It’s also suitable for educational examples of descriptors, abstract base classes, and validation logic in Python.
 ```
 
 4.
