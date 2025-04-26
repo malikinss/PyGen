@@ -27,10 +27,21 @@ Intended to unify the interface and shared logic of the `Average`, `Median`, and
 This hierarchy promotes code reuse, maintainability, and extensibility, making it suitable for applications like rating systems or statistical analysis, as well as educational examples of abstract base classes and inheritance in Python.
 ```
 
-2.
+2. 7_5_2_ChessPiece
 
 ```
+# ChessPiece, King, and Knight Class Implementation
 
+## Description 📝
+
+The provided code implements the `ChessPiece` abstract base class and its subclasses `King` and `Knight`.
+The `ChessPiece` class defines a chess piece with horizontal (`a` to `h`) and vertical (1 to 8) coordinates and an abstract `can_move` method.
+The `King` and `Knight` classes inherit from `ChessPiece`, implementing `can_move` to check valid moves for each piece type while maintaining the same initialization and coordinate attributes.
+
+## Purpose 🎯
+
+Intended for chess-related applications, such as game logic, move validation, or chess engines, where pieces need to track positions and verify legal moves.
+It’s also suitable for educational examples of abstract base classes, inheritance, and chess move mechanics in Python.
 ```
 
 3.
