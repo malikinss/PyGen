@@ -10,6 +10,23 @@ https://stepik.org/lesson/872533/step/1?unit=876917
 
 This lesson has good theory explonation, has 8 programing practical tasks and 16 theoretical questions presented on the website.
 
+7_5_abstract_classes_module_abc
+├───7_5_1_Middle
+│ └───tests
+├───7_5_2_ChessPiece
+│ └───tests
+├───7_5_3_Validator
+│ └───tests
+├───7_5_4_is_iterable
+│ └───tests
+├───7_5_5_CustomRange
+│ └───tests
+├───7_5_6_BitArray
+│ └───tests
+├───7_5_7_DNA
+│ └───tests
+└───7_5_8_SortedList
+
 1. 7_5_1_Middle
 
 ```
@@ -131,8 +148,20 @@ Intended for biological or bioinformatics applications, such as DNA sequence ana
 It’s also suitable for educational examples of sequence protocols, operator overloading, and abstract base classes in Python.
 ```
 
-8.
+8. 7_5_8_SortedList
 
 ```
+# SortedList Class Implementation
 
+## Description 📝
+
+The provided code implements the `SortedList` class, a subclass of `collections.abc.Sequence`.
+It represents a list that maintains its elements in sorted order upon creation and modification.
+The class supports adding, removing, and updating elements while ensuring sort order, and provides iteration, indexing, membership testing, and arithmetic operations (`+`, `+=`, `*`, `*=`).
+Certain list methods (`append`, `insert`, `extend`, `reverse`, `__setitem__`, `__reversed__`) raise `NotImplementedError` to enforce the sorted nature of the list.
+
+## Purpose 🎯
+
+Intended for scenarios requiring a dynamically maintained sorted list, such as priority queues, ranked data storage, or sorted collections in algorithms.
+It’s also suitable for educational examples of sequence protocols, operator overloading, and efficient insertion in Python.
 ```
