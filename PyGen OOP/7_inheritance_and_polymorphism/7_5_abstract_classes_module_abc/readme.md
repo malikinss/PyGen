@@ -61,10 +61,21 @@ Intended for scenarios requiring robust attribute validation, such as configurat
 It’s also suitable for educational examples of descriptors, abstract base classes, and validation logic in Python.
 ```
 
-4.
+4. 7_5_4_is_iterable
 
 ```
+# is_iterable and is_iterator Function Implementation
 
+## Description 📝
+
+The provided code implements two functions: `is_iterable` and `is_iterator`.
+The `is_iterable` function checks if an object is iterable (i.e., supports iteration, such as lists, strings, or other sequences).
+The `is_iterator` function checks if an object is an iterator (i.e., supports the iterator protocol with `__next__` and `__iter__` methods, such as iterator objects returned by `iter()`).
+
+## Purpose 🎯
+
+Intended for scenarios requiring type checking to determine whether an object can be iterated over or is an iterator, such as in data processing, loop handling, or debugging.
+It’s also suitable for educational examples of Python’s type system and iteration protocols.
 ```
 
 5.
