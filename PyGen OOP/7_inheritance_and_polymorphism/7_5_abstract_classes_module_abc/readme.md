@@ -1,112 +1,94 @@
-Lesson 7.5: abstract classes, module abc
+# Lesson 7.5: Abstract Classes and Module abc 📚
 
-Abstract classes
-Module abc
-Module collections.abc
+## Description 📝
 
-Abstract: The lesson is devoted to abstract classes and modules abc and collections.abc.
+This lesson covers:
 
-https://stepik.org/lesson/872533/step/1?unit=876917
+-   Abstract classes in Python
+-   The `abc` module for defining abstract base classes
+-   The `collections.abc` module for collection-based abstract classes
 
-This lesson has good theory explonation, has 8 programing practical tasks and 16 theoretical questions presented on the website.
+This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 16 theoretical questions available on the Stepik platform.
 
-7_5_abstract_classes_module_abc
-├───7_5_1_Middle
-├───7_5_2_ChessPiece
-├───7_5_3_Validator
-├───7_5_4_is_iterable
-├───7_5_5_CustomRange
-├───7_5_6_BitArray
-├───7_5_7_DNA
-└───7_5_8_SortedList
+## Purpose 🎯
 
-1. 7_5_1_Middle
+By the end of this lesson, I will:  
+✅ Understand and create abstract classes using the `abc` module  
+✅ Use `collections.abc` to implement collection-like interfaces  
+✅ Enforce interface contracts with abstract methods  
+✅ Apply abstract classes to practical scenarios like DNA sequences and chess pieces
 
-```
-# Middle and Inheritance Scheme Implementation
-The provided code implements the `Middle` abstract base class and establishes a correct inheritance scheme for the `Average`, `Median`, and `Harmonic` classes.
-The `Middle` class serves as a common interface for calculating average ratings (arithmetic mean, median, or harmonic mean) from user and expert votes on a 100-point scale.
-It avoids code duplication by centralizing shared functionality, such as vote filtering, while requiring subclasses to implement the specific average calculation via the abstract `get_average` method.
-Intended to unify the interface and shared logic of the `Average`, `Median`, and `Harmonic` classes, which process user and expert ratings for media content.
-This hierarchy promotes code reuse, maintainability, and extensibility, making it suitable for applications like rating systems or statistical analysis, as well as educational examples of abstract base classes and inheritance in Python.
-```
+## Concepts & Theory 🔍
 
-2. 7_5_2_ChessPiece
+### 🔹 Abstract Classes
 
-```
-# ChessPiece, King, and Knight Class Implementation
-The provided code implements the `ChessPiece` abstract base class and its subclasses `King` and `Knight`.
-The `ChessPiece` class defines a chess piece with horizontal (`a` to `h`) and vertical (1 to 8) coordinates and an abstract `can_move` method.
-The `King` and `Knight` classes inherit from `ChessPiece`, implementing `can_move` to check valid moves for each piece type while maintaining the same initialization and coordinate attributes.
-Intended for chess-related applications, such as game logic, move validation, or chess engines, where pieces need to track positions and verify legal moves.
-It’s also suitable for educational examples of abstract base classes, inheritance, and chess move mechanics in Python.
-```
+-   **Purpose**: Define interfaces with methods that subclasses must implement.
+-   **How They Work**: Prevent instantiation until all abstract methods are defined.
 
-3. 7_5_3_Validator
+### 🔹 Module `abc`
 
-```
-# Validator, Number, and String Class Implementation
-The provided code implements the `Validator` abstract base class and its subclasses `Number` and `String`, which are descriptors for validating attribute values.
-`Validator` enforces a common interface for attribute access and validation, requiring subclasses to implement the `validate` method.
-`Number` validates that values are numbers (`int` or `float`) within a specified range, and `String` validates that values are strings with lengths within specified bounds and optionally passing a predicate function.
-Intended for scenarios requiring robust attribute validation, such as configuration management, form input validation, or data integrity in objects.
-It’s also suitable for educational examples of descriptors, abstract base classes, and validation logic in Python.
-```
+-   **Purpose**: Provides tools like `ABC` and `@abstractmethod` for abstract classes.
+-   **When Used**: To enforce method implementation in subclasses.
 
-4. 7_5_4_is_iterable
+### 🔹 Module `collections.abc`
 
-```
-# is_iterable and is_iterator Function Implementation
-The provided code implements two functions: `is_iterable` and `is_iterator`.
-The `is_iterable` function checks if an object is iterable (i.e., supports iteration, such as lists, strings, or other sequences).
-The `is_iterator` function checks if an object is an iterator (i.e., supports the iterator protocol with `__next__` and `__iter__` methods, such as iterator objects returned by `iter()`).
-Intended for scenarios requiring type checking to determine whether an object can be iterated over or is an iterator, such as in data processing, loop handling, or debugging.
-It’s also suitable for educational examples of Python’s type system and iteration protocols.
-```
+-   **Purpose**: Offers abstract base classes for collections (e.g., `Sequence`, `Mapping`).
+-   **Benefits**: Ensures subclasses conform to collection interfaces with minimal code.
 
-5. 7_5_5_CustomRange
+## Practical Task 🧪
 
-```
-# CustomRange Class Implementation
-The provided code implements the `CustomRange` class, a subclass of `collections.abc.Sequence`.
-It represents a sequence of integers derived from single numbers and ranges (e.g., `"1-4"` for 1, 2, 3, 4).
-The class supports iteration, length calculation, reverse iteration, membership testing, and indexing (positive and negative).
-It accepts an arbitrary number of positional arguments (integers or range strings) during initialization.
-Intended for scenarios requiring a flexible sequence of integers from mixed inputs (single numbers and ranges), such as data processing, range-based iteration, or custom sequence handling.
-It’s also suitable for educational examples of sequence protocols and abstract base classes in Python.
-```
+### 1️⃣ **Abstract Class Implementations**
 
-6. 7_5_6_BitArray
+The lesson includes 8 practical tasks, each leveraging abstract classes:
 
-```
-# BitArray Class Implementation
-The provided code implements the `BitArray` class, a subclass of `collections.abc.Sequence`.
-It represents a sequence of bits (0s and 1s) initialized from an iterable, supporting iteration, indexing, length calculation, reverse iteration, membership testing, and bitwise operations (`~`, `&`, `|`).
-The class ensures independence from the input iterable and handles invalid operands for logical operations by returning `NotImplemented`.
-Intended for scenarios requiring manipulation of bit sequences, such as binary data processing, digital logic, or low-level programming.
-It’s also suitable for educational examples of sequence protocols, bitwise operations, and abstract base classes in Python.
-```
+1. **`Middle` Hierarchy**: Abstract base for average calculations.
 
-7. 7_5_7_DNA
+    - Subclasses: `Average`, `Median`, `Harmonic` for rating computations.
 
-```
-# DNA Class Implementation
-The provided code implements the `DNA` class, a subclass of `collections.abc.Sequence`.
-It represents a double-stranded DNA helix, initialized with the first strand (a string of nitrogenous bases: A, G, T, C).
-The class supports iteration, indexing, length calculation, reverse iteration, membership testing, equality comparison, and addition, using the principle of complementarity (A-T, G-C) to derive the second strand.
-Invalid operands for comparison or addition return `NotImplemented`.
-Intended for biological or bioinformatics applications, such as DNA sequence analysis, genetic simulations, or sequence alignment.
-It’s also suitable for educational examples of sequence protocols, operator overloading, and abstract base classes in Python.
-```
+2. **`ChessPiece` Hierarchy**: Abstract base for chess pieces.
 
-8. 7_5_8_SortedList
+    - Subclasses: `King`, `Knight` implement `can_move` for move validation.
 
-```
-# SortedList Class Implementation
-The provided code implements the `SortedList` class, a subclass of `collections.abc.Sequence`.
-It represents a list that maintains its elements in sorted order upon creation and modification.
-The class supports adding, removing, and updating elements while ensuring sort order, and provides iteration, indexing, membership testing, and arithmetic operations (`+`, `+=`, `*`, `*=`).
-Certain list methods (`append`, `insert`, `extend`, `reverse`, `__setitem__`, `__reversed__`) raise `NotImplementedError` to enforce the sorted nature of the list.
-Intended for scenarios requiring a dynamically maintained sorted list, such as priority queues, ranked data storage, or sorted collections in algorithms.
-It’s also suitable for educational examples of sequence protocols, operator overloading, and efficient insertion in Python.
-```
+3. **`Validator` Hierarchy**: Abstract descriptor for validation.
+
+    - Subclasses: `Number` (range check), `String` (length/predicate check).
+
+4. **`is_iterable`/`is_iterator` Functions**: Check iterable/iterator properties.
+
+    - Use type checking for iteration protocol compliance.
+
+5. **`CustomRange` Class**: Subclass of `Sequence`.
+
+    - Handles mixed integer and range inputs for iteration and indexing.
+
+6. **`BitArray` Class**: Subclass of `Sequence`.
+
+    - Manages bit sequences with bitwise operations.
+
+7. **`DNA` Class**: Subclass of `Sequence`.
+
+    - Models DNA strands with complementarity and sequence operations.
+
+8. **`SortedList` Class**: Subclass of `Sequence`.
+    - Maintains sorted order with restricted modification methods.
+
+💡 These tasks demonstrate abstract classes for enforcing interfaces and collection behaviors.
+
+## Benefits ✅
+
+-   Abstract classes ensure consistent subclass implementations.
+-   `abc` module enforces interface contracts with minimal overhead.
+-   `collections.abc` simplifies collection type customization.
+-   Robust designs support extensible, type-safe applications.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Create abstract classes with `abc` and `collections.abc`  
+✅ Implement collection-like interfaces for sequences and validators  
+✅ Apply abstract classes to practical use cases like chess and DNA modeling
+
+## Conclusion 🚀
+
+Mastering abstract classes and the `abc` and `collections.abc` modules empowers me to design robust, extensible interfaces.  
+From chess move validation to sorted lists, these tools ensure type safety and consistency, enhancing Python applications. 🧑‍💻✨
