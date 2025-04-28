@@ -65,10 +65,20 @@ Intended for scenarios requiring introspection of class hierarchies, such as deb
 It’s also suitable for educational examples of Python’s Method Resolution Order (MRO) and attribute lookup.
 ```
 
-4.
+4. 7_6_4_FamilyPerson
 
 ```
+# Family Hierarchy Implementation with Multiple Inheritance
 
+## Description 📝
+
+The provided code implements a hierarchy of four classes (`Father`, `Mother`, `Daughter`, `Son`) using multiple inheritance to minimize code duplication.
+An abstract base class `FamilyPerson` centralizes shared functionality (mood attribute and `be_strict`, `be_kind` methods).
+Each class defines specific behaviors as required, leveraging inheritance to reuse code efficiently.
+
+## Purpose 🎯
+
+Intended for modeling family member roles with shared and distinct behaviors, such as in simulations, role-based systems, or educational examples of multiple inheritance and abstract base classes in Python.
 ```
 
 5.
