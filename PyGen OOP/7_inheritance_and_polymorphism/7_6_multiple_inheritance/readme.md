@@ -13,18 +13,12 @@ This lesson has good theory explonation, has 5 programing practical tasks and 19
 
 ```
 # Class Hierarchy Implementation
-
-## Description 📝
-
 The provided code implements a class hierarchy based on the given diagram, using empty classes in Python.
 The hierarchy is structured as follows:
 
 -   `A` is the base class.
 -   `C`, `B`, and `D` directly inherit from `A`.
 -   `E` inherits from both `B` and `D` (multiple inheritance).
-
-## Purpose 🎯
-
 Intended to define a class hierarchy for use in scenarios requiring inheritance structures, such as object-oriented design, modeling relationships, or educational examples of single and multiple inheritance in Python.
 ```
 
@@ -32,9 +26,6 @@ Intended to define a class hierarchy for use in scenarios requiring inheritance 
 
 ```
 # Class Hierarchy Implementation
-
-## Description 📝
-
 The provided code implements a class hierarchy based on the given diagram, using empty classes in Python.
 The hierarchy is structured as follows:
 
@@ -43,9 +34,6 @@ The hierarchy is structured as follows:
 -   `B` inherits from `D` and `E` (multiple inheritance).
 -   `C` inherits from `F` and `G` (multiple inheritance).
 -   `A` inherits from `B` and `C` (multiple inheritance).
-
-## Purpose 🎯
-
 Intended for defining a class hierarchy for use in scenarios requiring complex inheritance structures, such as object-oriented design, modeling relationships, or educational examples of multiple inheritance in Python.
 ```
 
@@ -53,14 +41,8 @@ Intended for defining a class hierarchy for use in scenarios requiring complex i
 
 ```
 # get_method_owner Function Implementation
-
-## Description 📝
-
 The provided code implements the `get_method_owner` function, which takes a class (`cls`) and a method name (`method`) as arguments. It returns the class in the inheritance hierarchy of `cls` that defines the specified `method`.
 If the method is not found in `cls` or any of its ancestor classes, the function returns `None`.
-
-## Purpose 🎯
-
 Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic method resolution, or framework development.
 It’s also suitable for educational examples of Python’s Method Resolution Order (MRO) and attribute lookup.
 ```
@@ -69,15 +51,9 @@ It’s also suitable for educational examples of Python’s Method Resolution Or
 
 ```
 # Family Hierarchy Implementation with Multiple Inheritance
-
-## Description 📝
-
 The provided code implements a hierarchy of four classes (`Father`, `Mother`, `Daughter`, `Son`) using multiple inheritance to minimize code duplication.
 An abstract base class `FamilyPerson` centralizes shared functionality (mood attribute and `be_strict`, `be_kind` methods).
 Each class defines specific behaviors as required, leveraging inheritance to reuse code efficiently.
-
-## Purpose 🎯
-
 Intended for modeling family member roles with shared and distinct behaviors, such as in simulations, role-based systems, or educational examples of multiple inheritance and abstract base classes in Python.
 ```
 
@@ -85,15 +61,9 @@ Intended for modeling family member roles with shared and distinct behaviors, su
 
 ```
 # MROHelper Class Implementation
-
-## Description 📝
-
 The provided code implements the `MROHelper` class, which provides static methods for working with the Method Resolution Order (MRO) of arbitrary Python classes.
 The class includes three methods: `len` to get the MRO length, `class_by_index` to retrieve a class at a specific MRO index, and `index_by_class` to find the index of a parent class in a child’s MRO.
 The class takes no arguments during instantiation, as it only provides static utility methods.
-
-## Purpose 🎯
-
 Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic type checking, or framework development.
 It’s also suitable for educational examples of Python’s MRO and static methods.
 ```
