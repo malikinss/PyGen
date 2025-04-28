@@ -81,8 +81,19 @@ Each class defines specific behaviors as required, leveraging inheritance to reu
 Intended for modeling family member roles with shared and distinct behaviors, such as in simulations, role-based systems, or educational examples of multiple inheritance and abstract base classes in Python.
 ```
 
-5.
+5. 7_6_5_MROHelper
 
 ```
+# MROHelper Class Implementation
 
+## Description 📝
+
+The provided code implements the `MROHelper` class, which provides static methods for working with the Method Resolution Order (MRO) of arbitrary Python classes.
+The class includes three methods: `len` to get the MRO length, `class_by_index` to retrieve a class at a specific MRO index, and `index_by_class` to find the index of a parent class in a child’s MRO.
+The class takes no arguments during instantiation, as it only provides static utility methods.
+
+## Purpose 🎯
+
+Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic type checking, or framework development.
+It’s also suitable for educational examples of Python’s MRO and static methods.
 ```
