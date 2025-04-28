@@ -49,10 +49,20 @@ The hierarchy is structured as follows:
 Intended for defining a class hierarchy for use in scenarios requiring complex inheritance structures, such as object-oriented design, modeling relationships, or educational examples of multiple inheritance in Python.
 ```
 
-3.
+3. 7_6_3_get_method_owner
 
 ```
+# get_method_owner Function Implementation
 
+## Description 📝
+
+The provided code implements the `get_method_owner` function, which takes a class (`cls`) and a method name (`method`) as arguments. It returns the class in the inheritance hierarchy of `cls` that defines the specified `method`.
+If the method is not found in `cls` or any of its ancestor classes, the function returns `None`.
+
+## Purpose 🎯
+
+Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic method resolution, or framework development.
+It’s also suitable for educational examples of Python’s Method Resolution Order (MRO) and attribute lookup.
 ```
 
 4.
