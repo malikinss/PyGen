@@ -27,10 +27,20 @@ Intended for applications requiring date representation in localized formats, su
 It’s also suitable for educational examples of inheritance, abstract base classes, and date handling in Python.
 ```
 
-2.
+2. 7_7_2_Stat
 
 ```
+# MinStat, MaxStat, and AverageStat Class Implementation
 
+## Description 📝
+
+The provided code implements the `MinStat`, `MaxStat`, and `AverageStat` classes to compute the minimum, maximum, and average of a set of numbers, respectively.
+All classes inherit from an abstract base class `Stat`, which centralizes shared logic for storing numbers and implementing common methods (`add`, `clear`, and a generic `result`).
+Each class accepts an optional iterable of numbers during instantiation and provides methods to add numbers, compute the statistic, and clear the set.
+
+## Purpose 🎯
+
+Intended for applications requiring simple statistical computations on dynamic sets of numbers, such as data analysis, real-time monitoring, or educational examples of inheritance and abstract base classes in Python.
 ```
 
 3.
