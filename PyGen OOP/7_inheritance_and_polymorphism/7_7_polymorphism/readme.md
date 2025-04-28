@@ -43,8 +43,19 @@ Each class accepts an optional iterable of numbers during instantiation and prov
 Intended for applications requiring simple statistical computations on dynamic sets of numbers, such as data analysis, real-time monitoring, or educational examples of inheritance and abstract base classes in Python.
 ```
 
-3.
+3. 7_7_3_Paragraph
 
 ```
+# LeftParagraph and RightParagraph Class Implementation
 
+## Description 📝
+
+The provided code implements the `LeftParagraph` and `RightParagraph` classes to format paragraphs aligned to the left and right, respectively.
+Both classes inherit from an abstract base class `Paragraph`, which centralizes shared logic for managing lines, adding words, and handling line length constraints.
+Each class accepts a `length` parameter during instantiation and provides `add` to append words and `end` to print and clear the paragraph.
+
+## Purpose 🎯
+
+Intended for text formatting applications, such as document processing, typesetting, or console-based text alignment.
+It’s also suitable for educational examples of inheritance, abstract base classes, and text manipulation in Python.
 ```
