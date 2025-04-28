@@ -9,6 +9,13 @@ https://stepik.org/lesson/872533/step/1?unit=876917
 
 This lesson has good theory explonation, has 5 programing practical tasks and 19 theoretical questions presented on the website.
 
+7_6_multiple_inheritance
+├───7_6_1_class_hierarchy
+├───7_6_2_class_hierarchy
+├───7_6_3_get_method_owner
+├───7_6_4_FamilyPerson
+└───7_6_5_MROHelper
+
 1. 7_6_1_class_hierarchy
 
 ```
