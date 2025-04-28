@@ -10,6 +10,11 @@ https://stepik.org/lesson/872533/step/1?unit=876917
 
 This lesson has good theory explonation, has 3 programing practical tasks and 9 theoretical questions presented on the website.
 
+7_7_polymorphism
+├───7_7_1_AnyDate
+├───7_7_2_Stat
+└───7_7_3_Paragraph
+
 1. 7_7_1_AnyDate
 
 ```
