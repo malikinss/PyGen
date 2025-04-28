@@ -1,76 +1,82 @@
-Lesson 7.6: multiple inheritance
+# Lesson 7.6: Multiple Inheritance 🔗
 
-Multiple Inheritance
-The Diamond Inheritance Problem
-Method Resolution Order (MRO)
-Abstract: This lesson is about multiple inheritance in Python.
+## Description 📝
 
-https://stepik.org/lesson/872533/step/1?unit=876917
+This lesson covers:
 
-This lesson has good theory explonation, has 5 programing practical tasks and 19 theoretical questions presented on the website.
+-   Multiple inheritance in Python
+-   The diamond inheritance problem
+-   Method Resolution Order (MRO)
 
-7_6_multiple_inheritance
-├───7_6_1_class_hierarchy
-├───7_6_2_class_hierarchy
-├───7_6_3_get_method_owner
-├───7_6_4_FamilyPerson
-└───7_6_5_MROHelper
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 19 theoretical questions available on the Stepik platform.
 
-1. 7_6_1_class_hierarchy
+## Purpose 🎯
 
-```
-# Class Hierarchy Implementation
-The provided code implements a class hierarchy based on the given diagram, using empty classes in Python.
-The hierarchy is structured as follows:
+By the end of this lesson, I will:  
+✅ Understand and implement multiple inheritance  
+✅ Recognize and resolve the diamond inheritance problem  
+✅ Use Method Resolution Order (MRO) to predict attribute lookup  
+✅ Apply multiple inheritance to practical class hierarchies
 
--   `A` is the base class.
--   `C`, `B`, and `D` directly inherit from `A`.
--   `E` inherits from both `B` and `D` (multiple inheritance).
-Intended to define a class hierarchy for use in scenarios requiring inheritance structures, such as object-oriented design, modeling relationships, or educational examples of single and multiple inheritance in Python.
-```
+## Concepts & Theory 🔍
 
-2. 7_6_2_class_hierarchy
+### 🔹 Multiple Inheritance
 
-```
-# Class Hierarchy Implementation
-The provided code implements a class hierarchy based on the given diagram, using empty classes in Python.
-The hierarchy is structured as follows:
+-   **Purpose**: Allows a class to inherit from multiple parent classes.
+-   **How It Works**: Combines attributes and methods from all parents, resolved via MRO.
 
--   `H` is the base class.
--   `D`, `E`, `F`, and `G` directly inherit from `H`.
--   `B` inherits from `D` and `E` (multiple inheritance).
--   `C` inherits from `F` and `G` (multiple inheritance).
--   `A` inherits from `B` and `C` (multiple inheritance).
-Intended for defining a class hierarchy for use in scenarios requiring complex inheritance structures, such as object-oriented design, modeling relationships, or educational examples of multiple inheritance in Python.
-```
+### 🔹 The Diamond Inheritance Problem
 
-3. 7_6_3_get_method_owner
+-   **Purpose**: Addresses issues when a class inherits from multiple parents sharing a common base.
+-   **Solution**: Python’s MRO ensures a consistent, linear order for method resolution.
 
-```
-# get_method_owner Function Implementation
-The provided code implements the `get_method_owner` function, which takes a class (`cls`) and a method name (`method`) as arguments. It returns the class in the inheritance hierarchy of `cls` that defines the specified `method`.
-If the method is not found in `cls` or any of its ancestor classes, the function returns `None`.
-Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic method resolution, or framework development.
-It’s also suitable for educational examples of Python’s Method Resolution Order (MRO) and attribute lookup.
-```
+### 🔹 Method Resolution Order (MRO)
 
-4. 7_6_4_FamilyPerson
+-   **Purpose**: Defines the order in which Python searches for attributes in a class hierarchy.
+-   **How It Works**: Uses the C3 linearization algorithm, accessible via `__mro__` or `mro()`.
 
-```
-# Family Hierarchy Implementation with Multiple Inheritance
-The provided code implements a hierarchy of four classes (`Father`, `Mother`, `Daughter`, `Son`) using multiple inheritance to minimize code duplication.
-An abstract base class `FamilyPerson` centralizes shared functionality (mood attribute and `be_strict`, `be_kind` methods).
-Each class defines specific behaviors as required, leveraging inheritance to reuse code efficiently.
-Intended for modeling family member roles with shared and distinct behaviors, such as in simulations, role-based systems, or educational examples of multiple inheritance and abstract base classes in Python.
-```
+## Practical Task 🧪
 
-5. 7_6_5_MROHelper
+### 1️⃣ **Multiple Inheritance and MRO**
 
-```
-# MROHelper Class Implementation
-The provided code implements the `MROHelper` class, which provides static methods for working with the Method Resolution Order (MRO) of arbitrary Python classes.
-The class includes three methods: `len` to get the MRO length, `class_by_index` to retrieve a class at a specific MRO index, and `index_by_class` to find the index of a parent class in a child’s MRO.
-The class takes no arguments during instantiation, as it only provides static utility methods.
-Intended for scenarios requiring introspection of class hierarchies, such as debugging, dynamic type checking, or framework development.
-It’s also suitable for educational examples of Python’s MRO and static methods.
-```
+The lesson includes 5 practical tasks, each exploring multiple inheritance:
+
+1. **Class Hierarchy (Task 1)**: Empty class structure.
+
+    - `A` → `C`, `B`, `D` → `E` (inherits `B`, `D`).
+
+2. **Class Hierarchy (Task 2)**: Complex empty class structure.
+
+    - `H` → `D`, `E`, `F`, `G` → `B` (`D`, `E`), `C` (`F`, `G`) → `A` (`B`, `C`).
+
+3. **`get_method_owner` Function**: Finds the class defining a method.
+
+    - Takes `cls` and `method`, returns owning class or `None`.
+
+4. **`FamilyPerson` Hierarchy**: Family roles with shared behavior.
+
+    - `FamilyPerson` (abstract) → `Father`, `Mother`, `Daughter`, `Son`.
+
+5. **`MROHelper` Class**: Static MRO utilities.
+    - Methods: `len`, `class_by_index`, `index_by_class` for MRO introspection.
+
+💡 These tasks demonstrate multiple inheritance, MRO, and hierarchy introspection.
+
+## Benefits ✅
+
+-   Multiple inheritance enables flexible, reusable class designs.
+-   MRO ensures predictable attribute resolution in complex hierarchies.
+-   Understanding the diamond problem prevents inheritance pitfalls.
+-   Introspection tools simplify debugging and framework development.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Implement multiple inheritance for complex class hierarchies  
+✅ Use MRO to resolve method lookup and avoid diamond problem issues  
+✅ Apply MRO introspection to practical scenarios like family roles
+
+## Conclusion 🚀
+
+Mastering multiple inheritance and MRO empowers me to design sophisticated class hierarchies in Python.  
+From family role modeling to MRO utilities, these tools ensure clarity and flexibility in complex object-oriented systems. 🧑‍💻✨
