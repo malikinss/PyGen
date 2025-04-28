@@ -136,7 +136,25 @@ By the end of this lesson, I will:
 6. 7_6_multiple_inheritance
 
 ```
+# Lesson 7.6: Multiple Inheritance 🔗
 
+## Description 📝
+
+This lesson covers:
+
+-   Multiple inheritance in Python
+-   The diamond inheritance problem
+-   Method Resolution Order (MRO)
+
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 19 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand and implement multiple inheritance
+✅ Recognize and resolve the diamond inheritance problem
+✅ Use Method Resolution Order (MRO) to predict attribute lookup
+✅ Apply multiple inheritance to practical class hierarchies
 ```
 
 7. 7_7_polymorphism
