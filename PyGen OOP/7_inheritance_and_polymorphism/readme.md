@@ -160,7 +160,26 @@ By the end of this lesson, I will:
 7. 7_7_polymorphism
 
 ```
+# Lesson 7.7: Polymorphism 🌟
 
+## Description 📝
+
+This lesson covers:
+
+-   The concept of polymorphism in Python
+-   Polymorphism of operators
+-   Polymorphism of functions
+-   Polymorphism in class methods
+
+This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 9 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand polymorphism and its applications in Python
+✅ Implement polymorphic behavior in operators, functions, and methods
+✅ Design classes that share interfaces for flexible behavior
+✅ Apply polymorphism to practical scenarios like date formatting and statistics
 ```
 
 8. 7_8_composition
