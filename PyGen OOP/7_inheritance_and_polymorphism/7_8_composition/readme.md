@@ -25,10 +25,21 @@ Intended for geometric applications, such as graphics, simulations, or computati
 It’s also suitable for educational examples of object-oriented programming, class design, and string representation in Python.
 ```
 
-2.
+2. 7_8_2_ShoppingCart
 
 ```
+# Item and ShoppingCart Class Implementation
 
+## Description 📝
+
+The provided code implements the `Item` and `ShoppingCart` classes to represent a product and a shopping cart, respectively.
+The `Item` class stores a product’s name and price, with a string representation of `<name>, <price>$`.
+The `ShoppingCart` class manages a list of `Item` instances, supporting adding items, calculating the total cost, removing items by name, and providing a string representation of all items, one per line.
+
+## Purpose 🎯
+
+Intended for e-commerce applications, inventory management, or simulations involving shopping carts.
+It’s also suitable for educational examples of object-oriented programming, string representation, and list manipulation in Python.
 ```
 
 3.
