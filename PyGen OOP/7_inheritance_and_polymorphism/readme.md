@@ -27,9 +27,6 @@ This lesson covers:
 -   Multilevel inheritance
 
 This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand the fundamentals of inheritance in Python
 ✅ Define and override methods and attributes in subclasses
@@ -52,9 +49,6 @@ This lesson covers:
 -   Using descendant methods in a base class
 
 This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Override and extend methods to customize subclass behavior
 ✅ Use `super()` to leverage parent class functionality
@@ -75,9 +69,6 @@ This lesson covers:
 -   Inheritance from immutable built-in data types (`int`, `float`, `str`, `tuple`)
 
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 13 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand how to create instances of classes inheriting from immutable types
 ✅ Extend built-in immutable types (`int`, `float`, `str`, `tuple`) with custom behavior
@@ -99,9 +90,6 @@ This lesson covers:
 -   Using `UserDict` and `UserList` from the `collections` module
 
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Extend `dict` and `list` types with custom functionality
 ✅ Use `UserDict` and `UserList` for safer, flexible subclassing
@@ -123,9 +111,6 @@ This lesson covers:
 -   The `collections.abc` module for collection-based abstract classes
 
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 16 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand and create abstract classes using the `abc` module
 ✅ Use `collections.abc` to implement collection-like interfaces
@@ -147,9 +132,6 @@ This lesson covers:
 -   Method Resolution Order (MRO)
 
 This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 19 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand and implement multiple inheritance
 ✅ Recognize and resolve the diamond inheritance problem
@@ -172,9 +154,6 @@ This lesson covers:
 -   Polymorphism in class methods
 
 This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 9 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand polymorphism and its applications in Python
 ✅ Implement polymorphic behavior in operators, functions, and methods
@@ -195,9 +174,6 @@ This lesson covers:
 -   Composition versus inheritance
 
 This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
-
-## Purpose 🎯
-
 By the end of this lesson, I will:
 ✅ Understand composition and its role in object-oriented design
 ✅ Compare composition with inheritance for class relationships
