@@ -42,10 +42,20 @@ Intended for e-commerce applications, inventory management, or simulations invol
 It’s also suitable for educational examples of object-oriented programming, string representation, and list manipulation in Python.
 ```
 
-3.
+3. 7_8_3_Deck
 
 ```
+# Card and Deck Class Implementation
 
+## Description 📝
+
+The provided code implements the `Card` and `Deck` classes to represent a playing card and a standard deck of 52 playing cards, respectively.
+The `Card` class stores a suit and rank, with a string representation of `<suit><rank>`.
+The `Deck` class initializes a full deck ordered by suit and rank, supports shuffling (only when full) and dealing the last card, and provides a string representation of the remaining card count.
+
+## Purpose 🎯
+
+Intended for card game simulations, such as poker or blackjack, or educational examples of object-oriented programming, list manipulation, and exception handling in Python.
 ```
 
 4.
