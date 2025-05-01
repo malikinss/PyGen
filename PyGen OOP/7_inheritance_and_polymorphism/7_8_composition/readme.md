@@ -74,8 +74,18 @@ It handles key updates by moving existing keys to the end with new values and ra
 Intended for applications requiring a queue with key-based updates, such as task scheduling, caching with key priorities, or educational examples of queue operations, deque usage, and Python’s collection protocols.
 ```
 
-5.
+5. 7_8_5_Conference
 
 ```
+# Lecture and Conference Class Implementation
 
+## Description 📝
+
+The provided code implements the `Lecture` and `Conference` classes to represent a talk and a one-day conference of consecutive talks, respectively.
+The `Lecture` class stores a topic, start time, and duration, with times processed using `datetime`.
+The `Conference` class manages a list of lectures, ensuring no overlaps, and provides methods to calculate total duration, longest lecture, and longest break, all formatted as `HH:MM`.
+
+## Purpose 🎯
+
+Intended for scheduling applications, such as conference planning, event management, or educational examples of time manipulation, exception handling, and object-oriented programming in Python.
 ```
