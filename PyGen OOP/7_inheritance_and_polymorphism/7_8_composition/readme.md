@@ -58,10 +58,20 @@ The `Deck` class initializes a full deck ordered by suit and rank, supports shuf
 Intended for card game simulations, such as poker or blackjack, or educational examples of object-oriented programming, list manipulation, and exception handling in Python.
 ```
 
-4.
+4. 7_8_4_Queue
 
 ```
+# Queue Class Implementation
 
+## Description 📝
+
+The provided code implements the `Queue` class to represent a queue of key:value pairs, using a `collections.deque` for efficient operations.
+The class supports initialization with a list, dictionary, or no arguments, adding or updating key:value pairs, popping the first pair, and providing formal string representation and length.
+It handles key updates by moving existing keys to the end with new values and raises a `KeyError` for popping from an empty queue.
+
+## Purpose 🎯
+
+Intended for applications requiring a queue with key-based updates, such as task scheduling, caching with key priorities, or educational examples of queue operations, deque usage, and Python’s collection protocols.
 ```
 
 5.
