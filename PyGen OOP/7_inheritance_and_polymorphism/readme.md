@@ -16,16 +16,11 @@ This chapter separated on 8 lessons that have good theory explonation, 49 practi
 
 ```
 # Lesson 7.1: Inheritance (Part 1) 🧬
-
-## Description 📝
-
 This lesson covers:
-
 -   Introduction to inheritance in Python
 -   Defining and overriding attributes and methods
 -   Implicit inheritance and the `object` class
 -   Multilevel inheritance
-
 This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand the fundamentals of inheritance in Python
@@ -38,16 +33,11 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.2: Inheritance (Part 2) 🧬
-
-## Description 📝
-
 This lesson covers:
-
 -   Overriding methods in subclasses
 -   Extending methods to enhance inherited behavior
 -   The `super()` function for accessing parent class methods
 -   Using descendant methods in a base class
-
 This lesson includes a detailed theoretical explanation, 6 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Override and extend methods to customize subclass behavior
@@ -60,14 +50,9 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.3: Inheritance (Part 3) 🧬
-
-## Description 📝
-
 This lesson covers:
-
 -   The process of creating class instances
 -   Inheritance from immutable built-in data types (`int`, `float`, `str`, `tuple`)
-
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 13 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand how to create instances of classes inheriting from immutable types
@@ -80,15 +65,10 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.4: Inheritance (Part 4) 🧬
-
-## Description 📝
-
 This lesson covers:
-
 -   Inheritance from the `dict` type
 -   Inheritance from the `list` type
 -   Using `UserDict` and `UserList` from the `collections` module
-
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 14 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Extend `dict` and `list` types with custom functionality
@@ -101,15 +81,10 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.5: Abstract Classes and Module abc 📚
-
-## Description 📝
-
 This lesson covers:
-
 -   Abstract classes in Python
 -   The `abc` module for defining abstract base classes
 -   The `collections.abc` module for collection-based abstract classes
-
 This lesson includes a detailed theoretical explanation, 8 programming practical tasks, and 16 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand and create abstract classes using the `abc` module
@@ -122,15 +97,10 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.6: Multiple Inheritance 🔗
-
-## Description 📝
-
 This lesson covers:
-
 -   Multiple inheritance in Python
 -   The diamond inheritance problem
 -   Method Resolution Order (MRO)
-
 This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 19 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand and implement multiple inheritance
@@ -143,16 +113,11 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.7: Polymorphism 🌟
-
-## Description 📝
-
 This lesson covers:
-
 -   The concept of polymorphism in Python
 -   Polymorphism of operators
 -   Polymorphism of functions
 -   Polymorphism in class methods
-
 This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 9 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand polymorphism and its applications in Python
@@ -165,14 +130,9 @@ By the end of this lesson, I will:
 
 ```
 # Lesson 7.8: Composition 🛠️
-
-## Description 📝
-
 This lesson covers:
-
 -   The concept of composition in class design
 -   Composition versus inheritance
-
 This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
 By the end of this lesson, I will:
 ✅ Understand composition and its role in object-oriented design
