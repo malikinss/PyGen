@@ -92,7 +92,14 @@ In this chapter, I will:
 7. 7_inheritance_and_polymorphism
 
 ```
-
+# Chapter 7: Inheritance and Polymorphism 🧬
+This chapter is dedicated to mastering **inheritance** and **polymorphism** in Python, enabling me to create flexible, reusable, and well-structured class hierarchies.
+It consists of **8 comprehensive lessons** with in-depth theoretical explanations, **49 hands-on programming tasks**, and **113 theoretical questions** available on the course platform.
+In this chapter, I will:
+-   Learn how to use **inheritance** to build class hierarchies and extend functionality.
+-   Understand **polymorphism** to create flexible and interchangeable objects.
+-   Explore **abstract classes**, **multiple inheritance**, and **composition** for advanced object-oriented design.
+-   Practice designing modular and reusable classes for real-world applications.
 ```
 
 8. 8_additional_features
