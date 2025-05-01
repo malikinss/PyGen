@@ -8,6 +8,13 @@ https://stepik.org/lesson/804638/step/1?unit=807762
 
 This lesson has good theory explonation, has 5 programing practical tasks and 7 theoretical questions presented on the website.
 
+7_8_composition
+├───7_8_1_Point
+├───7_8_2_ShoppingCart
+├───7_8_3_Deck
+├───7_8_4_Queue
+└───7_8_5_Conference
+
 1. 7_8_1_Point
 
 ```
