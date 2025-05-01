@@ -1,68 +1,77 @@
-Lesson 7.8: composition
+# Lesson 7.8: Composition 🛠️
 
-Composition
-Composition and inheritance
-Abstract. The lesson is devoted to composition in class design.
+## Description 📝
 
-https://stepik.org/lesson/804638/step/1?unit=807762
+This lesson covers:
 
-This lesson has good theory explonation, has 5 programing practical tasks and 7 theoretical questions presented on the website.
+-   The concept of composition in class design
+-   Composition versus inheritance
 
-7_8_composition
-├───7_8_1_Point
-├───7_8_2_ShoppingCart
-├───7_8_3_Deck
-├───7_8_4_Queue
-└───7_8_5_Conference
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
 
-1. 7_8_1_Point
+## Purpose 🎯
 
-```
-# Point and Circle Class Implementation
-The provided code implements the `Point` and `Circle` classes to represent a point and a circle in a 2D plane, respectively.
-The `Point` class stores x and y coordinates, while the `Circle` class stores a radius and a center (a `Point` instance).
-Both classes provide informal string representations as specified: `(x, y)` for `Point` and `(x, y), r = radius` for `Circle`.
-Intended for geometric applications, such as graphics, simulations, or computational geometry.
-It’s also suitable for educational examples of object-oriented programming, class design, and string representation in Python.
-```
+By the end of this lesson, I will:  
+✅ Understand composition and its role in object-oriented design  
+✅ Compare composition with inheritance for class relationships  
+✅ Implement classes using composition for practical scenarios  
+✅ Design flexible, modular systems with composed objects
 
-2. 7_8_2_ShoppingCart
+## Concepts & Theory 🔍
 
-```
-# Item and ShoppingCart Class Implementation
-The provided code implements the `Item` and `ShoppingCart` classes to represent a product and a shopping cart, respectively.
-The `Item` class stores a product’s name and price, with a string representation of `<name>, <price>$`.
-The `ShoppingCart` class manages a list of `Item` instances, supporting adding items, calculating the total cost, removing items by name, and providing a string representation of all items, one per line.
-Intended for e-commerce applications, inventory management, or simulations involving shopping carts.
-It’s also suitable for educational examples of object-oriented programming, string representation, and list manipulation in Python.
-```
+### 🔹 Composition
 
-3. 7_8_3_Deck
+-   **Purpose**: Builds complex objects by combining simpler ones as attributes.
+-   **How It Works**: Objects contain instances of other classes to delegate functionality.
 
-```
-# Card and Deck Class Implementation
-The provided code implements the `Card` and `Deck` classes to represent a playing card and a standard deck of 52 playing cards, respectively.
-The `Card` class stores a suit and rank, with a string representation of `<suit><rank>`.
-The `Deck` class initializes a full deck ordered by suit and rank, supports shuffling (only when full) and dealing the last card, and provides a string representation of the remaining card count.
-Intended for card game simulations, such as poker or blackjack, or educational examples of object-oriented programming, list manipulation, and exception handling in Python.
-```
+### 🔹 Composition and Inheritance
 
-4. 7_8_4_Queue
+-   **Composition**: "Has-a" relationship, promoting flexibility and loose coupling.
+-   **Inheritance**: "Is-a" relationship, useful for shared behavior but tighter coupling.
+-   **When to Use**: Composition for modular design; inheritance for hierarchical specialization.
 
-```
-# Queue Class Implementation
-The provided code implements the `Queue` class to represent a queue of key:value pairs, using a `collections.deque` for efficient operations.
-The class supports initialization with a list, dictionary, or no arguments, adding or updating key:value pairs, popping the first pair, and providing formal string representation and length.
-It handles key updates by moving existing keys to the end with new values and raises a `KeyError` for popping from an empty queue.
-Intended for applications requiring a queue with key-based updates, such as task scheduling, caching with key priorities, or educational examples of queue operations, deque usage, and Python’s collection protocols.
-```
+## Practical Task 🧪
 
-5. 7_8_5_Conference
+### 1️⃣ **Composition-Based Class Design**
 
-```
-# Lecture and Conference Class Implementation
-The provided code implements the `Lecture` and `Conference` classes to represent a talk and a one-day conference of consecutive talks, respectively.
-The `Lecture` class stores a topic, start time, and duration, with times processed using `datetime`.
-The `Conference` class manages a list of lectures, ensuring no overlaps, and provides methods to calculate total duration, longest lecture, and longest break, all formatted as `HH:MM`.
-Intended for scheduling applications, such as conference planning, event management, or educational examples of time manipulation, exception handling, and object-oriented programming in Python.
-```
+The lesson includes 5 practical tasks, each implementing classes using composition:
+
+1. **`Point` and `Circle` Classes**: Geometric objects.
+
+    - `Point`: x, y coordinates; `Circle`: radius and `Point` center.
+
+2. **`Item` and `ShoppingCart` Classes**: E-commerce model.
+
+    - `Item`: name, price; `ShoppingCart`: manages list of `Item` instances.
+
+3. **`Card` and `Deck` Classes**: Card game components.
+
+    - `Card`: suit, rank; `Deck`: manages 52 `Card` instances.
+
+4. **`Queue` Class**: Key-value queue.
+
+    - Uses `deque` to manage key:value pairs with updates and pops.
+
+5. **`Lecture` and `Conference` Classes**: Event scheduling.
+    - `Lecture`: topic, time, duration; `Conference`: manages non-overlapping `Lecture` instances.
+
+💡 These tasks showcase composition for building modular, real-world systems.
+
+## Benefits ✅
+
+-   Composition promotes flexible, loosely coupled designs.
+-   Modular classes are easier to test and maintain.
+-   Composition avoids the complexity of deep inheritance hierarchies.
+-   Delegating functionality to composed objects enhances code reuse.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Design classes using composition for modular systems  
+✅ Compare composition and inheritance for appropriate use cases  
+✅ Implement practical examples like shopping carts and conference schedules
+
+## Conclusion 🚀
+
+Mastering composition enables me to create modular, maintainable Python code.  
+From geometric circles to conference schedules, composition fosters flexible designs, making complex systems easier to build and extend. 🧑‍💻✨
