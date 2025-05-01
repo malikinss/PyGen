@@ -185,5 +185,22 @@ By the end of this lesson, I will:
 8. 7_8_composition
 
 ```
+# Lesson 7.8: Composition 🛠️
 
+## Description 📝
+
+This lesson covers:
+
+-   The concept of composition in class design
+-   Composition versus inheritance
+
+This lesson includes a detailed theoretical explanation, 5 programming practical tasks, and 7 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand composition and its role in object-oriented design
+✅ Compare composition with inheritance for class relationships
+✅ Implement classes using composition for practical scenarios
+✅ Design flexible, modular systems with composed objects
 ```
