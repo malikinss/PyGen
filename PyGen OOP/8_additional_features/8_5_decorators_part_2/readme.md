@@ -24,9 +24,20 @@ It uses `functools.wraps` to maintain the original `__init__` method’s metadat
 Intended for scenarios requiring instance tracking, such as debugging, monitoring object creation, or educational examples of Python class decorators, instance management, and method wrapping.
 ```
 
-2.
+2. 8_5_2_add_attr_to_class
 
 ```
+# add_attr_to_class Decorator Class Implementation
+
+## Description 📝
+
+The provided code implements the `add_attr_to_class` decorator as a class that adds arbitrary named arguments as attributes to a decorated class.
+It uses `setattr` to set the attributes on the class, bypassing the immutability of the class’s `mappingproxy` `__dict__`.
+The decorator supports any number of keyword arguments and returns the modified class unchanged in structure, ensuring the attributes are added as specified.
+
+## Purpose 🎯
+
+Intended for scenarios requiring dynamic addition of class attributes, such as metaprogramming, class configuration, or educational examples of Python class decorators, attribute manipulation, and handling `mappingproxy` limitations.
 
 ```
 
