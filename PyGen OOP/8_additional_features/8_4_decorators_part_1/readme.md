@@ -1,79 +1,90 @@
-Lesson 8.4: Decorators (part 1)
+# Lesson 8.4: Decorators (Part 1) 🎨
 
-Decorators
-Decorating Methods
-Decorator Classes
-Abstract: This lesson covers different types of decorators in Python.
+## Description 📝
 
-https://stepik.org/lesson/808351/step/1?unit=811596
+This lesson covers:
 
-This lesson has good theory explonation, has 7 programing practical tasks and 8 theoretical questions presented on the website.
+-   Decorators in Python
+-   Decorating methods with class-based decorators
+-   Creating decorator classes for advanced functionality
 
-1.
+This lesson includes a detailed theoretical explanation, 7 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
 
-```
-# reverse_args Decorator Class Implementation
-The provided code implements the `reverse_args` decorator as a class that reverses the order of positional arguments passed to a decorated function.
-The decorator uses `functools.update_wrapper` to preserve the metadata of the decorated function and supports functions with any number of positional and keyword arguments, ensuring the function’s return value is passed through unchanged.
-Intended for scenarios requiring argument order manipulation, such as testing, debugging, or educational examples of Python decorators, callable classes, and metadata preservation.
-```
+## Purpose 🎯
 
-2. 8_4_2_limited_calls
+By the end of this lesson, I will:  
+✅ Understand how decorators enhance function behavior  
+✅ Create class-based decorators for methods and functions  
+✅ Implement decorators for argument validation, exception handling, and call limits  
+✅ Apply decorators to practical scenarios like type checking and error management
 
-```
-# limited_calls Decorator Class Implementation
-The provided code implements the `limited_calls` decorator as a class that restricts a decorated function to a maximum of `n` calls.
-It uses `functools.wraps` to preserve the decorated function's metadata and raises a `MaxCallsException` with the specified message if the call limit is exceeded.
-The decorator supports functions with any number of positional and keyword arguments and passes the function’s return value unchanged.
-Intended for scenarios requiring call restrictions, such as rate limiting, resource management, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
-```
+## Concepts & Theory 🔍
 
-3. 8_4_3_takes_numbers
+### 🔹 Decorators
 
-```
-# takes_numbers Decorator Class Implementation
-The provided code implements the `takes_numbers` decorator as a class that ensures all positional and keyword arguments passed to a decorated function are of type `int` or `float`.
-If any argument is of a different type, it raises a `TypeError` with the message "Arguments must be of type int or float".
-The decorator uses `functools.update_wrapper` to preserve the decorated function's metadata, supports arbitrary numbers of positional and keyword arguments, and passes the function’s return value unchanged.
-Intended for scenarios requiring type checking of numeric arguments, such as mathematical functions, data processing, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
-```
+-   **Purpose**: Wrap functions or methods to modify their behavior.
+-   **How They Work**: Use callable objects to intercept and augment function calls.
 
-4. 8_4_4_returns
+### 🔹 Decorating Methods
 
-```
-# returns Decorator Class Implementation
-The provided code implements the `returns` decorator as a class that ensures the return value of a decorated function matches a specified `datatype`.
-If the return value is not an instance of `datatype`, it raises a `TypeError`.
-The decorator uses `functools.wraps` to preserve the decorated function's metadata, supports arbitrary positional and keyword arguments, and passes the return value unchanged when valid.
-Intended for scenarios requiring return type validation, such as API development, type-safe programming, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
-```
+-   **Purpose**: Apply decorators to instance or class methods.
+-   **Challenges**: Handle `self` or `cls` correctly in the decorator logic.
 
-5. 8_4_5_exception_decorator
+### 🔹 Decorator Classes
 
-```
-# exception_decorator Class Implementation
-The provided code implements the `exception_decorator` as a class that wraps a function to capture its execution outcome.
-It returns a tuple: `(value, None)` if the function executes without raising an exception, where `value` is the function’s return value, or `(None, errortype)` if an exception occurs, where `errortype` is the type of the raised exception.
-The decorator uses `functools.update_wrapper` to preserve the decorated function's metadata and supports arbitrary positional and keyword arguments.
-Intended for scenarios requiring exception handling and result reporting, such as logging, debugging, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
-```
+-   **Purpose**: Use classes as decorators for stateful or complex wrapping logic.
+-   **Benefits**: Enable reusable, configurable decorator implementations.
 
-6. 8_4_6_ignore_exception
+## Practical Task 🧪
 
-```
-# ignore_exception Decorator Class Implementation
-The provided code implements the `ignore_exception` decorator as a class that catches specified exception types, prints "Exception <exception type> handled", and returns `None`.
-If an exception is not one of the specified types, it is re-raised.
-The decorator uses `functools.wraps` to preserve the decorated function's metadata, supports arbitrary positional and keyword arguments, and does not consume the function’s return value when no exception occurs.
-Intended for scenarios requiring selective exception handling, such as logging, error suppression, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
-```
+### 1️⃣ **Class-Based Decorators**
 
-7. 8_4_7_type_check
+The lesson includes 7 practical tasks, each implementing a class-based decorator:
 
-```
-# type_check Decorator Class Implementation
-The provided code implements the `type_check` decorator as a class that ensures the types of positional arguments passed to a decorated function match the types specified in a provided list.
-It checks that the type of each positional argument corresponds to the respective type in the `types` list, raising a `TypeError` if any mismatch occurs.
-The decorator handles cases where the number of arguments is less than or greater than the number of types, uses `functools.wraps` to preserve metadata, supports arbitrary positional and keyword arguments, and passes the function’s return value unchanged.
-Intended for scenarios requiring strict type checking of positional arguments, such as API validation, type-safe programming, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
-```
+1. **`reverse_args` Decorator**: Reverses positional argument order.
+
+    - Preserves metadata with `functools.update_wrapper`.
+
+2. **`limited_calls` Decorator**: Limits function calls to `n`.
+
+    - Raises `MaxCallsException` when limit exceeded.
+
+3. **`takes_numbers` Decorator**: Ensures arguments are `int` or `float`.
+
+    - Raises `TypeError` for non-numeric arguments.
+
+4. **`returns` Decorator**: Validates return value type.
+
+    - Raises `TypeError` for invalid return types.
+
+5. **`exception_decorator` Decorator**: Captures execution outcome.
+
+    - Returns `(value, None)` or `(None, errortype)`.
+
+6. **`ignore_exception` Decorator**: Suppresses specified exceptions.
+
+    - Prints exception message and returns `None`.
+
+7. **`type_check` Decorator**: Matches argument types to a list.
+    - Raises `TypeError` for type mismatches.
+
+💡 These tasks demonstrate decorators for argument manipulation, type safety, and error handling.
+
+## Benefits ✅
+
+-   Decorators enhance functions without modifying their core logic.
+-   Class-based decorators offer stateful, reusable solutions.
+-   Metadata preservation ensures compatibility with introspection tools.
+-   Type and exception handling improve code robustness.
+
+## Output 📜
+
+After completing this lesson, I now:  
+✅ Create class-based decorators for methods and functions  
+✅ Implement decorators for validation, limits, and error handling  
+✅ Apply decorators to practical use cases like type-safe APIs
+
+## Conclusion 🚀
+
+Mastering decorators empowers me to write modular, reusable Python code.  
+From argument validation to exception management, class-based decorators provide powerful tools for enhancing function behavior in diverse applications. 🧑‍💻✨
