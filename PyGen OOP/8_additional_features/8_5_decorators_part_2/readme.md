@@ -57,10 +57,20 @@ It uses `json.load` to parse the file and `setattr` to add each key-value pair a
 Intended for scenarios requiring dynamic class configuration from JSON data, such as configuration management, data-driven programming, or educational examples of Python class decorators, file I/O, JSON parsing, and attribute manipulation.
 ```
 
-4.
+4. 8_5_4_singleton
 
 ```
+# singleton Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `singleton` decorator as a class that transforms a decorated class into a singleton, ensuring only one instance is created.
+The decorator stores a single instance in a class-level `_instance` attribute and reuses it for subsequent calls, while allowing the class’s `__init__` to be called each time with new arguments.
+It supports arbitrary positional and keyword arguments for `__init__` and uses direct object creation via `object.__new__` to bypass `__init__` during instance creation.
+
+## Purpose 🎯
+
+Intended for scenarios requiring a single instance of a class, such as configuration managers, logging systems, or educational examples of Python class decorators, singleton patterns, and instance management.
 ```
 
 5.
