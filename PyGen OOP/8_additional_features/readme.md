@@ -90,7 +90,25 @@ By the end of this lesson, I will:
 4. 8_4_decorators_part_1
 
 ```
+# Lesson 8.4: Decorators (Part 1) 🎨
 
+## Description 📝
+
+This lesson covers:
+
+-   Decorators in Python
+-   Decorating methods with class-based decorators
+-   Creating decorator classes for advanced functionality
+
+This lesson includes a detailed theoretical explanation, 7 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand how decorators enhance function behavior
+✅ Create class-based decorators for methods and functions
+✅ Implement decorators for argument validation, exception handling, and call limits
+✅ Apply decorators to practical scenarios like type checking and error management
 ```
 
 5. 8_5_decorators_part_2
