@@ -41,8 +41,18 @@ Each enum element supports a `text_value` method that returns the season’s nam
 Intended for applications requiring localized season names, such as calendars, weather apps, or educational examples of Python enumerations, method implementation on enum elements, and internationalization.
 ```
 
-3.
+3. 8_2_3_NextDate
 
 ```
+# Weekday and NextDate Class Implementation
 
+## Description 📝
+
+The provided code implements the `Weekday` class as a Python enumeration using `enum.Enum` to represent days of the week, and the `NextDate` class to determine the next date corresponding to a specified weekday relative to a given date.
+The `Weekday` enum defines seven days with values 0–6.
+The `NextDate` class takes a current date, a target weekday, and a boolean flag to consider the current date, providing methods to return the next matching date and the number of days until it.
+
+## Purpose 🎯
+
+Intended for scheduling applications, such as calendar systems, event planning, or educational examples of Python enumerations, date manipulation, and modular arithmetic for weekday calculations.
 ```
