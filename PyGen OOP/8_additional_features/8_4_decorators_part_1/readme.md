@@ -104,8 +104,18 @@ The decorator uses `functools.wraps` to preserve the decorated function's metada
 Intended for scenarios requiring selective exception handling, such as logging, error suppression, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
-7.
+7. 8_4_7_type_check
 
 ```
+# type_check Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `type_check` decorator as a class that ensures the types of positional arguments passed to a decorated function match the types specified in a provided list.
+It checks that the type of each positional argument corresponds to the respective type in the `types` list, raising a `TypeError` if any mismatch occurs.
+The decorator handles cases where the number of arguments is less than or greater than the number of types, uses `functools.wraps` to preserve metadata, supports arbitrary positional and keyword arguments, and passes the function’s return value unchanged.
+
+## Purpose 🎯
+
+Intended for scenarios requiring strict type checking of positional arguments, such as API validation, type-safe programming, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
 ```
