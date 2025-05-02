@@ -11,6 +11,10 @@ https://stepik.org/lesson/958398/step/1?unit=964840
 
 This lesson has good theory explonation, has 2 programing practical tasks and 13 theoretical questions presented on the website.
 
+8_3_bit_flags
+├───8_3_1_OrderStatus
+└───8_3_2_Movie
+
 1. 8_3_1_OrderStatus
 
 ```
