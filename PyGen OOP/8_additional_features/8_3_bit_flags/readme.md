@@ -15,9 +15,6 @@ This lesson has good theory explonation, has 2 programing practical tasks and 13
 
 ```
 # OrderStatus Flag Implementation
-
-## Description 📝
-
 The provided code implements the `OrderStatus` class as a Python flag enumeration using `enum.Flag`.
 It defines three elements (`ORDER_PLACED`, `PAYMENT_RECEIVED`, `SHIPPING_COMPLETE`) with automatically assigned values via `auto()`.
 As a `Flag`, it supports bitwise operations to represent combinations of order states.
@@ -28,9 +25,6 @@ Intended for applications tracking online order progress, such as e-commerce sys
 
 ```
 # MovieGenres and Movie Class Implementation
-
-## Description 📝
-
 The provided code implements the `MovieGenres` class as a Python flag enumeration using `enum.Flag` and the `Movie` class to represent a movie with a name and genres.
 The `MovieGenres` flag defines five genres (`ACTION`, `COMEDY`, `DRAMA`, `FANTASY`, `HORROR`) with automatically assigned values.
 The `Movie` class stores a name and genres, provides a method to check genre membership, and has a string representation of the movie’s name.
