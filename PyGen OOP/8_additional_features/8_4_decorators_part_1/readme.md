@@ -88,10 +88,20 @@ The decorator uses `functools.update_wrapper` to preserve the decorated function
 Intended for scenarios requiring exception handling and result reporting, such as logging, debugging, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
-6.
+6. 8_4_6_ignore_exception
 
 ```
+# ignore_exception Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `ignore_exception` decorator as a class that catches specified exception types, prints "Exception <exception type> handled", and returns `None`.
+If an exception is not one of the specified types, it is re-raised.
+The decorator uses `functools.wraps` to preserve the decorated function's metadata, supports arbitrary positional and keyword arguments, and does not consume the function’s return value when no exception occurs.
+
+## Purpose 🎯
+
+Intended for scenarios requiring selective exception handling, such as logging, error suppression, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
 7.
