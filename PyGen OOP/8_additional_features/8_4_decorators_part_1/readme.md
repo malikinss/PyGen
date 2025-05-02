@@ -24,10 +24,20 @@ The decorator uses `functools.update_wrapper` to preserve the metadata of the de
 Intended for scenarios requiring argument order manipulation, such as testing, debugging, or educational examples of Python decorators, callable classes, and metadata preservation.
 ```
 
-2.
+2. 8_4_2_limited_calls
 
 ```
+# limited_calls Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `limited_calls` decorator as a class that restricts a decorated function to a maximum of `n` calls.
+It uses `functools.wraps` to preserve the decorated function's metadata and raises a `MaxCallsException` with the specified message if the call limit is exceeded.
+The decorator supports functions with any number of positional and keyword arguments and passes the function’s return value unchanged.
+
+## Purpose 🎯
+
+Intended for scenarios requiring call restrictions, such as rate limiting, resource management, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
 3.
