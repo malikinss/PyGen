@@ -9,6 +9,11 @@ https://stepik.org/lesson/794703/step/1?unit=797455
 
 This lesson has good theory explonation, has 3 programing practical tasks and 21 theoretical questions presented on the website.
 
+8_2_enumerations
+├───8_2_1_HTTPStatusCodes
+├───8_2_2_Seasons
+└───8_2_3_NextDate
+
 1. 8_2_1_HTTPStatusCodes
 
 ```
