@@ -39,7 +39,25 @@ By the end of this lesson, I will:
 2. 8_2_enumerations
 
 ```
+# Lesson 8.2: Enumerations and Class Enum 📋
 
+## Description 📝
+
+This lesson covers:
+
+-   Enumerations in Python
+-   Creating enumerations with the `Enum` class
+-   Capabilities and features of enumerations
+
+This lesson includes a detailed theoretical explanation, 3 programming practical tasks, and 21 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand the purpose and structure of enumerations
+✅ Create and use enumerations with `Enum` for type-safe constants
+✅ Implement methods on enum elements for custom behavior
+✅ Apply enumerations to practical scenarios like HTTP codes and date scheduling
 ```
 
 3. 8_3_bit_flags
