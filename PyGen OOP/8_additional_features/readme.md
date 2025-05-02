@@ -63,7 +63,28 @@ By the end of this lesson, I will:
 3. 8_3_bit_flags
 
 ```
+# Lesson 8.3: Bit Flags and Flag Class 🎌
 
+## Description 📝
+
+This lesson covers:
+
+-   Bit flags in Python
+-   The `Flag` class from the `enum` module
+-   Bitwise operators (`|`, `&`, `^`, `~`)
+-   Checking membership in flag combinations
+-   The zero element in flags
+-   Bit flag enhancements in Python 3.11
+
+This lesson includes a detailed theoretical explanation, 2 programming practical tasks, and 13 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand bit flags and their use in representing state combinations
+✅ Create flag enumerations with the `Flag` class
+✅ Use bitwise operators to manipulate flag combinations
+✅ Apply bit flags to practical scenarios like order tracking and movie genres
 ```
 
 4. 8_4_decorators_part_1
