@@ -41,10 +41,20 @@ Intended for scenarios requiring dynamic addition of class attributes, such as m
 
 ```
 
-3.
+3. 8_5_3_jsonattr
 
 ```
+# jsonattr Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `jsonattr` decorator as a class that reads a JSON file and adds its key-value pairs as attributes to a decorated class.
+The decorator takes a single argument, `filename`, which specifies the JSON file containing a JSON object.
+It uses `json.load` to parse the file and `setattr` to add each key-value pair as a class attribute, bypassing the immutability of the class’s `mappingproxy` `__dict__`.
+
+## Purpose 🎯
+
+Intended for scenarios requiring dynamic class configuration from JSON data, such as configuration management, data-driven programming, or educational examples of Python class decorators, file I/O, JSON parsing, and attribute manipulation.
 ```
 
 4.
