@@ -72,10 +72,20 @@ The decorator uses `functools.wraps` to preserve the decorated function's metada
 Intended for scenarios requiring return type validation, such as API development, type-safe programming, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
 ```
 
-5.
+5. 8_4_5_exception_decorator
 
 ```
+# exception_decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `exception_decorator` as a class that wraps a function to capture its execution outcome.
+It returns a tuple: `(value, None)` if the function executes without raising an exception, where `value` is the function’s return value, or `(None, errortype)` if an exception occurs, where `errortype` is the type of the raised exception.
+The decorator uses `functools.update_wrapper` to preserve the decorated function's metadata and supports arbitrary positional and keyword arguments.
+
+## Purpose 🎯
+
+Intended for scenarios requiring exception handling and result reporting, such as logging, debugging, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
 6.
