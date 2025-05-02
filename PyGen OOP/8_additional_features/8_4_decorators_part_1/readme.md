@@ -40,10 +40,20 @@ The decorator supports functions with any number of positional and keyword argum
 Intended for scenarios requiring call restrictions, such as rate limiting, resource management, or educational examples of Python decorators, callable classes, exception handling, and metadata preservation.
 ```
 
-3.
+3. 8_4_3_takes_numbers
 
 ```
+# takes_numbers Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `takes_numbers` decorator as a class that ensures all positional and keyword arguments passed to a decorated function are of type `int` or `float`.
+If any argument is of a different type, it raises a `TypeError` with the message "Arguments must be of type int or float".
+The decorator uses `functools.update_wrapper` to preserve the decorated function's metadata, supports arbitrary numbers of positional and keyword arguments, and passes the function’s return value unchanged.
+
+## Purpose 🎯
+
+Intended for scenarios requiring type checking of numeric arguments, such as mathematical functions, data processing, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
 ```
 
 4.
