@@ -56,10 +56,20 @@ The decorator uses `functools.update_wrapper` to preserve the decorated function
 Intended for scenarios requiring type checking of numeric arguments, such as mathematical functions, data processing, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
 ```
 
-4.
+4. 8_4_4_returns
 
 ```
+# returns Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `returns` decorator as a class that ensures the return value of a decorated function matches a specified `datatype`.
+If the return value is not an instance of `datatype`, it raises a `TypeError`.
+The decorator uses `functools.wraps` to preserve the decorated function's metadata, supports arbitrary positional and keyword arguments, and passes the return value unchanged when valid.
+
+## Purpose 🎯
+
+Intended for scenarios requiring return type validation, such as API development, type-safe programming, or educational examples of Python decorators, callable classes, type checking, and metadata preservation.
 ```
 
 5.
