@@ -34,13 +34,13 @@ This lesson has no theory explonation and theoretical questions but has 13 progr
 
 ```
 
-6.
+6. 9_1_6_HighScoreTable
 
 ```
 
 ```
 
-7.
+7. 9_1_7_Pagination
 
 ```
 
