@@ -41,10 +41,20 @@ The log entry includes the current date and time in `DD.MM.YYYY HH:MM:SS` format
 Intended for applications requiring logging capabilities, such as debugging, event tracking, or educational examples of Python mixins, datetime formatting, and class-based logging.
 ```
 
-3.
+3. 8_7_3_AttributesMixin
 
 ```
+# AttributesMixin Class Implementation
 
+## Description 📝
+
+The provided code implements the `AttributesMixin` class, a mixin that adds functionality to retrieve information about the public and protected attributes of class instances.
+It defines two methods: `get_public_attributes()` returns a list of tuples containing names and values of public attributes (those without a leading underscore), and `get_protected_attributes()` returns a list of tuples containing names and values of protected attributes (those with a single leading underscore, excluding magic attributes).
+The implementation uses `self.__dict__` to access instance attributes and filters them based on naming conventions.
+
+## Purpose 🎯
+
+Intended for applications requiring introspection of class instance attributes, such as debugging, serialization, or educational examples of Python mixins, attribute access, and naming conventions.
 ```
 
 4.
