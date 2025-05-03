@@ -25,10 +25,21 @@ The data class automatically generates an `__init__` method to initialize these 
 Intended for applications requiring structured representation of city data, such as geographic information systems, data analysis, or educational examples of Python data classes, automatic method generation, and comparison operations.
 ```
 
-2.
+2. 8_6_2_MusicAlbum
 
 ```
+# MusicAlbum Data Class Implementation
 
+## Description 📝
+
+The provided code implements the `MusicAlbum` class as an immutable Python data class using the `@dataclass(frozen=True)` decorator.
+It defines a music album with four attributes: `title` (string), `artist` (string), `genre` (string), and `year` (integer).
+The data class automatically generates an `__init__` method to initialize these attributes, a `__repr__` method for a formal string representation, and an `__eq__` method for equality comparison based on `title`, `artist`, and `year`.
+The `frozen=True` parameter ensures immutability, and `field` settings exclude `genre` and `year` from `__repr__` and `genre` from `__eq__` as required.
+
+## Purpose 🎯
+
+Intended for applications requiring structured, immutable representations of music albums, such as music libraries, catalog systems, or educational examples of Python data classes, immutability, and custom comparison logic.
 ```
 
 3.
