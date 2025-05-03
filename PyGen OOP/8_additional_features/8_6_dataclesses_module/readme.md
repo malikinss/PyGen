@@ -13,9 +13,6 @@ This lesson has good theory explonation, has 4 programing practical tasks and 22
 
 ```
 # City Data Class Implementation
-
-## Description 📝
-
 The provided code implements the `City` class as a Python data class using the `@dataclass` decorator.
 It defines a city with three attributes: `name` (string), `population` (integer), and `founded` (integer).
 The data class automatically generates an `__init__` method to initialize these attributes, a `__repr__` method for a formal string representation, and an `__eq__` method for equality comparison, meeting all specified requirements.
@@ -26,9 +23,6 @@ Intended for applications requiring structured representation of city data, such
 
 ```
 # MusicAlbum Data Class Implementation
-
-## Description 📝
-
 The provided code implements the `MusicAlbum` class as an immutable Python data class using the `@dataclass(frozen=True)` decorator.
 It defines a music album with four attributes: `title` (string), `artist` (string), `genre` (string), and `year` (integer).
 The data class automatically generates an `__init__` method to initialize these attributes, a `__repr__` method for a formal string representation, and an `__eq__` method for equality comparison based on `title`, `artist`, and `year`.
@@ -40,9 +34,6 @@ Intended for applications requiring structured, immutable representations of mus
 
 ```
 # Point Data Class Implementation
-
-## Description 📝
-
 The provided code implements the `Point` class as a Python data class using the `@dataclass` decorator.
 It represents a point on a coordinate plane with attributes `x` (float), `y` (float), and `quadrant` (int).
 The class accepts `x` and `y` coordinates with default values of `0.0`, computes the `quadrant` automatically, provides methods for symmetry about the x- and y-axes, and supports equality comparisons.
@@ -54,9 +45,6 @@ Intended for applications involving geometric computations, such as graphics, si
 
 ```
 # FootballPlayer and FootballTeam Data Class Implementation
-
-## Description 📝
-
 The provided code implements two Python data classes, `FootballPlayer` and `FootballTeam`, using the `@dataclass` decorator.
 `FootballPlayer` represents a football player with attributes `name`, `surname`, and `value`, supporting comparisons based on `value` and a custom string representation.
 `FootballTeam` represents a football team with a `name` and a `players` list, supporting equality comparisons based on `name` and a method to add players.
