@@ -58,7 +58,7 @@ This lesson has no theory explonation and theoretical questions but has 13 progr
 
 ```
 
-10.
+10. 9_1_10_Minesweeper
 
 ```
 
