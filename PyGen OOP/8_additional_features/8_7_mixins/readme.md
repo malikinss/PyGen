@@ -9,6 +9,12 @@ https://stepik.org/lesson/1525202/step/1?unit=1545578
 
 This lesson has good theory explonation, has 4 programing practical tasks and 8 theoretical questions presented on the website.
 
+8_7_mixins
+├───8_7_1_JsonSerializableMixin
+├───8_7_2_LoggerMixin
+├───8_7_3_AttributesMixin
+└───8_7_4_ToStringMixin
+
 1. 8_7_1_JsonSerializableMixin
 
 ```
