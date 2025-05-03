@@ -1,4 +1,4 @@
-Lesson 8.6: Mixins
+Lesson 8.7: Mixins
 
 Mixins
 Mixin usage scenarios
