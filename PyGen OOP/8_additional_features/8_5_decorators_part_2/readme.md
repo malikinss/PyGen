@@ -73,10 +73,20 @@ It supports arbitrary positional and keyword arguments for `__init__` and uses d
 Intended for scenarios requiring a single instance of a class, such as configuration managers, logging systems, or educational examples of Python class decorators, singleton patterns, and instance management.
 ```
 
-5.
+5. 8_5_5_snake_case
 
 ```
+# snake_case Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `snake_case` decorator as a class that renames non-magic methods (and optionally attributes) of a decorated class from Camel Case or lower Camel Case to Snake Case.
+The decorator takes a boolean argument `attrs` to determine whether class attributes should also be renamed.
+It uses regular expressions in a helper class `CaseHelper` to identify and convert names, ensuring only valid Camel Case names are renamed while preserving leading underscores and skipping magic methods (dunder methods).
+
+## Purpose 🎯
+
+Intended for scenarios requiring consistent naming conventions, such as code standardization, API design, or educational examples of Python class decorators, regular expressions, and dynamic attribute manipulation.
 ```
 
 6.
