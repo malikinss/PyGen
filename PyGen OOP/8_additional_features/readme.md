@@ -114,7 +114,24 @@ By the end of this lesson, I will:
 5. 8_5_decorators_part_2
 
 ```
+# Lesson 8.5: Decorators (Part 2) 🎨
 
+## Description 📝
+
+This lesson covers:
+
+-   Decorating classes in Python
+-   Practical examples of class decorators
+
+This lesson includes a detailed theoretical explanation, 7 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand how to decorate classes to modify their structure or behavior
+✅ Implement class decorators for instance tracking, attribute addition, and more
+✅ Apply class decorators to practical scenarios like singletons and naming conventions
+✅ Design flexible, reusable decorators for class customization
 ```
 
 6. 8_6_dataclesses_module
