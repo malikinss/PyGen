@@ -8,6 +8,15 @@ https://stepik.org/lesson/835206/step/1?unit=838840
 
 This lesson has good theory explonation, has 7 programing practical tasks and 8 theoretical questions presented on the website.
 
+8_5_decorators_part_2
+├───8_5_1_track_instances
+├───8_5_2_add_attr_to_class
+├───8_5_3_jsonattr
+├───8_5_4_singleton
+├───8_5_5_snake_case
+├───8_5_6_auto_repr
+└───8_5_7_limiter
+
 1. 8_5_1_track_instances
 
 ```
