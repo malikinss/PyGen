@@ -105,8 +105,19 @@ The resulting `__repr__` method generates a string of the form `<class name>(<at
 Intended for scenarios requiring standardized string representations of class instances, such as debugging, logging, or educational examples of Python class decorators, string representation, and dynamic method addition.
 ```
 
-7.
+7. 8_5_7_limiter
 
 ```
+# limiter Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `limiter` decorator as a class that restricts the number of instances a decorated class can create to a specified `limit`.
+It uses a `unique` attribute to identify instances and ensures that instances with the same identifier are not duplicated.
+If the instance limit is exceeded and the identifier is new, it returns either the first or last created instance based on the `lookup` parameter (`FIRST` or `LAST`).
+The decorator supports arbitrary `__init__` arguments and maintains instance state in a dictionary.
+
+## Purpose 🎯
+
+Intended for scenarios requiring controlled instance creation, such as resource management, caching, or educational examples of Python class decorators, instance limiting, and identifier-based deduplication.
 ```
