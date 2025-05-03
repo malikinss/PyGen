@@ -137,7 +137,25 @@ By the end of this lesson, I will:
 6. 8_6_dataclesses_module
 
 ```
+# Lesson 8.6: Dataclasses Module 🗂️
 
+## Description 📝
+
+This lesson covers:
+
+-   Data classes in Python
+-   The `dataclasses` module
+-   The `@dataclass` decorator for automatic method generation
+
+This lesson includes a detailed theoretical explanation, 4 programming practical tasks, and 22 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand the role of data classes in simplifying class design
+✅ Use the `@dataclass` decorator to automate method generation
+✅ Implement data classes with custom initialization and comparison
+✅ Apply data classes to practical scenarios like city and team data
 ```
 
 7. 8_7_mixins
