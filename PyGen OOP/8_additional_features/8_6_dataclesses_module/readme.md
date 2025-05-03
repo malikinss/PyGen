@@ -9,6 +9,12 @@ https://stepik.org/lesson/803002/step/1?unit=806074
 
 This lesson has good theory explonation, has 4 programing practical tasks and 22 theoretical questions presented on the website.
 
+8_6_dataclesses_module
+├───8_6_1_City
+├───8_6_2_MusicAlbum
+├───8_6_3_Point
+└───8_6_4_FootballTeam
+
 1. 8_6_1_City
 
 ```
