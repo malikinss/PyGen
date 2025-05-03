@@ -42,10 +42,21 @@ The `frozen=True` parameter ensures immutability, and `field` settings exclude `
 Intended for applications requiring structured, immutable representations of music albums, such as music libraries, catalog systems, or educational examples of Python data classes, immutability, and custom comparison logic.
 ```
 
-3.
+3. 8_6_3_Point
 
 ```
+# Point Data Class Implementation
 
+## Description 📝
+
+The provided code implements the `Point` class as a Python data class using the `@dataclass` decorator.
+It represents a point on a coordinate plane with attributes `x` (float), `y` (float), and `quadrant` (int).
+The class accepts `x` and `y` coordinates with default values of `0.0`, computes the `quadrant` automatically, provides methods for symmetry about the x- and y-axes, and supports equality comparisons.
+The implementation uses `dataclasses.field` to configure `quadrant` and includes a `__post_init__` method to compute the quadrant based on coordinates.
+
+## Purpose 🎯
+
+Intended for applications involving geometric computations, such as graphics, simulations, or educational examples of Python data classes, coordinate geometry, and custom attribute initialization.
 ```
 
 4.
