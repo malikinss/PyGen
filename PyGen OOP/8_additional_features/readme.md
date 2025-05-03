@@ -161,5 +161,23 @@ By the end of this lesson, I will:
 7. 8_7_mixins
 
 ```
+# Lesson 8.7: Mixins 🧩
 
+## Description 📝
+
+This lesson covers:
+
+-   Mixins in Python
+-   Scenarios for using mixins
+-   Issues and considerations when using mixins
+
+This lesson includes a detailed theoretical explanation, 4 programming practical tasks, and 8 theoretical questions available on the Stepik platform.
+
+## Purpose 🎯
+
+By the end of this lesson, I will:
+✅ Understand the concept and purpose of mixins in class design
+✅ Implement mixins to add reusable functionality to classes
+✅ Recognize appropriate use cases and potential pitfalls of mixins
+✅ Apply mixins to practical scenarios like logging and serialization
 ```
