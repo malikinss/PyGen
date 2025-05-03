@@ -59,8 +59,19 @@ The implementation uses `dataclasses.field` to configure `quadrant` and includes
 Intended for applications involving geometric computations, such as graphics, simulations, or educational examples of Python data classes, coordinate geometry, and custom attribute initialization.
 ```
 
-4.
+4. 8_6_4_FootballTeam
 
 ```
+# FootballPlayer and FootballTeam Data Class Implementation
 
+## Description 📝
+
+The provided code implements two Python data classes, `FootballPlayer` and `FootballTeam`, using the `@dataclass` decorator.
+`FootballPlayer` represents a football player with attributes `name`, `surname`, and `value`, supporting comparisons based on `value` and a custom string representation.
+`FootballTeam` represents a football team with a `name` and a `players` list, supporting equality comparisons based on `name` and a method to add players.
+The implementation leverages `dataclasses.field` to customize initialization, representation, and comparison behavior.
+
+## Purpose 🎯
+
+Intended for applications managing sports data, such as team management systems, player statistics, or educational examples of Python data classes, comparison operations, and dynamic list attributes.
 ```
