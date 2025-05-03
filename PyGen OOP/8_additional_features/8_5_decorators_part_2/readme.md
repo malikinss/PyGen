@@ -89,10 +89,20 @@ It uses regular expressions in a helper class `CaseHelper` to identify and conve
 Intended for scenarios requiring consistent naming conventions, such as code standardization, API design, or educational examples of Python class decorators, regular expressions, and dynamic attribute manipulation.
 ```
 
-6.
+6. 8_5_6_auto_repr
 
 ```
+# auto_repr Decorator Class Implementation
 
+## Description 📝
+
+The provided code implements the `auto_repr` decorator as a class that adds a formal string representation (`__repr__`) to a decorated class.
+The decorator takes two arguments: `args` (a list of attribute names to display as values) and `kwargs` (a list of attribute names to display as `name=value`).
+The resulting `__repr__` method generates a string of the form `<class name>(<attribute>, <attribute>, ...)`, where attributes from `args` appear as values and attributes from `kwargs` appear as `name=value`, in the order specified by the lists.
+
+## Purpose 🎯
+
+Intended for scenarios requiring standardized string representations of class instances, such as debugging, logging, or educational examples of Python class decorators, string representation, and dynamic method addition.
 ```
 
 7.
