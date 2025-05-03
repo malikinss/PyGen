@@ -106,16 +106,9 @@ In this chapter, I will:
 
 ```
 # Chapter 8: Additional Features ⚙️
-
-## Description 📝
-
 This chapter is dedicated to exploring **advanced Python features** that enhance class design, code efficiency, and maintainability.
 It consists of **7 comprehensive lessons** with detailed theoretical explanations, **28 hands-on programming tasks**, and **91 theoretical questions** available on the course platform.
-
-## Purpose 🎯
-
 In this chapter, I will:
-
 -   Learn how to optimize classes using **slots**, **data classes**, and **mixins**.
 -   Understand how to implement **enumerations**, **bit flags**, and **decorators** for robust and type-safe code.
 -   Practice applying advanced techniques like class decoration and mixin-based design to real-world scenarios.
