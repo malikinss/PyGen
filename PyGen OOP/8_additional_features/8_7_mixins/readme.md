@@ -25,10 +25,20 @@ The implementation is simple, leveraging Python’s `json` module to handle seri
 Intended for applications requiring JSON serialization of class instances, such as API development, data interchange, or educational examples of Python mixins, JSON handling, and instance attribute serialization.
 ```
 
-2.
+2. 8_7_2_LoggerMixin
 
 ```
+# LoggerMixin Class Implementation
 
+## Description 📝
+
+The provided code implements the `LoggerMixin` class, a mixin that adds logging functionality to classes.
+It defines a single method, `log()`, which takes a logging level and message as arguments and prints a formatted log entry.
+The log entry includes the current date and time in `DD.MM.YYYY HH:MM:SS` format, the logging level, the class name, and the message, following the specified format: `[<date and time>] - <level> - <class name>: <message>`.
+
+## Purpose 🎯
+
+Intended for applications requiring logging capabilities, such as debugging, event tracking, or educational examples of Python mixins, datetime formatting, and class-based logging.
 ```
 
 3.
