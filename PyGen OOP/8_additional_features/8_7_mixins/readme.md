@@ -57,8 +57,19 @@ The implementation uses `self.__dict__` to access instance attributes and filter
 Intended for applications requiring introspection of class instance attributes, such as debugging, serialization, or educational examples of Python mixins, attribute access, and naming conventions.
 ```
 
-4.
+4. 8_7_4_ToStringMixin
 
 ```
+# ToStringMixin Class Implementation
 
+## Description 📝
+
+The provided code implements the `ToStringMixin` class, a mixin that adds custom formal and informal string representations to class instances.
+It defines a `__repr__` method that returns a string in the format `<class name>(<attribute dictionary>)`, where the dictionary contains instance attributes.
+If the instance has more than six attributes, the dictionary includes only the first six attributes followed by `, ...`.
+The implementation uses `self.__dict__` to access attributes and ensures they are displayed in the order they were added.
+
+## Purpose 🎯
+
+Intended for applications requiring consistent string representations of class instances, such as debugging, logging, or educational examples of Python mixins, string formatting, and attribute iteration.
 ```
