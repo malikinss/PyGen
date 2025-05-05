@@ -22,7 +22,17 @@ This lesson has no theory explonation and theoretical questions but has 13 progr
 1. 9_1_1_anything
 
 ```
+# anything() Function and Anything Class Implementation
 
+## Description 📝
+
+The provided code implements the `anything()` function, which returns an instance of the `Anything` class.
+The `Anything` class overrides all comparison magic methods (`__eq__`, `__ne__`, `__gt__`, `__ge__`, `__lt__`, `__le__`) to return `True` for any comparison operation (`==`, `!=`, `>`, `<`, `>=`, `<=`) with any other object.
+This ensures that any comparison involving an `Anything` instance always evaluates to `True`.
+
+## Purpose 🎯
+
+Intended for scenarios requiring a universal comparator, such as testing, mocking, or educational examples of Python magic methods, comparison operations, and custom object behavior.
 ```
 
 2. 9_1_2_Vector
