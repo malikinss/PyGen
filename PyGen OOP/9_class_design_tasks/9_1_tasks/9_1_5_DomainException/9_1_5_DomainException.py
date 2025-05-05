@@ -35,3 +35,121 @@ NOTE:
     or more Latin letters, followed by an at sign (@), and then a correct
     domain.
 '''
+import re
+
+
+class DomainException(Exception):
+    """
+    Exception for invalid domain, URL, or email.
+    """
+    def __init__(
+        self, message: str = "Invalid domain, url, or email"
+    ) -> None:
+        super().__init__(message)
+
+
+class Domain:
+    """
+    Class to handle and validate domains.
+    """
+    # One or more letters, dot, one or more letters
+    DOMAIN_REGEX = r'[a-zA-Z]+\.[a-zA-Z]+'
+
+    def __init__(self, domain: str) -> None:
+        """
+        Initialize with a domain.
+
+        Args:
+            domain: Domain string (e.g., 'pygen.ru').
+
+        Raises:
+            DomainException: If domain is invalid.
+        """
+        if not Domain._is_correct_domain(domain):
+            raise DomainException
+        self._domain = domain
+
+    @classmethod
+    def from_url(cls, url: str) -> 'Domain':
+        """
+        Create Domain from a URL.
+
+        Args:
+            url: URL string (e.g., 'https://pygen.ru').
+
+        Returns:
+            Domain instance.
+
+        Raises:
+            DomainException: If URL is invalid.
+        """
+        if not Domain._is_correct_url(url):
+            raise DomainException
+        domain = url.split('//')[1]
+        return cls(domain)
+
+    @classmethod
+    def from_email(cls, email: str) -> 'Domain':
+        """
+        Create Domain from an email.
+
+        Args:
+            email: Email string (e.g., 'support@pygen.ru').
+
+        Returns:
+            Domain instance.
+
+        Raises:
+            DomainException: If email is invalid.
+        """
+        if not Domain._is_correct_email(email):
+            raise DomainException
+        domain = email.split('@')[1]
+        return cls(domain)
+
+    @staticmethod
+    def _is_correct_domain(domain: str) -> bool:
+        """
+        Check if domain is valid.
+
+        Args:
+            domain: Domain string.
+
+        Returns:
+            True if domain matches regex, False otherwise.
+        """
+        return bool(re.fullmatch(Domain.DOMAIN_REGEX, domain))
+
+    @staticmethod
+    def _is_correct_url(url: str) -> bool:
+        """
+        Check if URL is valid.
+
+        Args:
+            url: URL string.
+
+        Returns:
+            True if URL matches regex, False otherwise.
+        """
+        regex = r'https?://' + Domain.DOMAIN_REGEX
+        return bool(re.fullmatch(regex, url))
+
+    @staticmethod
+    def _is_correct_email(email: str) -> bool:
+        """
+        Check if email is valid.
+
+        Args:
+            email: Email string.
+
+        Returns:
+            True if email matches regex, False otherwise.
+        """
+        regex = r'[a-zA-Z]+@' + Domain.DOMAIN_REGEX
+        return bool(re.fullmatch(regex, email))
+
+    def __str__(self) -> str:
+        """
+        Return domain as string.
+        """
+        return self._domain
