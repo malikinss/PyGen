@@ -72,7 +72,17 @@ Intended for applications requiring simple text encryption/decryption, such as e
 4. 9_1_4_Progression
 
 ```
+# ArithmeticProgression and GeometricProgression Class Implementation
 
+## Description 📝
+
+The provided code implements two classes, `ArithmeticProgression` and `GeometricProgression`, for generating terms of infinite arithmetic and geometric progressions, respectively.
+Both classes inherit from an abstract base class `Progression`, which defines common iteration logic. `ArithmeticProgression` generates terms by adding a fixed difference, while `GeometricProgression` generates terms by multiplying by a fixed ratio.
+Both classes are iterable, infinite, and initialized with a starting term and a step (difference or ratio).
+
+## Purpose 🎯
+
+Intended for applications requiring sequences of numbers, such as mathematical modeling, algorithm testing, or educational examples of Python iterators, abstract base classes, and progression generation.
 ```
 
 5. 9_1_5_DomainException
