@@ -88,7 +88,18 @@ Intended for applications requiring sequences of numbers, such as mathematical m
 5. 9_1_5_DomainException
 
 ```
+# DomainException and Domain Class Implementation
 
+## Description 📝
+
+The provided code implements the `DomainException` exception class and the `Domain` class to handle and validate domains.
+The `Domain` class supports three creation methods: direct initialization with a domain, `from_url()` for extracting a domain from a URL, and `from_email()` for extracting a domain from an email address.
+It validates inputs using regular expressions, raising `DomainException` with the message "Invalid domain, url, or email" for invalid inputs.
+The informal string representation of a `Domain` instance is the domain itself.
+
+## Purpose 🎯
+
+Intended for applications requiring domain validation and extraction, such as web scraping, email processing, or educational examples of Python classes, regular expressions, and exception handling.
 ```
 
 6. 9_1_6_HighScoreTable
