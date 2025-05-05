@@ -105,7 +105,18 @@ Intended for applications requiring domain validation and extraction, such as we
 6. 9_1_6_HighScoreTable
 
 ```
+# HighScoreTable Class Implementation
 
+## Description 📝
+
+The provided code implements the `HighScoreTable` class, which manages a high score table for a game.
+The table stores a limited number of top scores, specified at initialization, in descending order.
+It supports adding new scores with the `update` method, which only retains scores that rank within the table’s capacity, and resetting all scores with the `reset` method.
+The `scores` attribute provides access to the current list of scores.
+
+## Purpose 🎯
+
+Intended for game applications requiring a leaderboard or high score tracking, such as arcade games, or educational examples of Python classes, list management, and sorting.
 ```
 
 7. 9_1_7_Pagination
