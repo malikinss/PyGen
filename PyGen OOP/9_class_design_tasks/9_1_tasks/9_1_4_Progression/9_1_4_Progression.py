@@ -29,3 +29,61 @@ TODO:
     A geometric progression, like an arithmetic one, must be iterable and also
     infinite.
 '''
+from abc import ABC, abstractmethod
+from typing import Self
+
+
+class Progression(ABC):
+    """
+    Abstract base class for infinite progressions.
+    """
+    def __init__(self, start: float, step: float) -> None:
+        """
+        Initialize progression with start and step.
+
+        Args:
+            start: First term of the progression.
+            step: Difference or ratio of the progression.
+        """
+        self.start = start
+        self.step = step
+        self.cur = start
+
+    def __iter__(self) -> Self:
+        """
+        Return iterator object.
+        """
+        return self
+
+    @abstractmethod
+    def __next__(self) -> float:
+        """
+        Return next term of the progression.
+        """
+        pass
+
+
+class ArithmeticProgression(Progression):
+    """
+    Class for infinite arithmetic progression.
+    """
+    def __next__(self) -> float:
+        """
+        Return next term and increment by step.
+        """
+        res = self.cur
+        self.cur += self.step
+        return res
+
+
+class GeometricProgression(Progression):
+    """
+    Class for infinite geometric progression.
+    """
+    def __next__(self) -> float:
+        """
+        Return next term and multiply by step.
+        """
+        res = self.cur
+        self.cur *= self.step
+        return res
