@@ -38,7 +38,18 @@ Intended for scenarios requiring a universal comparator, such as testing, mockin
 2. 9_1_2_Vector
 
 ```
+# Vector Class Implementation
 
+## Description 📝
+
+The provided code implements the `Vector` class, which represents a vector of arbitrary dimension in a coordinate space.
+It supports initialization with any number of coordinates, informal string representation, vector operations (addition, subtraction, dot product, normalization), and equality comparisons.
+The class raises a `ValueError` with the message "Vectors must have equal length" when operations are attempted on vectors of different dimensions.
+The implementation uses Python’s operator overloading and functional programming techniques for concise operation handling.
+
+## Purpose 🎯
+
+Intended for applications involving vector mathematics, such as physics simulations, computer graphics, or educational examples of Python classes, operator overloading, and mathematical operations.
 ```
 
 3. 9_1_3_CaesarCipher
