@@ -24,3 +24,63 @@ TODO:
 NOTE:
     The shift is guaranteed to be a number from the range [1; 26].
 '''
+
+
+class CaesarCipher:
+    """
+    A class for encrypting/decrypting text using Caesar cipher.
+    """
+    def __init__(self, shift: int) -> None:
+        """
+        Initialize cipher with shift value.
+
+        Args:
+            shift: Shift value for encryption/decryption (1 to 26).
+        """
+        self.shift = shift
+
+    def _code(self, text: str, shift: int) -> str:
+        """
+        Apply Caesar cipher to text with given shift.
+
+        Args:
+            text: Text to encode or decode.
+            shift: Shift value (positive for encode, negative for decode).
+
+        Returns:
+            Transformed text with preserved case and non-letters.
+        """
+        result = []
+        for c in text:
+            if c.isalpha() and c.isascii():
+                # Determine base and modulus for case (A=65, a=97)
+                base = 65 if c.isupper() else 97
+                res = (ord(c) - base + shift) % 26 + base
+                result.append(chr(res))
+            else:
+                result.append(c)
+        return ''.join(result)
+
+    def encode(self, text: str) -> str:
+        """
+        Encrypt text using Caesar cipher.
+
+        Args:
+            text: Text to encrypt.
+
+        Returns:
+            Encrypted text.
+        """
+        return self._code(text, self.shift)
+
+    def decode(self, text: str) -> str:
+        """
+        Decrypt text using Caesar cipher.
+
+        Args:
+            text: Text to decrypt.
+
+        Returns:
+            Decrypted text.
+        """
+        return self._code(text, -self.shift)
