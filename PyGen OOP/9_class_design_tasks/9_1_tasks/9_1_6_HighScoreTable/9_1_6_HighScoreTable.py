@@ -34,3 +34,39 @@ TODO:
         high_score_table.reset()
         print(high_score_table.scores) # []
 '''
+from typing import List
+
+
+class HighScoreTable:
+    """
+    Class to manage a high score table with limited entries.
+    """
+    def __init__(self, max_len: int) -> None:
+        """
+        Initialize table with maximum number of scores.
+
+        Args:
+            max_len: Maximum number of scores to store.
+        """
+        self.max_len = max_len
+        self.scores: List[int] = []
+
+    def update(self, score: int) -> None:
+        """
+        Add score if it ranks in top max_len scores.
+
+        Args:
+            score: Score to add.
+        """
+        new_scores = []
+        new_scores.extend(self.scores)
+        new_scores.append(score)
+        # Sort in descending order and limit to max_len
+        length = min(self.max_len, len(new_scores))
+        self.scores[:] = sorted(new_scores, reverse=True)[:length]
+
+    def reset(self) -> None:
+        """
+        Clear all scores in the table.
+        """
+        self.scores = []
