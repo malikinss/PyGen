@@ -55,7 +55,18 @@ Intended for applications involving vector mathematics, such as physics simulati
 3. 9_1_3_CaesarCipher
 
 ```
+# CaesarCipher Class Implementation
 
+## Description 📝
+
+The provided code implements the `CaesarCipher` class, which encrypts and decrypts text using the Caesar cipher with a specified shift.
+The class supports encryption via the `encode()` method (shifting letters to the right) and decryption via the `decode()` method (shifting letters to the left).
+It preserves the case of letters, only processes Latin letters (a-z, A-Z), and leaves non-letter characters unchanged.
+The implementation uses a helper method `_code` to handle the core transformation logic for both encryption and decryption.
+
+## Purpose 🎯
+
+Intended for applications requiring simple text encryption/decryption, such as educational exercises, basic security demonstrations, or puzzles involving the Caesar cipher.
 ```
 
 4. 9_1_4_Progression
