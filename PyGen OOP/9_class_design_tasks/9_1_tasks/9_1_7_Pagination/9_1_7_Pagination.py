@@ -62,3 +62,98 @@ TODO:
         pagination.go_to_page(100)
         print(pagination.get_visible_items()) # ['y', 'z']
 '''
+from typing import List, Any
+
+
+class Pagination:
+    """
+    Class to handle paginated data.
+    """
+    def __init__(self, given_data: List[Any], page_size: int) -> None:
+        """
+        Initialize pagination with data and page size.
+
+        Args:
+            given_data: List of elements to paginate.
+            page_size: Number of elements per page.
+        """
+        self.given_data = given_data
+        self.page_size = page_size
+        self._paginated = self._paginate()
+        self.total_pages = len(self._paginated)
+        self.current_page = 1
+
+    def _paginate(self) -> List[List[Any]]:
+        """
+        Split data into pages.
+
+        Returns:
+            List of pages, each containing up to page_size elements.
+        """
+        # Create pages of size page_size, including last partial page
+        return [
+            self.given_data[i:i + self.page_size]
+            for i in range(0, len(self.given_data), self.page_size)
+        ]
+
+    def get_visible_items(self) -> List[Any]:
+        """
+        Get elements of the current page.
+
+        Returns:
+            List of elements on the current page.
+        """
+        return self._paginated[self.current_page - 1]
+
+    def prev_page(self) -> 'Pagination':
+        """
+        Go to previous page, stay on first if already there.
+
+        Returns:
+            Self for method chaining.
+        """
+        self.go_to_page(self.current_page - 1)
+        return self
+
+    def next_page(self) -> 'Pagination':
+        """
+        Go to next page, stay on last if already there.
+
+        Returns:
+            Self for method chaining.
+        """
+        self.go_to_page(self.current_page + 1)
+        return self
+
+    def first_page(self) -> 'Pagination':
+        """
+        Go to first page.
+
+        Returns:
+            Self for method chaining.
+        """
+        self.go_to_page(1)
+        return self
+
+    def last_page(self) -> 'Pagination':
+        """
+        Go to last page.
+
+        Returns:
+            Self for method chaining.
+        """
+        self.go_to_page(self.total_pages)
+        return self
+
+    def go_to_page(self, number: int) -> 'Pagination':
+        """
+        Go to specified page, clamp to valid range.
+
+        Args:
+            number: Page number (1-based).
+
+        Returns:
+            Self for method chaining.
+        """
+        self.current_page = max(1, min(number, self.total_pages))
+        return self
