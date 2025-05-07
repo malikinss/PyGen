@@ -138,6 +138,18 @@ Intended for applications requiring data pagination, such as web interfaces, dat
 8. 9_1_8_Testpaper
 
 ```
+# Testpaper and Student Class Implementation
+
+## Description 📝
+
+The provided code implements the `Testpaper` and `Student` classes to manage exam tests and student results.
+The `Testpaper` class represents a test with a topic, correct answers, and a minimum passing percentage.
+The `Student` class tracks tests taken, allows students to take tests via the `take_test` method, and stores results in a dictionary (`tests_taken`) with test topics as keys and pass/fail outcomes with percentages as values.
+If no tests are taken, `tests_taken` returns the string "No tests taken".
+
+## Purpose 🎯
+
+Intended for educational applications simulating test-taking scenarios, such as quiz systems, or for teaching Python classes, dictionary management, and percentage calculations.
 
 ```
 
