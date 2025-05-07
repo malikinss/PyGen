@@ -46,3 +46,54 @@ NOTE:
     The percentage of correct answers should be rounded to the nearest whole
     number.
 '''
+from typing import List, Dict, Union
+
+
+class Testpaper:
+    """
+    Class representing an exam test.
+    """
+    def __init__(
+        self, theme: str, answers: List[str], min_success: str
+    ) -> None:
+        """
+        Initialize test with theme, answers, and passing percentage.
+
+        Args:
+            theme: Test topic (e.g., 'Maths').
+            answers: List of correct answers (e.g., ['1A', '2C']).
+            min_success: Minimum passing percentage (e.g., '60%').
+        """
+        self.theme = theme
+        self.answers = answers
+        self.min_success = float(min_success.rstrip('%'))
+
+
+class Student:
+    """
+    Class representing a student taking tests.
+    """
+    def __init__(self) -> None:
+        """
+        Initialize student with no tests taken.
+        """
+        self.tests_taken: Union[str, Dict[str, str]] = 'No tests taken'
+
+    def take_test(self, test: Testpaper, answers: List[str]) -> None:
+        """
+        Take a test and record result.
+
+        Args:
+            test: Testpaper instance to take.
+            answers: Student's answers (e.g., ['1A', '2D']).
+        """
+        if isinstance(self.tests_taken, str):
+            self.tests_taken = {}
+        # Count correct answers and compute rounded percentage
+        correct = sum(a == b for a, b in zip(test.answers, answers))
+        percent = round(correct * 100 / len(test.answers))
+        if percent >= test.min_success:
+            result = f'Passed! ({percent}%)'
+        else:
+            result = f'Failed! ({percent}%)'
+        self.tests_taken[test.theme] = result
