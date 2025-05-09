@@ -53,3 +53,50 @@ TODO:
         obj.save_state()
         print(obj.n_states()) # 3
 '''
+from copy import deepcopy
+from typing import Dict, Any, Self, List
+
+
+class Selfie:
+    """
+    Class that saves and restores its state.
+    """
+    def __init__(self) -> None:
+        """
+        Initialize with empty state history.
+        """
+        self.history: List[Dict[str, Any]] = []
+
+    def save_state(self) -> None:
+        """
+        Save current state excluding history.
+        """
+        # Copy attributes excluding history
+        state = {k: v for k, v in self.__dict__.items() if k != 'history'}
+        self.history.append(deepcopy(state))
+
+    def recover_state(self, index: int) -> Self:
+        """
+        Restore state by index or return self.
+
+        Args:
+            index: Index of state to restore (0-based).
+
+        Returns:
+            New Selfie instance with restored state or self if index invalid.
+        """
+        if index >= 0 and index < len(self.history):
+            new_obj = Selfie()
+            new_obj.__dict__.update(deepcopy(self.history[index]))
+            new_obj.history = deepcopy(self.history[index:index + 1])
+            return new_obj
+        return self
+
+    def n_states(self) -> int:
+        """
+        Return number of saved states.
+
+        Returns:
+            Number of states in history.
+        """
+        return len(self.history)
