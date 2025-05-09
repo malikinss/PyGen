@@ -190,7 +190,18 @@ Intended for game development, simulations, or educational examples of Python cl
 11. 9_1_11_Selfie
 
 ```
+# Selfie Class Implementation
 
+## Description 📝
+
+The provided code implements the `Selfie` class, which allows instances to save their state (attributes and values), restore previous states by index, and track the number of saved states.
+The class uses a list to store state snapshots, excluding the history itself to avoid recursive issues.
+The `save_state` method captures the current state, `recover_state` returns a new instance with the state at a given index (or the current instance if the index is invalid), and `n_states` returns the count of saved states.
+Deep copying ensures state integrity.
+
+## Purpose 🎯
+
+Intended for applications requiring state management, such as undo/redo functionality, object versioning, or educational examples of Python classes, state persistence, and deep copying.
 ```
 
 12. 9_1_12_MultiKeyDict
