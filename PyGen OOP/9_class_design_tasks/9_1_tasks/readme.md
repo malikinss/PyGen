@@ -207,7 +207,18 @@ Intended for applications requiring state management, such as undo/redo function
 12. 9_1_12_MultiKeyDict
 
 ```
+# MultiKeyDict Class Implementation
 
+## Description 📝
+
+The provided code implements the `MultiKeyDict` class, a dictionary-like class that extends `UserDict` to support key aliases.
+It allows standard dictionary creation, key-value access, and modification, with an additional `alias` method to create aliases for existing keys.
+Aliases act as alternative keys to access the same value, and the value remains accessible via aliases even after the original key is deleted.
+Keys take precedence over aliases when both exist, ensuring operations target the key’s value in such cases.
+
+## Purpose 🎯
+
+Intended for applications requiring flexible key mappings, such as data modeling, configuration management, or educational examples of Python dictionary subclasses, aliasing, and key precedence.
 ```
 
 13. 9_1_13_predicate
