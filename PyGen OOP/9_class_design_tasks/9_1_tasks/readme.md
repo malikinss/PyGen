@@ -156,7 +156,18 @@ Intended for educational applications simulating test-taking scenarios, such as 
 9. 9_1_9_TicTacToe
 
 ```
+# TicTacToe Class Implementation
 
+## Description 📝
+
+The provided code implements the `TicTacToe` class, which simulates a 3x3 Tic-Tac-Toe game.
+The class supports alternating moves between players (X goes first, then O), marking cells with coordinates (1-based), checking for a winner, and displaying the board.
+It handles invalid moves (already marked cells or moves after the game ends) by printing specific messages and determines the game outcome (win, draw, or ongoing).
+The board is displayed using `|` and `-` characters, with `X`, `O`, or spaces for cells.
+
+## Purpose 🎯
+
+Intended for gaming applications, educational examples of Python classes, game logic, or interactive simulations of Tic-Tac-Toe.
 ```
 
 10. 9_1_10_Minesweeper
