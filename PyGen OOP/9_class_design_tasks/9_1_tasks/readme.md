@@ -173,8 +173,18 @@ Intended for gaming applications, educational examples of Python classes, game l
 10. 9_1_10_Minesweeper
 
 ```
+# Game and Cell Class Implementation for Minesweeper
 
+## Description 📝
 
+The provided code implements the `Game` and `Cell` classes to represent a Minesweeper game board.
+The `Game` class creates a board with a specified number of rows, columns, and mines, randomly placing mines and initializing cells with their attributes.
+The `Cell` class represents individual cells, storing their position, mine status, and the number of mines in neighboring cells.
+The board is a 2D list of `Cell` instances, and mines are distributed randomly during initialization.
+
+## Purpose 🎯
+
+Intended for game development, simulations, or educational examples of Python classes, random distribution, and 2D grid processing, particularly for implementing Minesweeper logic.
 ```
 
 11. 9_1_11_Selfie
