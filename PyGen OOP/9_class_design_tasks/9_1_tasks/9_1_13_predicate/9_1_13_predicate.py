@@ -54,3 +54,79 @@ NOTE:
     It is guaranteed that the functions being combined have the same
     signatures.
 '''
+from typing import Callable
+from functools import wraps, update_wrapper
+
+
+class predicate:
+    """
+    Decorator for predicates with logical operations.
+    """
+    def __init__(self, func: Callable[..., bool]) -> None:
+        """
+        Initialize with predicate function.
+
+        Args:
+            func: Function returning bool.
+        """
+        update_wrapper(self, func)
+        self.func = func
+
+    def __call__(self, *args, **kwargs) -> bool:
+        """
+        Call wrapped predicate with arguments.
+
+        Args:
+            *args: Positional arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            Result of predicate function.
+        """
+        # Call the wrapped function
+        return self.func(*args, **kwargs)
+
+    def __and__(self, other: 'predicate') -> 'predicate':
+        """
+        Create predicate for logical AND.
+
+        Args:
+            other: Another predicate.
+
+        Returns:
+            New predicate combining self and other with AND.
+        """
+        @predicate
+        @wraps(self.func)
+        def combined(*args, **kwargs) -> bool:
+            return self.func(*args, **kwargs) and other.func(*args, **kwargs)
+        return combined
+
+    def __or__(self, other: 'predicate') -> 'predicate':
+        """
+        Create predicate for logical OR.
+
+        Args:
+            other: Another predicate.
+
+        Returns:
+            New predicate combining self and other with OR.
+        """
+        @predicate
+        @wraps(self.func)
+        def combined(*args, **kwargs) -> bool:
+            return self.func(*args, **kwargs) or other.func(*args, **kwargs)
+        return combined
+
+    def __invert__(self) -> 'predicate':
+        """
+        Create predicate for logical NOT.
+
+        Returns:
+            New predicate negating self.
+        """
+        @predicate
+        @wraps(self.func)
+        def negated(*args, **kwargs) -> bool:
+            return not self.func(*args, **kwargs)
+        return negated
