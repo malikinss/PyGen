@@ -224,5 +224,16 @@ Intended for applications requiring flexible key mappings, such as data modeling
 13. 9_1_13_predicate
 
 ```
+# predicate Decorator Implementation
 
+## Description 📝
+
+The provided code implements the `predicate` decorator class, which wraps functions returning boolean values (predicates) to enable logical combinations using `&` (AND), `|` (OR), and `~` (NOT) operators.
+The decorator preserves the original function’s behavior for direct calls and supports predicates with any number of positional or keyword arguments.
+Combined predicates apply the same arguments to both functions and compute the logical result.
+The implementation uses a class-based decorator with operator overloading for clean syntax.
+
+## Purpose 🎯
+
+Intended for applications requiring flexible predicate logic, such as filtering, validation, or educational examples of Python decorators, operator overloading, and functional programming.
 ```
