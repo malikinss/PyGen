@@ -34,7 +34,7 @@ Each subdirectory corresponds to a specific course, documenting the learning pro
 -   **Practical Tasks:**  
     The course includes **394 practical programming tasks** and **798 theoretical questions**, ensuring that I gain hands-on experience and a thorough understanding of each topic.
 
-### [4. Python Generation: OOP Course 📚](https://github.com/malikinss/PyGen/tree/main/PyGen%20for%20Professionals)
+### [4. Python Generation: OOP Course 📚](https://github.com/malikinss/PyGen/tree/main/PyGen%20OOP)
 
 -   **Platform:** Stepik
 -   **Description:** This course is a continuation of the **Python Generation** courses for beginners, advanced and proffessionals users, designed for those who want to deepen their knowledge of `Python OOP`.
