@@ -9,9 +9,6 @@ This chapter has only one lesson that have no theory explonation and theoretical
 
 ```
 # Lesson 9.1: Final Tasks 🏆
-
-## Description 📝
-
 This lesson focuses on applying a wide range of Python programming concepts through practical tasks, serving as a capstone for previous lessons.
 
 This lesson includes 13 programming practical tasks with no theoretical explanation or questions, emphasizing hands-on application of Python skills.
