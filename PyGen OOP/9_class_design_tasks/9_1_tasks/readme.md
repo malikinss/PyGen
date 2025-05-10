@@ -29,9 +29,6 @@ This lesson has no theory explonation and theoretical questions but has 13 progr
 The provided code implements the `anything()` function, which returns an instance of the `Anything` class.
 The `Anything` class overrides all comparison magic methods (`__eq__`, `__ne__`, `__gt__`, `__ge__`, `__lt__`, `__le__`) to return `True` for any comparison operation (`==`, `!=`, `>`, `<`, `>=`, `<=`) with any other object.
 This ensures that any comparison involving an `Anything` instance always evaluates to `True`.
-
-## Purpose 🎯
-
 Intended for scenarios requiring a universal comparator, such as testing, mocking, or educational examples of Python magic methods, comparison operations, and custom object behavior.
 ```
 
@@ -46,9 +43,6 @@ The provided code implements the `Vector` class, which represents a vector of ar
 It supports initialization with any number of coordinates, informal string representation, vector operations (addition, subtraction, dot product, normalization), and equality comparisons.
 The class raises a `ValueError` with the message "Vectors must have equal length" when operations are attempted on vectors of different dimensions.
 The implementation uses Python’s operator overloading and functional programming techniques for concise operation handling.
-
-## Purpose 🎯
-
 Intended for applications involving vector mathematics, such as physics simulations, computer graphics, or educational examples of Python classes, operator overloading, and mathematical operations.
 ```
 
@@ -63,9 +57,6 @@ The provided code implements the `CaesarCipher` class, which encrypts and decryp
 The class supports encryption via the `encode()` method (shifting letters to the right) and decryption via the `decode()` method (shifting letters to the left).
 It preserves the case of letters, only processes Latin letters (a-z, A-Z), and leaves non-letter characters unchanged.
 The implementation uses a helper method `_code` to handle the core transformation logic for both encryption and decryption.
-
-## Purpose 🎯
-
 Intended for applications requiring simple text encryption/decryption, such as educational exercises, basic security demonstrations, or puzzles involving the Caesar cipher.
 ```
 
@@ -79,9 +70,6 @@ Intended for applications requiring simple text encryption/decryption, such as e
 The provided code implements two classes, `ArithmeticProgression` and `GeometricProgression`, for generating terms of infinite arithmetic and geometric progressions, respectively.
 Both classes inherit from an abstract base class `Progression`, which defines common iteration logic. `ArithmeticProgression` generates terms by adding a fixed difference, while `GeometricProgression` generates terms by multiplying by a fixed ratio.
 Both classes are iterable, infinite, and initialized with a starting term and a step (difference or ratio).
-
-## Purpose 🎯
-
 Intended for applications requiring sequences of numbers, such as mathematical modeling, algorithm testing, or educational examples of Python iterators, abstract base classes, and progression generation.
 ```
 
@@ -96,9 +84,6 @@ The provided code implements the `DomainException` exception class and the `Doma
 The `Domain` class supports three creation methods: direct initialization with a domain, `from_url()` for extracting a domain from a URL, and `from_email()` for extracting a domain from an email address.
 It validates inputs using regular expressions, raising `DomainException` with the message "Invalid domain, url, or email" for invalid inputs.
 The informal string representation of a `Domain` instance is the domain itself.
-
-## Purpose 🎯
-
 Intended for applications requiring domain validation and extraction, such as web scraping, email processing, or educational examples of Python classes, regular expressions, and exception handling.
 ```
 
@@ -113,9 +98,6 @@ The provided code implements the `HighScoreTable` class, which manages a high sc
 The table stores a limited number of top scores, specified at initialization, in descending order.
 It supports adding new scores with the `update` method, which only retains scores that rank within the table’s capacity, and resetting all scores with the `reset` method.
 The `scores` attribute provides access to the current list of scores.
-
-## Purpose 🎯
-
 Intended for game applications requiring a leaderboard or high score tracking, such as arcade games, or educational examples of Python classes, list management, and sorting.
 ```
 
@@ -129,9 +111,6 @@ Intended for game applications requiring a leaderboard or high score tracking, s
 The provided code implements the `Pagination` class, which handles paginated data by splitting a list into chunks (pages) of a specified size.
 It supports navigation through pages using methods (`prev_page`, `next_page`, `first_page`, `last_page`, `go_to_page`), retrieves the current page’s contents with `get_visible_items`, and provides access to `total_pages` and `current_page`.
 The class ensures boundary conditions (e.g., staying on the first/last page when navigating beyond limits) and supports method chaining for navigation.
-
-## Purpose 🎯
-
 Intended for applications requiring data pagination, such as web interfaces, data browsing tools, or educational examples of Python classes, list slicing, and method chaining.
 ```
 
@@ -146,9 +125,6 @@ The provided code implements the `Testpaper` and `Student` classes to manage exa
 The `Testpaper` class represents a test with a topic, correct answers, and a minimum passing percentage.
 The `Student` class tracks tests taken, allows students to take tests via the `take_test` method, and stores results in a dictionary (`tests_taken`) with test topics as keys and pass/fail outcomes with percentages as values.
 If no tests are taken, `tests_taken` returns the string "No tests taken".
-
-## Purpose 🎯
-
 Intended for educational applications simulating test-taking scenarios, such as quiz systems, or for teaching Python classes, dictionary management, and percentage calculations.
 
 ```
@@ -164,9 +140,6 @@ The provided code implements the `TicTacToe` class, which simulates a 3x3 Tic-Ta
 The class supports alternating moves between players (X goes first, then O), marking cells with coordinates (1-based), checking for a winner, and displaying the board.
 It handles invalid moves (already marked cells or moves after the game ends) by printing specific messages and determines the game outcome (win, draw, or ongoing).
 The board is displayed using `|` and `-` characters, with `X`, `O`, or spaces for cells.
-
-## Purpose 🎯
-
 Intended for gaming applications, educational examples of Python classes, game logic, or interactive simulations of Tic-Tac-Toe.
 ```
 
@@ -181,9 +154,6 @@ The provided code implements the `Game` and `Cell` classes to represent a Minesw
 The `Game` class creates a board with a specified number of rows, columns, and mines, randomly placing mines and initializing cells with their attributes.
 The `Cell` class represents individual cells, storing their position, mine status, and the number of mines in neighboring cells.
 The board is a 2D list of `Cell` instances, and mines are distributed randomly during initialization.
-
-## Purpose 🎯
-
 Intended for game development, simulations, or educational examples of Python classes, random distribution, and 2D grid processing, particularly for implementing Minesweeper logic.
 ```
 
@@ -198,9 +168,6 @@ The provided code implements the `Selfie` class, which allows instances to save 
 The class uses a list to store state snapshots, excluding the history itself to avoid recursive issues.
 The `save_state` method captures the current state, `recover_state` returns a new instance with the state at a given index (or the current instance if the index is invalid), and `n_states` returns the count of saved states.
 Deep copying ensures state integrity.
-
-## Purpose 🎯
-
 Intended for applications requiring state management, such as undo/redo functionality, object versioning, or educational examples of Python classes, state persistence, and deep copying.
 ```
 
@@ -215,9 +182,6 @@ The provided code implements the `MultiKeyDict` class, a dictionary-like class t
 It allows standard dictionary creation, key-value access, and modification, with an additional `alias` method to create aliases for existing keys.
 Aliases act as alternative keys to access the same value, and the value remains accessible via aliases even after the original key is deleted.
 Keys take precedence over aliases when both exist, ensuring operations target the key’s value in such cases.
-
-## Purpose 🎯
-
 Intended for applications requiring flexible key mappings, such as data modeling, configuration management, or educational examples of Python dictionary subclasses, aliasing, and key precedence.
 ```
 
@@ -232,8 +196,5 @@ The provided code implements the `predicate` decorator class, which wraps functi
 The decorator preserves the original function’s behavior for direct calls and supports predicates with any number of positional or keyword arguments.
 Combined predicates apply the same arguments to both functions and compute the logical result.
 The implementation uses a class-based decorator with operator overloading for clean syntax.
-
-## Purpose 🎯
-
 Intended for applications requiring flexible predicate logic, such as filtering, validation, or educational examples of Python decorators, operator overloading, and functional programming.
 ```
