@@ -23,9 +23,6 @@ This lesson has no theory explonation and theoretical questions but has 13 progr
 
 ```
 # anything() Function and Anything Class Implementation
-
-## Description 📝
-
 The provided code implements the `anything()` function, which returns an instance of the `Anything` class.
 The `Anything` class overrides all comparison magic methods (`__eq__`, `__ne__`, `__gt__`, `__ge__`, `__lt__`, `__le__`) to return `True` for any comparison operation (`==`, `!=`, `>`, `<`, `>=`, `<=`) with any other object.
 This ensures that any comparison involving an `Anything` instance always evaluates to `True`.
@@ -36,9 +33,6 @@ Intended for scenarios requiring a universal comparator, such as testing, mockin
 
 ```
 # Vector Class Implementation
-
-## Description 📝
-
 The provided code implements the `Vector` class, which represents a vector of arbitrary dimension in a coordinate space.
 It supports initialization with any number of coordinates, informal string representation, vector operations (addition, subtraction, dot product, normalization), and equality comparisons.
 The class raises a `ValueError` with the message "Vectors must have equal length" when operations are attempted on vectors of different dimensions.
@@ -50,9 +44,6 @@ Intended for applications involving vector mathematics, such as physics simulati
 
 ```
 # CaesarCipher Class Implementation
-
-## Description 📝
-
 The provided code implements the `CaesarCipher` class, which encrypts and decrypts text using the Caesar cipher with a specified shift.
 The class supports encryption via the `encode()` method (shifting letters to the right) and decryption via the `decode()` method (shifting letters to the left).
 It preserves the case of letters, only processes Latin letters (a-z, A-Z), and leaves non-letter characters unchanged.
@@ -64,9 +55,6 @@ Intended for applications requiring simple text encryption/decryption, such as e
 
 ```
 # ArithmeticProgression and GeometricProgression Class Implementation
-
-## Description 📝
-
 The provided code implements two classes, `ArithmeticProgression` and `GeometricProgression`, for generating terms of infinite arithmetic and geometric progressions, respectively.
 Both classes inherit from an abstract base class `Progression`, which defines common iteration logic. `ArithmeticProgression` generates terms by adding a fixed difference, while `GeometricProgression` generates terms by multiplying by a fixed ratio.
 Both classes are iterable, infinite, and initialized with a starting term and a step (difference or ratio).
@@ -77,9 +65,6 @@ Intended for applications requiring sequences of numbers, such as mathematical m
 
 ```
 # DomainException and Domain Class Implementation
-
-## Description 📝
-
 The provided code implements the `DomainException` exception class and the `Domain` class to handle and validate domains.
 The `Domain` class supports three creation methods: direct initialization with a domain, `from_url()` for extracting a domain from a URL, and `from_email()` for extracting a domain from an email address.
 It validates inputs using regular expressions, raising `DomainException` with the message "Invalid domain, url, or email" for invalid inputs.
@@ -91,9 +76,6 @@ Intended for applications requiring domain validation and extraction, such as we
 
 ```
 # HighScoreTable Class Implementation
-
-## Description 📝
-
 The provided code implements the `HighScoreTable` class, which manages a high score table for a game.
 The table stores a limited number of top scores, specified at initialization, in descending order.
 It supports adding new scores with the `update` method, which only retains scores that rank within the table’s capacity, and resetting all scores with the `reset` method.
@@ -105,9 +87,6 @@ Intended for game applications requiring a leaderboard or high score tracking, s
 
 ```
 # Pagination Class Implementation
-
-## Description 📝
-
 The provided code implements the `Pagination` class, which handles paginated data by splitting a list into chunks (pages) of a specified size.
 It supports navigation through pages using methods (`prev_page`, `next_page`, `first_page`, `last_page`, `go_to_page`), retrieves the current page’s contents with `get_visible_items`, and provides access to `total_pages` and `current_page`.
 The class ensures boundary conditions (e.g., staying on the first/last page when navigating beyond limits) and supports method chaining for navigation.
@@ -118,9 +97,6 @@ Intended for applications requiring data pagination, such as web interfaces, dat
 
 ```
 # Testpaper and Student Class Implementation
-
-## Description 📝
-
 The provided code implements the `Testpaper` and `Student` classes to manage exam tests and student results.
 The `Testpaper` class represents a test with a topic, correct answers, and a minimum passing percentage.
 The `Student` class tracks tests taken, allows students to take tests via the `take_test` method, and stores results in a dictionary (`tests_taken`) with test topics as keys and pass/fail outcomes with percentages as values.
@@ -133,9 +109,6 @@ Intended for educational applications simulating test-taking scenarios, such as 
 
 ```
 # TicTacToe Class Implementation
-
-## Description 📝
-
 The provided code implements the `TicTacToe` class, which simulates a 3x3 Tic-Tac-Toe game.
 The class supports alternating moves between players (X goes first, then O), marking cells with coordinates (1-based), checking for a winner, and displaying the board.
 It handles invalid moves (already marked cells or moves after the game ends) by printing specific messages and determines the game outcome (win, draw, or ongoing).
@@ -147,9 +120,6 @@ Intended for gaming applications, educational examples of Python classes, game l
 
 ```
 # Game and Cell Class Implementation for Minesweeper
-
-## Description 📝
-
 The provided code implements the `Game` and `Cell` classes to represent a Minesweeper game board.
 The `Game` class creates a board with a specified number of rows, columns, and mines, randomly placing mines and initializing cells with their attributes.
 The `Cell` class represents individual cells, storing their position, mine status, and the number of mines in neighboring cells.
@@ -161,9 +131,6 @@ Intended for game development, simulations, or educational examples of Python cl
 
 ```
 # Selfie Class Implementation
-
-## Description 📝
-
 The provided code implements the `Selfie` class, which allows instances to save their state (attributes and values), restore previous states by index, and track the number of saved states.
 The class uses a list to store state snapshots, excluding the history itself to avoid recursive issues.
 The `save_state` method captures the current state, `recover_state` returns a new instance with the state at a given index (or the current instance if the index is invalid), and `n_states` returns the count of saved states.
@@ -175,9 +142,6 @@ Intended for applications requiring state management, such as undo/redo function
 
 ```
 # MultiKeyDict Class Implementation
-
-## Description 📝
-
 The provided code implements the `MultiKeyDict` class, a dictionary-like class that extends `UserDict` to support key aliases.
 It allows standard dictionary creation, key-value access, and modification, with an additional `alias` method to create aliases for existing keys.
 Aliases act as alternative keys to access the same value, and the value remains accessible via aliases even after the original key is deleted.
@@ -189,9 +153,6 @@ Intended for applications requiring flexible key mappings, such as data modeling
 
 ```
 # predicate Decorator Implementation
-
-## Description 📝
-
 The provided code implements the `predicate` decorator class, which wraps functions returning boolean values (predicates) to enable logical combinations using `&` (AND), `|` (OR), and `~` (NOT) operators.
 The decorator preserves the original function’s behavior for direct calls and supports predicates with any number of positional or keyword arguments.
 Combined predicates apply the same arguments to both functions and compute the logical result.
